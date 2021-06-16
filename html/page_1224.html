@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = "urn:schemas-microsoft-com:office:office"><HEAD><TITLE>怪物体型修正与飞行技能调整</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18921"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; MARGIN: 12pt 0cm 0pt 7.5pt; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; LINE-HEIGHT: 22px; TEXT-INDENT: -7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; break-after: avoid'><B><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 微软雅黑, sans-serif; COLOR: rgb(100,0,100); LINE-HEIGHT: 30px">怪物体型修正与飞行技能调整</SPAN></B></P>
+<DIV 
+style='FONT-SIZE: medium; FONT-FAMILY: "Times New Roman"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: left; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>
+<DIV style="HEIGHT: 10px; WIDTH: 200px; FLOAT: right"></DIV>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt 5.5pt; TEXT-INDENT: -5.5pt'><SPAN 
+lang=EN-US style="FONT-FAMILY: 微软雅黑, sans-serif"></SPAN>&nbsp;</P>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 6pt 0cm 6pt 6pt; TEXT-INDENT: -6pt'><B><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 微软雅黑, sans-serif; COLOR: rgb(175,0,0)">怪物体型相关修正</SPAN></B></P>
+<TABLE class=-17 
+style="FONT-SIZE: 12px; FONT-FAMILY: 宋体, Arial, Helvetica, sans-serif; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR style="HEIGHT: 17pt">
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">体型</SPAN></B></P></TD>
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">攻击和</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">AC<SPAN>&nbsp;</SPAN></SPAN></B><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">修正</SPAN></B></P></TD>
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">CMB<SPAN>&nbsp;</SPAN></SPAN></B><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">和</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">CMD<SPAN>&nbsp;</SPAN></SPAN></B><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">修正</SPAN></B></P></TD>
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">隐匿</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">技能</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">修正</SPAN></B></P></TD>
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">飞行</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">技能</SPAN></B></P>
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">修正</SPAN></B></P></TD>
+    <TD 
+    style="BORDER-TOP: medium none; HEIGHT: 17pt; BORDER-RIGHT: medium none; BACKGROUND: rgb(158,58,56); BORDER-BOTTOM: white 1.5pt solid; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt; border-image: initial">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: white">活吞能力等效</SPAN></B></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">超巨型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Colossal)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–16</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">16<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">巨型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Gargantuan)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–12</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–6</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">8<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">超大型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Huge)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">4<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">大型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Large)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–1</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+1</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">2<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">中型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Medium)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+0</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+0</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+0</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+0</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">1<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">小型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Small)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+1</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–1</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">1/2<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">超小型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Tiny)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–2</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">1/4<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">微型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Diminutive)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–4</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+12</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+6</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(237,242,248); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">1/8<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><B><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">超微型<SPAN 
+      lang=EN-US><SPAN>&nbsp;</SPAN>(Fine)</SPAN></SPAN></B></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">–8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+16</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">+8</SPAN></P></TD>
+    <TD 
+    style="BACKGROUND: rgb(219,229,241); PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt">
+      <P class=MsoNormal 
+      style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm'><SPAN 
+      lang=EN-US 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">1/16<SPAN>&nbsp;</SPAN></SPAN><SPAN 
+      style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: black">个中型生物</SPAN></P></TD></TR></TBODY></TABLE>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt 5.5pt; TEXT-INDENT: -5.5pt'><SPAN 
+lang=EN-US style="FONT-FAMILY: 微软雅黑, sans-serif"></SPAN>&nbsp;</P>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 6pt 0cm 6pt 6pt; TEXT-INDENT: -6pt'><B><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 微软雅黑, sans-serif; COLOR: rgb(175,0,0)">飞行技能</SPAN></B></P>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt 5.5pt; TEXT-INDENT: -5.5pt'><SPAN 
+style="FONT-FAMILY: 微软雅黑, sans-serif">所有拥有飞行速度的生物都将飞行视为本职技能，并做以下调整：</SPAN></P>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt 5.5pt; TEXT-INDENT: -5.5pt'><B><SPAN 
+style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: rgb(0,0,150)">机动性：</SPAN></B><SPAN 
+style="FONT-FAMILY: 微软雅黑, sans-serif">拥有天生飞行速度的生物，将根据飞行的机动性在飞行检定上获得加值<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(</SPAN>或减值<SPAN lang=EN-US>)</SPAN>：笨拙<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(Clumsy) –8</SPAN>，不良<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(Poor) –4</SPAN>，一般<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(Average) +0</SPAN>，良好<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(Good) +4</SPAN>，完美<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>(Perfect) 
++8</SPAN>。没有列出具体机动性的飞行生物视为机动性一般。</SPAN></P>
+<P class=MsoNormal 
+style='FONT-SIZE: 11pt; FONT-FAMILY: "Roboto Regular"; MARGIN: 0cm 0cm 0pt 5.5pt; TEXT-INDENT: -5.5pt'><B><SPAN 
+style="FONT-FAMILY: 微软雅黑, sans-serif; COLOR: rgb(0,0,150)">体型：</SPAN></B><SPAN 
+style="FONT-FAMILY: 微软雅黑, sans-serif">生物的体型大小也会影响到飞行技能的加<SPAN 
+lang=EN-US>/</SPAN>减值：超微型<SPAN lang=EN-US><SPAN>&nbsp;</SPAN>+8</SPAN>，微型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>+6</SPAN>，超小型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>+4</SPAN>，小型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>+2</SPAN>，中型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>+0</SPAN>，大型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>–2</SPAN>，超大型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>–4</SPAN>，巨型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>–6</SPAN>，超巨型<SPAN 
+lang=EN-US><SPAN>&nbsp;</SPAN>–8</SPAN>。</SPAN></P></DIV></BODY></HTML>
