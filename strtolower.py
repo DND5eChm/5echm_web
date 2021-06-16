@@ -1,6 +1,6 @@
 import os
 
-path="test"
+path="html"
 def rename (path):
   filenames = os.listdir(path)
   for filename in filenames:
