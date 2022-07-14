@@ -3,4 +3,8 @@
 
 fork修改自 https://github.com/dollzcx/chm_to_html
 
+编码转换工具为https://github.com/clorymmk/CodeTransmit
+
+不全书为5echm 天麟版 [果园链接](http://45.79.87.129/bbs/index.php?topic=124404.60)
+
 示范站点为 5echm.kagangtuya.top
