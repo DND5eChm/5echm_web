@@ -249,13 +249,13 @@ strings["Search"]                                ="搜索";
 strings["Bookmark"]                              ="书签";
 
 strings["Loading the data for search..."]        ="正在加载要搜索的数据...";
-strings["Type in the word(s) to search for:"]    ="输入要搜索的关键词：";
+strings["Type in the word(s) to search for:"]    ="输入要搜索的关键词(移动端需先选择页面再点击显示按钮)：";
 strings["Search title only"]                     ="仅搜索标题";
 strings["Search previous results"]               ="在上次结果中搜索";
 strings["Display"]                               ="显示";
 strings["No topics found!"]                      ="找不到主题！";
 
-strings["Type in the keyword to find:"]          ="键入要查找的关键字：";
+strings["Type in the keyword to find:"]          ="键入要查找的关键字(移动端需先选择页面再点击显示按钮)：";
 
 strings["Show all"]                              ="显示所有";
 strings["Hide all"]                              ="隐藏所有";
