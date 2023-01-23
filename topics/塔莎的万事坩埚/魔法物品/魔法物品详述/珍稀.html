@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!-- saved from url=(0014)about:internet -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -15,173 +14,6 @@ html,body {
 }
 </style>
 
-
-
-
-<style>
-html,div { margin: 0; padding: 0;}
-
-body {
-	padding: 0px;
-	margin: 0px;
-	overflow: auto;
-	height: 100%;
-}
-
-#winchm_template_button{
-	float: right;
-	width: 93px;
-	top: 7px;
-	position: relative;
-	text-align: right;
-	right: 5px;
-	height: auto;
-}
-
-#winchm_template_top{
-	padding: 0px;
-	margin: 0px;
-	border-bottom: 1px solid #9B9B9B;
-	background-color: #B1CEFE;
-}
-
-#winchm_template_navigation{
-	margin: 0px;
-	padding-top: 7px;
-	padding-left: 7px;
-	padding-bottom: 3px;
-	padding-right: 0px;
-	font-size: 8.5pt;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	color: #585858;
-}
-
-#winchm_template_title{
-	margin: 0px;
-	padding-top: 4px;
-	padding-left: 7px;
-	padding-bottom: 7px;
-	padding-right: 0px;
-	font-size: 18px; 
-	font-family: Verdana, Geneva, sans-serif;
-	color: #363636;
-}
-
-#winchm_template_content{
-	margin-top: 20px;
-	margin-left: 15px;
-	margin-bottom: 20px;
-	margin-right: 15px;
-	width: auto  !important;
-	width: 100%;
-}
-
-#winchm_template_footer{
-	border-width: 1px;
-	border-color: #B1CEFE;
-	border-top-style: solid;
-	margin-top: 15px;
-	margin-left: 15px;
-	margin-bottom: 20px;
-	margin-right: 15px;
-	padding-top: 7px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-right: 0px;
-	font-family: arial, helvetica, sans-serif;
-	font-size: 8.5pt;
-	color: #696969;
-	width: auto;
-	text-align: left;
-}
-
-
-#winchm_template_container{
-	margin: 0px;
-	padding: 0px;
-	position: static;
-	padding-bottom: 3px;
-	overflow: auto;
-	background-color: #FFFFFF;
-}
-
-
-#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
-#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
-#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
-#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
-
-A:link	{text-decoration: underline; color:#0033CC}
-A:visited  {text-decoration: underline; color: #0033CC}
-A:active {text-decoration: underline; color: #0033CC }
-A:hover {text-decoration: underline;color: #FF0000;}
-</style>
-<script type="text/javascript">
-function isMobile(){
-Agent = window.navigator.userAgent;
-if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
-return true;
-}else{
-return false;	
-}
-
-}
-function d_onresize(){
-if (window.navigator.userAgent.indexOf("MSIE")>=1){
-document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
-document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
-}
-document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
-}
-
-function d_onbeforeprint(){
-if (window.navigator.userAgent.indexOf("MSIE")>=1){
-document.getElementById('winchm_template_container').style.height = 'auto';
-}
-}
-
-function d_onafterprint(){
-d_onresize();
-}
-
-if(!isMobile()){
-
-window.onload = d_onresize;
-window.onresize = d_onresize;
-window.onbeforeprint = d_onbeforeprint;
-window.onafterprint = d_onafterprint;
-
-document.write("<style>\n");
-document.write("body {overflow: hidden;}\n");
-document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
-document.write("</style>\n");
-}
-
-</script>
-<style>
-@media print
-{
-body {
-	padding: 0px;
-	margin: 0px;
-	overflow: auto;
-	height: auto;
-}
-#winchm_template_container{
-	position: static;	
-	margin: 0px;
-	padding: 5px;
-	
-	width: auto;
-	height: auto;
-	overflow: hidden;
-}
-#winchm_template_button{
-visibility:hidden;
-}
-}
-</style>
 </head>
 
 <body><script language="JavaScript" type="text/JavaScript">
@@ -207,16 +39,7 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-
-
-<div id="winchm_template_top">
-	<div id="winchm_template_button"><A href="非普通.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../../template2/btn_prev_n.gif" border="0"></a><A href="极珍稀.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../../template2/btn_next_n.gif" border="0"></a></div>
-	<div id="winchm_template_navigation">Help &gt; 
-塔莎的万事坩埚 &gt; 魔法物品 &gt; 魔法物品详述 &gt; </div>
-	<div id="winchm_template_title">珍惜</div>
-</div>
-<div id="winchm_template_container">
-	<div id="winchm_template_content"><STRONG><span class=bbc_size style="FONT-SIZE: 14pt"><span class=bbc_color style="COLOR: navy">炼金总纲|Alchemical Compendium</span></span><br></STRONG><em>奇物, 珍稀（需法师同调）</em><br>这本褪色、厚重的订本上附着有辛辣的刺鼻气息。这本书的金属拟合件由能够在铜、铁、铅、银与金子这些金属间转换的的凝固中间物质组成。<br>这本书在被找到时，包含了以下法术：<em><span 
+<STRONG><span class=bbc_size style="FONT-SIZE: 14pt"><span class=bbc_color style="COLOR: navy">炼金总纲|Alchemical Compendium</span></span><br></STRONG><em>奇物, 珍稀（需法师同调）</em><br>这本褪色、厚重的订本上附着有辛辣的刺鼻气息。这本书的金属拟合件由能够在铜、铁、铅、银与金子这些金属间转换的的凝固中间物质组成。<br>这本书在被找到时，包含了以下法术：<em><span 
 class=bbc_color style="COLOR: purple">变巨/缩小术Enlarge/Reduce</span>，<span class=bbc_color 
 style="COLOR: purple">羽落术Feather Fall</span>，<span 
 class=bbc_color style="COLOR: purple">融身入石Meld into 
@@ -438,10 +261,5 @@ Good</em></span>（原文只有邪恶，显然不对）和<span class=bbc_color 
 Concertina</strong></span></span><br><em>奇物, 珍稀（需吟游诗人同调）</em><br>当持握这把手风琴时，你的吟游诗人法术豁免DC获得+2加值。<br>作为一个动作，你可以用手风琴施展<span class=bbc_color style="COLOR: purple"><em>奥图迷舞Otto’s irresistible 
 dance</em></span>法术。手风琴的此项属性直到下次黎明前，不能再次使用。<br><br><span class=bbc_color 
 style="COLOR: navy"><span class=bbc_size 
-style="FONT-SIZE: 14pt"><strong>堕影冥界碎晶|Shadowfell Shard</strong></span></span><br><em>奇物, 珍稀（需术士同调）</em><br>这块黯淡冰冷的水晶摸起来如铅般沉重，满溢着堕影冥界的绝望。作为一个动作，你可以将碎晶附上一件微型物件（如一把武器或一块珠宝）或摘下。当同调结束时它会掉落下来。当你持握或穿戴碎晶时，你可以将其作为法器使用。<br>当你持握或穿戴碎晶，并在一道法术上应用一种超魔法选项时，你可以暂时诅咒一个该法术的目标生物：选择一项属性，直到你的下个回合结束前，目标生物在该属性的属性检定和豁免检定上具有劣势。</P></div>	
-	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
-reserved. (To change the copyright info, just edit it in template.)</div>
-</div>
-
-</body>
+style="FONT-SIZE: 14pt"><strong>堕影冥界碎晶|Shadowfell Shard</strong></span></span><br><em>奇物, 珍稀（需术士同调）</em><br>这块黯淡冰冷的水晶摸起来如铅般沉重，满溢着堕影冥界的绝望。作为一个动作，你可以将碎晶附上一件微型物件（如一把武器或一块珠宝）或摘下。当同调结束时它会掉落下来。当你持握或穿戴碎晶时，你可以将其作为法器使用。<br>当你持握或穿戴碎晶，并在一道法术上应用一种超魔法选项时，你可以暂时诅咒一个该法术的目标生物：选择一项属性，直到你的下个回合结束前，目标生物在该属性的属性检定和豁免检定上具有劣势。</P></body>
 </html>

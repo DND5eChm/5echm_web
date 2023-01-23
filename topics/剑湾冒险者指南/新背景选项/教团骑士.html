@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!-- saved from url=(0014)about:internet -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -15,173 +14,6 @@ html,body {
 }
 </style>
 
-
-
-
-<style>
-html,div { margin: 0; padding: 0;}
-
-body {
-	padding: 0px;
-	margin: 0px;
-	overflow: auto;
-	height: 100%;
-}
-
-#winchm_template_button{
-	float: right;
-	width: 93px;
-	top: 7px;
-	position: relative;
-	text-align: right;
-	right: 5px;
-	height: auto;
-}
-
-#winchm_template_top{
-	padding: 0px;
-	margin: 0px;
-	border-bottom: 1px solid #9B9B9B;
-	background-color: #B1CEFE;
-}
-
-#winchm_template_navigation{
-	margin: 0px;
-	padding-top: 7px;
-	padding-left: 7px;
-	padding-bottom: 3px;
-	padding-right: 0px;
-	font-size: 8.5pt;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	color: #585858;
-}
-
-#winchm_template_title{
-	margin: 0px;
-	padding-top: 4px;
-	padding-left: 7px;
-	padding-bottom: 7px;
-	padding-right: 0px;
-	font-size: 18px; 
-	font-family: Verdana, Geneva, sans-serif;
-	color: #363636;
-}
-
-#winchm_template_content{
-	margin-top: 20px;
-	margin-left: 15px;
-	margin-bottom: 20px;
-	margin-right: 15px;
-	width: auto  !important;
-	width: 100%;
-}
-
-#winchm_template_footer{
-	border-width: 1px;
-	border-color: #B1CEFE;
-	border-top-style: solid;
-	margin-top: 15px;
-	margin-left: 15px;
-	margin-bottom: 20px;
-	margin-right: 15px;
-	padding-top: 7px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-right: 0px;
-	font-family: arial, helvetica, sans-serif;
-	font-size: 8.5pt;
-	color: #696969;
-	width: auto;
-	text-align: left;
-}
-
-
-#winchm_template_container{
-	margin: 0px;
-	padding: 0px;
-	position: static;
-	padding-bottom: 3px;
-	overflow: auto;
-	background-color: #FFFFFF;
-}
-
-
-#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
-#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
-#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
-#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
-
-A:link	{text-decoration: underline; color:#0033CC}
-A:visited  {text-decoration: underline; color: #0033CC}
-A:active {text-decoration: underline; color: #0033CC }
-A:hover {text-decoration: underline;color: #FF0000;}
-</style>
-<script type="text/javascript">
-function isMobile(){
-Agent = window.navigator.userAgent;
-if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
-return true;
-}else{
-return false;	
-}
-
-}
-function d_onresize(){
-if (window.navigator.userAgent.indexOf("MSIE")>=1){
-document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
-document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
-}
-document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
-}
-
-function d_onbeforeprint(){
-if (window.navigator.userAgent.indexOf("MSIE")>=1){
-document.getElementById('winchm_template_container').style.height = 'auto';
-}
-}
-
-function d_onafterprint(){
-d_onresize();
-}
-
-if(!isMobile()){
-
-window.onload = d_onresize;
-window.onresize = d_onresize;
-window.onbeforeprint = d_onbeforeprint;
-window.onafterprint = d_onafterprint;
-
-document.write("<style>\n");
-document.write("body {overflow: hidden;}\n");
-document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
-document.write("</style>\n");
-}
-
-</script>
-<style>
-@media print
-{
-body {
-	padding: 0px;
-	margin: 0px;
-	overflow: auto;
-	height: auto;
-}
-#winchm_template_container{
-	position: static;	
-	margin: 0px;
-	padding: 5px;
-	
-	width: auto;
-	height: auto;
-	overflow: hidden;
-}
-#winchm_template_button{
-visibility:hidden;
-}
-}
-</style>
 </head>
 
 <body><script language="JavaScript" type="text/JavaScript">
@@ -207,16 +39,7 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-
-
-<div id="winchm_template_top">
-	<div id="winchm_template_button"><A href="继承人.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="老佣兵.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
-	<div id="winchm_template_navigation">Help &gt; 
-<A href="../前言.html">剑湾冒险者指南</A> &gt; 新背景选项 &gt; </div>
-	<div id="winchm_template_title">教团骑士</div>
-</div>
-<div id="winchm_template_container">
-	<div id="winchm_template_content"><P class=MsoNormal><B><SPAN 
+<P class=MsoNormal><B><SPAN 
 style="FONT-SIZE: 16pt">教团骑士<SPAN lang=EN-US> Knight of the Order</SPAN></SPAN></B></P>
 <P class=MsoNormal>你隶属于某个为达到某个目的而宣誓的骑士团。骑士团的本质目标决定了你宣誓的誓言，在你的眼中看来为达到这目的做出的誓言毫无疑问是光荣而重大并愿意为之努力奋斗的。费伦大陆上有着许许多多的骑士团，所有的骑士团们都有着关于他们行为和责任相似的展望。</P>
 <P class=MsoNormal>说到“骑士”就会认为是那些穿着重甲，有着贵族血统和骑士精神的高贵战士们，然而在费伦，骑士团们并没有把他们的入会资格限定的如此之高。对目标和理念的追求远远高于成员们装备和战斗风格的限定，因此骑士团中并不会限定战斗方式，并向所有愿意为教团理念战斗和献出生命的平民百姓们开放。</P>
@@ -237,10 +60,5 @@ lang=EN-US>Lurue</SPAN>作为他们的幸运神，骑马闯荡为了乐趣而冒
 <P class=MsoNormal>密斯卓诺骑士<SPAN lang=EN-US>Knights ofMyth Drannor.</SPAN></P>
 <P class=MsoNormal>很久以前，密斯卓诺骑士团是一个非常有名的冒险团队，多芙·鹰手，著名的七姐妹中的一人就是其中的一员。这个过去式的团队是为了纪念曾经伟大但是陷落的城市而命名的，如今新建立的密斯卓诺骑士团也是如此。当这座城市再一次变为废墟时，多芙·鹰手决定要改革这个团体，把主要目标定为与世界上其他文明种族建立盟友关系，和善良的人们共同对抗邪恶。现在密斯卓诺骑士们再次骑行在谷地的大路上，他们已经开始向谷地之外的土地传播自己的理念，招收新人。每一个被多芙接纳成为骑士团一员的人，都是充满了勇气和忠诚之人。</P>
 <P class=MsoNormal>圣杯骑士<SPAN lang=EN-US>Knights of the Silver Chalice.</SPAN></P>
-<P class=MsoNormal>圣杯骑士团在一个世纪以前由半神赛雅茉芙（<SPAN lang=EN-US>Siamorphe</SPAN>）颁布法令而成立。赛雅茉芙的精神是高贵的权利并有责任去执行它。这个半神通常每一代都会化身成不同的凡人贵族。</P></div>	
-	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
-reserved. (To change the copyright info, just edit it in template.)</div>
-</div>
-
-</body>
+<P class=MsoNormal>圣杯骑士团在一个世纪以前由半神赛雅茉芙（<SPAN lang=EN-US>Siamorphe</SPAN>）颁布法令而成立。赛雅茉芙的精神是高贵的权利并有责任去执行它。这个半神通常每一代都会化身成不同的凡人贵族。</P></body>
 </html>
