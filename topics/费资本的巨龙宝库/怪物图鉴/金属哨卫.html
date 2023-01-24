@@ -1,84 +1,192 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <title>金属哨卫</title>
 
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<meta name=ProgId content=Word.Document>
+<style>
+<!--
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
+-->
+</style>
 
 
 
 <style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
+html,div { margin: 0; padding: 0;}
 
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
@@ -101,99 +209,100 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div id="msg_1140739"><p class=MsoNormal><span class=bbcsize><b><span style='font-size:14.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:brown'>閲戝睘鍝ㄥ崼</span></b></span><span
-lang=EN-US><br>
-</span>閲戝睘鍝ㄥ崼鏄敱閲戝睘榫欏垱閫犵殑瀹堟姢鑰咃紝鐢ㄤ笌鍏跺垱閫犺€呯浉鍏宠仈鐨勯噾灞為敾閫犺€屾垚锛岀敱榫欑殑鍚愭伅鑳介噺鎻愪緵鍔ㄥ姏銆傚畠鏄竴涓洉鍒荤潃绮楃姺鑺辩汗鐨勯緳宸ョ敓鐗╋紝鑷村姏浜庣紦鍜屽彲鑳芥紨鍙樹负鏆村姏鍐茬獊鐨勭煕鐩俱€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>閲戝睘鍜屽钩鍗＋</span></strong><span
-lang=EN-US><br>
-</span>褰撲竴鏉￠噾灞為緳瀵逛竴涓皬鑱氳惤浜х敓渚濇亱鏃?span lang=EN-US>鈥斺€?/span>杩欏父甯告槸榫欎互绫讳汉鐢熺墿褰㈡€佸湪杩欓噷灞呬綇涓€娈垫椂闂村悗<span
-lang=EN-US>鈥斺€?/span>榫欏彲鑳戒細鍐冲畾鍒涢€犱竴涓噾灞炲拰骞冲崼澹潵淇濇姢杩欎釜鍦版柟銆傚拰骞冲崼澹彲浠ュ畧鎶や竴涓ぞ鍖哄嚑涓笘绾紝绔欏湪鍒涢€犲畠鐨勯緳鐨勭珛鍦轰笂缁存寔鍜屽钩涓庣З搴忋€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:brown'>閲戝睘鍜屽钩鍗＋<span
-lang=EN-US>&nbsp; metallic peacekeeper</span></span></strong><span lang=EN-US><br>
-</span>涓瀷鏋勮鐢熺墿<span lang=EN-US>&nbsp; </span>閫氬父涓轰腑绔嬪杽鑹?span lang=EN-US><br>
-<br>
-AC 17(</span>澶╃敓鎶ょ敳<span lang=EN-US>)<br>
-</span>鐢熷懡鍊?span lang=EN-US> 68</span>锛?span lang=EN-US>8d8+32</span>锛?span
-lang=EN-US><br>
-</span>閫熷害<span lang=EN-US>30</span>灏?span lang=EN-US><br>
-<br>
-</span>鍔涢噺<span lang=EN-US>17</span>锛?span lang=EN-US>+3</span>锛?鏁忔嵎<span
-lang=EN-US>10</span>锛?span lang=EN-US>0</span>锛?浣撹川<span lang=EN-US>18</span>锛?span
-lang=EN-US>+4</span>锛?鏅哄姏<span lang=EN-US>14</span>锛?span lang=EN-US>+2</span>锛?鎰熺煡<span
-lang=EN-US>12</span>锛?span lang=EN-US>+1</span>锛?榄呭姏<span lang=EN-US>11</span>锛?span
-lang=EN-US>+0</span>锛?span lang=EN-US><br>
-<br>
-</span>浼ゅ鍏嶇柅锛氱伀鐒?span lang=EN-US><br>
-</span>鐘舵€佸厤鐤細榄呮儜锛屽け鑳斤紝鎭愭厡锛岄夯鐥癸紝鐭冲寲锛屼腑姣?span lang=EN-US><br>
-</span>鎰熷畼锛氶粦鏆楄瑙?span lang=EN-US>60</span>灏猴紝琚姩瀵熻<span lang=EN-US>11<br>
-</span>璇█锛氶€氱敤璇紝榫欒锛屽績鐏垫劅搴?span lang=EN-US>30</span>灏?span lang=EN-US><br>
-</span>鎸戞垬绛夌骇锛?span lang=EN-US>4(1100XP)&nbsp; </span>鐔熺粌鍔犲€?span lang=EN-US>+2<br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>涓嶅彉褰㈡€?span
-lang=EN-US>.</span></span></strong>鍜屽钩鍗＋鍏嶇柅浠讳綍浣垮畠鏀瑰彉褰㈡€佺殑娉曟湳鎴栨晥搴?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>蹇冪伒绾藉甫<span
-lang=EN-US>.</span></span></strong>褰撳拰骞冲崼澹拰瀹冪殑涓讳汉瀛樺湪浜庡悓涓€涓綅闈㈡椂锛屽畠鍙互榄旀硶鎬у湴灏嗗畠鐨勬劅瀹樹紶閫掔粰瀹冪殑涓讳汉锛屽苟涓斾袱鑰呭彲浠ュ郊姝よ繘琛屽績鐏垫劅搴斾氦娴併€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:brown'>鍔ㄤ綔</span></strong><span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>澶氶噸鏀诲嚮<span
-lang=EN-US>Multiattack</span>銆?/span></strong>鍜屽钩鍗＋鍙戝姩涓ゆ鐚涘嚮鏀诲嚮銆?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鐚涘嚮<span
-lang=EN-US>Slam</span>銆?/span></strong>杩戞垬姝﹀櫒鏀诲嚮锛氬懡涓?span lang=EN-US>+5</span>锛岃Е鍙?span
-lang=EN-US>5</span>灏猴紝鍗曚竴鐩爣銆傚懡涓細<span lang=EN-US>16</span>锛?span lang=EN-US>3d8+3</span>锛夌殑閽濆嚮浼ゅ銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>闀囧畾鍠烽浘<span
-lang=EN-US>Calming Mist</span>锛堝厖鑳?span lang=EN-US>5-6</span>锛?/span></strong>鍜屽钩鍗＋閲婃斁鍑轰竴鍥㈠鐩栬嚜韬懆鍥?span
-lang=EN-US>30</span>灏虹殑闀囧畾姘斾綋銆傝繖鍏朵腑鐨勬瘡涓敓鐗╁繀椤婚€氳繃涓€娆?span lang=EN-US>DC14</span>鐨勯瓍鍔涜眮鍏嶅惁鍒欒鍜屽钩鍗＋榄呮儜<span
-lang=EN-US>1</span>鍒嗛挓銆傚湪琚鏂瑰紡榄呮儜鏈熼棿锛岀敓鐗╅櫡鍏ュけ鑳藉苟涓旈€熷害闄嶄负<span lang=EN-US>0.<br>
-<br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>閲戝睘鍟笩</span></strong><span
-lang=EN-US><br>
-</span>閲戝睘鍟笩涓庨福绂界浉浼硷紝鍏呭綋鍏跺垱閫犺€呯殑绉樺瘑浠ｇ悊浜猴紝鍦ㄤ笉鐩存帴骞查鐨勬儏鍐典笅瀹堟湜绀惧尯銆傚畠浠殑蹇冪伒绾藉甫浣垮畠浠兘澶熷湪绱ф€ユ儏鍐典笅鍙敜鍒涢€犲畠鐨勯緳銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:brown'>閲戝睘鍟笩<span
-lang=EN-US>&nbsp; metallic warbler</span></span></strong><span lang=EN-US><br>
-</span>寰瀷鏋勮鐢熺墿<span lang=EN-US>&nbsp; </span>閫氬父涓轰腑绔嬪杽鑹?span lang=EN-US><br>
-<br>
-AC 14(</span>澶╃敓鎶ょ敳<span lang=EN-US>)<br>
-</span>鐢熷懡鍊?span lang=EN-US> 14</span>锛?span lang=EN-US>4d4+4</span>锛?span
-lang=EN-US><br>
-</span>閫熷害<span lang=EN-US>40</span>灏?span lang=EN-US> 60</span>灏洪琛?span
-lang=EN-US><br>
-<br>
-</span>鍔涢噺<span lang=EN-US>4</span>锛?span lang=EN-US>-3</span>锛?鏁忔嵎<span
-lang=EN-US>15</span>锛?span lang=EN-US>+2</span>锛?浣撹川<span lang=EN-US>12</span>锛?span
-lang=EN-US>+1</span>锛?鏅哄姏<span lang=EN-US>9</span>锛?span lang=EN-US>-1</span>锛?鎰熺煡<span
-lang=EN-US>12</span>锛?span lang=EN-US>+1</span>锛?榄呭姏<span lang=EN-US>12</span>锛?span
-lang=EN-US>+1</span>锛?span lang=EN-US><br>
-</span>璞佸厤锛氭晱鎹?span lang=EN-US>+4<br>
-</span>浼ゅ鍏嶇柅锛氱伀鐒?span lang=EN-US><br>
-</span>鐘舵€佸厤鐤細榄呮儜锛屽け鑳斤紝鎭愭厡锛岄夯鐥癸紝鐭冲寲锛屼腑姣?span lang=EN-US><br>
-</span>鎰熷畼锛氶粦鏆楄瑙?span lang=EN-US>60</span>灏猴紝琚姩瀵熻<span lang=EN-US>10<br>
-</span>璇█锛氳兘鐞嗚В閫氱敤璇拰榫欒浣嗕笉浼氳<span lang=EN-US><br>
-</span>鎸戞垬绛夌骇锛?span lang=EN-US>1/4(50XP)&nbsp; </span>鐔熺粌鍔犲€?span lang=EN-US>+2<br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>涓嶅彉褰㈡€?span
-lang=EN-US>.</span></span></strong>鍟笩鍏嶇柅浠讳綍浣垮畠鏀瑰彉褰㈡€佺殑娉曟湳鎴栨晥搴?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>蹇冪伒绾藉甫<span
-lang=EN-US>.</span></span></strong>褰撳暛楦熷拰瀹冪殑涓讳汉瀛樺湪浜庡悓涓€涓綅闈㈡椂锛屽畠鍙互榄旀硶鎬у湴灏嗗畠鐨勬劅瀹樹紶閫掔粰瀹冪殑涓讳汉锛屽苟涓斾袱鑰呭彲浠ュ郊姝よ繘琛屽績鐏垫劅搴斾氦娴併€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:brown'>鍔ㄤ綔</span></strong><span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鐖嚮<span
-lang=EN-US>Claw</span>銆?/span></strong>杩戞垬姝﹀櫒鏀诲嚮锛氬懡涓?span lang=EN-US>+4</span>锛岃Е鍙?span
-lang=EN-US>5</span>灏猴紝鍗曚竴鐩爣銆傚懡涓細<span lang=EN-US>4</span>锛?span lang=EN-US>1d4+2</span>锛夌殑鎸ョ爫浼ゅ銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>闀囧畾鍠烽浘<span
-lang=EN-US>Calming Mist</span>锛堝厖鑳?span lang=EN-US>5-6</span>锛?/span></strong>鍟笩閲婃斁鍑轰竴鍥㈠鐩栬嚜韬懆鍥?span
-lang=EN-US>5</span>灏虹殑闀囧畾姘斾綋銆傝繖鍏朵腑鐨勬瘡涓敓鐗╁繀椤婚€氳繃涓€娆?span lang=EN-US>DC11</span>鐨勯瓍鍔涜眮鍏嶅惁鍒欒鍟笩榄呮儜<span
-lang=EN-US>1</span>鍒嗛挓銆傚湪琚鏂瑰紡榄呮儜鏈熼棿锛岀敓鐗╅櫡鍏ュけ鑳藉苟涓旈€熷害闄嶄负<span lang=EN-US>0. </span></p></div></body>
 
+
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="金属太古龙.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="月石龙.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+费资本的巨龙宝库 &gt; 怪物图鉴 &gt; </div>
+	<div id="winchm_template_title">金属哨卫</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><p><br>
+金属哨卫是由金属龙创造的守护者，用与其创造者相关联的金属锻造而成，由龙的吐息能量提供动力。它是一个雕刻着粗犷花纹的龙工生物，致力于缓和可能演变为暴力冲突的矛盾。       <span
+lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>金属和平卫士</span></strong><br>
+当一条金属龙对一个小聚落产生依恋时       <span lang=EN-US>——</span>这常常是龙以类人生物形态在这里居住一段时间后<span
+lang=EN-US>——</span>龙可能会决定创造一个金属和平卫士来保护这个地方。和平卫士可以守护一个社区几个世纪，站在创造它的龙的立场上维持和平与秩序。<br>
+      <strong><span style='font-family:宋体;color:brown'>金属和平卫士<span
+lang=EN-US>&nbsp; metallic peacekeeper</span></span></strong><br>
+中型构装生物       <span lang=EN-US>&nbsp; </span>通常为中立善良<span lang=EN-US><br>
+      <br>
+      AC 17(</span>天生护甲<span lang=EN-US>)<br>
+      </span>生命值<span lang=EN-US> 68</span>（<span lang=EN-US>8d8+32</span>）<br>
+速度       <span lang=EN-US>30</span>尺<span lang=EN-US><br>
+      <br>
+      </span>力量<span lang=EN-US>17</span>（<span lang=EN-US>+3</span>） 敏捷<span
+lang=EN-US>10</span>（<span lang=EN-US>0</span>） 体质<span lang=EN-US>18</span>（<span
+lang=EN-US>+4</span>） 智力<span lang=EN-US>14</span>（<span lang=EN-US>+2</span>） 感知<span
+lang=EN-US>12</span>（<span lang=EN-US>+1</span>） 魅力<span lang=EN-US>11</span>（<span
+lang=EN-US>+0</span>）<span lang=EN-US><br>
+      <br>
+      </span>伤害免疫：火焰<br>
+状态免疫：魅惑，失能，恐慌，麻痹，石化，中毒       <br>
+感官：黑暗视觉       <span lang=EN-US>60</span>尺，被动察觉<span lang=EN-US>11<br>
+      </span>语言：通用语，龙语，心灵感应<span lang=EN-US>30</span>尺<br>
+挑战等级：       <span lang=EN-US>4(1100XP)&nbsp; </span>熟练加值<span lang=EN-US>+2<br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>不变形态<span
+lang=EN-US>.</span></span></strong>和平卫士免疫任何使它改变形态的法术或效应<br>
+      <strong><span style='font-family:宋体;'>心灵纽带<span
+lang=EN-US>.</span></span></strong>当和平卫士和它的主人存在于同一个位面时，它可以魔法性地将它的感官传递给它的主人，并且两者可以彼此进行心灵感应交流。<span
+lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;color:brown'>动作</span></strong><br>
+      <strong><span style='font-family:宋体;'>多重攻击<span
+lang=EN-US>Multiattack</span>。</span></strong>和平卫士发动两次猛击攻击。<br>
+      <strong><span style='font-family:宋体;'>猛击<span
+lang=EN-US>Slam</span>。</span></strong>近战武器攻击：命中<span lang=EN-US>+5</span>，触及<span
+lang=EN-US>5</span>尺，单一目标。命中：<span lang=EN-US>16</span>（<span lang=EN-US>3d8+3</span>）的钝击伤害。<br>
+      <strong><span style='font-family:宋体;'>镇定喷雾<span
+lang=EN-US>Calming Mist</span>（充能<span lang=EN-US>5-6</span>）</span></strong>和平卫士释放出一团复盖自身周围<span
+lang=EN-US>30</span>尺的镇定气体。这其中的每个生物必须通过一次<span lang=EN-US>DC14</span>的魅力豁免否则被和平卫士魅惑<span
+lang=EN-US>1</span>分钟。在被此方式魅惑期间，生物陷入失能并且速度降为<span lang=EN-US>0.<br>
+      <br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>金属啭鸟</span></strong><br>
+金属啭鸟与鸣禽相似，充当其创造者的秘密代理人，在不直接干预的情况下守望社区。它们的心灵纽带使它们能够在紧急情况下召唤创造它的龙。       <br>
+      <strong><span style='font-family:宋体;color:brown'>金属啭鸟<span
+lang=EN-US>&nbsp; metallic warbler</span></span></strong><br>
+微型构装生物       <span lang=EN-US>&nbsp; </span>通常为中立善良<span lang=EN-US><br>
+      <br>
+      AC 14(</span>天生护甲<span lang=EN-US>)<br>
+      </span>生命值<span lang=EN-US> 14</span>（<span lang=EN-US>4d4+4</span>）<br>
+速度       <span lang=EN-US>40</span>尺<span lang=EN-US> 60</span>尺飞行<span
+lang=EN-US><br>
+      <br>
+      </span>力量<span lang=EN-US>4</span>（<span lang=EN-US>-3</span>） 敏捷<span
+lang=EN-US>15</span>（<span lang=EN-US>+2</span>） 体质<span lang=EN-US>12</span>（<span
+lang=EN-US>+1</span>） 智力<span lang=EN-US>9</span>（<span lang=EN-US>-1</span>） 感知<span
+lang=EN-US>12</span>（<span lang=EN-US>+1</span>） 魅力<span lang=EN-US>12</span>（<span
+lang=EN-US>+1</span>）<br>
+豁免：敏捷       <span lang=EN-US>+4<br>
+      </span>伤害免疫：火焰<br>
+状态免疫：魅惑，失能，恐慌，麻痹，石化，中毒       <br>
+感官：黑暗视觉       <span lang=EN-US>60</span>尺，被动察觉<span lang=EN-US>10<br>
+      </span>语言：能理解通用语和龙语但不会说<br>
+挑战等级：       <span lang=EN-US>1/4(50XP)&nbsp; </span>熟练加值<span lang=EN-US>+2<br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>不变形态<span
+lang=EN-US>.</span></span></strong>啭鸟免疫任何使它改变形态的法术或效应<br>
+      <strong><span style='font-family:宋体;'>心灵纽带<span
+lang=EN-US>.</span></span></strong>当啭鸟和它的主人存在于同一个位面时，它可以魔法性地将它的感官传递给它的主人，并且两者可以彼此进行心灵感应交流。<span
+lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;color:brown'>动作</span></strong><br>
+      <strong><span style='font-family:宋体;'>爪击<span
+lang=EN-US>Claw</span>。</span></strong>近战武器攻击：命中<span lang=EN-US>+4</span>，触及<span
+lang=EN-US>5</span>尺，单一目标。命中：<span lang=EN-US>4</span>（<span lang=EN-US>1d4+2</span>）的挥砍伤害。<br>
+      <strong><span style='font-family:宋体;'>镇定喷雾<span
+lang=EN-US>Calming Mist</span>（充能<span lang=EN-US>5-6</span>）</span></strong>啭鸟释放出一团复盖自身周围<span
+lang=EN-US>5</span>尺的镇定气体。这其中的每个生物必须通过一次<span lang=EN-US>DC11</span>的魅力豁免否则被啭鸟魅惑<span
+lang=EN-US>1</span>分钟。在被此方式魅惑期间，生物陷入失能并且速度降为<span lang=EN-US>0. </span></p></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
+
+</body>
 </html>

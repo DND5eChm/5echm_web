@@ -1,87 +1,196 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <title>游侠-龙兽守卫</title>
 
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<meta name=ProgId content=Word.Document>
-
-
 <style>
 <!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
 -->
 </style>
 
+
+
+<style>
+html,div { margin: 0; padding: 0;}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
-  parent.nav.tree.selectNode(944);
+  parent.nav.tree.selectNode(945);
  }else{
   setTimeout("syn()",500);
 }
@@ -100,269 +209,196 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div class=WordSection1><div id="msg_1135727"><p class=MsoNormal><em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>浜轰滑閮借娓镐緺浼氬拰浠栦滑鐨勯噹鍏戒紮浼撮暱寰楄秺鏉ヨ秺鍍忋€傞緳鍏藉畧鍗箣鎵€浠ユ垚涓烘渶鏈夊惛寮曞姏鐨勪汉涔嬩竴锛屽師鍥犲氨鍦ㄦ銆?span
-lang=EN-US>鈥斺€?/span>鑿插吂鐝?/span></em><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>涓€浣嶉緳瑁旈緳鍏藉畧鍗拰濂圭殑榫欏吔浜掕〃鍠滅埍銆?/span></strong></p>
 
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
 
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal>浣犱笌鑷劧鐨勮繛鎺ュ舰寮忚〃鐜颁负涓€鏉￠緳鏃忕簿榄勶紝绮鹃瓌鑳藉寲褰负榫欏吔銆傞殢鐫€浣犵殑鑳介噺澧為暱锛屼綘鐨勯緳鍏戒篃浼氫竴鍚屽闀匡紝浠庡洓鏉¤吙鐨勫皬浼欎即铚曞彉涓哄畯浼熺殑宸ㄥぇ甯︾考鐢熺墿锛屽己澹埌鑳借浣犻獞涔樸€傝繖涓€杩囩▼涓紝浣犱篃浼氫笉鏂幏寰楀闀跨殑锛屼护浜烘暚鐣忕殑榫欐棌鍔涢噺銆?span
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="武僧-神龙宗.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="巨龙英豪.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+费资本的巨龙宝库 &gt; 玩家选项 &gt; </div>
+	<div id="winchm_template_title">游侠-龙兽守卫</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><div id="msg_1135727"><p><em><span style='font-family:宋体;'>人们都说游侠会和他们的野兽伙伴长得越来越像。龙兽守卫之所以成为最有吸引力的人之一，原因就在此。<span
+lang=EN-US>——</span>菲兹班</span></em><br>
+      <strong><span style='font-family:宋体;'>一位龙裔龙兽守卫和她的龙兽互表喜爱。</span></strong></p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p>你与自然的连接形式表现为一条龙族精魄，精魄能化形为龙兽。随着你的能量增长，你的龙兽也会一同增长，从四条腿的小伙伴蜕变为宏伟的巨大带翼生物，强壮到能让你骑乘。这一过程中，你也会不断获得增长的，令人敬畏的龙族力量。<br>
+思考与你联结的龙族精魄的起源。龙兽守卫起源表提供了范例。       </p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-size:14.0pt;font-family:宋体;
+'>龙兽守卫起源<span lang=EN-US>Drakewarden Origin</span></span></strong></p>
+    <table border=0 cellspacing=30 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>起源</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>1</span></p></td>
+        <td><p>你通过研究龙的鳞片或爪子，或一件从龙的宝库里找到的饰品，从这些徽记物上获取了残留的龙族魔法，构成了联结</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>2</span></p></td>
+        <td><p>一个专门收集和保护龙族学问的游侠会社向你传授了他们的道途。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>3</span></p></td>
+        <td><p>一条龙给了你一枚晶球或宝石，并让你进行照看，你没想到的是，龙兽从这块石头里孵化了出来。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>4</span></p></td>
+        <td><p>你吞下了几滴龙血，永远给你的自然魔法注入了龙的力量。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>5</span></p></td>
+        <td><p>当你大声朗读巨石柱上的古代龙纹铭文后，你被赋予了力量。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>6</span></p></td>
+        <td><p>你做了一个逼真的梦，你梦见一个神秘的人物，有七只黄色的金丝雀伴随其左右，警告你即将到来的浩劫。当你醒来时，你的龙兽就在你的身边盯着你。</p></td>
+      </tr>
+    </table>
+    <div align=center style='text-align:center'><span lang=EN-US
+style='color:white;'>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-size:14.0pt;font-family:宋体;
+'>龙族赠礼<span lang=EN-US>Draconic Gift</span></span></strong><span
 lang=EN-US><br>
-</span>鎬濊€冧笌浣犺仈缁撶殑榫欐棌绮鹃瓌鐨勮捣婧愩€傞緳鍏藉畧鍗捣婧愯〃鎻愪緵浜嗚寖渚嬨€?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span lang=EN-US style='font-size:14.0pt;font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>&nbsp;</span></strong></p>
-
-<p class=MsoNormal><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>榫欏吔瀹堝崼璧锋簮<span lang=EN-US>Drakewarden Origin</span></span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=30 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>璧锋簮</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>1</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>浣犻€氳繃鐮旂┒榫欑殑槌炵墖鎴栫埅瀛愶紝鎴栦竴浠朵粠榫欑殑瀹濆簱閲屾壘鍒扮殑楗板搧锛屼粠杩欎簺寰借鐗╀笂鑾峰彇浜嗘畫鐣欑殑榫欐棌榄旀硶锛屾瀯鎴愪簡鑱旂粨</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>2</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓笓闂ㄦ敹闆嗗拰淇濇姢榫欐棌瀛﹂棶鐨勬父渚犱細绀惧悜浣犱紶鎺堜簡浠栦滑鐨勯亾閫斻€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>3</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏉￠緳缁欎簡浣犱竴鏋氭櫠鐞冩垨瀹濈煶锛屽苟璁╀綘杩涜鐓х湅锛屼綘娌℃兂鍒扮殑鏄紝榫欏吔浠庤繖鍧楃煶澶撮噷瀛靛寲浜嗗嚭鏉ャ€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>4</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>浣犲悶涓嬩簡鍑犳淮榫欒锛屾案杩滅粰浣犵殑鑷劧榄旀硶娉ㄥ叆浜嗛緳鐨勫姏閲忋€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>5</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>褰撲綘澶у０鏈楄宸ㄧ煶鏌变笂鐨勫彜浠ｉ緳绾归摥鏂囧悗锛屼綘琚祴浜堜簡鍔涢噺銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>6</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>浣犲仛浜嗕竴涓€肩湡鐨勬ⅵ锛屼綘姊﹁涓€涓绉樼殑浜虹墿锛屾湁涓冨彧榛勮壊鐨勯噾涓濋泙浼撮殢鍏跺乏鍙筹紝璀﹀憡浣犲嵆灏嗗埌鏉ョ殑娴╁姭銆傚綋浣犻啋鏉ユ椂锛屼綘鐨勯緳鍏藉氨鍦ㄤ綘鐨勮韩杈圭洴鐫€浣犮€?/p>
-  </td>
- </tr>
-</table>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
-style='color:white;mso-color-alt:windowtext'>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>榫欐棌璧犵ぜ<span lang=EN-US>Draconic Gift</span></span></strong><span
+      <em><span style='font-family:宋体;'>3</span></em></span><em><span
+style='font-family:宋体;'>级龙兽守卫特性</span></em><br>
+通过与你龙兽的联结，你获得与龙族之间的联系，增强你的气场，赋予你知识，你获得以下增益       <span lang=EN-US>:<br>
+      </span><strong><span style='font-family:宋体;'>奇术<span
+lang=EN-US>Thaumaturgy</span>。</span></strong>你习得戏法奇术，这对你而言是一个游侠法术。<br>
+      <strong><span style='font-family:宋体;'>龙舌<span
+lang=EN-US>Tongue of Dragons</span>。</span></strong>你学会说，读，写龙语或另一门你选择的语言。<span
 lang=EN-US><br>
-<em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>3</span></em></span><em><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>绾ч緳鍏藉畧鍗壒鎬?/span></em><span
+      <br>
+      </span><strong><span style='font-size:14.0pt;font-family:宋体;'>龙兽伙伴<span lang=EN-US>Drake Companion</span></span></strong><span
 lang=EN-US><br>
-</span>閫氳繃涓庝綘榫欏吔鐨勮仈缁擄紝浣犺幏寰椾笌榫欐棌涔嬮棿鐨勮仈绯伙紝澧炲己浣犵殑姘斿満锛岃祴浜堜綘鐭ヨ瘑锛屼綘鑾峰緱浠ヤ笅澧炵泭<span lang=EN-US>:<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>濂囨湳<span
-lang=EN-US>Thaumaturgy</span>銆?/span></strong>浣犱範寰楁垙娉曞鏈紝杩欏浣犺€岃█鏄竴涓父渚犳硶鏈€?span
+      <em><span style='font-family:宋体;'>3</span></em></span><em><span
+style='font-family:宋体;'>级龙兽守卫特性</span></em><br>
+使用一个动作，你能魔法地召唤与你联结的龙兽。龙兽会出现在你       <span lang=EN-US>30</span>尺内一处由你选择的未被占据的空间里。<span
 lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榫欒垖<span
-lang=EN-US>Tongue of Dragons</span>銆?/span></strong>浣犲浼氳锛岃锛屽啓榫欒鎴栧彟涓€闂ㄤ綘閫夋嫨鐨勮瑷€銆?span
+      <br>
+      </span>龙兽听从你的指令，并且对你和你的同伴友善。从龙兽伙伴数据卡中查看龙兽的游戏数据，其中有几处使用了你的熟练值（<span lang=EN-US>PB</span>）。当你召唤龙兽时，从龙族精粹特性的列表中选择伤害类型。你能自订龙兽的外观特征，如颜色，鳞片纹理，和龙族精粹的视觉效果；你的外观选择对游戏数据没有影响。<span
 lang=EN-US><br>
-<br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>榫欏吔浼欎即<span lang=EN-US>Drake Companion</span></span></strong><span
+      <br>
+      </span>战斗中，龙兽与你共享先攻，会在你的回合结束之后立即进行自己的回合。龙兽能自己独自移动和使用反应动作，除非你在你的回合里使用附赠动作命令龙兽执行一个动作，否则龙兽只会使用回避动作。执行的动作可以是数据卡上的，也可以是其他的。当你失能时，龙兽能独自进行任何动作选项，而不是只能回避。<span
 lang=EN-US><br>
-<em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>3</span></em></span><em><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>绾ч緳鍏藉畧鍗壒鎬?/span></em><span
+      <br>
+      </span>龙兽持续直到它的生命值降为<span lang=EN-US>0</span>，或你使用本特性召唤另一只龙兽，或你死亡。当龙兽消失时，它穿戴和携带的物品会留在原地。<span
 lang=EN-US><br>
-</span>浣跨敤涓€涓姩浣滐紝浣犺兘榄旀硶鍦板彫鍞や笌浣犺仈缁撶殑榫欏吔銆傞緳鍏戒細鍑虹幇鍦ㄤ綘<span lang=EN-US>30</span>灏哄唴涓€澶勭敱浣犻€夋嫨鐨勬湭琚崰鎹殑绌洪棿閲屻€?span
+      <br>
+      </span>当你召唤龙兽后，你需要完成一次长休才能再次这样做。你也能使用一个一环或更高的法术位来召唤龙兽。<span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-size:14.0pt;font-family:宋体;'>牙鳞之联<span lang=EN-US>Bond of Fang and Scale</span></span></strong><span
 lang=EN-US><br>
-<br>
-</span>榫欏吔鍚粠浣犵殑鎸囦护锛屽苟涓斿浣犲拰浣犵殑鍚屼即鍙嬪杽銆備粠榫欏吔浼欎即鏁版嵁鍗′腑鏌ョ湅榫欏吔鐨勬父鎴忔暟鎹紝鍏朵腑鏈夊嚑澶勪娇鐢ㄤ簡浣犵殑鐔熺粌鍊硷紙<span lang=EN-US>PB</span>锛夈€傚綋浣犲彫鍞ら緳鍏芥椂锛屼粠榫欐棌绮剧补鐗规€х殑鍒楄〃涓€夋嫨浼ゅ绫诲瀷銆備綘鑳借嚜璁㈤緳鍏界殑澶栬鐗瑰緛锛屽棰滆壊锛岄碁鐗囩汗鐞嗭紝鍜岄緳鏃忕簿绮圭殑瑙嗚鏁堟灉锛涗綘鐨勫瑙傞€夋嫨瀵规父鎴忔暟鎹病鏈夊奖鍝嶃€?span
+      <em><span style='font-family:宋体;'>7</span></em></span><em><span
+style='font-family:宋体;'>级龙兽守卫特性</span></em><br>
+你与龙兽之间的纽带加强，激发龙兽的狂怒，为你提供保护。当你召唤龙兽时，其获得与步行速度相等的游泳速度，并且能在水里或空气中呼吸，或其获得与步行速度相等的飞行速度。（由你选择）       <span
 lang=EN-US><br>
-<br>
-</span>鎴樻枟涓紝榫欏吔涓庝綘鍏变韩鍏堟敾锛屼細鍦ㄤ綘鐨勫洖鍚堢粨鏉熶箣鍚庣珛鍗宠繘琛岃嚜宸辩殑鍥炲悎銆傞緳鍏借兘鑷繁鐙嚜绉诲姩鍜屼娇鐢ㄥ弽搴斿姩浣滐紝闄ら潪浣犲湪浣犵殑鍥炲悎閲屼娇鐢ㄩ檮璧犲姩浣滃懡浠ら緳鍏芥墽琛屼竴涓姩浣滐紝鍚﹀垯榫欏吔鍙細浣跨敤鍥為伩鍔ㄤ綔銆傛墽琛岀殑鍔ㄤ綔鍙互鏄暟鎹崱涓婄殑锛屼篃鍙互鏄叾浠栫殑銆傚綋浣犲け鑳芥椂锛岄緳鍏借兘鐙嚜杩涜浠讳綍鍔ㄤ綔閫夐」锛岃€屼笉鏄彧鑳藉洖閬裤€?span
+      <br>
+      </span>此外，当召唤的龙兽在场时，你和龙兽获得以下增益<span lang=EN-US>:<br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>龙兽坐骑<span
+lang=EN-US>Drake Mount</span></span></strong>。龙兽成长为中等体型。作为你特别联结的反映，你能够将龙兽当做坐骑骑乘，即使你的体型也为中型。当你骑乘龙兽时，龙兽不能使用从本特性中获得的飞行速度。<span
 lang=EN-US><br>
-<br>
-</span>榫欏吔鎸佺画鐩村埌瀹冪殑鐢熷懡鍊奸檷涓?span lang=EN-US>0</span>锛屾垨浣犱娇鐢ㄦ湰鐗规€у彫鍞ゅ彟涓€鍙緳鍏斤紝鎴栦綘姝讳骸銆傚綋榫欏吔娑堝け鏃讹紝瀹冪┛鎴村拰鎼哄甫鐨勭墿鍝佷細鐣欏湪鍘熷湴銆?span
+      <br>
+      </span><strong><span style='font-family:宋体;'>魔法獠牙<span
+lang=EN-US>Magic Fang</span></span></strong>。龙兽的啃咬攻击额外造成与龙族精粹伤害类型相同的<span
+lang=EN-US>d6</span>伤害。<span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>抗性<span
+lang=EN-US>Resistance</span></span></strong>。你获得与龙族精粹伤害类型相同的伤害抗性。<span
 lang=EN-US><br>
-<br>
-</span>褰撲綘鍙敜榫欏吔鍚庯紝浣犻渶瑕佸畬鎴愪竴娆￠暱浼戞墠鑳藉啀娆¤繖鏍峰仛銆備綘涔熻兘浣跨敤涓€涓竴鐜垨鏇撮珮鐨勬硶鏈綅鏉ュ彫鍞ら緳鍏姐€?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>鐗欓碁涔嬭仈<span lang=EN-US>Bond of Fang and Scale</span></span></strong><span
+      <br>
+      </span><strong><span style='font-size:14.0pt;font-family:宋体;'>龙兽吐息<span lang=EN-US>Drake’s Breath</span></span></strong><span lang=EN-US><br>
+      <em><span style='font-family:宋体;'>11</span></em></span><em><span
+style='font-family:宋体;'>级龙兽守卫特性</span></em><br>
+使用一个动作，你能喷吐       <span lang=EN-US>30</span>尺锥形的伤害吐息，或者你也能将喷射起点设为你的龙兽。选择强酸，寒冷，闪电，火焰，或毒性伤害。（你的选择和龙族精粹特性无关。）锥形范围内的生物进行一次敏捷豁免对抗你的法术<span
+lang=EN-US>DC</span>，豁免失败时受到<span lang=EN-US>8d6</span>伤害，成功时受到一半的伤害。<span
 lang=EN-US><br>
-<em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>7</span></em></span><em><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>绾ч緳鍏藉畧鍗壒鎬?/span></em><span
+      <br>
+      </span>当你<span lang=EN-US>15</span>级时，伤害增长到<span lang=EN-US>10d6</span>。<span
 lang=EN-US><br>
-</span>浣犱笌榫欏吔涔嬮棿鐨勭航甯﹀姞寮猴紝婵€鍙戦緳鍏界殑鐙傛€掞紝涓轰綘鎻愪緵淇濇姢銆傚綋浣犲彫鍞ら緳鍏芥椂锛屽叾鑾峰緱涓庢琛岄€熷害鐩哥瓑鐨勬父娉抽€熷害锛屽苟涓旇兘鍦ㄦ按閲屾垨绌烘皵涓懠鍚革紝鎴栧叾鑾峰緱涓庢琛岄€熷害鐩哥瓑鐨勯琛岄€熷害銆傦紙鐢变綘閫夋嫨锛?span
+      <br>
+      </span>当你使用本特性后，你需要完成一次长休才能再次这样做。你也能使用一个三环或更高的法术位来再次使用。<span lang=EN-US><br>
+      <br>
+      </span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:宋体;
+'>完美联结<span lang=EN-US>Perfected Bond</span></span></b></span><span
 lang=EN-US><br>
-<br>
-</span>姝ゅ锛屽綋鍙敜鐨勯緳鍏藉湪鍦烘椂锛屼綘鍜岄緳鍏借幏寰椾互涓嬪鐩?span lang=EN-US>:<br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榫欏吔鍧愰獞<span
-lang=EN-US>Drake Mount</span></span></strong>銆傞緳鍏芥垚闀夸负涓瓑浣撳瀷銆備綔涓轰綘鐗瑰埆鑱旂粨鐨勫弽鏄狅紝浣犺兘澶熷皢榫欏吔褰撳仛鍧愰獞楠戜箻锛屽嵆浣夸綘鐨勪綋鍨嬩篃涓轰腑鍨嬨€傚綋浣犻獞涔橀緳鍏芥椂锛岄緳鍏戒笉鑳戒娇鐢ㄤ粠鏈壒鎬т腑鑾峰緱鐨勯琛岄€熷害銆?span
+      <em><span style='font-family:宋体;'>15</span></em></span><em><span
+style='font-family:宋体;'>级龙兽守卫特性</span></em><br>
+你与龙兽的联结抵达其力量的巅峰。当召唤的龙兽在场时，你和龙兽获得以下增益       <span lang=EN-US>:<br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>增强啃咬<span
+lang=EN-US>Empowered Bite</span></span></strong>。龙兽的啃咬攻击额外造成与龙族精粹属性相同的<span
+lang=EN-US>d6</span>伤害。（总共<span lang=EN-US>2d6</span>额外伤害。）<span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>大型龙兽<span
+lang=EN-US>Large Drake</span></span></strong>。你的龙兽成长为大型。当你骑乘龙兽时，使用飞行速度不再受限于牙鳞之联。<span
 lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榄旀硶鐛犵墮<span
-lang=EN-US>Magic Fang</span></span></strong>銆傞緳鍏界殑鍟冨挰鏀诲嚮棰濆閫犳垚涓庨緳鏃忕簿绮逛激瀹崇被鍨嬬浉鍚岀殑<span
-lang=EN-US>d6</span>浼ゅ銆?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎶楁€?span
-lang=EN-US>Resistance</span></span></strong>銆備綘鑾峰緱涓庨緳鏃忕簿绮逛激瀹崇被鍨嬬浉鍚岀殑浼ゅ鎶楁€с€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>榫欏吔鍚愭伅<span lang=EN-US>Drake鈥檚 Breath</span></span></strong><span lang=EN-US><br>
-<em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>11</span></em></span><em><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>绾ч緳鍏藉畧鍗壒鎬?/span></em><span
-lang=EN-US><br>
-</span>浣跨敤涓€涓姩浣滐紝浣犺兘鍠峰悙<span lang=EN-US>30</span>灏洪敟褰㈢殑浼ゅ鍚愭伅锛屾垨鑰呬綘涔熻兘灏嗗柗灏勮捣鐐硅涓轰綘鐨勯緳鍏姐€傞€夋嫨寮洪吀锛屽瘨鍐凤紝闂數锛岀伀鐒帮紝鎴栨瘨鎬т激瀹炽€傦紙浣犵殑閫夋嫨鍜岄緳鏃忕簿绮圭壒鎬ф棤鍏炽€傦級閿ュ舰鑼冨洿鍐呯殑鐢熺墿杩涜涓€娆℃晱鎹疯眮鍏嶅鎶椾綘鐨勬硶鏈?span
-lang=EN-US>DC</span>锛岃眮鍏嶅け璐ユ椂鍙楀埌<span lang=EN-US>8d6</span>浼ゅ锛屾垚鍔熸椂鍙楀埌涓€鍗婄殑浼ゅ銆?span
-lang=EN-US><br>
-<br>
-</span>褰撲綘<span lang=EN-US>15</span>绾ф椂锛屼激瀹冲闀垮埌<span lang=EN-US>10d6</span>銆?span
-lang=EN-US><br>
-<br>
-</span>褰撲綘浣跨敤鏈壒鎬у悗锛屼綘闇€瑕佸畬鎴愪竴娆￠暱浼戞墠鑳藉啀娆¤繖鏍峰仛銆備綘涔熻兘浣跨敤涓€涓笁鐜垨鏇撮珮鐨勬硶鏈綅鏉ュ啀娆′娇鐢ㄣ€?span lang=EN-US><br>
-<br>
-</span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>瀹岀編鑱旂粨<span lang=EN-US>Perfected Bond</span></span></b></span><span
-lang=EN-US><br>
-<em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>15</span></em></span><em><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>绾ч緳鍏藉畧鍗壒鎬?/span></em><span
-lang=EN-US><br>
-</span>浣犱笌榫欏吔鐨勮仈缁撴姷杈惧叾鍔涢噺鐨勫穮宄般€傚綋鍙敜鐨勯緳鍏藉湪鍦烘椂锛屼綘鍜岄緳鍏借幏寰椾互涓嬪鐩?span lang=EN-US>:<br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>澧炲己鍟冨挰<span
-lang=EN-US>Empowered Bite</span></span></strong>銆傞緳鍏界殑鍟冨挰鏀诲嚮棰濆閫犳垚涓庨緳鏃忕簿绮瑰睘鎬х浉鍚岀殑<span
-lang=EN-US>d6</span>浼ゅ銆傦紙鎬诲叡<span lang=EN-US>2d6</span>棰濆浼ゅ銆傦級<span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>澶у瀷榫欏吔<span
-lang=EN-US>Large Drake</span></span></strong>銆備綘鐨勯緳鍏芥垚闀夸负澶у瀷銆傚綋浣犻獞涔橀緳鍏芥椂锛屼娇鐢ㄩ琛岄€熷害涓嶅啀鍙楅檺浜庣墮槌炰箣鑱斻€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍙嶅皠鎶楁€?span
-lang=EN-US>Reflexive Resistance</span></span></strong>銆傚綋浣犱笌榫欏吔鐩歌窛<span lang=EN-US>30</span>灏哄唴锛屼綘鎴栦綘鐨勯緳鍏藉彈鍒颁激瀹虫椂锛屼綘鑳戒娇鐢ㄤ綘鐨勫弽搴斾负浣犳垨浣犵殑榫欏吔瀵硅繖娆′激瀹虫彁渚涙姉鎬с€備綘鑳戒娇鐢ㄦ湰鍙嶅簲鐨勬鏁颁笌浣犵殑鐔熺粌鍊肩浉绛夛紝褰撲綘瀹屾垚涓€娆￠暱浼戝悗鎭㈠鎵€鏈夌殑浣跨敤娆℃暟銆?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>榫欏吔浼欎即<span lang=EN-US>Drake Companion</span></span></strong><span
-lang=EN-US><br>
-</span>灏忓瀷榫?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎶ょ敳绛夌骇</span></strong><span
-lang=EN-US> 14+PB</span>锛堝ぉ鐢熸姢鐢诧級<span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鐢熷懡鍊?/span></strong><span
-lang=EN-US> 5+</span>浣犳父渚犵瓑绾?span lang=EN-US>*5</span>锛堥緳鍏芥湁涓庝綘娓镐緺绛夌骇鐩稿悓鏁伴噺鐨?span
-lang=EN-US>d10</span>鐢熷懡楠帮級<span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>閫熷害</span></strong><span
-lang=EN-US> 40</span>灏?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal>鍔涢噺<span lang=EN-US>16</span>锛?span lang=EN-US>+3</span>锛?鏁忔嵎<span
-lang=EN-US>12</span>锛?span lang=EN-US>+1</span>锛?浣撹川<span lang=EN-US>15</span>锛?span
-lang=EN-US>+2</span>锛?span lang=EN-US><br>
-</span>鏅哄姏<span lang=EN-US>8</span>锛?span lang=EN-US>-1</span>锛?span lang=EN-US>&nbsp;
-</span>鎰熺煡<span lang=EN-US>14</span>锛?span lang=EN-US>+2</span>锛?榄呭姏<span
-lang=EN-US>8</span>锛?span lang=EN-US>-1</span>锛?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>璞佸厤</span></strong> 鏁忔嵎<span lang=EN-US>+1+PB&nbsp; </span>鎰熺煡<span
+      <br>
+      </span><strong><span style='font-family:宋体;'>反射抗性<span
+lang=EN-US>Reflexive Resistance</span></span></strong>。当你与龙兽相距<span lang=EN-US>30</span>尺内，你或你的龙兽受到伤害时，你能使用你的反应为你或你的龙兽对这次伤害提供抗性。你能使用本反应的次数与你的熟练值相等，当你完成一次长休后恢复所有的使用次数。</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-size:14.0pt;font-family:宋体;
+'>龙兽伙伴<span lang=EN-US>Drake Companion</span></span></strong><br>
+小型龙       <br>
+      <strong><span style='font-family:宋体;'>护甲等级</span></strong><span
+lang=EN-US> 14+PB</span>（天生护甲）<br>
+      <strong><span style='font-family:宋体;'>生命值</span></strong><span
+lang=EN-US> 5+</span>你游侠等级<span lang=EN-US>*5</span>（龙兽有与你游侠等级相同数量的<span
+lang=EN-US>d10</span>生命骰）<br>
+      <strong><span style='font-family:宋体;'>速度</span></strong><span
+lang=EN-US> 40</span>尺</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p>力量<span lang=EN-US>16</span>（<span lang=EN-US>+3</span>） 敏捷<span
+lang=EN-US>12</span>（<span lang=EN-US>+1</span>） 体质<span lang=EN-US>15</span>（<span
+lang=EN-US>+2</span>）<br>
+智力       <span lang=EN-US>8</span>（<span lang=EN-US>-1</span>）<span lang=EN-US>&nbsp; </span>感知<span lang=EN-US>14</span>（<span lang=EN-US>+2</span>） 魅力<span
+lang=EN-US>8</span>（<span lang=EN-US>-1</span>）</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-family:宋体;'>豁免</span></strong> 敏捷<span lang=EN-US>+1+PB&nbsp; </span>感知<span
 lang=EN-US>+2+PB<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>浼ゅ鍏嶇柅</span></strong>
-鐢遍緳鏃忕簿绮圭壒鎬у喅瀹?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎰熷畼</span></strong>
-榛戞殫瑙嗚<span lang=EN-US>40</span>灏?琚姩鎰熺煡<span lang=EN-US>12<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>璇█</span></strong>
-榫欒<span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎸戞垬绛夌骇</span></strong><span
-lang=EN-US>鈥?</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>鐔熺粌鍊硷紙<span lang=EN-US>PB</span>锛?/span></strong>涓庝綘鐔熺粌鍊肩浉鍚?span lang=EN-US><br>
-<br>
-</span><strong><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榫欐棌绮剧补<span
-lang=EN-US>Draconic Essence</span></span></i></strong>銆傚綋浣犲彫鍞ら緳鍏芥椂锛岄€夋嫨涓€绉嶄激瀹崇被鍨?span
-lang=EN-US>:</span>寮洪吀锛屽瘨鍐凤紝闂數锛岀伀鐒帮紝姣掓€с€傝浼ゅ绫诲瀷浼氬奖鍝嶄激瀹冲厤鐤拰娉ㄨ兘鎵撳嚮鐨勪激瀹炽€?/p>
+      </span><strong><span style='font-family:宋体;'>伤害免疫</span></strong> 由龙族精粹特性决定<br>
+      <strong><span style='font-family:宋体;'>感官</span></strong> 黑暗视觉<span lang=EN-US>40</span>尺 被动感知<span lang=EN-US>12<br>
+      </span><strong><span style='font-family:宋体;'>语言</span></strong> 龙语<br>
+      <strong><span style='font-family:宋体;'>挑战等级</span></strong><span
+lang=EN-US>– </span><strong><span style='font-family:宋体;'>熟练值（<span lang=EN-US>PB</span>）</span></strong>与你熟练值相同<span lang=EN-US><br>
+      <br>
+      </span><strong><i><span style='font-family:宋体;'>龙族精粹<span
+lang=EN-US>Draconic Essence</span></span></i></strong>。当你召唤龙兽时，选择一种伤害类型<span
+lang=EN-US>:</span>强酸，寒冷，闪电，火焰，毒性。该伤害类型会影响伤害免疫和注能打击的伤害。</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-size:14.0pt;font-family:宋体;
+'>动作</span></strong><br>
+      <strong><i><span style='font-family:宋体;'>啃咬<span
+lang=EN-US>Bite</span></span></i></strong>。近战武器攻击<span lang=EN-US>:</span>命中<span
+lang=EN-US>+3+PB</span>，触及<span lang=EN-US>5</span>尺，单一目标，伤害<span lang=EN-US>:1d6+PB</span>穿刺伤害。</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><strong><span style='font-size:14.0pt;font-family:宋体;
+'>反应</span></strong><br>
+      <strong><i><span style='font-family:宋体;'>注能打击<span
+lang=EN-US>Infused Strikes</span></span></i></strong>。当龙兽<span lang=EN-US>30</span>尺内一个龙兽可见的生物用武器攻击命中一个生物时，龙兽能用它的精粹注能本次打击，使目标额外受到<span
+lang=EN-US>d6</span>伤害，伤害类型与龙族精粹相同。</p></div></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
 
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍔ㄤ綔</span></strong><span lang=EN-US><br>
-</span><strong><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍟冨挰<span
-lang=EN-US>Bite</span></span></i></strong>銆傝繎鎴樻鍣ㄦ敾鍑?span lang=EN-US>:</span>鍛戒腑<span
-lang=EN-US>+3+PB</span>锛岃Е鍙?span lang=EN-US>5</span>灏猴紝鍗曚竴鐩爣锛屼激瀹?span lang=EN-US>:1d6+PB</span>绌垮埡浼ゅ銆?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍙嶅簲</span></strong><span lang=EN-US><br>
-</span><strong><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娉ㄨ兘鎵撳嚮<span
-lang=EN-US>Infused Strikes</span></span></i></strong>銆傚綋榫欏吔<span lang=EN-US>30</span>灏哄唴涓€涓緳鍏藉彲瑙佺殑鐢熺墿鐢ㄦ鍣ㄦ敾鍑诲懡涓竴涓敓鐗╂椂锛岄緳鍏借兘鐢ㄥ畠鐨勭簿绮规敞鑳芥湰娆℃墦鍑伙紝浣跨洰鏍囬澶栧彈鍒?span
-lang=EN-US>d6</span>浼ゅ锛屼激瀹崇被鍨嬩笌榫欐棌绮剧补鐩稿悓銆?/p>
-
-</div></div></body>
-
+</body>
 </html>

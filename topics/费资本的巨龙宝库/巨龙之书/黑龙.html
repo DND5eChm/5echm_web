@@ -1,83 +1,192 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <title>黑龙</title>
 
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<meta name=ProgId content=Word.Document>
-
-
 <style>
 <!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
 -->
 </style>
 
+
+
+<style>
+html,div { margin: 0; padding: 0;}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
@@ -100,904 +209,468 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div class=WordSection1><div id="msg_1141292"><p class=MsoNormal><span class=bbcsize><b><span style='font-size:18.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳<span lang=EN-US>Black Dragon</span></span></b></span></p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-<p class=MsoNormal><span class=bbcsize><i><span lang=EN-US style='font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鈥?/span></i></span><span class=bbcsize><i><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎻愪簹椹壒鍦ㄥ埗浣滈粦榫欑殑鏃跺€欒姳浜嗘渶澶氱殑鏃堕棿銆?/span></i></span><i><span
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="紫晶龙.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="蓝龙.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+费资本的巨龙宝库 &gt; <A href="../巨龙之书.html">巨龙之书</A> &gt; </div>
+	<div id="winchm_template_title">黑龙</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><div id="msg_1141292"><p><span class=bbcsize><b><span style='font-size:18.0pt;
+font-family:宋体;'>黑龙<span lang=EN-US>Black Dragon</span></span></b></span></p>
+    <p><span class=bbcsize><i><span lang=EN-US style='font-family:
+宋体;'>“</span></i></span><span class=bbcsize><i><span
+style='font-family:宋体;'>提亚马特在制作黑龙的时候花了最多的时间。</span></i></span><i><br>
+      <span class=bbcsize><span style='font-family:宋体;'>我也被她的成果吓了一跳，给了超多的修改建议，但有时候有些项目做完了就不会改了。<span lang=EN-US>”</span></span></span></i></p>
+    <p align=right style='text-align:right'><span class=bbcsize><i><span
+lang=EN-US style='font-family:宋体;'>——</span></i></span><span
+class=bbcsize><i><span style='font-family:宋体;'>费资本</span></i></span></p>
+    <p>使用本节的表格、地图以及其他信息来创作一次与黑龙的独特遭遇。</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><span class=bbcsize><b><span style='font-size:16.0pt;
+font-family:宋体;'>创作黑龙<span lang=EN-US>Creating an Black
+      Dragon</span></span></b></span><br>
+使用黑龙个性特点与黑龙理念表格来为您描绘黑龙角色形象时提供灵感，并用黑龙施法表格来帮助您选择黑龙施法者的法术。       <br>
+      <strong><span style='font-family:宋体;'>黑龙个性特点</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>特点</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>我通过诸多精妙的暴行来显现我的聪明才智。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>看着弱小者的成果崩毁溃灭之时，我满心欢喜。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>若欺骗诡诈有用，那我就绝不直面威胁。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>征服胜于消灭。奴役使我愉悦。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>我不遗余力地追求那些致命的魔法新知。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>没有事物能够长存。但我保证我会比你更长存。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>我曾见证诸多文明的兴衰。而如你这般朝生暮死的小虫又能有什么样的智慧呢？</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>收集古物并研究失落的文明何以倾颓是我的毕生所愿。若你能对我有什么助力，那我就饶你一命。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>黑龙理念</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>理念</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>嫉妒<span lang=EN-US>Envy</span>。</span></strong>其他者取得的成就，如果不能掩盖它，那就毁灭它。（邪恶）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>贪婪<span lang=EN-US>Acquisitiveness</span>。</span></strong>拥有他人渴求之物时，便无比满足。（任意）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>狡猾<span lang=EN-US>Cunning</span>。</span></strong>消灭敌人而不使自己暴露于危险之中，是门艺术。（邪恶）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>适应<span lang=EN-US>Adaptability</span>。</span></strong>并非强者生存，而是适者生存。（混乱）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>耐心<span lang=EN-US>Patience</span>。</span></strong>若时间在你，那就没必要草率计划并盲目行动。（任意）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>宁静<span lang=EN-US>Serenity</span>。</span></strong>旁观一种文化的沧桑变化并最终湮灭作土，使我对生命的认知更为全面。（任意）</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:14.0pt;font-family:宋体;'>黑龙施法<span lang=EN-US>Black Dragon Spellcasting</span></span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>年龄</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>法术<span lang=EN-US>DC</span></span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>已知法术</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>青年</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>13</span></strong></p></td>
+        <td><p><span class=bbccolor><i><span style='font-family:宋体;
+  color:purple'>目盲<span lang=EN-US>/</span>耳聋术<span
+  lang=EN-US>Blindness/Deafness</span></span></i></span>，<em><span
+  style='font-family:宋体;color:purple'>造水<span
+  lang=EN-US>/</span>枯水术<span lang=EN-US>Create or Destroy Water</span></span></em></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>成年</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>16</span></strong></p></td>
+        <td><p><span class=bbccolor><i><span style='font-family:宋体;
+  color:purple'>目盲<span lang=EN-US>/</span>耳聋术<span
+  lang=EN-US>Blindness/Deafness</span></span></i></span>，<em><span
+  style='font-family:宋体;color:purple'>造水<span
+  lang=EN-US>/</span>枯水术<span lang=EN-US>Create or Destroy Water</span></span></em>，<span
+  class=bbccolor><i><span style='font-family:宋体;  color:purple'>植物滋长<span lang=EN-US>Plant Growth</span></span></i></span></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>远古</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>19</span></strong></p></td>
+        <td><p><span class=bbccolor><i><span style='font-family:宋体;
+  color:purple'>目盲<span lang=EN-US>/</span>耳聋术<span
+  lang=EN-US>Blindness/Deafness</span></span></i></span>，<em><span
+  style='font-family:宋体;color:purple'>造水<span
+  lang=EN-US>/</span>枯水术<span lang=EN-US>Create or Destroy Water</span></span></em>，<span
+  class=bbccolor><i><span style='font-family:宋体;  color:purple'>疫病虫群<span lang=EN-US>Insect Plague</span></span></i></span>，<span
+  class=bbccolor><i><span style='font-family:宋体;  color:purple'>植物滋长<span lang=EN-US>Plant Growth</span></span></i></span></p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:16.0pt;font-family:宋体;'>黑龙冒险<span lang=EN-US>Black Dragon Adventures</span></span></strong><br>
+黑龙冒险引子表格为关于黑龙的故事和冒险提供了些许建议。       <br>
+      <strong><span style='font-family:宋体;'>黑龙冒险引子</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>冒险引子</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>某条黑龙最近控制了一伙海盗和他们的藏身港口。海盗们恶向胆边生，开始袭击附近的航道。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>某条厌恶冲突的黑龙正偷偷向当地的农田里喷洒一种炼金落叶剂，以迫使该地区的居民搬离龙巢。由此产生的饥荒正在摧毁整个村镇。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>在黑龙的策谋下，两个对立的国家即将开始战争，黑龙希望能在由此产生的大屠杀中得到满足。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>因沼泽地长期干旱而萎缩，两条黑龙组成了一个临时联盟，去摧毁附近的城镇以获得更大的生存空间。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>黑龙的强酸吐息物是唯一能够融化暴君宝库门锁的物质。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>据传有某件威力巨大的神器藏在一座黑龙居住的废墟中。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>某群冒险者和某条黑龙在同一座浸水的城市废墟中寻找同一个宝藏。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>某条享乐主义的黑龙正在贵族的猎苑内以恐怖的速度偷猎。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:14.0pt;font-family:宋体;'>邻居生物<span lang=EN-US>Connected Creatures</span></span></strong><br>
+黑龙喜欢与容易控制且不易背叛的生物搭伙。无意识的不死生物、蔓生怪、食肉植物、泥怪与构装生物都是理想的下仆，能与黑龙那如邪魔般狡诈的陷阱协同合作。黑龙的智慧追随者普遍崇拜其巨龙威严，一般包括狗头人、战蜥人、蜥蜴人与（罕见情况下的）原体蛇人。       <br>
+      <strong><span style='font-family:宋体;'>黑龙雏龙邻居</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>自某个狂妄法师的手下逃脱时，<span class=bbccolor><span style='font-family:
+  宋体;color:red'>黑龙雏龙<span lang=EN-US>Black Wyrmling</span></span></span>偷走了魔法师的控制护符<span
+  lang=EN-US>——</span>以及与之配套的<span class=bbccolor><span style='font-family:
+  宋体;color:red'>活化盔甲<span lang=EN-US>Animated Armor</span></span></span>。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>一群<span class=bbccolor><span style='font-family:宋体;
+  color:red'>战蜥人<span lang=EN-US>Troglodyte</span></span></span>被<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>黑龙雏龙<span lang=EN-US>Black Wyrmling</span></span></span>胁迫，成为了它的保镖。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>最近出现的<span class=bbccolor><span style='font-family:宋体;
+  color:red'>黑龙雏龙<span lang=EN-US>Black Wyrmling</span></span></span>改变了当地的生态系统，使得诸多疫病大量传播，打破了自然的平衡。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>黑龙雏龙<span lang=EN-US>Black Wyrmling</span></span></span>在路上设下了许多狡猾的陷阱，希望能杀伤一些马匹和牲畜，方便自己开动。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>某座热带城市下的<span class=bbccolor><span style='font-family:
+  宋体;color:red'>狗头人<span lang=EN-US>Kobold</span></span></span>们在干窃盗生意，为他们心爱的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>黑龙雏龙<span lang=EN-US>Black Wyrmling</span></span></span>收集宝藏。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>有位侏儒遗物猎人正在一座荒废已久的城市中搜刮，还和<span class=bbccolor><span
+  style='font-family:宋体;color:red'>黑龙雏龙<span
+  lang=EN-US>Black Wyrmling</span></span></span>建立了不太稳定的联盟，以掠夺一处考古现场。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>青年黑龙邻居</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>某条富有炼金天赋的<span class=bbccolor><span style='font-family:
+  宋体;color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>正将一处蕈人栖息地的孢子制成武器。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>一伙<span class=bbccolor><span style='font-family:宋体;
+  color:red'>迈罗鱼人<span lang=EN-US>Merrow</span></span></span>战团与<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>谈判，希望与之一起洗劫附近的贸易港口。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>一群从墓地中爬起来的<span class=bbccolor><span style='font-family:
+  宋体;color:red'>食尸鬼<span lang=EN-US>Ghoul</span></span></span>成为了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>的保镖与打手。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>培育了一株启蒙食肉植物（使用<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>启蒙树木<span lang=EN-US>Awakened Tree</span></span></span>的数据）作为巢穴守卫，并绑架了一些旅行者来喂养这株植物。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>崇拜<span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>的一伙蜥蜴人袭击了附近的渔猎聚落。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年黑龙<span lang=EN-US>Young Black Dragon</span></span></span>与一只在它巢穴周围作乱的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>树绳妖<span lang=EN-US>Roper</span></span></span>达成了互助协议。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>成年黑龙邻居</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>沼泽里的一群<span class=bbccolor><span style='font-family:宋体;
+  color:red'>奇美拉<span lang=EN-US>Chimera</span></span></span>被<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>驯化成了门卫，并将其中一些卖给了当地的军阀。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>某个刺客教团将一条<span class=bbccolor><span style='font-family:
+  宋体;color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>作为其神祇的化身崇拜。而龙也正利用这个教团来颠复当地君主的统治。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>传闻有处失落帝国的宝库废墟，被一条不安生的<span class=bbccolor><span
+  style='font-family:宋体;color:red'>成年黑龙<span
+  lang=EN-US>Adult Black Dragon</span></span></span>以泥怪为基底设计出来的陷阱网络所保护。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>被一只进入其领地的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>精魂娜迦<span lang=EN-US>Spirit Naga</span></span></span>教唆去研究死灵法术。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>将它的宝石藏在了一处恐怖迷宫之内，里面塞满了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>蔓生怪<span lang=EN-US>Shambling Mounds</span></span></span>、陷阱和有毒植物，以考验冒险者为乐。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>有条<span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>誓缚了一群<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>水元素<span lang=EN-US>Water Element</span></span></span>，让它们负责将食物搬到龙巢之内。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>有伙狂蛙人正寻求对付<span class=bbccolor><span style='font-family:
+  宋体;color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>的援兵，这条黑龙一直在吃狂蛙人们驯养的巨蛙。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>两个国家，一个由<span class=bbccolor><span style='font-family:
+  宋体;color:red'>成年黑龙<span lang=EN-US>Adult Black Dragon</span></span></span>统治而另一个由<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>憎恶蛇人<span lang=EN-US>Yuan-ti Abomination</span></span></span>的领导，结成了联军以摧毁第三个国家。这受威胁的国家正招募冒险者以保卫国土。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>远古黑龙邻居</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d4</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>某条<span class=bbccolor><span style='font-family:宋体;
+  color:red'>远古黑龙<span lang=EN-US>Ancient Black Dragon</span></span></span>在研究了献给异域外神的亵渎文字后发出了警告，一位被腐化的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>异界神侍<span lang=EN-US>Planetar</span></span></span>将如流星般降临在大地上，落在一座大都会城墙外的沼泽地里。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>某处灵吸怪社区花了千年时间来孵化和培养一条黑龙，以期其成为<span class=bbccolor><span
+  style='font-family:宋体;color:red'>主脑龙<span lang=EN-US>Elder
+            Brain Dragon</span></span></span>，由此<span class=bbccolor><span
+  style='font-family:宋体;color:red'>主脑<span lang=EN-US>Elder
+            Brain</span></span></span>便可以亲自毁灭其对手。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>远古黑龙<span lang=EN-US>Ancient Black Dragon</span></span></span>和一位邪恶的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>大法师<span lang=EN-US>Archmage</span></span></span>策谋数十年的阴谋即将实现。若是他们的计划成功，就会发生大陆范围的破坏。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>有座被污染的湖中存在着一座巨大且堕落的城市，由一条<span class=bbccolor><span
+  style='font-family:宋体;color:red'>远古黑龙<span
+  lang=EN-US>Ancient Black Dragon</span></span></span>所统治。有位愤怒的<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>大德鲁伊<span lang=EN-US>Archdruid</span></span></span>威胁要毁灭这座城，这意味着成千上万的无辜者会因此而死。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <span class=bbcsize><b><span style='font-size:16.0pt;font-family:宋体;
+'>黑龙巢穴<span lang=EN-US>Black Dragon Lairs</span></span></b></span><br>
+黑龙喜欢栖息在沼泽和丛林中，越阴暗越恶臭越好。在诸多环境中，废墟因为防御能力以及某种沉闷的美学而被黑龙青睐有加。       <br>
+在选择巢穴时，黑龙喜欢错综复杂与乱麻丛生的地方。寻找龙的冒险者们必须在古老红树林沼泽的根部中曲折前行，并勇敢地面对充满陷阱的沼泽废墟，无论是何种经历，都会是一次致命的遭遇。       <span
 lang=EN-US><br>
-</span><span class=bbcsize><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>鎴戜篃琚ス鐨勬垚鏋滃悡浜嗕竴璺筹紝缁欎簡瓒呭鐨勪慨鏀瑰缓璁紝浣嗘湁鏃跺€欐湁浜涢」鐩仛瀹屼簡灏变笉浼氭敼浜嗐€?span lang=EN-US>鈥?/span></span></span></i></p>
-
-<p class=MsoNormal align=right style='text-align:right'><span class=bbcsize><i><span
-lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鈥斺€?/span></i></span><span
-class=bbcsize><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>璐瑰吂鏈?/span></i></span></p>
-
-<p class=MsoNormal>浣跨敤鏈妭鐨勮〃鏍笺€佸湴鍥句互鍙婂叾浠栦俊鎭潵鍒涗綔涓€娆′笌榛戦緳鐨勭嫭鐗归伃閬囥€?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><span class=bbcsize><b><span style='font-size:16.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍒涗綔榛戦緳<span lang=EN-US>Creating an Black
-Dragon</span></span></b></span><span lang=EN-US><br>
-</span>浣跨敤榛戦緳涓€х壒鐐逛笌榛戦緳鐞嗗康琛ㄦ牸鏉ヤ负鎮ㄦ弿缁橀粦榫欒鑹插舰璞℃椂鎻愪緵鐏垫劅锛屽苟鐢ㄩ粦榫欐柦娉曡〃鏍兼潵甯姪鎮ㄩ€夋嫨榛戦緳鏂芥硶鑰呯殑娉曟湳銆?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳涓€х壒鐐?/span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐗圭偣</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戦€氳繃璇稿绮惧鐨勬毚琛屾潵鏄剧幇鎴戠殑鑱槑鎵嶆櫤銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鐪嬬潃寮卞皬鑰呯殑鎴愭灉宕╂瘉婧冪伃涔嬫椂锛屾垜婊″績娆㈠枩銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鑻ユ楠楄璇堟湁鐢紝閭ｆ垜灏辩粷涓嶇洿闈㈠▉鑳併€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>寰佹湇鑳滀簬娑堢伃銆傚ゴ褰逛娇鎴戞剦鎮︺€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戜笉閬椾綑鍔涘湴杩芥眰閭ｄ簺鑷村懡鐨勯瓟娉曟柊鐭ャ€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>娌℃湁浜嬬墿鑳藉闀垮瓨銆備絾鎴戜繚璇佹垜浼氭瘮浣犳洿闀垮瓨銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戞浘瑙佽瘉璇稿鏂囨槑鐨勫叴琛般€傝€屽浣犺繖鑸湞鐢熸毊姝荤殑灏忚櫕鍙堣兘鏈変粈涔堟牱鐨勬櫤鎱у憿锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏀堕泦鍙ょ墿骞剁爺绌跺け钀界殑鏂囨槑浣曚互鍊鹃鏄垜鐨勬瘯鐢熸墍鎰裤€傝嫢浣犺兘瀵规垜鏈変粈涔堝姪鍔涳紝閭ｆ垜灏遍ザ浣犱竴鍛姐€?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳鐞嗗康</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐞嗗康</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>瀚夊<span lang=EN-US>Envy</span>銆?/span></strong>鍏朵粬鑰呭彇寰楃殑鎴愬氨锛屽鏋滀笉鑳芥帺鐩栧畠锛岄偅灏辨瘉鐏畠銆傦紙閭伓锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>璐┆<span lang=EN-US>Acquisitiveness</span>銆?/span></strong>鎷ユ湁浠栦汉娓存眰涔嬬墿鏃讹紝渚挎棤姣旀弧瓒炽€傦紙浠绘剰锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐙＄尵<span lang=EN-US>Cunning</span>銆?/span></strong>娑堢伃鏁屼汉鑰屼笉浣胯嚜宸辨毚闇蹭簬鍗遍櫓涔嬩腑锛屾槸闂ㄨ壓鏈€傦紙閭伓锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閫傚簲<span lang=EN-US>Adaptability</span>銆?/span></strong>骞堕潪寮鸿€呯敓瀛橈紝鑰屾槸閫傝€呯敓瀛樸€傦紙娣蜂贡锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鑰愬績<span lang=EN-US>Patience</span>銆?/span></strong>鑻ユ椂闂村湪浣狅紝閭ｅ氨娌″繀瑕佽崏鐜囪鍒掑苟鐩茬洰琛屽姩銆傦紙浠绘剰锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>瀹侀潤<span lang=EN-US>Serenity</span>銆?/span></strong>鏃佽涓€绉嶆枃鍖栫殑娌ф鍙樺寲骞舵渶缁堟巩鐏綔鍦燂紝浣挎垜瀵圭敓鍛界殑璁ょ煡鏇翠负鍏ㄩ潰銆傦紙浠绘剰锛?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>榛戦緳鏂芥硶<span lang=EN-US>Black Dragon Spellcasting</span></span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>骞撮緞</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>娉曟湳<span lang=EN-US>DC</span></span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>宸茬煡娉曟湳</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>闈掑勾</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>13</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><i><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>鐩洸<span lang=EN-US>/</span>鑰宠亱鏈?span
-  lang=EN-US>Blindness/Deafness</span></span></i></span>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>閫犳按<span
-  lang=EN-US>/</span>鏋按鏈?span lang=EN-US>Create or Destroy Water</span></span></em></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鎴愬勾</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>16</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><i><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>鐩洸<span lang=EN-US>/</span>鑰宠亱鏈?span
-  lang=EN-US>Blindness/Deafness</span></span></i></span>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>閫犳按<span
-  lang=EN-US>/</span>鏋按鏈?span lang=EN-US>Create or Destroy Water</span></span></em>锛?span
-  class=bbccolor><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:purple'>妞嶇墿婊嬮暱<span lang=EN-US>Plant Growth</span></span></i></span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>杩滃彜</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>19</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><i><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>鐩洸<span lang=EN-US>/</span>鑰宠亱鏈?span
-  lang=EN-US>Blindness/Deafness</span></span></i></span>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>閫犳按<span
-  lang=EN-US>/</span>鏋按鏈?span lang=EN-US>Create or Destroy Water</span></span></em>锛?span
-  class=bbccolor><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:purple'>鐤梾铏兢<span lang=EN-US>Insect Plague</span></span></i></span>锛?span
-  class=bbccolor><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:purple'>妞嶇墿婊嬮暱<span lang=EN-US>Plant Growth</span></span></i></span></p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US style='color:white;mso-color-alt:windowtext'><br>
-</span><strong><span style='font-size:16.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>榛戦緳鍐掗櫓<span lang=EN-US>Black Dragon Adventures</span></span></strong><span
+      <br>
+      </span><strong><span style='font-size:14.0pt;font-family:宋体;'>黑龙巢穴特征<span lang=EN-US>Black Dragon Lairs Features</span></span></strong><br>
+此黑龙巢穴如地图       <span lang=EN-US>5.2</span>所示，坐落于一座阴暗沼泽内的废弃小教堂中，被时间所遗忘。该建筑的木制结构早已腐烂，只剩下满布台藓的石头结构和一座孤立的塔。巢穴具有以下特征：<br>
+      <strong><span style='font-family:宋体;'>沼泽湖。</span></strong>小教堂与一处沼泽湖相连，其为黑龙沉眠之处。水体散发着死鱼的恶臭与腐烂的气味，岸边茂密而杂乱的灌木丛上爬满了蠕行的软体动物。一片浓厚的雾气<span
+lang=EN-US>——</span>巨龙腐化效应的一部分<span lang=EN-US>——</span>为巢穴带来了一种幽闭恐惧的感觉。<br>
+      <strong><span style='font-family:宋体;'>小教堂。</span></strong>粘稠的石柱如同肋骨一般，从小教堂裸露的地面刺出，仿佛在嘲笑这个曾经神圣的地方的神圣性。。<br>
+      <strong><span style='font-family:宋体;'>地下。</span></strong>大厅里的双座楼梯往下到一处浸水的墓室。五个石棺耸立在水线之上，棺盖描绘着几位已被酸液蚀去面容的具装武士。每个石棺内都有一些硬币和闪亮的饰品，与乍看之下似乎是宝物的垃圾混在一起。在塔的地下室，还有一条被完全淹没的隧道通向龙眠之湖。<br>
+      <strong><span style='font-family:宋体;'>小教堂之塔。</span></strong>一扇泡水膨胀的双开橡木门，刻有一对古旧的贵族战士浮雕，打开后是阴暗的石塔，其内空无一人，只有一座残缺的楼梯通往第二层，其在半空中断裂，最后到达摇摇欲坠的第三层。楼梯间里有复盖着霉菌的壁画，描绘的是着跪在天使面前的骑士。<br>
+      <strong><span style='font-family:宋体;'>塔顶。</span></strong>龙的秘藏被保存在摇摇欲坠的塔顶，龙喜欢在那里休憩并凝视塔外的黑暗。如果想要得到龙的秘藏，那么不能飞的入侵者们就必须冒险爬上陡峭、粘滑的的墙壁（从塔外或二层内部），勇敢地面对可能存在的诸般陷阱。<span
 lang=EN-US><br>
-</span>榛戦緳鍐掗櫓寮曞瓙琛ㄦ牸涓哄叧浜庨粦榫欑殑鏁呬簨鍜屽啋闄╂彁渚涗簡浜涜寤鸿銆?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳鍐掗櫓寮曞瓙</span></strong></p>
+      <br>
+      </span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:宋体;
+'>额外巢穴动作<span lang=EN-US>Additional Lair Actions</span></span></b></span><br>
+取决于您的意愿，一条传奇（成年或远古）黑龙可以在其巢穴内使用以下一种或多种巢穴动作：       <br>
+      <strong><span style='font-family:宋体;'>腐化喷涌<span
+lang=EN-US>Filth Burst</span>。</span></strong>龙选择其<span lang=EN-US>120</span>尺内地面上一点。以其为源点喷发出半径<span
+lang=EN-US>20</span>英尺，高<span lang=EN-US>20</span>英尺的圆柱腐水，持续到下一次先攻轮到<span
+lang=EN-US>20</span>时。当每个生物进入圆柱或在其中结束回合时，必须进行一次<span lang=EN-US>DC15</span>的体质豁免，失败则受到<span
+lang=EN-US>10 (3d6)</span>毒素伤害，豁免成功时只受到一半的毒素伤害。圆柱内为困难地形。<br>
+      <strong><span style='font-family:宋体;'>淤泥擒攫<span
+lang=EN-US>Grasping Muck</span>。</span></strong>翻滚的泥土卷须从龙巢猛然伸出，并擒抱最多三个位于巢穴之中，龙所能看到的生物。目标生物必须成功进行一次<span
+lang=EN-US>DC15</span>的力量豁免，否则在下一次先攻轮到<span lang=EN-US>20</span>前被束缚。<br>
+      <strong><span style='font-family:宋体;'>毒害瓦斯<span
+lang=EN-US>Noxious Gas</span>。</span></strong>富含沼气的气泡爆裂开来，影响了半径<span
+lang=EN-US>20</span>尺球状区域，这个球状区域的中心是龙可以看到的其巢穴中任意一点。该区域内的所有生物必须成功通过<span
+lang=EN-US>DC15</span>的体质豁免，否则中毒<span lang=EN-US>1</span>分钟。目标可以在每个回合结束时重复豁免，豁免成功则终止该状态。<span
+lang=EN-US><br>
+      <br>
+      </span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:宋体;
+'>区域效应</span></b></span><br>
+作为《怪物图鉴》所描述效应的追加或替代，以下这些效应中的任何一个都可能出现在黑龙巢穴周围的区域：       <br>
+      <strong><span style='font-family:宋体;'>倦怠<span
+lang=EN-US>Ennui</span>。</span></strong>在龙巢<span lang=EN-US>10</span>英里范围生活超过一年的生物浑身都是丧气和绝望。<br>
+      <strong><span style='font-family:宋体;'>磨人密探<span
+lang=EN-US>Grating Spies</span>。</span></strong>在巢穴<span lang=EN-US>6</span>英里范围内，总会有叽喳不停而又烦人的鸟类、昆虫或爬行动物跟随着不知有龙的类人生物，使其在敏捷（隐匿）检定上具有劣势。龙可以随意抑制此效应。<br>
+      <strong><span style='font-family:宋体;'>腐化领域<span
+lang=EN-US>Rotting Domain</span>。</span></strong>巢穴周围<span lang=EN-US>6</span>英里内满是具有攻击性的臭虫，还使得空气弥漫着浓厚的腐烂气味。<span
+lang=EN-US><br>
+      <br>
+      </span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:宋体;
+'>黑龙宝藏<span lang=EN-US>Black Dragon Treasures</span></span></b></span><br>
+黑龙欣赏那些源自失落文明，具有着文化、魔法或科学意义的物品。知道自己拥有的一件遗物为他人垂涎，因为它与逝去的过往有所关联，如此种种就是其价值所在。黑龙也喜欢传统的宝藏，如宝石（尤其是欧泊）、不易腐蚀的贵金属和石雕。       <br>
+由于黑龙的巢穴不可避免的潮湿，如果不是完全被浸没，黑龙很少有布、木头或纸类物品，除非这些物品被存放在防水的容器中。擅长魔法的黑龙经常将笔记和仪式记录在骨头、贝壳和金属板上，而不是纸或羊皮纸。这些作品本身就是艺术，每一件作品都有一排排优雅的龙文，以龙的酸液镌刻而成。       <br>
+大多数黑龙把他们的宝藏藏得很好，并有一个私密的赏宝室以存放最珍贵的宝藏。若是知道自己那群手下能够看到其藏品，光是这样就会让黑龙怒不可遏。       <br>
+      <strong><span style='font-family:宋体;'>黑龙艺术品</span></strong></p>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d10</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>物件</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>一条优美的项链，属于一位多年前失踪的显赫贵族。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>一座石刻，代表一个迷失在岁月中的神系。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>一个失传之秘，关于如何熔炼某种蕴含奥秘潜能的合金，被蚀刻在<span lang=EN-US>12</span>张餐盘大小的金属圆盘上。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>一个密封的白金烧瓶，内涵某位矮人蒸馏大师所制造的，最后已知的一点生命之水。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>一把仪式用的长剑，浮雕银为剑柄，琥珀为剑身。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>一份保存在魔法密封容器中的图文家谱，对现任君主的正当王权具有挑战性。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>三颗苹果大小的宝石，雕刻着异端宗教符号。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>一张精雕细琢的面具，代表一位收获和生育之神</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>9</span></strong></p></td>
+        <td><p>一个金属号角，以宝石镶嵌，出自龙忠诚的崇拜者之手。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>10</span></strong></p></td>
+        <td><p>一个精美的珐琅瓮，盛放着风干的绿龙之心，黑龙的手下败将。</p></td>
+      </tr>
+    </table>
+    <blockquote>
+      <p><span class=bbcsize><b><span style='font-size:14.0pt;
+font-family:宋体;'>拉夏克<span lang=EN-US>Rhashaak</span></span></b></span><br>
+诅咒之城哈卡托瓦克         <span lang=EN-US>Haka'torvhak</span>的守护者，<span class=bbccolor><span
+style='font-family:宋体;color:red'>太古黑龙<span lang=EN-US>Black
+        Greatwyrm</span></span></span>拉夏克<span lang=EN-US>Rhashaak</span>生活在夸巴拉<span
+lang=EN-US>Q'barra</span>的丛林深处，在那里，他被无数狗头人、巨龙与蜥蜴人奉为神祇化身。玛斯维里克<span lang=EN-US>Masvirik</span>，曾经统治爬行动物的受锢邪魔，拉夏克作为它的守护者已达数千年之久。<br>
+沧海桑田，拉夏克已被他所守护的腐化所玷污，并使其慢慢向邪恶屈服。强力的结界将拉夏克束缚在他那堕落的城市，但如果当地居民或探索者唤醒了废墟中沉睡的拉夏克，他的军团就将再度带来威胁。         </p></blockquote></div></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
 
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鍐掗櫓寮曞瓙</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愭潯榛戦緳鏈€杩戞帶鍒朵簡涓€浼欐捣鐩楀拰浠栦滑鐨勮棌韬腐鍙ｃ€傛捣鐩椾滑鎭跺悜鑳嗚竟鐢燂紝寮€濮嬭鍑婚檮杩戠殑鑸亾銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愭潯鍘屾伓鍐茬獊鐨勯粦榫欐鍋峰伔鍚戝綋鍦扮殑鍐滅敯閲屽柗娲掍竴绉嶇偧閲戣惤鍙跺墏锛屼互杩娇璇ュ湴鍖虹殑灞呮皯鎼榫欏发銆傜敱姝や骇鐢熺殑楗ヨ崚姝ｅ湪鎽ф瘉鏁翠釜鏉戦晣銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍦ㄩ粦榫欑殑绛栬皨涓嬶紝涓や釜瀵圭珛鐨勫浗瀹跺嵆灏嗗紑濮嬫垬浜夛紝榛戦緳甯屾湜鑳藉湪鐢辨浜х敓鐨勫ぇ灞犳潃涓緱鍒版弧瓒炽€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍥犳布娉藉湴闀挎湡骞叉棻鑰岃悗缂╋紝涓ゆ潯榛戦緳缁勬垚浜嗕竴涓复鏃惰仈鐩燂紝鍘绘懅姣侀檮杩戠殑鍩庨晣浠ヨ幏寰楁洿澶х殑鐢熷瓨绌洪棿銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>榛戦緳鐨勫己閰稿悙鎭墿鏄敮涓€鑳藉铻嶅寲鏆村悰瀹濆簱闂ㄩ攣鐨勭墿璐ㄣ€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎹紶鏈夋煇浠跺▉鍔涘法澶х殑绁炲櫒钘忓湪涓€搴ч粦榫欏眳浣忕殑搴熷涓€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愮兢鍐掗櫓鑰呭拰鏌愭潯榛戦緳鍦ㄥ悓涓€搴ф蹈姘寸殑鍩庡競搴熷涓鎵惧悓涓€涓疂钘忋€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愭潯浜箰涓讳箟鐨勯粦榫欐鍦ㄨ吹鏃忕殑鐚庤嫅鍐呬互鎭愭€栫殑閫熷害鍋风寧銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>閭诲眳鐢熺墿<span lang=EN-US>Connected Creatures</span></span></strong><span
-lang=EN-US><br>
-</span>榛戦緳鍠滄涓庡鏄撴帶鍒朵笖涓嶆槗鑳屽彌鐨勭敓鐗╂惌浼欍€傛棤鎰忚瘑鐨勪笉姝荤敓鐗┿€佽敁鐢熸€€侀鑲夋鐗┿€佹偿鎬笌鏋勮鐢熺墿閮芥槸鐞嗘兂鐨勪笅浠嗭紝鑳戒笌榛戦緳閭ｅ閭瓟鑸嫛璇堢殑闄烽槺鍗忓悓鍚堜綔銆傞粦榫欑殑鏅烘収杩介殢鑰呮櫘閬嶅磭鎷滃叾宸ㄩ緳濞佷弗锛屼竴鑸寘鎷嫍澶翠汉銆佹垬铚ヤ汉銆佽湧铚翠汉涓庯紙缃曡鎯呭喌涓嬬殑锛夊師浣撹泧浜恒€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳闆忛緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鑷煇涓媯濡勬硶甯堢殑鎵嬩笅閫冭劚鏃讹紝<span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>榛戦緳闆忛緳<span lang=EN-US>Black Wyrmling</span></span></span>鍋疯蛋浜嗛瓟娉曞笀鐨勬帶鍒舵姢绗?span
-  lang=EN-US>鈥斺€?/span>浠ュ強涓庝箣閰嶅鐨?span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>娲诲寲鐩旂敳<span lang=EN-US>Animated Armor</span></span></span>銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€缇?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴樿湧浜?span lang=EN-US>Troglodyte</span></span></span>琚?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>榛戦緳闆忛緳<span lang=EN-US>Black Wyrmling</span></span></span>鑳佽揩锛屾垚涓轰簡瀹冪殑淇濋晼銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈€杩戝嚭鐜扮殑<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>榛戦緳闆忛緳<span lang=EN-US>Black Wyrmling</span></span></span>鏀瑰彉浜嗗綋鍦扮殑鐢熸€佺郴缁燂紝浣垮緱璇稿鐤梾澶ч噺浼犳挱锛屾墦鐮翠簡鑷劧鐨勫钩琛°€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>榛戦緳闆忛緳<span lang=EN-US>Black Wyrmling</span></span></span>鍦ㄨ矾涓婅涓嬩簡璁稿鐙＄尵鐨勯櫡闃憋紝甯屾湜鑳芥潃浼や竴浜涢┈鍖瑰拰鐗茬暅锛屾柟渚胯嚜宸卞紑鍔ㄣ€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愬骇鐑甫鍩庡競涓嬬殑<span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>鐙楀ご浜?span lang=EN-US>Kobold</span></span></span>浠湪骞茬獌鐩楃敓鎰忥紝涓轰粬浠績鐖辩殑<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>榛戦緳闆忛緳<span lang=EN-US>Black Wyrmling</span></span></span>鏀堕泦瀹濊棌銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈変綅渚忓剴閬楃墿鐚庝汉姝ｅ湪涓€搴ц崚搴熷凡涔呯殑鍩庡競涓悳鍒紝杩樺拰<span class=bbccolor><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>榛戦緳闆忛緳<span
-  lang=EN-US>Black Wyrmling</span></span></span>寤虹珛浜嗕笉澶ǔ瀹氱殑鑱旂洘锛屼互鎺犲ず涓€澶勮€冨彜鐜板満銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>闈掑勾榛戦緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愭潯瀵屾湁鐐奸噾澶╄祴鐨?span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>姝ｅ皢涓€澶勮晥浜烘爾鎭湴鐨勫瀛愬埗鎴愭鍣ㄣ€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€浼?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩堢綏楸间汉<span lang=EN-US>Merrow</span></span></span>鎴樺洟涓?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>璋堝垽锛屽笇鏈涗笌涔嬩竴璧锋礂鍔檮杩戠殑璐告槗娓彛銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€缇や粠澧撳湴涓埇璧锋潵鐨?span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>椋熷案楝?span lang=EN-US>Ghoul</span></span></span>鎴愪负浜?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>鐨勪繚闀栦笌鎵撴墜銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>鍩硅偛浜嗕竴鏍惎钂欓鑲夋鐗╋紙浣跨敤<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鍚挋鏍戞湪<span lang=EN-US>Awakened Tree</span></span></span>鐨勬暟鎹級浣滀负宸㈢┐瀹堝崼锛屽苟缁戞灦浜嗕竴浜涙梾琛岃€呮潵鍠傚吇杩欐牚妞嶇墿銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>宕囨嫓<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>鐨勪竴浼欒湧铚翠汉琚嚮浜嗛檮杩戠殑娓旂寧鑱氳惤銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾榛戦緳<span lang=EN-US>Young Black Dragon</span></span></span>涓庝竴鍙湪瀹冨发绌村懆鍥翠綔涔辩殑<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鏍戠怀濡?span lang=EN-US>Roper</span></span></span>杈炬垚浜嗕簰鍔╁崗璁€?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎴愬勾榛戦緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>娌兼辰閲岀殑涓€缇?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>濂囩編鎷?span lang=EN-US>Chimera</span></span></span>琚?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>椹寲鎴愪簡闂ㄥ崼锛屽苟灏嗗叾涓竴浜涘崠缁欎簡褰撳湴鐨勫啗闃€銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愪釜鍒哄鏁欏洟灏嗕竴鏉?span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>浣滀负鍏剁绁囩殑鍖栬韩宕囨嫓銆傝€岄緳涔熸鍒╃敤杩欎釜鏁欏洟鏉ラ澶嶅綋鍦板悰涓荤殑缁熸不銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>浼犻椈鏈夊澶辫惤甯濆浗鐨勫疂搴撳簾澧燂紝琚竴鏉′笉瀹夌敓鐨?span class=bbccolor><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span
-  lang=EN-US>Adult Black Dragon</span></span></span>浠ユ偿鎬负鍩哄簳璁捐鍑烘潵鐨勯櫡闃辩綉缁滄墍淇濇姢銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>琚竴鍙繘鍏ュ叾棰嗗湴鐨?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>绮鹃瓊濞滆喀<span lang=EN-US>Spirit Naga</span></span></span>鏁欏攩鍘荤爺绌舵鐏垫硶鏈€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>灏嗗畠鐨勫疂鐭宠棌鍦ㄤ簡涓€澶勬亹鎬栬糠瀹箣鍐咃紝閲岄潰濉炴弧浜?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>钄撶敓鎬?span lang=EN-US>Shambling Mounds</span></span></span>銆侀櫡闃卞拰鏈夋瘨妞嶇墿锛屼互鑰冮獙鍐掗櫓鑰呬负涔愩€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈夋潯<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>瑾撶細浜嗕竴缇?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>姘村厓绱?span lang=EN-US>Water Element</span></span></span>锛岃瀹冧滑璐熻矗灏嗛鐗╂惉鍒伴緳宸箣鍐呫€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈変紮鐙傝洐浜烘瀵绘眰瀵逛粯<span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>鐨勬彺鍏碉紝杩欐潯榛戦緳涓€鐩村湪鍚冪媯铔欎汉浠┋鍏荤殑宸ㄨ洐銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓や釜鍥藉锛屼竴涓敱<span class=bbccolor><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾榛戦緳<span lang=EN-US>Adult Black Dragon</span></span></span>缁熸不鑰屽彟涓€涓敱<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鎲庢伓铔囦汉<span lang=EN-US>Yuan-ti Abomination</span></span></span>鐨勯瀵硷紝缁撴垚浜嗚仈鍐涗互鎽ф瘉绗笁涓浗瀹躲€傝繖鍙楀▉鑳佺殑鍥藉姝ｆ嫑鍕熷啋闄╄€呬互淇濆崼鍥藉湡銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>杩滃彜榛戦緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愭潯<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜榛戦緳<span lang=EN-US>Ancient Black Dragon</span></span></span>鍦ㄧ爺绌朵簡鐚粰寮傚煙澶栫鐨勪旱娓庢枃瀛楀悗鍙戝嚭浜嗚鍛婏紝涓€浣嶈鑵愬寲鐨?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>寮傜晫绁炰緧<span lang=EN-US>Planetar</span></span></span>灏嗗娴佹槦鑸檷涓村湪澶у湴涓婏紝钀藉湪涓€搴уぇ閮戒細鍩庡澶栫殑娌兼辰鍦伴噷銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏌愬鐏靛惛鎬ぞ鍖鸿姳浜嗗崈骞存椂闂存潵瀛靛寲鍜屽煿鍏讳竴鏉￠粦榫欙紝浠ユ湡鍏舵垚涓?span class=bbccolor><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>涓昏剳榫?span lang=EN-US>Elder
-  Brain Dragon</span></span></span>锛岀敱姝?span class=bbccolor><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>涓昏剳<span lang=EN-US>Elder
-  Brain</span></span></span>渚垮彲浠ヤ翰鑷瘉鐏叾瀵规墜銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜榛戦緳<span lang=EN-US>Ancient Black Dragon</span></span></span>鍜屼竴浣嶉偑鎭剁殑<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>澶ф硶甯?span lang=EN-US>Archmage</span></span></span>绛栬皨鏁板崄骞寸殑闃磋皨鍗冲皢瀹炵幇銆傝嫢鏄粬浠殑璁″垝鎴愬姛锛屽氨浼氬彂鐢熷ぇ闄嗚寖鍥寸殑鐮村潖銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈夊骇琚薄鏌撶殑婀栦腑瀛樺湪鐫€涓€搴у法澶т笖鍫曡惤鐨勫煄甯傦紝鐢变竴鏉?span class=bbccolor><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜榛戦緳<span
-  lang=EN-US>Ancient Black Dragon</span></span></span>鎵€缁熸不銆傛湁浣嶆劋鎬掔殑<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>澶у痉椴佷紛<span lang=EN-US>Archdruid</span></span></span>濞佽儊瑕佹瘉鐏繖搴у煄锛岃繖鎰忓懗鐫€鎴愬崈涓婁竾鐨勬棤杈滆€呬細鍥犳鑰屾銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>榛戦緳宸㈢┐<span lang=EN-US>Black Dragon Lairs</span></span></b></span><span
-lang=EN-US><br>
-</span>榛戦緳鍠滄鏍栨伅鍦ㄦ布娉藉拰涓涙灄涓紝瓒婇槾鏆楄秺鎭惰嚟瓒婂ソ銆傚湪璇稿鐜涓紝搴熷鍥犱负闃插尽鑳藉姏浠ュ強鏌愮娌夐椃鐨勭編瀛﹁€岃榛戦緳闈掔潗鏈夊姞銆?span
-lang=EN-US><br>
-</span>鍦ㄩ€夋嫨宸㈢┐鏃讹紝榛戦緳鍠滄閿欑患澶嶆潅涓庝贡楹讳笡鐢熺殑鍦版柟銆傚鎵鹃緳鐨勫啋闄╄€呬滑蹇呴』鍦ㄥ彜鑰佺孩鏍戞灄娌兼辰鐨勬牴閮ㄤ腑鏇叉姌鍓嶈锛屽苟鍕囨暍鍦伴潰瀵瑰厖婊￠櫡闃辩殑娌兼辰搴熷锛屾棤璁烘槸浣曠缁忓巻锛岄兘浼氭槸涓€娆¤嚧鍛界殑閬亣銆?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>榛戦緳宸㈢┐鐗瑰緛<span lang=EN-US>Black Dragon Lairs Features</span></span></strong><span
-lang=EN-US><br>
-</span>姝ら粦榫欏发绌村鍦板浘<span lang=EN-US>5.2</span>鎵€绀猴紝鍧愯惤浜庝竴搴ч槾鏆楁布娉藉唴鐨勫簾寮冨皬鏁欏爞涓紝琚椂闂存墍閬楀繕銆傝寤虹瓚鐨勬湪鍒剁粨鏋勬棭宸茶厫鐑傦紝鍙墿涓嬫弧甯冨彴钘撶殑鐭冲ご缁撴瀯鍜屼竴搴у绔嬬殑濉斻€傚发绌村叿鏈変互涓嬬壒寰侊細<span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娌兼辰婀栥€?/span></strong>灏忔暀鍫備笌涓€澶勬布娉芥箹鐩歌繛锛屽叾涓洪粦榫欐矇鐪犱箣澶勩€傛按浣撴暎鍙戠潃姝婚奔鐨勬伓鑷笌鑵愮儌鐨勬皵鍛筹紝宀歌竟鑼傚瘑鑰屾潅涔辩殑鐏屾湪涓涗笂鐖弧浜嗚爼琛岀殑杞綋鍔ㄧ墿銆備竴鐗囨祿鍘氱殑闆炬皵<span
-lang=EN-US>鈥斺€?/span>宸ㄩ緳鑵愬寲鏁堝簲鐨勪竴閮ㄥ垎<span lang=EN-US>鈥斺€?/span>涓哄发绌村甫鏉ヤ簡涓€绉嶅菇闂亹鎯х殑鎰熻銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>灏忔暀鍫傘€?/span></strong>绮樼鐨勭煶鏌卞鍚岃倠楠ㄤ竴鑸紝浠庡皬鏁欏爞瑁搁湶鐨勫湴闈㈠埡鍑猴紝浠夸經鍦ㄥ槻绗戣繖涓浘缁忕鍦ｇ殑鍦版柟鐨勭鍦ｆ€с€傘€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍦颁笅銆?/span></strong>澶у巺閲岀殑鍙屽骇妤兼寰€涓嬪埌涓€澶勬蹈姘寸殑澧撳銆備簲涓煶妫鸿€哥珛鍦ㄦ按绾夸箣涓婏紝妫虹洊鎻忕粯鐫€鍑犱綅宸茶閰告恫铓€鍘婚潰瀹圭殑鍏疯姝﹀＋銆傛瘡涓煶妫哄唴閮芥湁涓€浜涚‖甯佸拰闂寒鐨勯グ鍝侊紝涓庝箥鐪嬩箣涓嬩技涔庢槸瀹濈墿鐨勫瀮鍦炬贩鍦ㄤ竴璧枫€傚湪濉旂殑鍦颁笅瀹わ紝杩樻湁涓€鏉¤瀹屽叏娣规病鐨勯毀閬撻€氬悜榫欑湢涔嬫箹銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>灏忔暀鍫備箣濉斻€?/span></strong>涓€鎵囨场姘磋啫鑳€鐨勫弻寮€姗℃湪闂紝鍒绘湁涓€瀵瑰彜鏃х殑璐垫棌鎴樺＋娴洉锛屾墦寮€鍚庢槸闃存殫鐨勭煶濉旓紝鍏跺唴绌烘棤涓€浜猴紝鍙湁涓€搴ф畫缂虹殑妤兼閫氬線绗簩灞傦紝鍏跺湪鍗婄┖涓柇瑁傦紝鏈€鍚庡埌杈炬憞鎽囨鍧犵殑绗笁灞傘€傛ゼ姊棿閲屾湁澶嶇洊鐫€闇夎弻鐨勫鐢伙紝鎻忕粯鐨勬槸鐫€璺湪澶╀娇闈㈠墠鐨勯獞澹€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>濉旈《銆?/span></strong>榫欑殑绉樿棌琚繚瀛樺湪鎽囨憞娆插潬鐨勫椤讹紝榫欏枩娆㈠湪閭ｉ噷浼戞啯骞跺嚌瑙嗗澶栫殑榛戞殫銆傚鏋滄兂瑕佸緱鍒伴緳鐨勭钘忥紝閭ｄ箞涓嶈兘椋炵殑鍏ヤ镜鑰呬滑灏卞繀椤诲啋闄╃埇涓婇櫋宄€佺矘婊戠殑鐨勫澹侊紙浠庡澶栨垨浜屽眰鍐呴儴锛夛紝鍕囨暍鍦伴潰瀵瑰彲鑳藉瓨鍦ㄧ殑璇歌埇闄烽槺銆?span
-lang=EN-US><br>
-<br>
-</span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>棰濆宸㈢┐鍔ㄤ綔<span lang=EN-US>Additional Lair Actions</span></span></b></span><span
-lang=EN-US><br>
-</span>鍙栧喅浜庢偍鐨勬剰鎰匡紝涓€鏉′紶濂囷紙鎴愬勾鎴栬繙鍙わ級榛戦緳鍙互鍦ㄥ叾宸㈢┐鍐呬娇鐢ㄤ互涓嬩竴绉嶆垨澶氱宸㈢┐鍔ㄤ綔锛?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鑵愬寲鍠锋秾<span
-lang=EN-US>Filth Burst</span>銆?/span></strong>榫欓€夋嫨鍏?span lang=EN-US>120</span>灏哄唴鍦伴潰涓婁竴鐐广€備互鍏朵负婧愮偣鍠峰彂鍑哄崐寰?span
-lang=EN-US>20</span>鑻卞昂锛岄珮<span lang=EN-US>20</span>鑻卞昂鐨勫渾鏌辫厫姘达紝鎸佺画鍒颁笅涓€娆″厛鏀昏疆鍒?span
-lang=EN-US>20</span>鏃躲€傚綋姣忎釜鐢熺墿杩涘叆鍦嗘煴鎴栧湪鍏朵腑缁撴潫鍥炲悎鏃讹紝蹇呴』杩涜涓€娆?span lang=EN-US>DC15</span>鐨勪綋璐ㄨ眮鍏嶏紝澶辫触鍒欏彈鍒?span
-lang=EN-US>10 (3d6)</span>姣掔礌浼ゅ锛岃眮鍏嶆垚鍔熸椂鍙彈鍒颁竴鍗婄殑姣掔礌浼ゅ銆傚渾鏌卞唴涓哄洶闅惧湴褰€?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣ゆ偿鎿掓敨<span
-lang=EN-US>Grasping Muck</span>銆?/span></strong>缈绘粴鐨勬偿鍦熷嵎椤讳粠榫欏发鐚涚劧浼稿嚭锛屽苟鎿掓姳鏈€澶氫笁涓綅浜庡发绌翠箣涓紝榫欐墍鑳界湅鍒扮殑鐢熺墿銆傜洰鏍囩敓鐗╁繀椤绘垚鍔熻繘琛屼竴娆?span
-lang=EN-US>DC15</span>鐨勫姏閲忚眮鍏嶏紝鍚﹀垯鍦ㄤ笅涓€娆″厛鏀昏疆鍒?span lang=EN-US>20</span>鍓嶈鏉熺細銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>姣掑鐡︽柉<span
-lang=EN-US>Noxious Gas</span>銆?/span></strong>瀵屽惈娌兼皵鐨勬皵娉＄垎瑁傚紑鏉ワ紝褰卞搷浜嗗崐寰?span
-lang=EN-US>20</span>灏虹悆鐘跺尯鍩燂紝杩欎釜鐞冪姸鍖哄煙鐨勪腑蹇冩槸榫欏彲浠ョ湅鍒扮殑鍏跺发绌翠腑浠绘剰涓€鐐广€傝鍖哄煙鍐呯殑鎵€鏈夌敓鐗╁繀椤绘垚鍔熼€氳繃<span
-lang=EN-US>DC15</span>鐨勪綋璐ㄨ眮鍏嶏紝鍚﹀垯涓瘨<span lang=EN-US>1</span>鍒嗛挓銆傜洰鏍囧彲浠ュ湪姣忎釜鍥炲悎缁撴潫鏃堕噸澶嶈眮鍏嶏紝璞佸厤鎴愬姛鍒欑粓姝㈣鐘舵€併€?span
-lang=EN-US><br>
-<br>
-</span><span class=bbcsize><b><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍖哄煙鏁堝簲</span></b></span><span lang=EN-US><br>
-</span>浣滀负銆婃€墿鍥鹃壌銆嬫墍鎻忚堪鏁堝簲鐨勮拷鍔犳垨鏇夸唬锛屼互涓嬭繖浜涙晥搴斾腑鐨勪换浣曚竴涓兘鍙兘鍑虹幇鍦ㄩ粦榫欏发绌村懆鍥寸殑鍖哄煙锛?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍊︽€?span
-lang=EN-US>Ennui</span>銆?/span></strong>鍦ㄩ緳宸?span lang=EN-US>10</span>鑻遍噷鑼冨洿鐢熸椿瓒呰繃涓€骞寸殑鐢熺墿娴戣韩閮芥槸涓ф皵鍜岀粷鏈涖€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>纾ㄤ汉瀵嗘帰<span
-lang=EN-US>Grating Spies</span>銆?/span></strong>鍦ㄥ发绌?span lang=EN-US>6</span>鑻遍噷鑼冨洿鍐咃紝鎬讳細鏈夊徑鍠充笉鍋滆€屽張鐑︿汉鐨勯笩绫汇€佹槅铏垨鐖鍔ㄧ墿璺熼殢鐫€涓嶇煡鏈夐緳鐨勭被浜虹敓鐗╋紝浣垮叾鍦ㄦ晱鎹凤紙闅愬尶锛夋瀹氫笂鍏锋湁鍔ｅ娍銆傞緳鍙互闅忔剰鎶戝埗姝ゆ晥搴斻€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鑵愬寲棰嗗煙<span
-lang=EN-US>Rotting Domain</span>銆?/span></strong>宸㈢┐鍛ㄥ洿<span lang=EN-US>6</span>鑻遍噷鍐呮弧鏄叿鏈夋敾鍑绘€х殑鑷櫕锛岃繕浣垮緱绌烘皵寮ユ极鐫€娴撳帤鐨勮厫鐑傛皵鍛炽€?span
-lang=EN-US><br>
-<br>
-</span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>榛戦緳瀹濊棌<span lang=EN-US>Black Dragon Treasures</span></span></b></span><span
-lang=EN-US><br>
-</span>榛戦緳娆ｈ祻閭ｄ簺婧愯嚜澶辫惤鏂囨槑锛屽叿鏈夌潃鏂囧寲銆侀瓟娉曟垨绉戝鎰忎箟鐨勭墿鍝併€傜煡閬撹嚜宸辨嫢鏈夌殑涓€浠堕仐鐗╀负浠栦汉鍨傛稁锛屽洜涓哄畠涓庨€濆幓鐨勮繃寰€鏈夋墍鍏宠仈锛屽姝ょ绉嶅氨鏄叾浠峰€兼墍鍦ㄣ€傞粦榫欎篃鍠滄浼犵粺鐨勫疂钘忥紝濡傚疂鐭筹紙灏ゅ叾鏄娉婏級銆佷笉鏄撹厫铓€鐨勮吹閲戝睘鍜岀煶闆曘€?span
-lang=EN-US><br>
-</span>鐢变簬榛戦緳鐨勫发绌翠笉鍙伩鍏嶇殑娼箍锛屽鏋滀笉鏄畬鍏ㄨ娴告病锛岄粦榫欏緢灏戞湁甯冦€佹湪澶存垨绾哥被鐗╁搧锛岄櫎闈炶繖浜涚墿鍝佽瀛樻斁鍦ㄩ槻姘寸殑瀹瑰櫒涓€傛搮闀块瓟娉曠殑榛戦緳缁忓父灏嗙瑪璁板拰浠紡璁板綍鍦ㄩ澶淬€佽礉澹冲拰閲戝睘鏉夸笂锛岃€屼笉鏄焊鎴栫緤鐨焊銆傝繖浜涗綔鍝佹湰韬氨鏄壓鏈紝姣忎竴浠朵綔鍝侀兘鏈変竴鎺掓帓浼橀泤鐨勯緳鏂囷紝浠ラ緳鐨勯吀娑查晫鍒昏€屾垚銆?span
-lang=EN-US><br>
-</span>澶у鏁伴粦榫欐妸浠栦滑鐨勫疂钘忚棌寰楀緢濂斤紝骞舵湁涓€涓瀵嗙殑璧忓疂瀹や互瀛樻斁鏈€鐝嶈吹鐨勫疂钘忋€傝嫢鏄煡閬撹嚜宸遍偅缇ゆ墜涓嬭兘澶熺湅鍒板叾钘忓搧锛屽厜鏄繖鏍峰氨浼氳榛戦緳鎬掍笉鍙亸銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>榛戦緳鑹烘湳鍝?/span></strong></p>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d10</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐗╀欢</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏉′紭缇庣殑椤归摼锛屽睘浜庝竴浣嶅骞村墠澶辫釜鐨勬樉璧吹鏃忋€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€搴х煶鍒伙紝浠ｈ〃涓€涓糠澶卞湪宀佹湀涓殑绁炵郴銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓け浼犱箣绉橈紝鍏充簬濡備綍鐔旂偧鏌愮钑村惈濂ョ娼滆兘鐨勫悎閲戯紝琚殌鍒诲湪<span lang=EN-US>12</span>寮犻鐩樺ぇ灏忕殑閲戝睘鍦嗙洏涓娿€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓瘑灏佺殑鐧介噾鐑х摱锛屽唴娑垫煇浣嶇煯浜鸿捀棣忓ぇ甯堟墍鍒堕€犵殑锛屾渶鍚庡凡鐭ョ殑涓€鐐圭敓鍛戒箣姘淬€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鎶婁华寮忕敤鐨勯暱鍓戯紝娴洉閾朵负鍓戞焺锛岀惀鐝€涓哄墤韬€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€浠戒繚瀛樺湪榄旀硶瀵嗗皝瀹瑰櫒涓殑鍥炬枃瀹惰氨锛屽鐜颁换鍚涗富鐨勬褰撶帇鏉冨叿鏈夋寫鎴樻€с€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓夐鑻规灉澶у皬鐨勫疂鐭筹紝闆曞埢鐫€寮傜瀹楁暀绗﹀彿銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€寮犵簿闆曠粏鐞㈢殑闈㈠叿锛屼唬琛ㄤ竴浣嶆敹鑾峰拰鐢熻偛涔嬬</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:9'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>9</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓噾灞炲彿瑙掞紝浠ュ疂鐭抽暥宓岋紝鍑鸿嚜榫欏繝璇氱殑宕囨嫓鑰呬箣鎵嬨€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>10</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓簿缇庣殑鐝愮悈鐡紝鐩涙斁鐫€椋庡共鐨勭豢榫欎箣蹇冿紝榛戦緳鐨勬墜涓嬭触灏嗐€?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
-
-<p class=MsoNormal><span class=bbcsize><b><span style='font-size:14.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎷夊鍏?span lang=EN-US>Rhashaak</span></span></b></span><span
-lang=EN-US><br>
-</span>璇呭拻涔嬪煄鍝堝崱鎵樼摝鍏?span lang=EN-US>Haka'torvhak</span>鐨勫畧鎶よ€咃紝<span class=bbccolor><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:red'>澶彜榛戦緳<span lang=EN-US>Black
-Greatwyrm</span></span></span>鎷夊鍏?span lang=EN-US>Rhashaak</span>鐢熸椿鍦ㄥじ宸存媺<span
-lang=EN-US>Q'barra</span>鐨勪笡鏋楁繁澶勶紝鍦ㄩ偅閲岋紝浠栬鏃犳暟鐙楀ご浜恒€佸法榫欎笌铚ヨ湸浜哄涓虹绁囧寲韬€傜帥鏂淮閲屽厠<span lang=EN-US>Masvirik</span>锛屾浘缁忕粺娌荤埇琛屽姩鐗╃殑鍙楅敘閭瓟锛屾媺澶忓厠浣滀负瀹冪殑瀹堟姢鑰呭凡杈炬暟鍗冨勾涔嬩箙銆?span
-lang=EN-US></span>></blockquote></div></div></body>
-
+</body>
 </html>

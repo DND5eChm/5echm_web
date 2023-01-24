@@ -1,86 +1,192 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <title>大海蛇</title>
 
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<meta name=ProgId content=Word.Document>
-
-
 <style>
 <!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
 -->
 </style>
 
+
+
+<style>
+html,div { margin: 0; padding: 0;}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
@@ -103,226 +209,194 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div id="msg_1140363"><p class=MsoNormal style='margin-bottom:12.0pt'><span class=bbcsize><span
-style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:blue'>澶ф捣铔?span
+
+
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="蓝宝石龙.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="黄玉龙.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+费资本的巨龙宝库 &gt; 怪物图鉴 &gt; </div>
+	<div id="winchm_template_title">大海蛇</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><div id="msg_1140363"><p><span class=bbcsize><span
+style='font-size:14.0pt;font-family:宋体;color:blue'>大海蛇<span
 lang=EN-US>Sea Serpent</span></span></span></p>
-
-<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
-
-<p class=MsoNormal><span class=bbcsize><span style='font-size:10.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>褰撲竴鏉″ぇ娴疯泧绌胯繃骞舵摝韫埞浣撴椂锛屽畠鍙槸璇曞浘鍔犻€熻湑鐨繃绋嬨€傚綋鐒讹紝杩欒墭鑸瑰彲鑳戒細娌夋病锛屼絾杩欑粷涓嶆槸铔囩殑閿欍€?span
-lang=EN-US>鈥斺€?/span>璐瑰吂鏈?/span></span></p>
-
-</blockquote>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=bbcsize><span
-style='font-size:10.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娴疯泧鍜岄緳榫熷苟鍒椾负娣辨捣涓渶鍙€曠殑鎹曢鑰咃紝瀹冧滑婵€鍙戜簡璁稿姘存墜鏈€鍙€曠殑鍣╂ⅵ銆傚畠浠己澹殑<span
-class=GramE>槌嶆帹鍔?/span>瀹冧滑鍦ㄦ捣娲嬩腑楂橀€熷墠杩涖€?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>闈掑勾娴疯泧鏄晱鎹风殑鐚庝汉銆備粬浠埄鐢ㄦ殫绀佸拰澶╃劧浼鍦ㄨ鍑诲墠闅愯棌璧锋潵锛屼竴涓帴涓€涓湴鐚庢崟绮楀績鑸瑰憳銆傝€岃繙鍙ゆ捣铔囬暱寰?span
-class=GramE>瓒充互澶?/span>鍒版懅姣佹暣鑹樿埞锛岀劧鍚庢偁闂插湴浠ユ按涓棤鍔╃殑姘存墜涓洪銆傚湪浠讳綍骞撮緞娈碉紝娴疯泧閮戒細浠ュ彲鎬曠殑鎾曞挰銆?span
-class=GramE>闉姸鐨?/span>灏惧反銆佸己鏈夊姏鐨勭紶缁曞拰鍐板喎鐨勫悙<span class=GramE>鎭鍣?/span>杩涜鏀诲嚮锛岃繖绉?span
-class=GramE>鍚愭伅浼氳</span>姘存墜浠殑灏镐綋鍐荤粨鍦ㄨ埞鐨勬畫楠镐腑銆?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>娴疯泧鍜屽叾浠栭緳涓€鏍峰叿鏈夊嚩鐚涚殑棰嗗湡鎬э紝瀹冧滑涓嶄細鍠勫緟鏈粡璁稿彲渚块殢鎰忛€氳繃鍏堕鍦熺殑鑸瑰彧銆傛湁浜涗汉鍙互閫氳繃鎻愪緵璐㈠疂鏉ュ畨鎶氾紝浣嗗ぇ澶氭暟澶ф捣铔囪繕瑕佹眰鑸瑰憳鐗虹壊鑷繁鐨勪竴涓垨澶氫釜鏉ユ弧瓒冲畠銆?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>娴疯泧鐢熸椿鍦ㄦ矇鑸圭殑娈嬮涓垨娣辨捣娲炵┐涓紝瀹冧滑鏀堕泦娌夎埞涓婄殑璐㈢墿锛屽ぇ閲忓洡绉锤鏄撹揣鐗┿€佹按鎵嬬殑灏忛グ鍝佸拰娴风洍鐨勬垬鍒╁搧銆?/span></span></p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=bbcsize><span
-style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>杩滃彜澶ф捣铔?span
-lang=EN-US> ANCIENT SEA SERPENT</span></span></span><span lang=EN-US
-style='font-size:14.0pt'><br>
-</span><span class=bbcsize><span style='font-size:14.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>瓒?span class=GramE>宸ㄥ瀷榫?/span>绫伙紝閫氬父涓轰腑绔?/span></span><span
+    <blockquote>
+      <p><span class=bbcsize><span style='font-size:10.0pt;
+font-family:宋体;'>当一条大海蛇穿过并擦蹭船体时，它只是试图加速蜕皮过程。当然，这艘船可能会沉没，但这绝不是蛇的错。<span
+lang=EN-US>——</span>费资本</span></span></p>
+    </blockquote>
+    <p><span class=bbcsize><span
+style='font-size:10.0pt;font-family:宋体;'>海蛇和龙龟并列为深海中最可怕的捕食者，它们激发了许多水手最可怕的噩梦。它们强壮的<span
+class=GramE>鳍推动</span>它们在海洋中高速前进。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>青年海蛇是敏捷的猎人。他们利用暗礁和天然伪装在袭击前隐藏起来，一个接一个地猎捕粗心船员。而远古海蛇长得<span
+class=GramE>足以大</span>到摧毁整艘船，然后悠闲地以水中无助的水手为食。在任何年龄段，海蛇都会以可怕的撕咬、<span
+class=GramE>鞭状的</span>尾巴、强有力的缠绕和冰冷的吐<span class=GramE>息武器</span>进行攻击，这种<span
+class=GramE>吐息会让</span>水手们的尸体冻结在船的残骸中。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>海蛇和其他龙一样具有凶猛的领土性，它们不会善待未经许可便随意通过其领土的船只。有些人可以通过提供财宝来安抚，但大多数大海蛇还要求船员牺牲自己的一个或多个来满足它。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>海蛇生活在沉船的残骸中或深海洞穴中，它们收集沉船上的财物，大量囤积贸易货物、水手的小饰品和海盗的战利品。</span></span></p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><span class=bbcsize><span
+style='font-size:14.0pt;font-family:宋体;'>远古大海蛇<span
+lang=EN-US> ANCIENT SEA SERPENT</span></span></span><br>
+      <span class=bbcsize><span style='font-size:14.0pt;font-family:宋体;
+'>超<span class=GramE>巨型龙</span>类，通常为中立</span></span><span
 lang=EN-US><br>
-<br>
-</span><span class=bbcsize><span lang=EN-US style='font-size:10.0pt;font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>AC 17(</span></span><span class=bbcsize><span
-style='font-size:10.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>澶╃敓鎶ょ敳<span
-lang=EN-US>)</span></span></span><span lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鐢熷懡鍊?span lang=EN-US> 170</span>锛?span lang=EN-US>11d20+55</span>锛?/span></span><span
+      <br>
+      </span><span class=bbcsize><span lang=EN-US style='font-size:10.0pt;font-family:
+宋体;'>AC 17(</span></span><span class=bbcsize><span
+style='font-size:10.0pt;font-family:宋体;'>天生护甲<span
+lang=EN-US>)</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>生命值<span lang=EN-US> 170</span>（<span lang=EN-US>11d20+55</span>）</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>速度<span lang=EN-US> 20</span>尺，游泳速度<span lang=EN-US>60</span>尺</span></span><span
 lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>閫熷害<span lang=EN-US> 20</span>灏猴紝娓告吵閫熷害<span lang=EN-US>60</span>灏?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍔涢噺<span lang=EN-US>24</span>锛?span lang=EN-US>+7</span>锛?
-鏁忔嵎<span lang=EN-US>15</span>锛?span lang=EN-US>+2</span>锛?浣撹川<span lang=EN-US>20</span>锛?span
-lang=EN-US>+5</span>锛?鏅哄姏<span lang=EN-US>13</span>锛?span lang=EN-US>+1</span>锛?鎰熺煡<span
-lang=EN-US>16</span>锛?span lang=EN-US>+3</span>锛?榄呭姏<span lang=EN-US>12</span>锛?span
-lang=EN-US>+1</span>锛?/span></span><span lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>璞佸厤锛氬姏閲?span lang=EN-US>+12</span>锛屼綋璐?span lang=EN-US>+10</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎶€鑳斤細瀵熻<span lang=EN-US>+8</span>锛岄殣钄?span lang=EN-US>+7</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>浼ゅ鍏嶇柅锛氬瘨鍐?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎰熷畼锛氶粦鏆楄瑙?span lang=EN-US>120</span>灏猴紝琚姩瀵熻<span
-lang=EN-US>18</span>灏?/span></span><span lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>璇█锛氶€氱敤璇€侀緳璇?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎸戞垬绛夌骇锛?span lang=EN-US>14 (11,500 XP)&nbsp; </span>鐔熺粌鍔犲€?span
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>力量<span lang=EN-US>24</span>（<span lang=EN-US>+7</span>）
+      敏捷<span lang=EN-US>15</span>（<span lang=EN-US>+2</span>） 体质<span lang=EN-US>20</span>（<span
+lang=EN-US>+5</span>） 智力<span lang=EN-US>13</span>（<span lang=EN-US>+1</span>） 感知<span
+lang=EN-US>16</span>（<span lang=EN-US>+3</span>） 魅力<span lang=EN-US>12</span>（<span
+lang=EN-US>+1</span>）</span></span><span lang=EN-US style='font-size:10.0pt'><br>
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>豁免：力量<span lang=EN-US>+12</span>，体质<span lang=EN-US>+10</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>技能：察觉<span lang=EN-US>+8</span>，隐蔽<span lang=EN-US>+7</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>伤害免疫：寒冷</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>感官：黑暗视觉<span lang=EN-US>120</span>尺，被动察觉<span
+lang=EN-US>18</span>尺</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>语言：通用语、龙语</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>挑战等级：<span lang=EN-US>14 (11,500 XP)&nbsp; </span>熟练加值<span
 lang=EN-US>+5</span></span></span><span lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>涓ゆ爾鐢熺墿锛氬ぇ娴疯泧鍙互鍦ㄧ┖姘斿拰姘翠腑鍛煎惛</span></span><span lang=EN-US
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>两栖生物：大海蛇可以在空气和水中呼吸</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>传奇抗性（<span lang=EN-US>2/</span>天）：若远古大海蛇在一次豁免中失败，它可以选择直接成功。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>攻城怪物：大海蛇对坚实物体和建筑物造成双倍伤害</span></span><span lang=EN-US
 style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>浼犲鎶楁€э紙<span lang=EN-US>2/</span>澶╋級锛氳嫢杩滃彜澶ф捣铔囧湪涓€娆¤眮鍏嶄腑澶辫触锛屽畠鍙互閫夋嫨鐩存帴鎴愬姛銆?/span></span><span
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>动作</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>多重攻击：远古大海蛇进行一次撕咬攻击和一次绞缠或尾击</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>撕咬<span lang=EN-US> Bite:</span>近战武器攻击：命中<span
+lang=EN-US>+12</span>，触及<span lang=EN-US>15</span>尺，单一目标。伤害：<span lang=EN-US>20</span>（<span
+lang=EN-US>2d12+7</span>）的穿刺伤害，外加<span lang=EN-US>6</span>（<span lang=EN-US>1d12</span>）的寒冷伤害。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>绞缠<span lang=EN-US> Constrict</span>：近战武器攻击：命中<span
+lang=EN-US>+12</span>，触及<span lang=EN-US>20</span>尺，单一生物。伤害：<span lang=EN-US>29</span>（<span
+lang=EN-US>4d10+7</span>）的钝击伤害，且目标被擒抱（逃脱<span lang=EN-US>DC 20</span>）。直到<span
+class=GramE>擒抱解除前目标</span>被束缚，且该海蛇不能绞缠另一目标。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>尾击<span lang=EN-US>Tail</span>。近战武器攻击：命中<span
+lang=EN-US>+12</span>，触及<span lang=EN-US>20</span>尺，单一目标。伤害：<span lang=EN-US>13</span>（<span
+lang=EN-US>1d12+7</span>）的钝击伤害。如果目标是生物，则该生物必须成功通过一次<span lang=EN-US>DC20</span>的力量豁免，否则被推离距大海蛇至多<span
+lang=EN-US>30</span>尺并应击倒地<span lang=EN-US>.</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>寒霜吐息<span lang=EN-US>Rime Breath</span>（充能<span
+lang=EN-US>5~6</span>）。远古大海蛇呼出冰霜并<span class=GramE>复盖</span>一处<span lang=EN-US>60</span>尺的锥状区域，该区域内的每个生物都必须进行一次<span
+lang=EN-US>DC 18</span>的体质豁免，豁免失败者将受到<span lang=EN-US>49</span>（<span
+lang=EN-US>9d10</span>）的冷冻伤害，豁免成功则伤害减半。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>传奇动作：</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>远古大海蛇拥有<span lang=EN-US>3</span>传奇动作，用来选择执行下列动作项。它每次只可选择执行一个传奇动作项，且必须在另一生物回合结束时执行。远古大海蛇在其回合开始时恢复所有消耗的传奇动作数。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>尾击<span lang=EN-US>Tail </span>。远古大海蛇发动一次尾击攻击。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>撕咬<span lang=EN-US> Bite</span>（消耗<span lang=EN-US>2</span>动作）。远古大海蛇发动一次撕咬攻击。</span></span><span
 lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鏀诲煄鎬墿锛氬ぇ娴疯泧瀵瑰潥瀹炵墿浣撳拰寤虹瓚鐗╅€犳垚鍙屽€嶄激瀹?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍔ㄤ綔</span></span><span lang=EN-US style='font-size:
-10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>澶氶噸鏀诲嚮锛氳繙鍙ゅぇ娴疯泧杩涜涓€娆℃挄鍜敾鍑诲拰涓€娆＄粸缂犳垨灏惧嚮</span></span><span
+      <br>
+      </span></p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><span class=bbcsize><span
+style='font-size:14.0pt;font-family:宋体;'>青年海蛇<span
+lang=EN-US> YOUNG SEA SERPENT</span></span></span><br>
+      <span class=GramE><span class=bbcsize><span style='font-size:14.0pt;
+font-family:宋体;'>巨型龙</span></span></span><span
+class=bbcsize><span style='font-size:14.0pt;font-family:宋体;'>类，通常为中立</span></span><span lang=EN-US><br>
+      <br>
+      </span><span class=bbcsize><span lang=EN-US style='font-size:10.0pt;font-family:
+宋体;'>AC 16(</span></span><span class=bbcsize><span
+style='font-size:10.0pt;font-family:宋体;'>天生护甲<span
+lang=EN-US>)</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>生命值<span lang=EN-US> 123</span>（<span lang=EN-US>13d12+39</span>）</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>速度<span lang=EN-US> 10</span>尺，游泳速度<span lang=EN-US>40</span>尺</span></span><span
 lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎾曞挰<span lang=EN-US> Bite:</span>杩戞垬姝﹀櫒鏀诲嚮锛氬懡涓?span
-lang=EN-US>+12</span>锛岃Е鍙?span lang=EN-US>15</span>灏猴紝鍗曚竴鐩爣銆備激瀹筹細<span lang=EN-US>20</span>锛?span
-lang=EN-US>2d12+7</span>锛夌殑绌垮埡浼ゅ锛屽鍔?span lang=EN-US>6</span>锛?span lang=EN-US>1d12</span>锛夌殑瀵掑喎浼ゅ銆?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>缁炵紶<span lang=EN-US> Constrict</span>锛氳繎鎴樻鍣ㄦ敾鍑伙細鍛戒腑<span
-lang=EN-US>+12</span>锛岃Е鍙?span lang=EN-US>20</span>灏猴紝鍗曚竴鐢熺墿銆備激瀹筹細<span lang=EN-US>29</span>锛?span
-lang=EN-US>4d10+7</span>锛夌殑閽濆嚮浼ゅ锛屼笖鐩爣琚搾鎶憋紙閫冭劚<span lang=EN-US>DC 20</span>锛夈€傜洿鍒?span
-class=GramE>鎿掓姳瑙ｉ櫎鍓嶇洰鏍?/span>琚潫缂氾紝涓旇娴疯泧涓嶈兘缁炵紶鍙︿竴鐩爣銆?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>灏惧嚮<span lang=EN-US>Tail</span>銆傝繎鎴樻鍣ㄦ敾鍑伙細鍛戒腑<span
-lang=EN-US>+12</span>锛岃Е鍙?span lang=EN-US>20</span>灏猴紝鍗曚竴鐩爣銆備激瀹筹細<span lang=EN-US>13</span>锛?span
-lang=EN-US>1d12+7</span>锛夌殑閽濆嚮浼ゅ銆傚鏋滅洰鏍囨槸鐢熺墿锛屽垯璇ョ敓鐗╁繀椤绘垚鍔熼€氳繃涓€娆?span lang=EN-US>DC20</span>鐨勫姏閲忚眮鍏嶏紝鍚﹀垯琚帹绂昏窛澶ф捣铔囪嚦澶?span
-lang=EN-US>30</span>灏哄苟搴斿嚮鍊掑湴<span lang=EN-US>.</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>瀵掗湝鍚愭伅<span lang=EN-US>Rime Breath</span>锛堝厖鑳?span
-lang=EN-US>5~6</span>锛夈€傝繙鍙ゅぇ娴疯泧鍛煎嚭鍐伴湝骞?span class=GramE>澶嶇洊</span>涓€澶?span lang=EN-US>60</span>灏虹殑閿ョ姸鍖哄煙锛岃鍖哄煙鍐呯殑姣忎釜鐢熺墿閮藉繀椤昏繘琛屼竴娆?span
-lang=EN-US>DC 18</span>鐨勪綋璐ㄨ眮鍏嶏紝璞佸厤澶辫触鑰呭皢鍙楀埌<span lang=EN-US>49</span>锛?span
-lang=EN-US>9d10</span>锛夌殑鍐峰喕浼ゅ锛岃眮鍏嶆垚鍔熷垯浼ゅ鍑忓崐銆?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>浼犲鍔ㄤ綔锛?/span></span><span lang=EN-US style='font-size:
-10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>杩滃彜澶ф捣铔囨嫢鏈?span lang=EN-US>3</span>浼犲鍔ㄤ綔锛岀敤鏉ラ€夋嫨鎵ц涓嬪垪鍔ㄤ綔椤广€傚畠姣忔鍙彲閫夋嫨鎵ц涓€涓紶濂囧姩浣滈」锛屼笖蹇呴』鍦ㄥ彟涓€鐢熺墿鍥炲悎缁撴潫鏃舵墽琛屻€傝繙鍙ゅぇ娴疯泧鍦ㄥ叾鍥炲悎寮€濮嬫椂鎭㈠鎵€鏈夋秷鑰楃殑浼犲鍔ㄤ綔鏁般€?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>灏惧嚮<span lang=EN-US>Tail </span>銆傝繙鍙ゅぇ娴疯泧鍙戝姩涓€娆″熬鍑绘敾鍑汇€?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎾曞挰<span lang=EN-US> Bite</span>锛堟秷鑰?span lang=EN-US>2</span>鍔ㄤ綔锛夈€傝繙鍙ゅぇ娴疯泧鍙戝姩涓€娆℃挄鍜敾鍑汇€?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br style='mso-special-character:line-break'>
-<br style='mso-special-character:line-break'>
-</span></p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=bbcsize><span
-style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>闈掑勾娴疯泧<span
-lang=EN-US> YOUNG SEA SERPENT</span></span></span><span lang=EN-US
-style='font-size:14.0pt'><br>
-</span><span class=GramE><span class=bbcsize><span style='font-size:14.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>宸ㄥ瀷榫?/span></span></span><span
-class=bbcsize><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>绫伙紝閫氬父涓轰腑绔?/span></span><span lang=EN-US><br>
-<br>
-</span><span class=bbcsize><span lang=EN-US style='font-size:10.0pt;font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>AC 16(</span></span><span class=bbcsize><span
-style='font-size:10.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>澶╃敓鎶ょ敳<span
-lang=EN-US>)</span></span></span><span lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鐢熷懡鍊?span lang=EN-US> 123</span>锛?span lang=EN-US>13d12+39</span>锛?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>閫熷害<span lang=EN-US> 10</span>灏猴紝娓告吵閫熷害<span lang=EN-US>40</span>灏?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍔涢噺<span lang=EN-US>19</span>锛?span lang=EN-US>+4</span>锛?
-鏁忔嵎<span lang=EN-US>12</span>锛?span lang=EN-US>+1</span>锛?浣撹川<span lang=EN-US>17</span>锛?span
-lang=EN-US>+3</span>锛?鏅哄姏<span lang=EN-US>11</span>锛?span lang=EN-US>+0</span>锛?鎰熺煡<span
-lang=EN-US>13</span>锛?span lang=EN-US>+1</span>锛?榄呭姏<span lang=EN-US>10</span>锛?span
-lang=EN-US>+0</span>锛?/span></span><span lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>璞佸厤锛氬姏閲?span lang=EN-US>+7</span>锛屼綋璐?span lang=EN-US>+6</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎶€鑳斤細瀵熻<span lang=EN-US>+4</span>锛岄殣钄?span lang=EN-US>+4</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>浼ゅ鍏嶇柅锛氬瘨鍐?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎰熷畼锛氶粦鏆楄瑙?span lang=EN-US>120</span>灏猴紝琚姩瀵熻<span
-lang=EN-US>14</span>灏?/span></span><span lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>璇█锛氶€氱敤璇€侀緳璇?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎸戞垬绛夌骇锛?span lang=EN-US>8 (3900 XP)&nbsp; </span>鐔熺粌鍔犲€?span
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>力量<span lang=EN-US>19</span>（<span lang=EN-US>+4</span>）
+      敏捷<span lang=EN-US>12</span>（<span lang=EN-US>+1</span>） 体质<span lang=EN-US>17</span>（<span
+lang=EN-US>+3</span>） 智力<span lang=EN-US>11</span>（<span lang=EN-US>+0</span>） 感知<span
+lang=EN-US>13</span>（<span lang=EN-US>+1</span>） 魅力<span lang=EN-US>10</span>（<span
+lang=EN-US>+0</span>）</span></span><span lang=EN-US style='font-size:10.0pt'><br>
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>豁免：力量<span lang=EN-US>+7</span>，体质<span lang=EN-US>+6</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>技能：察觉<span lang=EN-US>+4</span>，隐蔽<span lang=EN-US>+4</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>伤害免疫：寒冷</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>感官：黑暗视觉<span lang=EN-US>120</span>尺，被动察觉<span
+lang=EN-US>14</span>尺</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>语言：通用语、龙语</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>挑战等级：<span lang=EN-US>8 (3900 XP)&nbsp; </span>熟练加值<span
 lang=EN-US>+3</span></span></span><span lang=EN-US style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>涓ゆ爾鐢熺墿锛氬ぇ娴疯泧鍙互鍦ㄧ┖姘斿拰姘翠腑鍛煎惛</span></span><span lang=EN-US
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>两栖生物：大海蛇可以在空气和水中呼吸</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>攻城怪物：大海蛇对坚实物体和建筑物造成双倍伤害</span></span><span lang=EN-US
 style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鏀诲煄鎬墿锛氬ぇ娴疯泧瀵瑰潥瀹炵墿浣撳拰寤虹瓚鐗╅€犳垚鍙屽€嶄激瀹?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-<br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鍔ㄤ綔</span></span><span lang=EN-US style='font-size:
-10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>澶氶噸鏀诲嚮锛氬ぇ娴疯泧杩涜涓€娆℃挄鍜敾鍑诲拰涓€娆＄粸缂犳垨灏惧嚮</span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>鎾曞挰<span lang=EN-US> Bite:</span>杩戞垬姝﹀櫒鏀诲嚮锛氬懡涓?span
-lang=EN-US>+7</span>锛岃Е鍙?span lang=EN-US>10</span>灏猴紝鍗曚竴鐩爣銆備激瀹筹細<span lang=EN-US>15</span>锛?span
-lang=EN-US>2d10+4</span>锛夌殑绌垮埡浼ゅ锛屽鍔?span lang=EN-US>5</span>锛?span lang=EN-US>1d10</span>锛夌殑瀵掑喎浼ゅ銆?/span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>缁炵紶<span lang=EN-US> Constrict</span>锛氳繎鎴樻鍣ㄦ敾鍑伙細鍛戒腑<span
-lang=EN-US>+7</span>锛岃Е鍙?span lang=EN-US>20</span>灏猴紝鍗曚竴鐢熺墿銆備激瀹筹細<span lang=EN-US>22</span>锛?span
-lang=EN-US>4d8+4</span>锛夌殑閽濆嚮浼ゅ锛屼笖鐩爣琚搾鎶憋紙閫冭劚<span lang=EN-US>DC 15</span>锛夈€傜洿鍒?span
-class=GramE>鎿掓姳瑙ｉ櫎鍓嶇洰鏍?/span>琚潫缂氾紝涓旇娴疯泧涓嶈兘缁炵紶鍙︿竴鐩爣銆?/span></span><span lang=EN-US
-style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>灏惧嚮<span lang=EN-US>Tail</span>銆傝繎鎴樻鍣ㄦ敾鍑伙細鍛戒腑<span
-lang=EN-US>+7</span>锛岃Е鍙?span lang=EN-US>15</span>灏猴紝鍗曚竴鐩爣銆備激瀹筹細<span lang=EN-US>9</span>锛?span
-lang=EN-US>1d10+4</span>锛夌殑閽濆嚮浼ゅ銆傚鏋滅洰鏍囨槸鐢熺墿锛屽垯璇ョ敓鐗╁繀椤绘垚鍔熼€氳繃涓€娆?span lang=EN-US>DC15</span>鐨勫姏閲忚眮鍏嶏紝鍚﹀垯琚帹绂昏窛澶ф捣铔囪嚦澶?span
-lang=EN-US>20</span>灏哄苟搴斿嚮鍊掑湴<span lang=EN-US>.</span></span></span><span
-lang=EN-US style='font-size:10.0pt'><br>
-</span><span class=bbcsize><span style='font-size:10.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>瀵掗湝鍚愭伅<span lang=EN-US>Rime Breath</span>锛堝厖鑳?span
-lang=EN-US>5~6</span>锛夈€傚ぇ娴疯泧鍛煎嚭鍐伴湝骞?span class=GramE>澶嶇洊</span>涓€澶?span lang=EN-US>30</span>灏虹殑閿ョ姸鍖哄煙锛岃鍖哄煙鍐呯殑姣忎釜鐢熺墿閮藉繀椤昏繘琛屼竴娆?span
-lang=EN-US>DC 14</span>鐨勪綋璐ㄨ眮鍏嶏紝璞佸厤澶辫触鑰呭皢鍙楀埌<span lang=EN-US>38</span>锛?span
-lang=EN-US>7d10</span>锛夌殑鍐峰喕浼ゅ锛岃眮鍏嶆垚鍔熷垯浼ゅ鍑忓崐銆?/span></span><span lang=EN-US
-style='font-size:10.0pt'></span></p></div></body>
+      <br>
+      </span><span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>动作</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>多重攻击：大海蛇进行一次撕咬攻击和一次绞缠或尾击</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>撕咬<span lang=EN-US> Bite:</span>近战武器攻击：命中<span
+lang=EN-US>+7</span>，触及<span lang=EN-US>10</span>尺，单一目标。伤害：<span lang=EN-US>15</span>（<span
+lang=EN-US>2d10+4</span>）的穿刺伤害，外加<span lang=EN-US>5</span>（<span lang=EN-US>1d10</span>）的寒冷伤害。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>绞缠<span lang=EN-US> Constrict</span>：近战武器攻击：命中<span
+lang=EN-US>+7</span>，触及<span lang=EN-US>20</span>尺，单一生物。伤害：<span lang=EN-US>22</span>（<span
+lang=EN-US>4d8+4</span>）的钝击伤害，且目标被擒抱（逃脱<span lang=EN-US>DC 15</span>）。直到<span
+class=GramE>擒抱解除前目标</span>被束缚，且该海蛇不能绞缠另一目标。</span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>尾击<span lang=EN-US>Tail</span>。近战武器攻击：命中<span
+lang=EN-US>+7</span>，触及<span lang=EN-US>15</span>尺，单一目标。伤害：<span lang=EN-US>9</span>（<span
+lang=EN-US>1d10+4</span>）的钝击伤害。如果目标是生物，则该生物必须成功通过一次<span lang=EN-US>DC15</span>的力量豁免，否则被推离距大海蛇至多<span
+lang=EN-US>20</span>尺并应击倒地<span lang=EN-US>.</span></span></span><br>
+      <span class=bbcsize><span style='font-size:10.0pt;font-family:宋体;
+'>寒霜吐息<span lang=EN-US>Rime Breath</span>（充能<span
+lang=EN-US>5~6</span>）。大海蛇呼出冰霜并<span class=GramE>复盖</span>一处<span lang=EN-US>30</span>尺的锥状区域，该区域内的每个生物都必须进行一次<span
+lang=EN-US>DC 14</span>的体质豁免，豁免失败者将受到<span lang=EN-US>38</span>（<span
+lang=EN-US>7d10</span>）的冷冻伤害，豁免成功则伤害减半。</span></span><span lang=EN-US
+style='font-size:10.0pt'></span></p></div></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
 
+</body>
 </html>

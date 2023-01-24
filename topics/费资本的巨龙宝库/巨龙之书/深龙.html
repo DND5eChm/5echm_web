@@ -1,83 +1,192 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <title>深龙</title>
 
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<meta name=ProgId content=Word.Document>
-
-
 <style>
 <!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
 -->
 </style>
 
+
+
+<style>
+html,div { margin: 0; padding: 0;}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
@@ -100,870 +209,440 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div class=WordSection1><div id="msg_1141298"><p class=MsoNormal><span class=bbcsize><b><span style='font-size:18.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:#5E5A80'>娣遍緳<span lang=EN-US>Deep
-Dragon</span></span></b></span></p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-<p class=MsoNormal><span class=bbcsize><i><span lang=EN-US style='font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鈥?/span></i></span><span class=bbcsize><i><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鏇炬湁娣遍緳璇磋繃涓€鍙ヨ瘽锛岀炕璇戣繃鏉ュ氨鏄?span
-lang=EN-US>鈥?/span>褰诲簳灏辨槸璐交鍒板簳<span lang=EN-US>鈥?/span>锛?/span></i></span><i><span
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="水晶龙.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../template2/btn_prev_n.gif" border="0"></a><A href="龙龟.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+费资本的巨龙宝库 &gt; <A href="../巨龙之书.html">巨龙之书</A> &gt; </div>
+	<div id="winchm_template_title">深龙</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><div id="msg_1141298"><p><span class=bbcsize><b><span style='font-size:18.0pt;
+font-family:宋体;color:#5E5A80'>深龙<span lang=EN-US>Deep
+      Dragon</span></span></b></span></p>
+    <p><span class=bbcsize><i><span lang=EN-US style='font-family:
+宋体;'>“</span></i></span><span class=bbcsize><i><span
+style='font-family:宋体;'>曾有深龙说过一句话，翻译过来就是<span
+lang=EN-US>‘</span>彻底就是贯彻到底<span lang=EN-US>’</span>，</span></i></span><i><br>
+      <span class=bbcsize><span style='font-family:宋体;'>但更确切的意思是<span lang=EN-US>‘</span>把每块石头都翻过来<span lang=EN-US>’</span>！每块石头？！听起来有够累的。<span
+lang=EN-US>”</span></span></span></i></p>
+    <p align=right style='text-align:right'><span class=bbcsize><i><span
+lang=EN-US style='font-family:宋体;'>——</span></i></span><span
+class=bbcsize><i><span style='font-family:宋体;'>费资本</span></i></span></p>
+    <p>使用本节的表格、地图以及其他信息来创作一次与深龙的独特遭遇。</p>
+    <div align=center style='text-align:center'><span lang=EN-US>
+      <hr size=2 width="100%" align=center>
+      </span></div>
+    <p><span class=bbcsize><b><span style='font-size:16.0pt;
+font-family:宋体;'>创作深龙<span lang=EN-US>Creating an Deep
+      Dragon</span></span></b></span><br>
+使用深龙个性特点与深龙理念表格来为您描绘深龙角色形象时提供灵感，并用深龙施法表格来帮助您选择深龙施法者的法术。       <br>
+      <strong><span style='font-family:宋体;'>深龙个性特点</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>特点</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>我不会冒险被弱小生物伤害<span lang=EN-US>——</span>尤其是我可以让他们自相残杀，借刀杀人的时候。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>对于任何其他非龙类来说，想穿过我扭曲的思想迷宫可是很难的。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>我也许不会同意其他龙的观点，但同为高级生物，我们不应放低自己去与之冲突。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>我对地表没兴趣，那里更适合派狗腿子去。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>当其他生物又如同蚊子一样争吵时，我更愿意和那些能欣赏生活中的美好事物，还给我带来蛤蜊或底栖魔鱼肉的生物说话。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>我愿拼尽全力去宰掉夺心魔，这些恶心的生物必须被消灭。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>我梦想看到海洋最深的地方。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>我发现我很喜欢与人交往<span lang=EN-US>——</span>前提是他们不知道我本性是何样。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>深龙理念</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>理念</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>理解<span lang=EN-US>Understanding</span>。</span></strong>真正的力量来自于看穿其他生物的动机。（任意）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>血亲<span lang=EN-US>Kindred</span>。</span></strong>所有的龙都是亲族，我们都应该优先考虑这层关系。（任意）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>神秘<span lang=EN-US>Mystery</span>。</span></strong>我欣赏那些难倒我的问题，所以我努力成为其他生物眼中的谜。（任意）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>适应<span lang=EN-US>Adaptability</span>。</span></strong>从换新形态、认新盟友到试新策略，灵活能让我永葆年轻。（混乱）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>优越<span lang=EN-US>Superiority</span>。</span></strong>弱者不可信，我不断敲打我的下仆，显现我有何等威力。（邪恶）</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>耐心<span lang=EN-US>Patience</span>。</span></strong>所有的生物都可能给我上一课，我愿意等待并找出其本质而非匆忙行动。（善良）</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:14.0pt;font-family:宋体;'>深龙施法<span lang=EN-US>Deep Dragon Spellcasting</span></span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>年龄</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>法术<span lang=EN-US>DC</span></span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>已知法术</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>青年</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>14</span></strong></p></td>
+        <td><p><em><span style='font-family:宋体;  color:purple'>命令术<span lang=EN-US>Command</span></span></em>，<em><span
+  style='font-family:宋体;color:purple'>不谐低语<span
+  lang=EN-US>Dissonant Whispers</span></span></em>，<em><span style='font-family:
+  宋体;color:purple'>妖火<span lang=EN-US>Faerie Fire</span></span></em></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>成年</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>16</span></strong></p></td>
+        <td><p><span class=bbccolor><i><span style='font-family:宋体;
+  color:purple'>命令术<span lang=EN-US>Command</span></span></i></span>，<em><span
+  style='font-family:宋体;color:purple'>不谐低语<span
+  lang=EN-US>Dissonant Whispers</span></span></em>，<em><span style='font-family:
+  宋体;color:purple'>妖火<span lang=EN-US>Faerie Fire</span></span></em>，<em><span
+  style='font-family:宋体;color:purple'>水下呼吸<span
+  lang=EN-US>Water Breathing</span></span></em></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span style='font-family:宋体;'>远古</span></strong></p></td>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>19</span></strong></p></td>
+        <td><p><span class=bbccolor><i><span style='font-family:宋体;
+  color:purple'>命令术<span lang=EN-US>Command</span></span></i></span>，<em><span
+  style='font-family:宋体;color:purple'>不谐低语<span
+  lang=EN-US>Dissonant Whispers</span></span></em>，<em><span style='font-family:
+  宋体;color:purple'>妖火<span lang=EN-US>Faerie Fire</span></span></em>，<em><span
+  style='font-family:宋体;color:purple'>穿墙术<span
+  lang=EN-US>Passwall</span></span></em>，<em><span style='font-family:宋体;
+  color:purple'>水下呼吸<span lang=EN-US>Water Breathing</span></span></em></p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:16.0pt;font-family:宋体;'>深龙冒险<span lang=EN-US>Deep Dragon Adventures</span></span></strong><br>
+深龙冒险引子表格为关于深龙的故事和冒险提供了些许建议。       <br>
+      <strong><span style='font-family:宋体;'>深龙冒险引子</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>冒险引子</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>夜晚的城市街道上，有陌生的卓尔冒险者在徘徊，他们在无意中谈论自己服务的巨龙时被人所听见。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>斯涅布利侏儒雇佣角色们给其深龙邻居献上贡品。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>伪装后的深龙给了一个接触稀有神器的机会<span lang=EN-US>——</span>只要愿意去做海鲜航运生意。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>天才游侠惨遭深龙绑架，原因竟是想找猎友。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>友好的青年赤铜龙想找位可信赖的随从托管自己的财产，于是它尝试去说动一条深龙。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>深龙想调查幽暗地域下某个湖中海怪的传言是否属实，于是它雇了冒险者来调查。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>在深龙的精心操弄下，两座幽暗地域的聚落即将开战。有个绝望的统治者向任何能够揭露开战真相的人许以重酬。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>深龙想找人和它演一场戏，好让自己从保护一座城市的诺言中解脱。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-size:14.0pt;font-family:宋体;'>邻居生物<span lang=EN-US>Connected Creatures</span></span></strong><br>
+深龙喜欢其他龙的陪伴。虽然他们认为其他大多数物种都比龙族卑贱，只有作为仆从或工具的价值，但那些能给他们留下深刻印象的稀有个体仍会被看作伙伴并赢得尊重       <span
+lang=EN-US>——</span>虽然也只是初级伙伴。<span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>深龙雏龙邻居</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>一个<span class=bbccolor><span style='font-family:宋体;
+  color:red'>食人魔<span lang=EN-US>Orge</span></span></span>将一条<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>深龙雏龙<span lang=EN-US>Deep Wyrmling</span></span></span>认作了宠物，却不知道深龙实际上是非常聪明的生物，而且会长的非常大。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>充满好奇心的<span class=bbccolor><span style='font-family:宋体;
+  color:red'>深龙雏龙<span lang=EN-US>Deep Wyrmling</span></span></span>来到了地表世界。但是它在这里撞失了路，被一伙坏蛋冒险者给抓住了。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>深龙雏龙<span lang=EN-US>Deep Wyrmling</span></span></span>以心血来潮统治着一群<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>狗头人<span lang=EN-US>Kobold</span></span></span>，命令它们去地表给雏龙带回各种馋嘴佳肴。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>在某处罗丝崇拜者的飞地正要举行的拍卖会上，有一颗即将孵化的深龙蛋。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>热衷实验的<span class=bbccolor><span style='font-family:宋体;
+  color:red'>深龙雏龙<span lang=EN-US>Deep Wyrmling</span></span></span>搞出了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>灰泥怪<span lang=EN-US>Gray Ooze</span></span></span>的<span
+  lang=EN-US>“</span>花园<span lang=EN-US>”</span>。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>一条<span class=bbccolor><span style='font-family:宋体;
+  color:red'>深龙雏龙<span lang=EN-US>Deep Wyrmling</span></span></span>孤儿被一条<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>巨蟒<span lang=EN-US>Giant Constrictor Snake</span></span></span>照顾着，这条巨蟒被德鲁伊的启蒙术所启蒙。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>青年深龙邻居</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d6</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>找了一群寇涛鱼人，决定把他们变成仆从而不是吃掉他们。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>一直伪装成某位类人艺术家帅哥，以维持卓尔和灰矮人团体的崇拜。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>一条十分傲慢的<span class=bbccolor><span style='font-family:宋体;
+  color:red'>骸骨娜迦<span lang=EN-US>Bone Naga</span></span></span>担任了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>的管家，正如它曾为深龙父母所服务的那样。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>组织了一个大地精探索者社群，让他们在幽暗地域探寻新的地点好让深龙观光。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>有个<span class=bbccolor><span style='font-family:宋体;
+  color:red'>变形怪<span lang=EN-US>Doppelganger</span></span></span>伪装成了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>的类人形态，并实施了连环谋杀，希望让幽暗地域的居民对抗这条深龙。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>尽管<span class=bbccolor><span style='font-family:宋体;
+  color:red'>夺心魔<span lang=EN-US>Mind Flayer</span></span></span>使尽浑身解数，<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年深龙<span lang=EN-US>Young Deep Dragon</span></span></span>也拒绝离开一处洞穴，只因龙最好的朋友<span
+  lang=EN-US>——</span>赢得龙尊重和爱戴的冒险者<span lang=EN-US>——</span>正在此作为<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>幽魂<span lang=EN-US>Ghost</span></span></span>徘徊。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>成年深龙邻居</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d8</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>已经和一位卓尔主母下了几百年的大棋。每一步都代表着棋手在争夺幽暗地域统治权中的计划。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>有位<span class=bbccolor><span style='font-family:宋体;
+  color:red'>火巨人<span lang=EN-US>Fire Giant</span></span></span>因为无意间侮辱了<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>而被巨龙的仆人们所折磨，但却没有和龙说上过话。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>一群<span class=bbccolor><span style='font-family:宋体;
+  color:red'>独眼巨人<span lang=EN-US>Cyclops</span></span></span>希望<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>能保护他们免于<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>夺心魔<span lang=EN-US>Mind Flayer</span></span></span>的摧残，尽管一再恳求，深龙依然对此毫无兴趣。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>一巢<span class=bbccolor><span style='font-family:宋体;
+  color:red'>吸血鬼<span lang=EN-US>Vampire</span></span></span>对深龙之血有了兴趣。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>渴望附近<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>底栖魔鱼<span lang=EN-US>Aboleth</span></span></span>巢穴里储存的知识。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>一条<span class=bbccolor><span style='font-family:宋体;
+  color:red'>精魂娜迦<span lang=EN-US>Spirit Naga</span></span></span>近乎绝望地想要求到<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>宝库中一枚通往神秘地底的钥匙。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>将一条<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年黄铜龙<span lang=EN-US>Young Brass Dragon</span></span></span>养大成龙，但最终对这条龙的恶作剧失去了耐心。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>成年深龙<span lang=EN-US>Adult Deep Dragon</span></span></span>以养了一群<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>地狱犬<span lang=EN-US>Hell Hound</span></span></span>为豪，但却拴不住它们。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <strong><span style='font-family:宋体;'>远古深龙邻居</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d4</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>邻居生物</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>远古深龙<span lang=EN-US>Ancient Deep Dragon</span></span></span>收了一条<span
+  class=bbccolor><span style='font-family:宋体;  color:red'>青年幽影红龙<span lang=EN-US>Young Red Shadow Dragon</span></span></span>作为门徒。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>一对远古龙恋人<span lang=EN-US>——</span>深龙和白龙<span lang=EN-US>——</span>每百年才相见一面，而后会选定目标开始狩猎。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>两条<span class=bbccolor><span style='font-family:宋体;
+  color:red'>远古深龙<span lang=EN-US>Ancient Deep Dragon</span></span></span>正在争夺领土。但都不愿意当面对抗，于是利用当地的居民和有能访客作为战争的兵卒。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p><span class=bbccolor><span style='font-family:宋体;
+  color:red'>远古深龙<span lang=EN-US>Ancient Deep Dragon</span></span></span>让一座城市的居民在盐湖中心建立起一座大都会，好让它来统治。</p></td>
+      </tr>
+    </table>
+    <p><br>
+      <span class=bbcsize><b><span style='font-size:16.0pt;font-family:宋体;
+'>深龙巢穴<span lang=EN-US>Deep Dragon Lairs</span></span></b></span><br>
+深龙会在幽暗地域的深处建造巢穴，通常会选在盟友或敌人老巢附近。它们的巢穴是独立结构。有些是用活体真菌编织而成。而有些是在远古城市的废墟上，或是地下湖泊附近的洞穴里。       <br>
+深龙的巢穴是龙的探险基地，也为它们的秘藏提供了安全的宝库。当这些富有好奇心的生物离开家园，探索新的环境，寻找新的视点时，就会把巢穴交给其仆从、盟友、魔法、陷阱或以上排列组合来保护。       <span
 lang=EN-US><br>
-</span><span class=bbcsize><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>浣嗘洿纭垏鐨勬剰鎬濇槸<span lang=EN-US>鈥?/span>鎶婃瘡鍧楃煶澶撮兘缈昏繃鏉?span lang=EN-US>鈥?/span>锛佹瘡鍧楃煶澶达紵锛佸惉璧锋潵鏈夊绱殑銆?span
-lang=EN-US>鈥?/span></span></span></i></p>
-
-<p class=MsoNormal align=right style='text-align:right'><span class=bbcsize><i><span
-lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鈥斺€?/span></i></span><span
-class=bbcsize><i><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>璐瑰吂鏈?/span></i></span></p>
-
-<p class=MsoNormal>浣跨敤鏈妭鐨勮〃鏍笺€佸湴鍥句互鍙婂叾浠栦俊鎭潵鍒涗綔涓€娆′笌娣遍緳鐨勭嫭鐗归伃閬囥€?/p>
-
-<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US>
-
-<hr size=2 width="100%" align=center>
-
-</span></div>
-
-<p class=MsoNormal><span class=bbcsize><b><span style='font-size:16.0pt;
-font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍒涗綔娣遍緳<span lang=EN-US>Creating an Deep
-Dragon</span></span></b></span><span lang=EN-US><br>
-</span>浣跨敤娣遍緳涓€х壒鐐逛笌娣遍緳鐞嗗康琛ㄦ牸鏉ヤ负鎮ㄦ弿缁樻繁榫欒鑹插舰璞℃椂鎻愪緵鐏垫劅锛屽苟鐢ㄦ繁榫欐柦娉曡〃鏍兼潵甯姪鎮ㄩ€夋嫨娣遍緳鏂芥硶鑰呯殑娉曟湳銆?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣遍緳涓€х壒鐐?/span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐗圭偣</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戜笉浼氬啋闄╄寮卞皬鐢熺墿浼ゅ<span lang=EN-US>鈥斺€?/span>灏ゅ叾鏄垜鍙互璁╀粬浠嚜鐩告畫鏉€锛屽€熷垁鏉€浜虹殑鏃跺€欍€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>瀵逛簬浠讳綍鍏朵粬闈為緳绫绘潵璇达紝鎯崇┛杩囨垜鎵洸鐨勬€濇兂杩峰鍙槸寰堥毦鐨勩€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戜篃璁镐笉浼氬悓鎰忓叾浠栭緳鐨勮鐐癸紝浣嗗悓涓洪珮绾х敓鐗╋紝鎴戜滑涓嶅簲鏀句綆鑷繁鍘讳笌涔嬪啿绐併€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戝鍦拌〃娌″叴瓒ｏ紝閭ｉ噷鏇撮€傚悎娲剧嫍鑵垮瓙鍘汇€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>褰撳叾浠栫敓鐗╁張濡傚悓铓婂瓙涓€鏍蜂簤鍚垫椂锛屾垜鏇存効鎰忓拰閭ｄ簺鑳芥璧忕敓娲讳腑鐨勭編濂戒簨鐗╋紝杩樼粰鎴戝甫鏉ヨ洡铚婃垨搴曟爾榄旈奔鑲夌殑鐢熺墿璇磋瘽銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戞効鎷煎敖鍏ㄥ姏鍘诲鎺夊ず蹇冮瓟锛岃繖浜涙伓蹇冪殑鐢熺墿蹇呴』琚秷鐏€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戞ⅵ鎯崇湅鍒版捣娲嬫渶娣辩殑鍦版柟銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戝彂鐜版垜寰堝枩娆笌浜轰氦寰€<span lang=EN-US>鈥斺€?/span>鍓嶆彁鏄粬浠笉鐭ラ亾鎴戞湰鎬ф槸浣曟牱銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣遍緳鐞嗗康</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐞嗗康</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐞嗚В<span lang=EN-US>Understanding</span>銆?/span></strong>鐪熸鐨勫姏閲忔潵鑷簬鐪嬬┛鍏朵粬鐢熺墿鐨勫姩鏈恒€傦紙浠绘剰锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>琛€浜?span lang=EN-US>Kindred</span>銆?/span></strong>鎵€鏈夌殑榫欓兘鏄翰鏃忥紝鎴戜滑閮藉簲璇ヤ紭鍏堣€冭檻杩欏眰鍏崇郴銆傦紙浠绘剰锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>绁炵<span lang=EN-US>Mystery</span>銆?/span></strong>鎴戞璧忛偅浜涢毦鍊掓垜鐨勯棶棰橈紝鎵€浠ユ垜鍔姏鎴愪负鍏朵粬鐢熺墿鐪间腑鐨勮皽銆傦紙浠绘剰锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閫傚簲<span lang=EN-US>Adaptability</span>銆?/span></strong>浠庢崲鏂板舰鎬併€佽鏂扮洘鍙嬪埌璇曟柊绛栫暐锛岀伒娲昏兘璁╂垜姘歌憜骞磋交銆傦紙娣蜂贡锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>浼樿秺<span lang=EN-US>Superiority</span>銆?/span></strong>寮辫€呬笉鍙俊锛屾垜涓嶆柇鏁叉墦鎴戠殑涓嬩粏锛屾樉鐜版垜鏈変綍绛夊▉鍔涖€傦紙閭伓锛?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鑰愬績<span lang=EN-US>Patience</span>銆?/span></strong>鎵€鏈夌殑鐢熺墿閮藉彲鑳界粰鎴戜笂涓€璇撅紝鎴戞効鎰忕瓑寰呭苟鎵惧嚭鍏舵湰璐ㄨ€岄潪鍖嗗繖琛屽姩銆傦紙鍠勮壇锛?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>娣遍緳鏂芥硶<span lang=EN-US>Deep Dragon Spellcasting</span></span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>骞撮緞</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>娉曟湳<span lang=EN-US>DC</span></span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>宸茬煡娉曟湳</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>闈掑勾</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>14</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><em><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:purple'>鍛戒护鏈?span lang=EN-US>Command</span></span></em>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>涓嶈皭浣庤<span
-  lang=EN-US>Dissonant Whispers</span></span></em>锛?em><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>濡栫伀<span lang=EN-US>Faerie Fire</span></span></em></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鎴愬勾</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>16</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><i><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>鍛戒护鏈?span lang=EN-US>Command</span></span></i></span>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>涓嶈皭浣庤<span
-  lang=EN-US>Dissonant Whispers</span></span></em>锛?em><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>濡栫伀<span lang=EN-US>Faerie Fire</span></span></em>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>姘翠笅鍛煎惛<span
-  lang=EN-US>Water Breathing</span></span></em></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>杩滃彜</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>19</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><i><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>鍛戒护鏈?span lang=EN-US>Command</span></span></i></span>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>涓嶈皭浣庤<span
-  lang=EN-US>Dissonant Whispers</span></span></em>锛?em><span style='font-family:
-  瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>濡栫伀<span lang=EN-US>Faerie Fire</span></span></em>锛?em><span
-  style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;color:purple'>绌垮鏈?span
-  lang=EN-US>Passwall</span></span></em>锛?em><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:purple'>姘翠笅鍛煎惛<span lang=EN-US>Water Breathing</span></span></em></p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US style='color:white;mso-color-alt:windowtext'><br>
-</span><strong><span style='font-size:16.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>娣遍緳鍐掗櫓<span lang=EN-US>Deep Dragon Adventures</span></span></strong><span
+      <br>
+      </span><strong><span style='font-size:14.0pt;font-family:宋体;'>深龙巢穴特征<span lang=EN-US>Deep Dragon Lairs Features</span></span></strong><br>
+此深龙巢穴如地图       <span lang=EN-US>5.12</span>的蓝宝石龙巢穴类似，但它未必是由石头所建，而是把在地下河附近生长真菌林挖空而成。无论如何，深龙会在洞穴真菌壁之间的狭窄通道上布满魔法或寻常陷阱。<br>
+标准巢穴具有以下特征：       <span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>连接通道。</span></strong>因为深龙无法像蓝宝石龙一般塑石，就会增加一些连接通道和密门来进入一些房间，可能还会连接附近的地下河作为洞穴的入口。<br>
+      <strong><span style='font-family:宋体;'>客厅。</span></strong>龙将巢穴中的一处大洞室作为接待盟友和仆役的客厅。和洞穴其他部分议员，这里被真菌的磷光所照亮，散发出柔和的绿、蓝和紫光。<br>
+      <strong><span style='font-family:宋体;'>宝库。</span></strong>巨龙的秘藏被藏在一处偏远的房间，上面还有幻术系法术掩盖，用陷阱和魔法警报所保护。若其被触发，这些警报首先会招来龙的随从和盟友，然后才是龙。<br>
+      <strong><span style='font-family:宋体;'>地下河。</span></strong>在洞穴外有一条地下河流过，巨龙用石坝减缓了流速，使其形成一处小水池，用来沐浴和水产养殖。<br>
+      <strong><span style='font-family:宋体;'>客房。</span></strong>一个大房间和与其连接的小房间，如同地图下方所示，形成了一个套房，给来访客龙用作客房。尽管主龙会把价值昂贵或是寄情深重的财宝放在宝库，但还是会把一些来自罕见地方或有些故事的小宝藏放在这些雅致的客房里，让它们激起访客的好奇心，给自己就这些宝贝吹水创造机会。<span
 lang=EN-US><br>
-</span>娣遍緳鍐掗櫓寮曞瓙琛ㄦ牸涓哄叧浜庢繁榫欑殑鏁呬簨鍜屽啋闄╂彁渚涗簡浜涜寤鸿銆?span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣遍緳鍐掗櫓寮曞瓙</span></strong></p>
+      <br>
+      </span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:宋体;
+'>深龙宝藏<span lang=EN-US>Deep Dragon Treasures</span></span></b></span><br>
+深龙喜欢来自遥远他乡的货物，尤其是那些独特的宝贝。它们储藏了许多狩猎或探险的纪念品。它们嗜好颜色偏深、偏暗的宝石，但也喜欢色彩斑斓的种类，它们会把宝石放在镜框和博古架上，博古架会用珍稀的木材制作，同时也会镶嵌上更多的宝石。       <br>
+深龙的宝库基本不会只有宝石和宝藏，这些生物可喜欢炫耀它们有什么了。它们可以花上好几天时间把访客从这个战利品带到那个战利品，期间还滔滔不绝地讲述这些玩意儿的故事       <span
+lang=EN-US>——</span>如果深龙互相拜访，这种旅程可能会持续好几天。<span lang=EN-US><br>
+      <br>
+      </span><strong><span style='font-family:宋体;'>深龙艺术品</span></strong></p>
+    <table border=0 cellpadding=0>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>d12</span></strong></p></td>
+        <td><p><strong><span style='font-family:宋体;'>物件</span></strong></p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>1</span></strong></p></td>
+        <td><p>一尊不明的有翼羚羊雕像，以巨大的蛋白石雕刻而成。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>2</span></strong></p></td>
+        <td><p>一只防腐良好的紫虫幼虫，被摆在镶嵌着紫水晶的乌木博古架上。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>3</span></strong></p></td>
+        <td><p>一个精巧的斯芬克斯机器人，当被提问时，它会用与某处失落文明有关的问题来回答每一个问题。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>4</span></strong></p></td>
+        <td><p>一套镶有宝石的黄金利爪，可以根据佩戴着的心情改变颜色。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>5</span></strong></p></td>
+        <td><p>一种灭绝熊类的银色毛皮，触摸时会有雪花飘落。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>6</span></strong></p></td>
+        <td><p>一幅画，描绘了火山岛的独特生物群落，还有从水下进入内部的示意图。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>7</span></strong></p></td>
+        <td><p>一盏魔法吊灯，投射出世界上极难接近之处的风景，每当吊灯被重新点亮，风景也会随之改变。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>8</span></strong></p></td>
+        <td><p>一个魔法高脚杯，当持握它的生物说出一个国名时，高脚杯就会盈满该国最好的葡萄酒。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>9</span></strong></p></td>
+        <td><p>一套精美的微型龙雕，由贵金属、珠宝和石头制成。每一种都代表着相应的色彩、金属和宝石龙。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>10</span></strong></p></td>
+        <td><p>一颗镶珠远古龙头骨，深龙总是把它带在身边，孤独时还会与其对话。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>11</span></strong></p></td>
+        <td><p>一系列华丽的鼓，描绘了某处偏僻山区的民俗传说。</p></td>
+      </tr>
+      <tr>
+        <td><p><strong><span lang=EN-US style='font-family:宋体;'>12</span></strong></p></td>
+        <td><p>一尊精致的雕像，是深龙最喜欢的类人外形，由龙在几个世纪前认识的一位艺术家所制。</p></td></tr></table></div></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
 
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鍐掗櫓寮曞瓙</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>澶滄櫄鐨勫煄甯傝閬撲笂锛屾湁闄岀敓鐨勫崜灏斿啋闄╄€呭湪寰樺緤锛屼粬浠湪鏃犳剰涓皥璁鸿嚜宸辨湇鍔＄殑宸ㄩ緳鏃惰浜烘墍鍚銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏂秴甯冨埄渚忓剴闆囦剑瑙掕壊浠粰鍏舵繁榫欓偦灞呯尞涓婅础鍝併€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>浼鍚庣殑娣遍緳缁欎簡涓€涓帴瑙︾█鏈夌鍣ㄧ殑鏈轰細<span lang=EN-US>鈥斺€?/span>鍙鎰挎剰鍘诲仛娴烽矞鑸繍鐢熸剰銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>澶╂墠娓镐緺鎯ㄩ伃娣遍緳缁戞灦锛屽師鍥犵珶鏄兂鎵剧寧鍙嬨€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍙嬪ソ鐨勯潚骞磋丹閾滈緳鎯虫壘浣嶅彲淇¤禆鐨勯殢浠庢墭绠¤嚜宸辩殑璐骇锛屼簬鏄畠灏濊瘯鍘昏鍔ㄤ竴鏉℃繁榫欍€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>娣遍緳鎯宠皟鏌ュ菇鏆楀湴鍩熶笅鏌愪釜婀栦腑娴锋€殑浼犺█鏄惁灞炲疄锛屼簬鏄畠闆囦簡鍐掗櫓鑰呮潵璋冩煡銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍦ㄦ繁榫欑殑绮惧績鎿嶅紕涓嬶紝涓ゅ骇骞芥殫鍦板煙鐨勮仛钀藉嵆灏嗗紑鎴樸€傛湁涓粷鏈涚殑缁熸不鑰呭悜浠讳綍鑳藉鎻湶寮€鎴樼湡鐩哥殑浜鸿浠ラ噸閰€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>娣遍緳鎯虫壘浜哄拰瀹冩紨涓€鍦烘垙锛屽ソ璁╄嚜宸变粠淇濇姢涓€搴у煄甯傜殑璇鸿█涓В鑴便€?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>閭诲眳鐢熺墿<span lang=EN-US>Connected Creatures</span></span></strong><span
-lang=EN-US><br>
-</span>娣遍緳鍠滄鍏朵粬榫欑殑闄即銆傝櫧鐒朵粬浠涓哄叾浠栧ぇ澶氭暟鐗╃閮芥瘮榫欐棌鍗戣幢锛屽彧鏈変綔涓轰粏浠庢垨宸ュ叿鐨勪环鍊硷紝浣嗛偅浜涜兘缁欎粬浠暀涓嬫繁鍒诲嵃璞＄殑绋€鏈変釜浣撲粛浼氳鐪嬩綔浼欎即骞惰耽寰楀皧閲?span
-lang=EN-US>鈥斺€?/span>铏界劧涔熷彧鏄垵绾т紮浼淬€?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣遍緳闆忛緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>椋熶汉榄?span lang=EN-US>Orge</span></span></span>灏嗕竴鏉?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>娣遍緳闆忛緳<span lang=EN-US>Deep Wyrmling</span></span></span>璁や綔浜嗗疇鐗╋紝鍗翠笉鐭ラ亾娣遍緳瀹為檯涓婃槸闈炲父鑱槑鐨勭敓鐗╋紝鑰屼笖浼氶暱鐨勯潪甯稿ぇ銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍏呮弧濂藉蹇冪殑<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>娣遍緳闆忛緳<span lang=EN-US>Deep Wyrmling</span></span></span>鏉ュ埌浜嗗湴琛ㄤ笘鐣屻€備絾鏄畠鍦ㄨ繖閲屾挒澶变簡璺紝琚竴浼欏潖铔嬪啋闄╄€呯粰鎶撲綇浜嗐€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>娣遍緳闆忛緳<span lang=EN-US>Deep Wyrmling</span></span></span>浠ュ績琛€鏉ユ疆缁熸不鐫€涓€缇?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鐙楀ご浜?span lang=EN-US>Kobold</span></span></span>锛屽懡浠ゅ畠浠幓鍦拌〃缁欓洀榫欏甫鍥炲悇绉嶉鍢翠匠鑲淬€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍦ㄦ煇澶勭綏涓濆磭鎷滆€呯殑椋炲湴姝ｈ涓捐鐨勬媿鍗栦細涓婏紝鏈変竴棰楀嵆灏嗗鍖栫殑娣遍緳铔嬨€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鐑》瀹為獙鐨?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>娣遍緳闆忛緳<span lang=EN-US>Deep Wyrmling</span></span></span>鎼炲嚭浜?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鐏版偿鎬?span lang=EN-US>Gray Ooze</span></span></span>鐨?span
-  lang=EN-US>鈥?/span>鑺卞洯<span lang=EN-US>鈥?/span>銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏉?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>娣遍緳闆忛緳<span lang=EN-US>Deep Wyrmling</span></span></span>瀛ゅ効琚竴鏉?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>宸ㄨ煉<span lang=EN-US>Giant Constrictor Snake</span></span></span>鐓ч【鐫€锛岃繖鏉″法锜掕寰烽瞾浼婄殑鍚挋鏈墍鍚挋銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>闈掑勾娣遍緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>鎵句簡涓€缇ゅ瘒娑涢奔浜猴紝鍐冲畾鎶婁粬浠彉鎴愪粏浠庤€屼笉鏄悆鎺変粬浠€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>涓€鐩翠吉瑁呮垚鏌愪綅绫讳汉鑹烘湳瀹跺竻鍝ワ紝浠ョ淮鎸佸崜灏斿拰鐏扮煯浜哄洟浣撶殑宕囨嫓銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏉″崄鍒嗗偛鎱㈢殑<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>楠搁濞滆喀<span lang=EN-US>Bone Naga</span></span></span>鎷呬换浜?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>鐨勭瀹讹紝姝ｅ瀹冩浘涓烘繁榫欑埗姣嶆墍鏈嶅姟鐨勯偅鏍枫€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>缁勭粐浜嗕竴涓ぇ鍦扮簿鎺㈢储鑰呯ぞ缇わ紝璁╀粬浠湪骞芥殫鍦板煙鎺㈠鏂扮殑鍦扮偣濂借娣遍緳瑙傚厜銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈変釜<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鍙樺舰鎬?span lang=EN-US>Doppelganger</span></span></span>浼鎴愪簡<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>鐨勭被浜哄舰鎬侊紝骞跺疄鏂戒簡杩炵幆璋嬫潃锛屽笇鏈涜骞芥殫鍦板煙鐨勫眳姘戝鎶楄繖鏉℃繁榫欍€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>灏界<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>澶哄績榄?span lang=EN-US>Mind Flayer</span></span></span>浣垮敖娴戣韩瑙ｆ暟锛?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾娣遍緳<span lang=EN-US>Young Deep Dragon</span></span></span>涔熸嫆缁濈寮€涓€澶勬礊绌达紝鍙洜榫欐渶濂界殑鏈嬪弸<span
-  lang=EN-US>鈥斺€?/span>璧㈠緱榫欏皧閲嶅拰鐖辨埓鐨勫啋闄╄€?span lang=EN-US>鈥斺€?/span>姝ｅ湪姝や綔涓?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>骞介瓊<span lang=EN-US>Ghost</span></span></span>寰樺緤銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鎴愬勾娣遍緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>宸茬粡鍜屼竴浣嶅崜灏斾富姣嶄笅浜嗗嚑鐧惧勾鐨勫ぇ妫嬨€傛瘡涓€姝ラ兘浠ｈ〃鐫€妫嬫墜鍦ㄤ簤澶哄菇鏆楀湴鍩熺粺娌绘潈涓殑璁″垝銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鏈変綅<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鐏法浜?span lang=EN-US>Fire Giant</span></span></span>鍥犱负鏃犳剰闂翠井杈变簡<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>鑰岃宸ㄩ緳鐨勪粏浜轰滑鎵€鎶樼（锛屼絾鍗存病鏈夊拰榫欒涓婅繃璇濄€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€缇?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鐙溂宸ㄤ汉<span lang=EN-US>Cyclops</span></span></span>甯屾湜<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>鑳戒繚鎶や粬浠厤浜?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>澶哄績榄?span lang=EN-US>Mind Flayer</span></span></span>鐨勬懅娈嬶紝灏界涓€鍐嶆伋姹傦紝娣遍緳渚濈劧瀵规姣棤鍏磋叮銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€宸?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鍚歌楝?span lang=EN-US>Vampire</span></span></span>瀵规繁榫欎箣琛€鏈変簡鍏磋叮銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>娓存湜闄勮繎<span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>搴曟爾榄旈奔<span lang=EN-US>Aboleth</span></span></span>宸㈢┐閲屽偍瀛樼殑鐭ヨ瘑銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏉?span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>绮鹃瓊濞滆喀<span lang=EN-US>Spirit Naga</span></span></span>杩戜箮缁濇湜鍦版兂瑕佹眰鍒?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>瀹濆簱涓竴鏋氶€氬線绁炵鍦板簳鐨勯挜鍖欍€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>灏嗕竴鏉?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾榛勯摐榫?span lang=EN-US>Young Brass Dragon</span></span></span>鍏诲ぇ鎴愰緳锛屼絾鏈€缁堝杩欐潯榫欑殑鎭朵綔鍓уけ鍘讳簡鑰愬績銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>鎴愬勾娣遍緳<span lang=EN-US>Adult Deep Dragon</span></span></span>浠ュ吇浜嗕竴缇?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>鍦扮嫳鐘?span lang=EN-US>Hell Hound</span></span></span>涓鸿豹锛屼絾鍗存嫶涓嶄綇瀹冧滑銆?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>杩滃彜娣遍緳閭诲眳</span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>閭诲眳鐢熺墿</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜娣遍緳<span lang=EN-US>Ancient Deep Dragon</span></span></span>鏀朵簡涓€鏉?span
-  class=bbccolor><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋;
-  color:red'>闈掑勾骞藉奖绾㈤緳<span lang=EN-US>Young Red Shadow Dragon</span></span></span>浣滀负闂ㄥ緬銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€瀵硅繙鍙ら緳鎭嬩汉<span lang=EN-US>鈥斺€?/span>娣遍緳鍜岀櫧榫?span lang=EN-US>鈥斺€?/span>姣忕櫨骞存墠鐩歌涓€闈紝鑰屽悗浼氶€夊畾鐩爣寮€濮嬬嫨鐚庛€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓ゆ潯<span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜娣遍緳<span lang=EN-US>Ancient Deep Dragon</span></span></span>姝ｅ湪浜夊ず棰嗗湡銆備絾閮戒笉鎰挎剰褰撻潰瀵规姉锛屼簬鏄埄鐢ㄥ綋鍦扮殑灞呮皯鍜屾湁鑳借瀹綔涓烘垬浜夌殑鍏靛崚銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=bbccolor><span style='font-family:瀹嬩綋;
-  mso-bidi-font-family:瀹嬩綋;color:red'>杩滃彜娣遍緳<span lang=EN-US>Ancient Deep Dragon</span></span></span>璁╀竴搴у煄甯傜殑灞呮皯鍦ㄧ洂婀栦腑蹇冨缓绔嬭捣涓€搴уぇ閮戒細锛屽ソ璁╁畠鏉ョ粺娌汇€?/p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><span lang=EN-US><br>
-</span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>娣遍緳宸㈢┐<span lang=EN-US>Deep Dragon Lairs</span></span></b></span><span
-lang=EN-US><br>
-</span>娣遍緳浼氬湪骞芥殫鍦板煙鐨勬繁澶勫缓閫犲发绌达紝閫氬父浼氶€夊湪鐩熷弸鎴栨晫浜鸿€佸发闄勮繎銆傚畠浠殑宸㈢┐鏄嫭绔嬬粨鏋勩€傛湁浜涙槸鐢ㄦ椿浣撶湡鑿岀紪缁囪€屾垚銆傝€屾湁浜涙槸鍦ㄨ繙鍙ゅ煄甯傜殑搴熷涓婏紝鎴栨槸鍦颁笅婀栨硦闄勮繎鐨勬礊绌撮噷銆?span
-lang=EN-US><br>
-</span>娣遍緳鐨勫发绌存槸榫欑殑鎺㈤櫓鍩哄湴锛屼篃涓哄畠浠殑绉樿棌鎻愪緵浜嗗畨鍏ㄧ殑瀹濆簱銆傚綋杩欎簺瀵屾湁濂藉蹇冪殑鐢熺墿绂诲紑瀹跺洯锛屾帰绱㈡柊鐨勭幆澧冿紝瀵绘壘鏂扮殑瑙嗙偣鏃讹紝灏变細鎶婂发绌翠氦缁欏叾浠嗕粠銆佺洘鍙嬨€侀瓟娉曘€侀櫡闃辨垨浠ヤ笂鎺掑垪缁勫悎鏉ヤ繚鎶ゃ€?span
-lang=EN-US><br>
-<br>
-</span><strong><span style='font-size:14.0pt;font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>娣遍緳宸㈢┐鐗瑰緛<span lang=EN-US>Deep Dragon Lairs Features</span></span></strong><span
-lang=EN-US><br>
-</span>姝ゆ繁榫欏发绌村鍦板浘<span lang=EN-US>5.12</span>鐨勮摑瀹濈煶榫欏发绌寸被浼硷紝浣嗗畠鏈繀鏄敱鐭冲ご鎵€寤猴紝鑰屾槸鎶婂湪鍦颁笅娌抽檮杩戠敓闀跨湡鑿屾灄鎸栫┖鑰屾垚銆傛棤璁哄浣曪紝娣遍緳浼氬湪娲炵┐鐪熻弻澹佷箣闂寸殑鐙獎閫氶亾涓婂竷婊￠瓟娉曟垨瀵诲父闄烽槺銆?span
-lang=EN-US><br>
-</span>鏍囧噯宸㈢┐鍏锋湁浠ヤ笅鐗瑰緛锛?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>杩炴帴閫氶亾銆?/span></strong>鍥犱负娣遍緳鏃犳硶鍍忚摑瀹濈煶榫欎竴鑸鐭筹紝灏变細澧炲姞涓€浜涜繛鎺ラ€氶亾鍜屽瘑闂ㄦ潵杩涘叆涓€浜涙埧闂达紝鍙兘杩樹細杩炴帴闄勮繎鐨勫湴涓嬫渤浣滀负娲炵┐鐨勫叆鍙ｃ€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>瀹㈠巺銆?/span></strong>榫欏皢宸㈢┐涓殑涓€澶勫ぇ娲炲浣滀负鎺ュ緟鐩熷弸鍜屼粏褰圭殑瀹㈠巺銆傚拰娲炵┐鍏朵粬閮ㄥ垎璁憳锛岃繖閲岃鐪熻弻鐨勭７鍏夋墍鐓т寒锛屾暎鍙戝嚭鏌斿拰鐨勭豢銆佽摑鍜岀传鍏夈€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>瀹濆簱銆?/span></strong>宸ㄩ緳鐨勭钘忚钘忓湪涓€澶勫亸杩滅殑鎴块棿锛屼笂闈㈣繕鏈夊够鏈郴娉曟湳鎺╃洊锛岀敤闄烽槺鍜岄瓟娉曡鎶ユ墍淇濇姢銆傝嫢鍏惰瑙﹀彂锛岃繖浜涜鎶ラ鍏堜細鎷涙潵榫欑殑闅忎粠鍜岀洘鍙嬶紝鐒跺悗鎵嶆槸榫欍€?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鍦颁笅娌炽€?/span></strong>鍦ㄦ礊绌村鏈変竴鏉″湴涓嬫渤娴佽繃锛屽法榫欑敤鐭冲潩鍑忕紦浜嗘祦閫燂紝浣垮叾褰㈡垚涓€澶勫皬姘存睜锛岀敤鏉ユ矏娴村拰姘翠骇鍏绘畺銆?span
-lang=EN-US><br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>瀹㈡埧銆?/span></strong>涓€涓ぇ鎴块棿鍜屼笌鍏惰繛鎺ョ殑灏忔埧闂达紝濡傚悓鍦板浘涓嬫柟鎵€绀猴紝褰㈡垚浜嗕竴涓鎴匡紝缁欐潵璁垮榫欑敤浣滃鎴裤€傚敖绠′富榫欎細鎶婁环鍊兼槀璐垫垨鏄瘎鎯呮繁閲嶇殑璐㈠疂鏀惧湪瀹濆簱锛屼絾杩樻槸浼氭妸涓€浜涙潵鑷綍瑙佸湴鏂规垨鏈変簺鏁呬簨鐨勫皬瀹濊棌鏀惧湪杩欎簺闆呰嚧鐨勫鎴块噷锛岃瀹冧滑婵€璧疯瀹㈢殑濂藉蹇冿紝缁欒嚜宸卞氨杩欎簺瀹濊礉鍚规按鍒涢€犳満浼氥€?span
-lang=EN-US><br>
-<br>
-</span><span class=bbcsize><b><span style='font-size:16.0pt;font-family:瀹嬩綋;
-mso-bidi-font-family:瀹嬩綋'>娣遍緳瀹濊棌<span lang=EN-US>Deep Dragon Treasures</span></span></b></span><span
-lang=EN-US><br>
-</span>娣遍緳鍠滄鏉ヨ嚜閬ヨ繙浠栦埂鐨勮揣鐗╋紝灏ゅ叾鏄偅浜涚嫭鐗圭殑瀹濊礉銆傚畠浠偍钘忎簡璁稿鐙╃寧鎴栨帰闄╃殑绾康鍝併€傚畠浠棞濂介鑹插亸娣便€佸亸鏆楃殑瀹濈煶锛屼絾涔熷枩娆㈣壊褰╂枒鏂撶殑绉嶇被锛屽畠浠細鎶婂疂鐭虫斁鍦ㄩ暅妗嗗拰鍗氬彜鏋朵笂锛屽崥鍙ゆ灦浼氱敤鐝嶇█鐨勬湪鏉愬埗浣滐紝鍚屾椂涔熶細闀跺祵涓婃洿澶氱殑瀹濈煶銆?span
-lang=EN-US><br>
-</span>娣遍緳鐨勫疂搴撳熀鏈笉浼氬彧鏈夊疂鐭冲拰瀹濊棌锛岃繖浜涚敓鐗╁彲鍠滄鐐€€瀹冧滑鏈変粈涔堜簡銆傚畠浠彲浠ヨ姳涓婂ソ鍑犲ぉ鏃堕棿鎶婅瀹粠杩欎釜鎴樺埄鍝佸甫鍒伴偅涓垬鍒╁搧锛屾湡闂磋繕婊旀粩涓嶇粷鍦拌杩拌繖浜涚帺鎰忓効鐨勬晠浜?span
-lang=EN-US>鈥斺€?/span>濡傛灉娣遍緳浜掔浉鎷滆锛岃繖绉嶆梾绋嬪彲鑳戒細鎸佺画濂藉嚑澶┿€?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>娣遍緳鑹烘湳鍝?/span></strong></p>
-
-<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
- mso-yfti-tbllook:1184'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>d12</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>鐗╀欢</span></strong></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>1</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€灏婁笉鏄庣殑鏈夌考缇氱緤闆曞儚锛屼互宸ㄥぇ鐨勮泲鐧界煶闆曞埢鑰屾垚銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>2</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鍙槻鑵愯壇濂界殑绱櫕骞艰櫕锛岃鎽嗗湪闀跺祵鐫€绱按鏅剁殑涔屾湪鍗氬彜鏋朵笂銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>3</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓簿宸х殑鏂姮鍏嬫柉鏈哄櫒浜猴紝褰撹鎻愰棶鏃讹紝瀹冧細鐢ㄤ笌鏌愬澶辫惤鏂囨槑鏈夊叧鐨勯棶棰樻潵鍥炵瓟姣忎竴涓棶棰樸€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>4</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€濂楅暥鏈夊疂鐭崇殑榛勯噾鍒╃埅锛屽彲浠ユ牴鎹僵鎴寸潃鐨勫績鎯呮敼鍙橀鑹层€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>5</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€绉嶇伃缁濈唺绫荤殑閾惰壊姣涚毊锛岃Е鎽告椂浼氭湁闆姳椋樿惤銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>6</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€骞呯敾锛屾弿缁樹簡鐏北宀涚殑鐙壒鐢熺墿缇よ惤锛岃繕鏈変粠姘翠笅杩涘叆鍐呴儴鐨勭ず鎰忓浘銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>7</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鐩忛瓟娉曞悐鐏紝鎶曞皠鍑轰笘鐣屼笂鏋侀毦鎺ヨ繎涔嬪鐨勯鏅紝姣忓綋鍚婄伅琚噸鏂扮偣浜紝椋庢櫙涔熶細闅忎箣鏀瑰彉銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>8</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓瓟娉曢珮鑴氭澂锛屽綋鎸佹彙瀹冪殑鐢熺墿璇村嚭涓€涓浗鍚嶆椂锛岄珮鑴氭澂灏变細鐩堟弧璇ュ浗鏈€濂界殑钁¤悇閰掋€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:9'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>9</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€濂楃簿缇庣殑寰瀷榫欓洉锛岀敱璐甸噾灞炪€佺彔瀹濆拰鐭冲ご鍒舵垚銆傛瘡涓€绉嶉兘浠ｈ〃鐫€鐩稿簲鐨勮壊褰┿€侀噾灞炲拰瀹濈煶榫欍€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:10'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>10</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€棰楅暥鐝犺繙鍙ら緳澶撮锛屾繁榫欐€绘槸鎶婂畠甯﹀湪韬竟锛屽鐙椂杩樹細涓庡叾瀵硅瘽銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:11'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>11</span></strong></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€绯诲垪鍗庝附鐨勯紦锛屾弿缁樹簡鏌愬鍋忓兓灞卞尯鐨勬皯淇椾紶璇淬€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:12;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><strong><span lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:
-  瀹嬩綋'>12</span></strong></p></td></tr></table></div></div></body>
-
+</body>
 </html>

@@ -1,91 +1,195 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!-- saved from url=(0014)about:internet -->
-<html>
+<html xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>衡鉴学生</title>
 
 <head>
 <title>衡鉴学生</title>
 
-<meta charset=UTF-8"UTF-8">
-<meta http-equiv=Content-Type content="text/html; charset=unicode">
-<meta name=ProgId content=Word.Document>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style>
+<!--
+p.msonormal0, li.msonormal0, div.msonormal0 {
+	font-size: 12.0pt;
+	font-family: 宋体;
+}
+.MsoChpDefault {
+	font-size: 10.0pt;
+}
+-->
+</style>
 
 
 
 <style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:瀹嬩綋;
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-alt:SimSun;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:"\@瀹嬩綋";
-	panose-1:2 1 6 0 3 1 1 1 1 1;
-	mso-font-charset:134;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:3 680460288 22 0 262145 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:瀹嬩綋;
-	mso-bidi-font-family:瀹嬩綋;}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-ascii-font-family:"Times New Roman";
-	mso-hansi-font-family:"Times New Roman";
-	mso-font-kerning:0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 90.0pt 72.0pt 90.0pt;
-	mso-header-margin:42.55pt;
-	mso-footer-margin:49.6pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
+html,div { margin: 0; padding: 0;}
 
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+}
+
+#winchm_template_button{
+	float: right;
+	width: 93px;
+	top: 7px;
+	position: relative;
+	text-align: right;
+	right: 5px;
+	height: auto;
+}
+
+#winchm_template_top{
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid #9B9B9B;
+	background-color: #B1CEFE;
+}
+
+#winchm_template_navigation{
+	margin: 0px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-bottom: 3px;
+	padding-right: 0px;
+	font-size: 8.5pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #585858;
+}
+
+#winchm_template_title{
+	margin: 0px;
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	font-size: 18px; 
+	font-family: Verdana, Geneva, sans-serif;
+	color: #363636;
+}
+
+#winchm_template_content{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	width: auto  !important;
+	width: 100%;
+}
+
+#winchm_template_footer{
+	border-width: 1px;
+	border-color: #B1CEFE;
+	border-top-style: solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #696969;
+	width: auto;
+	text-align: left;
+}
+
+
+#winchm_template_container{
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	padding-bottom: 3px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+
+#winchm_template_navigation A:link	{text-decoration: none; color:#004080}
+#winchm_template_navigation A:visited  {text-decoration: none; color: #004080}
+#winchm_template_navigation A:active {text-decoration: none; color: #004080 }
+#winchm_template_navigation A:hover {text-decoration: none;color: #0080FF}
+
+A:link	{text-decoration: underline; color:#0033CC}
+A:visited  {text-decoration: underline; color: #0033CC}
+A:active {text-decoration: underline; color: #0033CC }
+A:hover {text-decoration: underline;color: #FF0000;}
+</style>
+<script type="text/javascript">
+function isMobile(){
+Agent = window.navigator.userAgent;
+if (Agent.indexOf("iPhone")>=1 || Agent.indexOf("iPad")>=1 || Agent.indexOf("iPod")>=1 || Agent.indexOf("Android")>=1){
+return true;
+}else{
+return false;	
+}
+
+}
+function d_onresize(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.pixelWidth = document.body.offsetWidth - 3;
+document.getElementById('winchm_template_container').style.pixelHeight = document.body.offsetHeight - document.getElementById('winchm_template_top').offsetHeight - 4;
+}
+document.getElementById('winchm_template_container').style.top = document.getElementById('winchm_template_top').offsetHeight + 'px';
+}
+
+function d_onbeforeprint(){
+if (window.navigator.userAgent.indexOf("MSIE")>=1){
+document.getElementById('winchm_template_container').style.height = 'auto';
+}
+}
+
+function d_onafterprint(){
+d_onresize();
+}
+
+if(!isMobile()){
+
+window.onload = d_onresize;
+window.onresize = d_onresize;
+window.onbeforeprint = d_onbeforeprint;
+window.onafterprint = d_onafterprint;
+
+document.write("<style>\n");
+document.write("body {overflow: hidden;}\n");
+document.write("#winchm_template_container {position: absolute;overflow: auto;top : 0px;right: 0px;bottom: 0px;left: 0px;}\n");
+document.write("</style>\n");
+}
+
+</script>
+<style>
+@media print
+{
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	height: auto;
+}
+#winchm_template_container{
+	position: static;	
+	margin: 0px;
+	padding: 5px;
+	
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+#winchm_template_button{
+visibility:hidden;
+}
+}
+</style>
 </head>
 
-<body lang=ZH-CN style='tab-interval:21.0pt;word-wrap:break-word'><script language="JavaScript" type="text/JavaScript">
+<body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
@@ -108,248 +212,155 @@ window.onload = function(){parent.contentLoaded = true;};
 window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
-<div class=WordSection1><p class=MsoNormal style='margin-bottom:12.0pt'><span class=GramE><strong><span
-style='font-size:18.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>琛￠壌瀛︾敓</span></strong></span><strong><span
-lang=EN-US style='font-size:18.0pt;font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>LOREHOLD
-STUDENT</span></strong></p>
 
-<p class=MsoNormal style='margin-bottom:12.0pt'><span lang=EN-US><br>
-</span>浣犵殑闈掑勾鏃跺厜鑺辫垂鍦ㄤ负<span class=GramE>杩涘叆琛￠壌瀛﹂櫌</span>鐨勫噯澶囦笂锛屾妸涓洪澶囧鐢熸彁渚涚殑鎺ㄨ崘涔﹀崟涓婄殑涔﹀叏閮借浜嗕竴閬嶃€備綘鐨勫鏈儹鎯呰仛鐒︿簬瀹藉箍鐨勫巻鍙查鍩熴€備綘鍙兘姊︽兂鐫€浣跨敤榄旀硶涓庡巻鍙蹭紵浜烘垨浣犵殑鍏堢杩涜娌熼€氾紝涔熷彲鑳芥槸鎯宠閲嶇幇杩滃彜鏃朵唬鐨勫己澶ч瓟娉曘€?span
+
+<div id="winchm_template_top">
+	<div id="winchm_template_button"><A href="../种族-枭人.html" title="Previous topic"><img id="winchm_template_prev" alt="Previous topic" src="../../../template2/btn_prev_n.gif" border="0"></a><A href="粹丽学生.html" title="Next topic"><img id="winchm_template_next" alt="Next topic" src="../../../template2/btn_next_n.gif" border="0"></a></div>
+	<div id="winchm_template_navigation">Help &gt; 
+斯翠海文：混沌研习 &gt; 玩家选项 &gt; 背景 &gt; </div>
+	<div id="winchm_template_title">衡鉴学生</div>
+</div>
+<div id="winchm_template_container">
+	<div id="winchm_template_content"><div class=WordSection1><p><span class=GramE><strong><span
+style='font-size:18.0pt;font-family:宋体;'>衡鉴学生</span></strong></span><strong><span
+lang=EN-US style='font-size:18.0pt;font-family:宋体;'>LOREHOLD
+    STUDENT</span></strong></p>
+  <p><br>
+你的青年时光花费在为     <span class=GramE>进入衡鉴学院</span>的准备上，把为预备学生提供的推荐书单上的书全都读了一遍。你的学术热情聚焦于宽广的历史领域。你可能梦想着使用魔法与历史伟人或你的先祖进行沟通，也可能是想要重现远古时代的强大魔法。<br>
+技能熟练：历史，宗教     <br>
+语言：两项你选择的语言     <br>
+装备：一瓶黑色墨水，一根钢笔，一把锤子，一盏带盖罩的提灯，一个火绒盒，一本历史册，一套校服，一个装有     <span lang=EN-US>15gp</span>的包。<span
 lang=EN-US><br>
-</span>鎶€鑳界啛缁冿細鍘嗗彶锛屽畻鏁?span lang=EN-US><br>
-</span>璇█锛氫袱椤逛綘閫夋嫨鐨勮瑷€<span lang=EN-US><br>
-</span>瑁呭锛氫竴鐡堕粦鑹插ⅷ姘达紝涓€鏍归挗绗旓紝涓€鎶婇敜瀛愶紝涓€鐩忓甫鐩栫僵鐨勬彁鐏紝涓€涓伀缁掔洅锛屼竴鏈巻鍙插唽锛屼竴濂楁牎鏈嶏紝涓€涓鏈?span lang=EN-US>15gp</span>鐨勫寘銆?span
+    <br>
+    </span><strong><span style='font-family:宋体;'>特性：<span
+class=GramE>衡鉴学徒</span><span lang=EN-US>LOREHOLD INITIATE</span></span></strong><br>
+你     <span class=GramE>获得斯翠海</span>文学徒专长（见本章后），你必须<span class=GramE>选择衡鉴学院</span>。<br>
+此外，如果你拥有施法或契约魔法特性，     <span class=GramE>将衡鉴法术</span>表中的法术加入你施法职业的法术列表中。（如果你拥有多个法术列表的兼职角色，这些法术会加入所有职业的列表中。）</p>
+  <p><span class=GramE><strong><span
+style='font-family:宋体;'>衡鉴法术</span></strong></span><strong><span
+lang=EN-US style='font-family:宋体;'>LOREHOLD SPELLS</span></strong></p>
+  <blockquote>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><span class=GramE>法术环级</span> </p></td>
+        <td><p>法术 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>1st</span></p></td>
+        <td><p>通晓语言<span lang=EN-US> Comprehend Languages , </span>鉴定术<span
+  lang=EN-US> Identify </span></p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>2nd</span></p></td>
+        <td><p>借鉴才学<span lang=EN-US>Borrowed Knowledge</span>（见本书）<span
+  lang=EN-US>, </span>物件定位术<span lang=EN-US> Locate Object </span></p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>3rd</span></p></td>
+        <td><p>死者交谈<span lang=EN-US> Speak with Dead </span>，灵体卫士<span
+  lang=EN-US> Spirit Guardians </span></p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>4th</span></p></td>
+        <td><p><span class=GramE>秘</span>法眼<span lang=EN-US> Arcane Eye </span>，<span
+  class=GramE>塑石术</span><span lang=EN-US> Stone Shape </span></p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>5th</span></p></td>
+        <td><p><span class=GramE>焰击术</span><span lang=EN-US> Flame Strike </span>，通晓传奇<span lang=EN-US> Legend Lore </span></p></td>
+      </tr>
+    </table>
+  </blockquote>
+  <p><br>
+考虑定制你施法时的法术外观。你     <span class=GramE>的衡鉴法术</span>可能创造出金色光芒的陈列。你也许使用书卷或卷轴为法器，你的法术效果可以反映出你所学习参阅的书的外观。<span
 lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鐗规€э細<span
-class=GramE>琛￠壌瀛﹀緬</span><span lang=EN-US>LOREHOLD INITIATE</span></span></strong><span
-lang=EN-US><br>
-</span>浣?span class=GramE>鑾峰緱鏂繝娴?/span>鏂囧寰掍笓闀匡紙瑙佹湰绔犲悗锛夛紝浣犲繀椤?span class=GramE>閫夋嫨琛￠壌瀛﹂櫌</span>銆?span
-lang=EN-US><br>
-</span>姝ゅ锛屽鏋滀綘鎷ユ湁鏂芥硶鎴栧绾﹂瓟娉曠壒鎬э紝<span class=GramE>灏嗚　閴存硶鏈?/span>琛ㄤ腑鐨勬硶鏈姞鍏ヤ綘鏂芥硶鑱屼笟鐨勬硶鏈垪琛ㄤ腑銆傦紙濡傛灉浣犳嫢鏈夊涓硶鏈垪琛ㄧ殑鍏艰亴瑙掕壊锛岃繖浜涙硶鏈細鍔犲叆鎵€鏈夎亴涓氱殑鍒楄〃涓€傦級</p>
+    <br>
+    </span><span class=GramE><strong><span style='font-family:宋体;'>构建衡鉴角色</span></strong></span><strong><span lang=EN-US style='font-family:
+宋体;'>BUILDING A LOREHOLD CHARACTER</span></strong><br>
+任何与过去的知识打交道的职业或     <span class=GramE>子职都适合</span>衡鉴。<span class=GramE>吟游诗人们在衡鉴茁壮成长</span>，法师们（特别是预言学派）在学生中数量众多。牧师（通常是知识和光明领域）也十分常见。<br>
+对于不寻常     <span class=GramE>的衡鉴学生</span>，你能考虑扮演一名与<span class=GramE>往昔有</span>原初连接的野蛮人（可以采用<span
+class=GramE>珊娜萨</span>的万事指南中的先祖守卫道途），或一位选择古贤之誓的圣武士，与历史有着实在的关联。<span lang=EN-US><br>
+    <br>
+    </span><strong><span style='font-family:宋体;'>建议人物特征<span
+lang=EN-US>Suggested Characteristics</span>。</span></strong><span class=GramE>在衡鉴学院</span>的队列之中，能找到有条不紊的历史学家和勇敢无畏的冒险者。<span
+class=GramE>衡鉴个性</span>特点表提供了多样的特点建议，你可以为你的角色选用。</p>
+  <p><span class=GramE><strong><span
+style='font-family:宋体;'>衡鉴个性</span></strong></span><strong><span
+style='font-family:宋体;'>特点<span lang=EN-US>LOREHOLD
+    PERSONALITY TRAITS</span></span></strong></p>
+  <blockquote>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><span lang=EN-US>d6 </span></p></td>
+        <td><p>个性特点 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>1 </span></p></td>
+        <td><p>我靠着深奥的学问过活。我在日常对话中引用的历史典故越晦涩约好。 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>2 </span></p></td>
+        <td><p>我希望能在搜寻这些失落的神器的旅途上发现真正的自己。 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>3 </span></p></td>
+        <td><p>我每时每刻都在讨论我的研究。我脑子里装了那么多知识，得有地方倾泻出来。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>4 </span></p></td>
+        <td><p>和死去的魂灵交谈比起和活人同学讲话有意思多啦。</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>5 </span></p></td>
+        <td><p>我说起历史的影响时雄辩有力。但是问我两位数的加法我头就晕了。 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>6 </span></p></td>
+        <td><p>到最后，只会剩下混乱无序。事物终有一天溃灭。</p></td>
+      </tr>
+    </table>
+  </blockquote>
+  <p><br>
+    <span class=GramE><strong><span style='font-family:宋体;'>衡鉴饰品</span></strong></span><span class=SpellE><strong><span lang=EN-US
+style='font-family:宋体;'>Lorehold</span></strong></span><strong><span
+lang=EN-US style='font-family:宋体;'> Trinkets</span></strong><strong><span
+style='font-family:宋体;'>。</span></strong>当你创建角色投掷起始饰品时，你能<span
+class=GramE>投掷衡鉴饰品</span>表而不是玩家手册中的饰品表。</p>
+  <p><span class=GramE><strong><span
+style='font-family:宋体;'>衡鉴饰品</span></strong></span><strong><span
+lang=EN-US style='font-family:宋体;'>LOREHOLD TRINKETS</span></strong></p>
+  <blockquote>
+    <table border=0 cellspacing=3 cellpadding=0>
+      <tr>
+        <td><p><span lang=EN-US>d6 </span></p></td>
+        <td><p>饰品 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>1 </span></p></td>
+        <td><p>一张带有多个同心圆的地图，这些同心圆能在页面上转动 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>2 </span></p></td>
+        <td><p>一个装饰着琥珀<span class=GramE>的谜笼</span> </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>3 </span></p></td>
+        <td><p>一个有凹痕的黄铜罗盘，里面有一根红色指针</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>4 </span></p></td>
+        <td><p>一个破损塑像的头，其中寄宿着一位尖刻的智者的意识</p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>5 </span></p></td>
+        <td><p>一张羊皮纸，<span class=GramE>压印着</span>浮凸的可触文字，散发着红光 </p></td>
+      </tr>
+      <tr>
+        <td><p><span lang=EN-US>6 </span></p></td>
+        <td><p>一柄破匕首，有着波浪形剑刃，蛇一样弯曲的剑柄</p></td></tr></table></blockquote></div></div>	
+	<div id="winchm_template_footer">Copyright &copy; 2019. All rights 
+reserved. (To change the copyright info, just edit it in template.)</div>
+</div>
 
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=GramE><strong><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>琛￠壌娉曟湳</span></strong></span><strong><span
-lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>LOREHOLD SPELLS</span></strong></p>
-
-<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=GramE>娉曟湳鐜骇</span> </p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>娉曟湳 </p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>1st</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>閫氭檽璇█<span lang=EN-US> Comprehend Languages , </span>閴村畾鏈?span
-  lang=EN-US> Identify </span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>2nd</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍊熼壌鎵嶅<span lang=EN-US>Borrowed Knowledge</span>锛堣鏈功锛?span
-  lang=EN-US>, </span>鐗╀欢瀹氫綅鏈?span lang=EN-US> Locate Object </span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>3rd</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>姝昏€呬氦璋?span lang=EN-US> Speak with Dead </span>锛岀伒浣撳崼澹?span
-  lang=EN-US> Spirit Guardians </span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>4th</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=GramE>绉?/span>娉曠溂<span lang=EN-US> Arcane Eye </span>锛?span
-  class=GramE>濉戠煶鏈?/span><span lang=EN-US> Stone Shape </span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>5th</span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span class=GramE>鐒板嚮鏈?/span><span lang=EN-US> Flame Strike
-  </span>锛岄€氭檽浼犲<span lang=EN-US> Legend Lore </span></p>
-  </td>
- </tr>
-</table>
-
-</blockquote>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span lang=EN-US
-style='color:white;mso-color-alt:windowtext'><br>
-</span>鑰冭檻瀹氬埗浣犳柦娉曟椂鐨勬硶鏈瑙傘€備綘<span class=GramE>鐨勮　閴存硶鏈?/span>鍙兘鍒涢€犲嚭閲戣壊鍏夎姃鐨勯檲鍒椼€備綘涔熻浣跨敤涔﹀嵎鎴栧嵎杞翠负娉曞櫒锛屼綘鐨勬硶鏈晥鏋滃彲浠ュ弽鏄犲嚭浣犳墍瀛︿範鍙傞槄鐨勪功鐨勫瑙傘€?span
-lang=EN-US><br>
-<br>
-</span><span class=GramE><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>鏋勫缓琛￠壌瑙掕壊</span></strong></span><strong><span lang=EN-US style='font-family:
-瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>BUILDING A LOREHOLD CHARACTER</span></strong><b><span
-lang=EN-US><br>
-</span></b>浠讳綍涓庤繃鍘荤殑鐭ヨ瘑鎵撲氦閬撶殑鑱屼笟鎴?span class=GramE>瀛愯亴閮介€傚悎</span>琛￠壌銆?span class=GramE>鍚熸父璇椾汉浠湪琛￠壌鑼佸．鎴愰暱</span>锛屾硶甯堜滑锛堢壒鍒槸棰勮█瀛︽淳锛夊湪瀛︾敓涓暟閲忎紬澶氥€傜墽甯堬紙閫氬父鏄煡璇嗗拰鍏夋槑棰嗗煙锛変篃鍗佸垎甯歌銆?span
-lang=EN-US><br>
-</span>瀵逛簬涓嶅甯?span class=GramE>鐨勮　閴村鐢?/span>锛屼綘鑳借€冭檻鎵紨涓€鍚嶄笌<span class=GramE>寰€鏄旀湁</span>鍘熷垵杩炴帴鐨勯噹铔汉锛堝彲浠ラ噰鐢?span
-class=GramE>鐝婂钀?/span>鐨勪竾浜嬫寚鍗椾腑鐨勫厛绁栧畧鍗亾閫旓級锛屾垨涓€浣嶉€夋嫨鍙よ搐涔嬭獡鐨勫湥姝﹀＋锛屼笌鍘嗗彶鏈夌潃瀹炲湪鐨勫叧鑱斻€?span lang=EN-US><br>
-<br>
-</span><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>寤鸿浜虹墿鐗瑰緛<span
-lang=EN-US>Suggested Characteristics</span>銆?/span></strong><span class=GramE>鍦ㄨ　閴村闄?/span>鐨勯槦鍒椾箣涓紝鑳芥壘鍒版湁鏉′笉绱婄殑鍘嗗彶瀛﹀鍜屽媷鏁㈡棤鐣忕殑鍐掗櫓鑰呫€?span
-class=GramE>琛￠壌涓€?/span>鐗圭偣琛ㄦ彁渚涗簡澶氭牱鐨勭壒鐐瑰缓璁紝浣犲彲浠ヤ负浣犵殑瑙掕壊閫夌敤銆?/p>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=GramE><strong><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>琛￠壌涓€?/span></strong></span><strong><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>鐗圭偣<span lang=EN-US>LOREHOLD
-PERSONALITY TRAITS</span></span></strong></p>
-
-<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>d6 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€х壒鐐?</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>1 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戦潬鐫€娣卞ゥ鐨勫闂繃娲汇€傛垜鍦ㄦ棩甯稿璇濅腑寮曠敤鐨勫巻鍙插吀鏁呰秺鏅︽订绾﹀ソ銆?</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>2 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戝笇鏈涜兘鍦ㄦ悳瀵昏繖浜涘け钀界殑绁炲櫒鐨勬梾閫斾笂鍙戠幇鐪熸鐨勮嚜宸便€?</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>3 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戞瘡鏃舵瘡鍒婚兘鍦ㄨ璁烘垜鐨勭爺绌躲€傛垜鑴戝瓙閲岃浜嗛偅涔堝鐭ヨ瘑锛屽緱鏈夊湴鏂瑰€炬郴鍑烘潵銆?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>4 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍜屾鍘荤殑榄傜伒浜よ皥姣旇捣鍜屾椿浜哄悓瀛﹁璇濇湁鎰忔€濆鍟︺€?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>5 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鎴戣璧峰巻鍙茬殑褰卞搷鏃堕泟杈╂湁鍔涖€備絾鏄棶鎴戜袱浣嶆暟鐨勫姞娉曟垜澶村氨鏅曚簡銆?</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>6 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>鍒版渶鍚庯紝鍙細鍓╀笅娣蜂贡鏃犲簭銆備簨鐗╃粓鏈変竴澶╂簝鐏€?/p>
-  </td>
- </tr>
-</table>
-
-</blockquote>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span lang=EN-US
-style='color:white;mso-color-alt:windowtext'><br>
-</span><span class=GramE><strong><span style='font-family:瀹嬩綋;mso-bidi-font-family:
-瀹嬩綋'>琛￠壌楗板搧</span></strong></span><span class=SpellE><strong><span lang=EN-US
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>Lorehold</span></strong></span><strong><span
-lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'> Trinkets</span></strong><strong><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>銆?/span></strong>褰撲綘鍒涘缓瑙掕壊鎶曟幏璧峰楗板搧鏃讹紝浣犺兘<span
-class=GramE>鎶曟幏琛￠壌楗板搧</span>琛ㄨ€屼笉鏄帺瀹舵墜鍐屼腑鐨勯グ鍝佽〃銆?/p>
-
-<p class=MsoNormal style='margin-bottom:12.0pt'><span class=GramE><strong><span
-style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>琛￠壌楗板搧</span></strong></span><strong><span
-lang=EN-US style='font-family:瀹嬩綋;mso-bidi-font-family:瀹嬩綋'>LOREHOLD TRINKETS</span></strong></p>
-
-<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
-
-<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
- style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>d6 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>楗板搧 </p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>1 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€寮犲甫鏈夊涓悓蹇冨渾鐨勫湴鍥撅紝杩欎簺鍚屽績鍦嗚兘鍦ㄩ〉闈笂杞姩 </p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>2 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓楗扮潃鐞ョ弨<span class=GramE>鐨勮皽绗?/span> </p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>3 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓湁鍑圭棔鐨勯粍閾滅綏鐩橈紝閲岄潰鏈変竴鏍圭孩鑹叉寚閽?/p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>4 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€涓牬鎹熷鍍忕殑澶达紝鍏朵腑瀵勫鐫€涓€浣嶅皷鍒荤殑鏅鸿€呯殑鎰忚瘑</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>5 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€寮犵緤鐨焊锛?span class=GramE>鍘嬪嵃鐫€</span>娴嚫鐨勫彲瑙︽枃瀛楋紝鏁ｅ彂鐫€绾㈠厜 </p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal><span lang=EN-US>6 </span></p>
-  </td>
-  <td style='padding:.75pt .75pt .75pt .75pt'>
-  <p class=MsoNormal>涓€鏌勭牬鍖曢锛屾湁鐫€娉㈡氮褰㈠墤鍒冿紝铔囦竴鏍峰集鏇茬殑鍓戞焺</p></td></tr></table></blockquote></div></body>
-
+</body>
 </html>
