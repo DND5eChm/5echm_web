@@ -6,11 +6,11 @@
 
 托管于Netlify，备用域名 https://5echmdev.netlify.app
 
-使用了 fastly.jsdelivr.net 来对部分js文件进行国内访问加速
-
 使用工具为
 
 [优秀小巧的 CHM 编辑器 WinCHM Pro 5.492 中文免费版 - 大眼仔旭 (dayanzai.me)](http://www.dayanzai.me/winchm.html)
+
+工程文件托管于 [Leen-Ouyang/DND5e_chm: DND5E CHM (github.com)](https://github.com/Leen-Ouyang/DND5e_chm)
 
 gbk与utf混杂情况下统一修正为uf8的python脚本参考
 
