@@ -2,9 +2,9 @@
 
 这个项目的目的是将5echm转换成静态网页版本,并方便地在各种设备的浏览器上访问。
 
-主域名 https://5echm.kagangtuya.top
+[主域名](https://5echm.kagangtuya.top)，托管于[Vercel](https://5echm.vercel.app)
 
-托管于Netlify，备用域名 https://5echmdev.netlify.app
+[备用域名](https://5echm.kagangtuya.top)，托管于Github Pages
 
 使用工具为
 
