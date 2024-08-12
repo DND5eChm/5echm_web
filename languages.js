@@ -11,7 +11,7 @@ if (lang=='zh-cn') { lang = 'cn';}
 lang = lang.substr(0,2).toLowerCase();
 
 lang="en";
-lang="cn";
+
 if(lang=='de'){/////////////////////////////German////////////////////////////////////////////////////
 
 strings["Contents"]                              = "Inhalt";
