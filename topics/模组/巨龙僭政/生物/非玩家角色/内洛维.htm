@@ -12,7 +12,30 @@ html,body {
 }
 </style>
 
-</head>
+</head><body><script language="JavaScript" type="text/JavaScript">
+function syn(){
+if(parent.nav.tree){
+ if(parent.nav.tree.loaded){
+  parent.nav.tree.selectNode(5245);
+ }else{
+  setTimeout("syn()",500);
+}
+  }else{
+  setTimeout("syn()",500);
+  }}
+if(parent!=self){
+  setTimeout("syn()",100);
+}else{
+  parent.location.href = "../../../../../index.htm?page=模组/巨龙僭政/生物/非玩家角色/内洛维.htm";
+}
+originalOnload = window.onload;
+if(originalOnload==null){
+window.onload = function(){parent.contentLoaded = true;};
+}else{
+window.onload = function(){originalOnload();parent.contentLoaded = true;};
+}
+</script> 
+
 
 <P><STRONG><FONT color=#800000>内洛维Neronvain
 </FONT></STRONG><BR><EM>中型类人生物（精灵），中立邪恶 </EM><BR>
@@ -42,4 +65,4 @@ AC ：17<BR>HP ：117（18d8+36）<BR>速度：30尺<BR>
 毒气会围绕拐角扩散 并持续到内洛维的下一回合开始。
 任何生物在毒气区域内开始其回合时，必须进行一次 DC16 体质豁免，豁免失败者将陷入中毒状态 1 分钟。
 一个生物可以在他的每个回合结束时重复豁免检定，成功则结束中毒状态。  <BR>
-</html>
+</body></html>

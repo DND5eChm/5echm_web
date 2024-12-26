@@ -12,7 +12,30 @@ html,body {
 }
 </style>
 
-</head>
+</head><body><script language="JavaScript" type="text/JavaScript">
+function syn(){
+if(parent.nav.tree){
+ if(parent.nav.tree.loaded){
+  parent.nav.tree.selectNode(5246);
+ }else{
+  setTimeout("syn()",500);
+}
+  }else{
+  setTimeout("syn()",500);
+  }}
+if(parent!=self){
+  setTimeout("syn()",100);
+}else{
+  parent.location.href = "../../../../../index.htm?page=模组/巨龙僭政/生物/非玩家角色/赛维林.htm";
+}
+originalOnload = window.onload;
+if(originalOnload==null){
+window.onload = function(){parent.contentLoaded = true;};
+}else{
+window.onload = function(){originalOnload();parent.contentLoaded = true;};
+}
+</script> 
+
 
 
 <P><STRONG><FONT color=#800000>赛维林Severin
@@ -57,4 +80,4 @@ AC ：16<BR>HP ：150（20d8+60）<BR>速度：30尺<BR>
 而且在传送之前，赛维林5英尺范围内的每个生物都会受到5（1d10）点火焰伤害。  <BR>
 <STRONG>火焰锁链Hellish Chalns（消耗3次传奇动作）。</STRONG>赛维林瞄准他能在 30 英尺范围内看到的一个目标。目标被火链捆住并陷入束缚状态。
 受束缚的目标在其每回合开始时受到21（6d6）点火焰伤害。在其每回合结束时，目标可以进行DC 17力量豁免检定，成功则挣脱火链，火链消失。   <BR>
-</html>
+</body></html>
