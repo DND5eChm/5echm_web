@@ -43,3 +43,54 @@ h4 {
     margin-bottom: -20px;
 	font-size: 24px;
 }
+/*道具页使用h5*/
+h5 {
+	color: #800000;
+    margin-bottom: -20px;
+	font-size: 18px;
+}
+/*居中框*/
+.center-div{
+	BORDER: #656565 2px solid;
+	WIDTH: 100%;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;
+	PADDING-LEFT: 50px;
+	MARGIN-LEFT: 8%;
+	PADDING-RIGHT: 50px;
+	MARGIN-RIGHT: 8%;
+	BACKGROUND-COLOR: #ebd6c1;
+}
+/*备用数据卡框*/
+.stat-block{
+	margin-left: 22px;
+	width: 500px;
+	background-color: #F8F8F6;
+	padding: 15px;
+	border:3px double #808080;
+}
+/*实例文本框*/
+.example{
+	font-family: "fangsong","仿宋",Arial, Helvetica, sans-serif;
+	WIDTH: 100%; 
+	BACKGROUND: #fff2cc; 
+	PADDING-BOTTOM: 10px; 
+	PADDING-TOP: 10px; 
+	PADDING-LEFT: 10px; 
+	MARGIN-LEFT: 5%; 
+	PADDING-RIGHT: 10px; 
+	MARGIN-RIGHT: 5%
+}
+/*实例右框*/
+.ex-right{
+	BORDER: #656565 2px solid; 
+	WIDTH: 250px;
+	FLOAT: right; 
+	PADDING: 10px; 
+	BACKGROUND-COLOR: #ebd6c1; 
+	MARGIN-RIGHT: -10px
+}
+/*普通表格*/
+.TN{
+	BORDER-COLLAPSE: collapse
+}
