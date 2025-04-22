@@ -11,6 +11,10 @@ UL {
 	margin-top: -16px;
 	margin-bottom: -16px;
 }
+OL {
+	margin-top: -16px;
+	margin-bottom: -16px;
+}
 /*下划线→术语格式*/
 U{
 	color: #008000;
@@ -27,30 +31,38 @@ U EM,U I{
 /*斜体+下划线→魔法物品格式*/
 EM U,I U{
 	color: #0000ff;
-	font-style: italic;
+	font-style: normal;
 	font-weight: bold;
 
 }
 /*粗体+下划线→怪物格式*/
 B U,U B,STRONG U,U STRONG{
 	color: #ee3300;
-	font-style: italic;
+	font-style: normal;
 	font-weight: bold
 }
 /*法术页使用h4*/
 h4 {
     color: #704cd9;
     margin-bottom: -20px;
-	font-size: 24px;
+	font-size: 22px;
 }
-/*道具页使用h5*/
-h5 {
+/*怪物页使用h5*/
+div h5{
+	color: #800000;
+	font-weight: bold;
+	font-size: 22px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+/*道具页使用h6*/
+h6 {
 	color: #800000;
     margin-bottom: -20px;
 	font-size: 18px;
 }
 /*居中框*/
-.center-div{
+div.center{
 	BORDER: #656565 2px solid;
 	WIDTH: 100%;
 	PADDING-BOTTOM: 10px;
@@ -62,7 +74,7 @@ h5 {
 	BACKGROUND-COLOR: #ebd6c1;
 }
 /*备用数据卡框*/
-.stat-block{
+div.stat-block{
 	margin-left: 22px;
 	width: 500px;
 	background-color: #F8F8F6;
@@ -70,7 +82,7 @@ h5 {
 	border:3px double #808080;
 }
 /*实例文本框*/
-.example{
+div.example{
 	font-family: "fangsong","仿宋",Arial, Helvetica, sans-serif;
 	WIDTH: 100%; 
 	BACKGROUND: #fff2cc; 
@@ -82,7 +94,7 @@ h5 {
 	MARGIN-RIGHT: 5%
 }
 /*实例右框*/
-.ex-right{
+div.ex-right{
 	BORDER: #656565 2px solid; 
 	WIDTH: 250px;
 	FLOAT: right; 
@@ -90,7 +102,46 @@ h5 {
 	BACKGROUND-COLOR: #ebd6c1; 
 	MARGIN-RIGHT: -10px
 }
-/*普通表格*/
-.TN{
-	BORDER-COLLAPSE: collapse
+/*基础表格*/
+table.basic{
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+}
+table.basic td{
+	padding: 2px;
+}
+table.center{
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+	text-align:center;
+}
+table.center td{
+	padding: 2px;
+}
+table.part {
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+}
+table.part td{
+	padding: 2px;
+}
+table.part th{
+	padding: 2px;
+	font-weight: normal;
+	text-align: center;
+}
+P.sum{
+	font-size:18px;
+	MARGIN-TOP: -8px;
+	margin-bottom: -8px;
+	color: #808080;
+	font-weight: bold;
+	font-family: "fangsong","仿宋";
+
 }

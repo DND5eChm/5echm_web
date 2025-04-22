@@ -2,92 +2,72 @@
 html,body { 
 	font-family: Arial, Helvetica, sans-serif;
 }
-.stat-block{
+div.stat-block{
 	margin-left: 22px;
 	width: 500px;
 	background-color: #F8F8F6;
 	padding: 15px;
 	border:3px double #808080;
 	font-size: 16px;
+	margin-bottom:20px;
 }
-.stat-block h5,.stat-block h6{
+div.stat-block h5,div.stat-block h6{
 	color: #800000;
 	font-weight: bold;
-	border-bottom: 1px;
-	border-color: #800000;
+	border-bottom: 1px #800000 solid;
 }
-.stat-block h5{
+div.stat-block h5{
 	font-size: 22px;
 	margin-top: 0px;
 	margin-bottom: 5px;
-	border-bottom: 1px;
-	border-color: #800000;
-	border-style: none none solid none;
 }
-.stat-block h6{
+div.stat-block h6{
 	font-size: 18px;
 	margin-top: 17px;
 	margin-bottom: -12px;
-	border-bottom: 1px;
-	border-color: #800000;
-	border-style: none none solid none;
 }
-.stat-block .sub-line{
+div.stat-block .sub-line{
 	color: #808080;
 	font-style: italic;
 	MARGIN-TOP: -3px;
 }
-.stat-block table{
-	width: 100%;
+div.stat-block table{
+	width: 500px;
 	color: #800000;
 	white-space: nowrap;
 	border-collapse: collapse;
 }
-.stat-abilities{
+table.stat-abilities{
 	min-width: 500px;
 	text-align: center;
 	white-space: nowrap;
 	border-collapse: collapse;
 	margin-bottom: 15px;
 }
-.stat-abilities th{
+table.stat-abilities th{
 	width: 40px;
 	font-size: 12px;
 	color: #808080;
 }
-.stat-abilities td{
+table.stat-abilities td{
 	padding: 2px 0px 2px 0px;
 	font-size: 16px;
 }
-.c1{
+td.c1{
 	BACKGROUND-COLOR:#e9e3d6;
 }
-.c2{
+td.c2{
 	BACKGROUND-COLOR: #d8d0c9
 }
-.c3{
+td.c3{
 	BACKGROUND-COLOR: #d2d6ce
 }
-.c4{
+td.c4{
 	BACKGROUND-COLOR: #cbc6c6
 }
 /*标题颜色*/
-h1{
+h1,h2,h3{
 	color:#800000;
-}
-h2{
-	color:#800000;
-	border-bottom: 1px;
-	border-color: #b79c61;
-	border-style: none none solid none;
-}
-h3{
-	font-size:22px;
-	MARGIN-TOP: -15px;
-	margin-bottom: 13px;
-	color: #808080;
-	font-weight: bold;
-	font-family: "fangsong","仿宋";
 }
 /*下划线→术语格式*/
 U{
@@ -104,31 +84,89 @@ U EM,U I{
 /*斜体+下划线→魔法物品格式*/
 EM U,I U{
 	color: #0000ff;
-	font-style: italic;
+	font-style: normal;
 	font-weight: bold;
 }
 /*粗体+下划线→怪物格式*/
 B U,U B,STRONG U,U STRONG{
 	color: #ee3300;
-	font-style: italic;
+	font-style: normal;
 	font-weight: bold
 }
 /*小纸条*/
-.little-paper {          
-	padding: 20px;
+div.little-paper {       
+	padding: 15px;
 	border:3px double #9E6859;
 	background-color: #FAF0EB;
 	font-family: "fangsong","仿宋",Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	TEXT-ALIGN: center;
 	font-size: 16px;
+	margin-bottom:20px;
+}
+div.little-paper P{
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 /*栖息地与宝藏*/
-.HT {
+div.HT {
 	padding: 5px;
 	border-top:3px solid #D1BC90;
 	background-color: #F0E9DA;
 	MARGIN-TOP: -7px;
 	width: 500px;
 	font-size: 16px;
+}
+/*基础表格*/
+table.basic{
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+}
+table.basic td{
+	padding: 2px;
+}
+table.center{
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+	text-align:center;
+}
+table.center td{
+	padding: 2px;
+}
+table.part {
+	width: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;	
+}
+table.part td{
+	padding: 2px;
+}
+table.part th{
+	padding: 2px;
+	font-weight: normal;
+	text-align: center;
+}
+div.center{
+	BORDER: #656565 2px solid;
+	WIDTH: 100%;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;
+	PADDING-LEFT: 50px;
+	MARGIN-LEFT: 8%;
+	PADDING-RIGHT: 50px;
+	MARGIN-RIGHT: 8%;
+	BACKGROUND-COLOR: #ebd6c1;
+}
+P.sum{
+	font-size:18px;
+	MARGIN-TOP: -15px;
+	margin-bottom: 13px;
+	color: #808080;
+	font-weight: bold;
+	font-family: "fangsong","仿宋";
+
 }

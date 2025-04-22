@@ -10,7 +10,7 @@
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
-  parent.nav.tree.selectNode(552);
+  parent.nav.tree.selectNode(579);
  }else{
   setTimeout("syn()",500);
 }
@@ -30,12 +30,11 @@ window.onload = function(){originalOnload();parent.contentLoaded = true;};
 }
 </script> 
 <h1>武僧 Monk</h1>
-<P><FONT color=#808080 face=仿宋><STRONG>凝意入拳的武术家</STRONG></FONT> </P>
+<p class=sum>凝意入拳的武术家</p>
 
 
 <P><STRONG>武僧核心特质Monk Core Traits</STRONG>
-<TABLE style="BORDER-COLLAPSE: collapse" 
-cellSpacing=0 cellPadding=2 border=0>
+<TABLE class="basic">
 <TR><TD><STRONG> 主要属性Primary Ability</STRONG> </TD><TD><STRONG>敏捷</STRONG>与<STRONG>感知</STRONG></TD></TR>
 <TR bgColor=#eeeeee><TD><STRONG> 生命值骰Hit Point Die</STRONG> </TD><TD>每<FONT style="BACKGROUND-COLOR: #eeeeee"><STRONG>武僧</STRONG></FONT>等级D8</TD></TR>
 <TR><TD><STRONG>豁免熟练Saving Throw 
@@ -133,7 +132,7 @@ Defense</FONT></STRONG><BR>若你未着装任何护甲也没持用盾牌，你�
 
 
 <p><STRONG><FONT color=#800000>2级：武僧武功Monk's 
-Focus</FONT></STRONG><BR>通过运转玄功和习练武艺，你便得以掌握自身非凡的内在能量。功力点代表着你所能使用的这份能量。你的武僧等级决定了你拥有多少功力点，具体数据见武僧特性表中的功力点一列。你可以消耗功力点来增强或启动特定的武僧特性。你一开始掌握三种特性：<b>疾风连击，坚强防御，疾步如风</b>。细节见下。<BR>每当你消耗1点功力时，直到你完成一次短休或者长休前其将暂时不可以再被使用。在完成休息时，你将回复所有已消耗的功力点。<BR>你的某些特性会要求你的目标进行豁免以对抗该特性的效果，这些特性的豁免DC为8+你的感知调整值+你的熟练加值。<BR><b>疾风连击Flurry of Blows。</b>你可以消耗1点功力，以一个附赠动作发动两次徒手打击。<BR><b>坚强防御Patient Defense。</b>你能以一个附赠动作执行撤离动作。此外，你可以消耗1点功力，以一个附赠动作同时执行<U>撤离</U>与<U>回避</U>动作。<BR><b>疾步如风Step of the Wind。</b>你能以一个附赠动作执行疾走动作。此外，你可以消耗1点功力，以一个附赠动作同时执行<FONT color=#008000><STRONG>撤离</STRONG></FONT>与<U>疾走</U> 动作，同时使你该回合内的跳跃距离翻倍。</p>
+Focus</FONT></STRONG><BR>通过运转玄功和习练武艺，你便得以掌握自身非凡的内在能量。功力点代表着你所能使用的这份能量。你的武僧等级决定了你拥有多少功力点，具体数据见武僧特性表中的功力点一列。你可以消耗功力点来增强或启动特定的武僧特性。你一开始掌握三种特性：<b>疾风连击，坚强防御，疾步如风</b>。细节见下。<BR>每当你消耗1点功力时，直到你完成一次短休或者长休前其将暂时不可以再被使用。在完成休息时，你将重获所有已消耗的功力点。<BR>你的某些特性会要求你的目标进行豁免以对抗该特性的效果，这些特性的豁免DC为8+你的感知调整值+你的熟练加值。<BR><b>疾风连击Flurry of Blows。</b>你可以消耗1点功力，以一个附赠动作发动两次徒手打击。<BR><b>坚强防御Patient Defense。</b>你能以一个附赠动作执行撤离动作。此外，你可以消耗1点功力，以一个附赠动作同时执行<U>撤离</U>与<U>回避</U>动作。<BR><b>疾步如风Step of the Wind。</b>你能以一个附赠动作执行疾走动作。此外，你可以消耗1点功力，以一个附赠动作同时执行<FONT color=#008000><STRONG>撤离</STRONG></FONT>与<U>疾走</U> 动作，同时使你该回合内的跳跃距离翻倍。</p>
 
 
 
@@ -143,7 +142,7 @@ Focus</FONT></STRONG><BR>通过运转玄功和习练武艺，你便得以掌握�
 
 
 <p><STRONG><FONT color=#800000>2级：运转周天Uncanny 
-Metabolism<BR></FONT></STRONG>当你投掷先攻时，你可以回复所有已消耗的功力点。若你如此做，掷你的武艺骰，并且回复其结果+你的武僧等级的生命值。<BR>
+Metabolism<BR></FONT></STRONG>当你投掷先攻时，你可以重获所有已消耗的功力点。若你如此做，掷你的武艺骰，并且恢复其结果+你的武僧等级的生命值。<BR>
 使用此特性后，你必须完成一次长休才能再次使用。</p>
 
 
@@ -160,7 +159,7 @@ Subclass</FONT></STRONG> <BR>你选择获得一项武僧子职：<SPAN><STRONG><
 
 
 <p><STRONG><FONT color=#800000>4级：属性值提升Ability Score 
-Improvement</FONT></STRONG><BR>你获得属性值提升专长（见第五章）或其它你满足条件的专长。如武僧特性表所示，你在第8，第12，第16级时会再次获得本特性。</p>
+Improvement</FONT></STRONG><BR>你获得属性值提升专长（见第五章）或其他你满足条件的专长。如武僧特性表所示，你在第8，第12，第16级时会再次获得本特性。</p>
 
 
 
