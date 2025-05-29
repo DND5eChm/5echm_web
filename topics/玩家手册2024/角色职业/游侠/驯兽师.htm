@@ -5,13 +5,65 @@
 <head><title>驯兽师</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css"></head>
+<style>
+div.stat-block h5,div.stat-block h6{
+	color: #800000;
+	font-weight: bold;
+	border-bottom: 1px #800000 solid;
+}
+div.stat-block h5{
+	font-size: 22px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+div.stat-block h6{
+	font-size: 18px;
+	margin-top: 17px;
+	margin-bottom: -12px;
+}
+div.stat-block .sub-line{
+	color: #808080;
+	font-style: italic;
+	MARGIN-TOP: -3px;
+}
+div.stat-block table{
+	width: 500px;
+	color: #800000;
+	border-collapse: collapse;
+}
+table.stat-abilities{
+	text-align: center;
+	margin-bottom: 15px;
+	white-space: nowrap;
+}
+table.stat-abilities th{
+	width: 40px;
+	font-size: 12px;
+	color: #808080;
+}
+table.stat-abilities td{
+	padding: 2px 0px 2px 0px;
+	font-size: 16px;
+}
+td.c1{
+	BACKGROUND-COLOR:#e9e3d6;
+}
+td.c2{
+	BACKGROUND-COLOR: #d8d0c9
+}
+td.c3{
+	BACKGROUND-COLOR: #d2d6ce
+}
+td.c4{
+	BACKGROUND-COLOR: #cbc6c6
+}</style>
 
 
 <body><script language="JavaScript" type="text/JavaScript">
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
-  parent.nav.tree.selectNode(592);
+  parent.nav.tree.selectNode(594);
  }else{
   setTimeout("syn()",500);
 }
@@ -41,7 +93,7 @@ window.onload = function(){originalOnload();parent.contentLoaded = true;};
 
 
 <p><STRONG><FONT color=#800000>3级：原初行侣 Primal 
-Companion</FONT></STRONG><BR>你魔法性的召唤出一只原初野兽，其力量来自于与你与自然的联系。你从<b><span style="COLOR: #806000">大地野兽</span></b>、<b><span style="COLOR: #1f4e79">海洋野兽</span></b>和<b><span style="COLOR: #00b0f0">天空野兽</span></b>中选择其一项作为它的数据卡。你决定原初野兽是何种动物，选择适合其数据卡的外形。无论你选择什么样的动物，这只野兽都带有原初之力的印痕，暗示着其超凡起源。<BR>这只野兽对你和你的伙伴态度友善，并会听从你的命令。野兽会在你死亡时消失。<BR><b>战斗中的野兽The Beast in Combat。</b>战斗中，原初野兽会在你的回合中行动。它能自主地移动或使用反应，但除非你在你的回合中以一个附赠动作命令它执行其他动作，它只会执行回避动作。命令的动作可以是其数据卡中列出的动作或是之外的其他动作。作为另一种命令方式，你也能在使用自己的攻击动作时，牺牲一次自己的攻击来命令野兽执行野兽打击动作。如果你陷入失能，野兽将会自主行动，而非仅使用回避动作。<BR><b>复活或替换野兽Restoring or Replacing the Beast。</b>如果野兽死亡不超过一小时，你能够以一个<U>魔法</U>动作，并消耗一个法术位使它复活。它会在一分钟后死而复生并恢复所有生命值。<BR>每当你完成长休时，你都能召唤一只不同的原初野兽。这只新的野兽出现在位于你5尺内的一处未占据空间内，并由你选择其数据卡和外表。如果你已经通过此特性获得了一只原初野兽，它会在新的原初野兽出现时消失。</p>
+Companion</FONT></STRONG><BR>你魔法性的召唤出一只原初野兽，其力量来自于与你与自然的联系。你从<b><FONT color=#806000>大地野兽Beast of the Land</FONT></b>、<b><FONT color=#1f4e79>海洋野兽Beast of the Sea</FONT></b>和<b><FONT color=#00b0f0>天空野兽Beast of the Sky</FONT></b>中选择其一项作为它的数据卡。你决定原初野兽是何种动物，选择适合其数据卡的外形。无论你选择什么样的动物，这只野兽都带有原初之力的印痕，暗示着其超凡起源。<BR>这只野兽对你和你的伙伴态度友善，并会听从你的命令。野兽会在你死亡时消失。<BR><b>战斗中的野兽The Beast in Combat。</b>战斗中，原初野兽会在你的回合中行动。它能自主地移动或使用反应，但除非你在你的回合中以一个附赠动作命令它执行其他动作，它只会执行回避动作。命令的动作可以是其数据卡中列出的动作或是之外的其他动作。作为另一种命令方式，你也能在使用自己的攻击动作时，牺牲一次自己的攻击来命令野兽执行野兽打击动作。如果你陷入失能，野兽将会自主行动，而非仅使用回避动作。<BR><b>复活或替换野兽Restoring or Replacing the Beast。</b>如果野兽死亡不超过一小时，你能够以一个<U>魔法</U>动作，并消耗一个法术位使它复活。它会在一分钟后死而复生并恢复所有生命值。<BR>每当你完成长休时，你都能召唤一只不同的原初野兽。这只新的野兽出现在位于你5尺内的一处未占据空间内，并由你选择其数据卡和外表。如果你已经通过此特性获得了一只原初野兽，它会在新的原初野兽出现时消失。</p>
 
 
 
@@ -59,177 +111,112 @@ Mark</EM></U>影响的生物时，它可以额外造成一定的力场伤害，�
 
 <p><STRONG><FONT color=#800000>15级：法术共享 Share 
 Spells</FONT></STRONG><BR> 当你施展的法术指定了你自己作为目标，并且你的原初行侣正位于你30尺范围内时，你可以让该法术效应同时作用于你的原初行侣。</p>
-<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
-<p><STRONG><FONT color=#806000>大地野兽 Beast of the Land<BR>    
-</FONT></STRONG><EM>中型野兽，绝对中立</EM>
-<BR><STRONG>AC </STRONG>13+你的感知调整值
-<BR><STRONG>HP </STRONG>5+你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[D8]）
-<BR><STRONG>速度 </STRONG>40尺，攀爬40尺</p>
-<p><table width=400 border=0 style="MARGIN-BOTTOM: 5px; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center" cellSpacing=0 cellPadding=2>
-<tr style="FONT-SIZE: 10px; COLOR: #333333">
-<td colspan=2></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td></tr>
-<tr bgColor=#eeeeee>
-<td><b>力量</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
-<td bgcolor=transparent></td>
-<td><b>敏捷</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
-<td bgcolor=transparent></td>
-<td><b>体质</b></td>
-<td>15</td>
-<td>+2</td>
-<td>+2</td></tr>
-<tr>
-<td><b>智力</b></td>
-<td>8</td>
-<td>-1</td>
-<td>-1</td>
+<div class="stat-block">
+<h5><FONT color=#806000>大地野兽Beast of the Land</FONT></h5>
+<div class="sub-line">中型野兽，绝对中立</div>
+<table><tr><td><strong>AC </strong></td><td width="40%"><strong>先攻 </strong>+0（10）</td></tr>
+<tr><td colspan=2><strong> HP </strong>5+你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）</td></tr>
+<tr><td colspan=2><strong>速度 </strong>40尺，攀爬40尺</td></tr></table>
+<table class="stat-abilities"><tr><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th></tr>
+<tr><td class="c1"><strong>力量</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
 <td></td>
-<td><b>感知</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
+<td class="c1"><strong>敏捷</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
 <td></td>
-<td><b>魅力</b></td>
-<td>11</td>
-<td>+0</td>
-<td>+0</td></tr></table></p>
-<p><STRONG>感官 </STRONG>黑暗视觉60尺，被动察觉12
-<BR><STRONG>语言 </STRONG>理解你说的语言
-<BR><STRONG>CR </STRONG>无（XP0，PB等于你的PB）
-<BR><FONT color=#800000><STRONG>特质Traits</STRONG>
-<BR></FONT><STRONG>原初联结Primal Bond。</STRONG> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。
-<BR><FONT color=#800000><STRONG>动作Actions</STRONG>
-<BR></FONT><STRONG>野兽打击Beast‘s strike。</STRONG> 
-  <BR>近战攻击检定：加值等于你的法术攻击加值，触及5尺。<BR>命中：1d8+2+你的感知调整值穿刺、挥砍或钝击伤害（于召唤时选择）。若野兽在此次攻击前立即向着该目标直线移动了至少20尺，则其额外受到1d6与攻击伤害类型相同的伤害，若目标体型不超过巨型，则其还会陷入<U>倒地</U> 状态。</p>
-
-
-
-
-<p><STRONG><FONT color=#000080>海洋野兽 Beast of the Sea</FONT></STRONG>
-<BR><EM>中型野兽，绝对中立</EM>
-<BR><STRONG>AC </STRONG>13+你的感知调整值
-<BR><STRONG>HP </STRONG>5+你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[D8]）
-<BR><STRONG>速度 </STRONG>5尺，游泳60尺</p>
-<p><table width=400 border=0 style="MARGIN-BOTTOM: 5px; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center" cellSpacing=0 cellPadding=2>
-<tr style="FONT-SIZE: 10px; COLOR: #333333">
-<td colspan=2></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td></tr>
-<tr bgColor=#eeeeee>
-<td><b>力量</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
-<td bgcolor=transparent></td>
-<td><b>敏捷</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
-<td bgcolor=transparent></td>
-<td><b>体质</b></td>
-<td>15</td>
-<td>+2</td>
-<td>+2</td></tr>
-<tr>
-<td><b>智力</b></td>
-<td>8</td>
-<td>-1</td>
-<td>-1</td>
+<td class="c1"><strong>体质</strong></td><td class="c1">15 </td><td class="c2">+2 </td><td class="c2">+2</td></tr>
+<tr><td class="c3"><strong>智力</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
 <td></td>
-<td><b>感知</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
+<td class="c3"><strong>感知</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
 <td></td>
-<td><b>魅力</b></td>
-<td>11</td>
-<td>+0</td>
-<td>+0</td></tr></table></p>
-<p><STRONG>感官 </STRONG>黑暗视觉90尺，被动察觉12
-<BR><STRONG>语言 </STRONG>理解你说的语言
-<BR><STRONG>CR </STRONG>无（XP0，PB等于你的PB）
-<BR><STRONG><FONT color=#800000>特质Traits</FONT><BR>水陆两栖Amphibious。</STRONG>野兽可以在空气和水中呼吸。
-<BR><STRONG>原初联结Primal Bond。</STRONG> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。
-<BR><STRONG><FONT color=#800000>动作Actions</FONT></STRONG>
-<BR><STRONG>野兽打击Beast‘s 
-  strike。<BR> </STRONG>近战攻击检定：加值等于你的法术攻击加值，触及5尺。|<BR>命中：1d6+2+你的感知调整值钝击或穿刺伤害（于召唤时选择），且目标陷入受擒状态（逃脱DC等于你的法术豁免DC）。</p>
-
-
-
-<p><STRONG><FONT color=#a6caf0>天空野兽 Beast of the Sky</FONT></STRONG>   
-<BR><EM>小型野兽，绝对中立</EM>
-<BR><STRONG>AC </STRONG>13+你的感知调整值
-<BR><STRONG>HP </STRONG>4+你游侠等级的四倍（野兽拥有与你游侠等级相同数量的生命骰[D6]）
-<BR><STRONG>速度 </STRONG>10尺，飞行60尺</p>
-<p><table width=400 border=0 style="MARGIN-BOTTOM: 5px; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center" cellSpacing=0 cellPadding=2>
-<tr style="FONT-SIZE: 10px; COLOR: #333333">
-<td colspan=2></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td>
-<td colspan=3></td>
-<td>调整</td>
-<td>豁免</td></tr>
-<tr bgColor=#eeeeee>
-<td><b>力量</b></td>
-<td>6</td>
-<td>-2</td>
-<td>-2</td>
-<td bgcolor=transparent></td>
-<td><b>敏捷</b></td>
-<td>16</td>
-<td>+3</td>
-<td>+3</td>
-<td bgcolor=transparent></td>
-<td><b>体质</b></td>
-<td>13</td>
-<td>+1</td>
-<td>+1</td></tr>
-<tr>
-<td><b>智力</b></td>
-<td>8</td>
-<td>-1</td>
-<td>-1</td>
+<td class="c3"><strong>魅力</strong></td><td class="c3">11 </td><td class="c4">+0 </td><td class="c4">+0</td></tr>
+</table>
+<table>
+<tr><td><strong>感官 </strong>黑暗视觉60尺，被动察觉12</td></tr>
+<tr><td><strong>语言 </strong>理解你说的语言</td></tr>
+<tr><td><strong>CR </strong>无（XP0，PB等于你的PB）</td></tr>
+</table>
+<P>
+</P>
+<h6>特质Traits</h6>
+<p>
+<strong>原初联结Primal Bond。</strong> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。<br>
+</p>
+<h6>动作Actions</h6>
+<p>
+<strong>野兽打击Beast‘s strike。</strong>
+<em>近战攻击检定：</em>加值等于你的法术攻击加值，触及5尺。
+<em>命中：</em>1d8+2+你的感知调整值穿刺、挥砍或钝击伤害（于召唤时选择）。若野兽在此次攻击前立即向着该目标直线移动了至少20尺，则其额外受到1d6与攻击伤害类型相同的伤害，若目标体型不超过巨型，则其还会陷入<u>倒地</u> 状态。
+</p>
+</div>
+<div class="stat-block">
+<h5><FONT color=#1f4e79>海洋野兽Beast of the Sea</FONT>    </h5>
+<div class="sub-line">中型野兽，绝对中立</div>
+<table><tr><td><strong>AC </strong></td><td width="40%"><strong>先攻 </strong>+0（10）</td></tr>
+<tr><td colspan=2><strong> HP </strong>5+你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）</td></tr>
+<tr><td colspan=2><strong>速度 </strong>5尺，游泳60尺</td></tr></table>
+<table class="stat-abilities"><tr><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th></tr>
+<tr><td class="c1"><strong>力量</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
 <td></td>
-<td><b>感知</b></td>
-<td>14</td>
-<td>+2</td>
-<td>+2</td>
+<td class="c1"><strong>敏捷</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
 <td></td>
-<td><b>魅力</b></td>
-<td>11</td>
-<td>+0</td>
-<td>+0</td></tr></table></p>
-<p><STRONG>感官 </STRONG>黑暗视觉60尺，被动察觉12
-<BR><STRONG>语言 </STRONG>理解你说的语言
-<BR><STRONG>CR </STRONG>无（XP0，PB等于你的PB）
-<BR><STRONG><FONT color=#800000>特质Traits
-<BR></FONT>飞掠Flyby。</STRONG>野兽飞行离开敌人的触及时不会引发借机攻击。
-<BR><STRONG>原初联结Primal Bond。</STRONG> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。
-<BR><STRONG><FONT color=#800000>动作Actions</FONT></STRONG>
-<BR><STRONG>野兽打击Beast‘s 
-  strike。<BR> </STRONG>近战攻击检定：加值等于你的法术攻击加值，触及5尺。<BR>命中：1d4+3+你的感知调整值挥砍伤害。</p></BLOCKQUOTE>
+<td class="c1"><strong>体质</strong></td><td class="c1">15 </td><td class="c2">+2 </td><td class="c2">+2</td></tr>
+<tr><td class="c3"><strong>智力</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
+<td></td>
+<td class="c3"><strong>感知</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
+<td></td>
+<td class="c3"><strong>魅力</strong></td><td class="c3">11 </td><td class="c4">+0 </td><td class="c4">+0</td></tr>
+</table>
+<table>
+<tr><td><strong>感官 </strong>黑暗视觉90尺，被动察觉12</td></tr>
+<tr><td><strong>语言 </strong>理解你说的语言</td></tr>
+<tr><td><strong>CR </strong>无（XP0，PB等于你的PB）</td></tr>
+</table>
+<P>
+</P>
+<h6>特质Traits</h6>
+<p>
+<strong>水陆两栖Amphibious。</strong>野兽可以在空气和水中呼吸。<br>
+<strong>原初联结Primal Bond。</strong> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。<br>
+</p>
+<h6>动作Actions</h6>
+<p>
+<strong>野兽打击Beast‘s strike。</strong><em>近战攻击检定：</em>加值等于你的法术攻击加值，触及5尺。<em>命中：</em>1d6+2+你的感知调整值钝击或穿刺伤害（于召唤时选择），且目标陷入<u>受擒</u>状态（逃脱DC等于你的法术豁免DC）。
+</p>
+</div>
+<div class="stat-block">
+<h5><FONT color=#00b0f0>天空野兽Beast of the Sky</FONT></h5>
+<div class="sub-line">小型野兽，绝对中立</div>
+<table><tr><td><strong>AC </strong></td><td width="40%"><strong>先攻 </strong>+0（10）</td></tr>
+<tr><td colspan=2><strong> HP </strong>4+你游侠等级的四倍（野兽具有等于你游侠等级的生命骰[D6]）</td></tr>
+<tr><td colspan=2><strong>速度 </strong>10尺，飞行60尺</td></tr></table>
+<table class="stat-abilities"><tr><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th><td style="WIDTH: 5px"></td><th></th><th></th><th>调整</th><th>豁免</th></tr>
+<tr><td class="c1"><strong>力量</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
+<td></td>
+<td class="c1"><strong>敏捷</strong></td><td class="c1">10</td><td class="c2">+0</td><td class="c2">+0</td>
+<td></td>
+<td class="c1"><strong>体质</strong></td><td class="c1">13 </td><td class="c2">+1 </td><td class="c2">+1</td></tr>
+<tr><td class="c3"><strong>智力</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
+<td></td>
+<td class="c3"><strong>感知</strong></td><td class="c3">10</td><td class="c4">+0</td><td class="c4">+0</td>
+<td></td>
+<td class="c3"><strong>魅力</strong></td><td class="c3">11 </td><td class="c4">+0 </td><td class="c4">+0</td></tr>
+</table>
+<table>
+<tr><td><strong>感官 </strong>黑暗视觉60尺，被动察觉12</td></tr>
+<tr><td><strong>语言 </strong>理解你说的语言</td></tr>
+<tr><td><strong>CR </strong>无（XP0，PB等于你的PB）</td></tr>
+</table>
+<P>
+</P>
+<h6>特质Traits</h6>
+<p>
+<strong>飞掠Flyby。</strong>野兽飞行离开敌人的触及时不会引发<u>借机攻击</u>。<br>
+<strong>原初联结Primal Bond。</strong> 将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。<br>
+</p>
+<h6>动作Actions</h6>
+<p>
+<strong>野兽打击Beast‘s strike。</strong><em>近战攻击检定：</em>加值等于你的法术攻击加值，触及5尺。<em>命中：</em>1d4+3+你的感知调整值挥砍伤害。
+</p>
+</div>
 </body>
 
 

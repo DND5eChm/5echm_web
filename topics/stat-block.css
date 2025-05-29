@@ -4,7 +4,7 @@ html,body {
 }
 div.stat-block{
 	margin-left: 22px;
-	width: 500px;
+	width: 537px;
 	background-color: #F8F8F6;
 	padding: 15px;
 	border:3px double #808080;
@@ -34,15 +34,12 @@ div.stat-block .sub-line{
 div.stat-block table{
 	width: 500px;
 	color: #800000;
-	white-space: nowrap;
 	border-collapse: collapse;
 }
 table.stat-abilities{
-	min-width: 500px;
 	text-align: center;
-	white-space: nowrap;
-	border-collapse: collapse;
 	margin-bottom: 15px;
+	white-space: nowrap;
 }
 table.stat-abilities th{
 	width: 40px;

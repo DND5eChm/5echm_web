@@ -12,7 +12,7 @@
 function syn(){
 if(parent.nav.tree){
  if(parent.nav.tree.loaded){
-  parent.nav.tree.selectNode(1674);
+  parent.nav.tree.selectNode(1611);
  }else{
   setTimeout("syn()",500);
 }
@@ -45,6 +45,7 @@ window.onload = function(){originalOnload();parent.contentLoaded = true;};
 <P> 一些罪恶的魔法使会执行禁忌的死灵仪式，将其灵魂与躯体切离，以此转化为巫妖——死亡的主宰，魔法的宗师。它们将灵魂存放在秘藏起来的圣物中，远程操纵着自己的躯体，以此满足自己摆脱死亡之束缚的野心。
 <BR>巫妖有着非凡的狡诈与魔法之力，这些亡灵使用其悖逆自然的不朽生命来追求远越凡人一生所能抵达之极限的奥法隐秘。巫妖的邪恶大计令其投身于探索生命之秘、多元宇宙、神性、以及其他不可理解的内容。它们对凡人的生活与欲望漠不关心，不遗余力地投身到推进自己的计划之中。
 <BR>巫妖的年龄与起源会影响其外貌。古老的巫妖看起来也许不过是一具披着来自被遗忘的帝国风格的腐烂服饰的脆弱枯骨，而更“年轻”的巫妖看起来则更接近活物，穿着现代的服饰。许多巫妖都使用幻术伪装真身，化作标致的凡人之貌。
+<BR>尽管巫妖不惧死亡，但它们却未必能摆脱漫长时光的蹂躏。一些巫妖会在经年累月之后逐渐失去和凡界的联系，退化为<STRONG><U>半巫妖Demiliches</U></STRONG>。
 </P>
 <DIV align=center>
 <div class=little-paper style="WIDTH: 500px">
@@ -81,16 +82,26 @@ window.onload = function(){originalOnload();parent.contentLoaded = true;};
 </td></tr>
 <tr><th>8</th><td>这名巫妖的导师的颅骨。
 </td></tr></TABLE></P>
+<H2>巫妖巢穴Lich Lairs
+</H2>
 
+<P>巫妖的巢穴是它们建造的魔法图书馆，或是隐藏在异位面要塞、臭名昭著的古堡、还有其它类似的可怖庇护所之中的奥术实验室。
+<BR>巫妖的巢穴所在区域将因其存在而异变，产生以下效应： 
+<BR><STRONG>全知者All-Seeing。</STRONG>若巫妖身处巢穴内，其可以施展<U><EM>鹰眼术Clairvoyance</EM></U>，无需法术成分并使用与施法动作相同的施法属性。
+<BR><STRONG>吞灭亡魂Inevitable 
+Siphon。</STRONG>每当一名类人生物在巢穴1里内死亡时，其灵魂将会立即被巫妖吞噬。因此被吞噬灵魂的类人只能被法术<U><EM>完全复生术True 
+Resurrection</EM></U>或<U><EM>祈愿术Wish</EM></U>  复活。
+<BR>若巫妖被摧毁或是将其巢穴搬至别处，这些效应立即结束。当巫妖重塑躯壳（见其命匣特质），这些效应立即再度起效。
+</P>
 <div class="stat-block">
 <h5>巫妖Lich</h5>
 <div class="sub-line">中型亡灵（法师），中立邪恶</div>
 <table><tr>
           <td><strong>AC </strong>20</td><td width="40%"><strong>先攻 </strong>+17（27）</td></tr>
-<tr><td><strong> HP </strong>315（42d8+126）</td></tr>
+<tr><td colspan=2><strong>HP </strong>315（42d8+126）</td></tr>
 <tr><td colspan=2><strong>速度 </strong>30尺</td></tr></table>
 <table class="stat-abilities"><tr>
-          <th></th><th></th><th>调整</th><th>豁免</th><td WIDTH=5px></td><th></th><th></th><th>调整</th><th>豁免</th><td WIDTH=5px></td><th></th><th></th><th>调整</th><th>豁免</th></tr>
+          <th></th><th></th><th>调整</th><th>豁免</th><td WIDTH=5></td><th></th><th></th><th>调整</th><th>豁免</th><td WIDTH=5></td><th></th><th></th><th>调整</th><th>豁免</th></tr>
 <tr><td class="c1"><strong>力量</strong></td><td class="c1">11</td><td class="c2">+0</td><td class="c2">+0</td>
 <td></td>
 <td class="c1"><strong>敏捷</strong></td><td class="c1">16</td><td class="c2">+3</td><td class="c2">+10</td>
