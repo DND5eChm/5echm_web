@@ -7,11 +7,13 @@ h1,h2,h3{
 	color:#800000;
 }
 /*列表聚拢*/
-UL {
+UL,OL{
+	margin-left: 24px;
 	margin-top: -16px;
 	margin-bottom: -16px;
 }
-OL {
+BLOCKQUOTE{
+	margin-left: 24px;
 	margin-top: -16px;
 	margin-bottom: -16px;
 }
@@ -45,13 +47,13 @@ B U,U B,STRONG U,U STRONG{
 h4 {
     color: #704cd9;
     margin-bottom: -20px;
-	font-size: 22px;
+	font-size: 140%;
 }
 /*怪物页使用h5*/
 div h5{
 	color: #800000;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 140%;
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
@@ -59,7 +61,7 @@ div h5{
 h6 {
 	color: #800000;
     margin-bottom: -20px;
-	font-size: 18px;
+	font-size: 115%;
 }
 /*居中框*/
 div.center{
@@ -75,12 +77,12 @@ div.center{
 }
 /*备用数据卡框*/
 div.stat-block{
-	margin-left: 22px;
+	margin-left: 24px;
 	width: 537px;
 	background-color: #F8F8F6;
 	padding: 15px;
 	border:3px double #808080;
-	font-size: 16px;
+	font-size: 100%;;
 	margin-bottom:20px;
 }
 /*实例文本框*/
@@ -157,7 +159,7 @@ table.part th{
 	text-align: center;
 }
 P.sum{
-	font-size:18px;
+	font-size: 115%;
 	MARGIN-TOP: -8px;
 	margin-bottom: -8px;
 	color: #808080;
