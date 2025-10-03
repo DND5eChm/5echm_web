@@ -306,7 +306,6 @@ body {
 
 <script>
 var words = [];
-var API_BASE = 'https://5echmsearch.kagangtuya.top';
 var lastResultIndexes = [];
 var previewTooltip;
 var previewTitleElem;
@@ -403,10 +402,10 @@ function displayResults(data) {
 
             li.addEventListener('click', function(event) {
                 selectItem(li, event);
-            });
-
-            li.addEventListener('dblclick', function() {
-                viewItem(item.path);
+                if (li.dataset.url) {
+                    hidePreview();
+                    viewItem(li.dataset.url);
+                }
             });
 
             li.addEventListener('mouseenter', function(event) {
