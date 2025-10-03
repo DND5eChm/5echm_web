@@ -1,320 +1,726 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
 <head>
-	<title>5E 不全书</title>
+<title>搜索</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+* {
+    box-sizing: border-box;
+}
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<style type="text/css">
-		<!-- 
-		.selected {
-			font-weight: normal;
-			background-color: #E2E2E2;
-			padding: 0px, 2px, 0px, 2px;
-		}
+html, body {
+    height: 100%;
+}
 
-		.unselected {
-			font-weight: normal;
-			padding: 0px, 2px, 0px, 2px;
-		}
+body {
+    margin: 0;
+    padding: 12px 12px 16px;
+    font-family: "Microsoft YaHei", "Inter", sans-serif;
+    background: transparent;
+    color: #0f172a;
+    overflow-y: auto;
+}
 
-		.hand {
-			cursor: hand;
-		}
+.search-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
 
-		.p {
-			height: 16px;
-			width: 16px;
-			vertical-align: middle;
-			border: 0;
-		}
+.search-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
 
-		div,
-		body {
-			font-family: Tahoma, Verdana;
-			font-size: 16px;
-		}
+.search-input-wrapper {
+    position: relative;
+}
 
-		A:link {
-			text-decoration: none;
-			color: #000000
-		}
+#keyword {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5f5;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
 
-		A:visited {
-			text-decoration: none;
-			color: #000000
-		}
+#keyword:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    background: #ffffff;
+    outline: none;
+}
 
-		A:active {
-			text-decoration: none;
-			color: #000000
-		}
+.options-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 12px;
+    color: #475569;
+    flex-wrap: wrap;
+}
 
-		A:hover {
-			text-decoration: none;
-			color: #FF0000
-		}
-		-->
-	</style>
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
 
-	<script>
+.checkbox-label input {
+    width: 14px;
+    height: 14px;
+    accent-color: #2563eb;
+}
 
-		var words = new Array();
-		var rank = new Array();
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
 
-		function highlight(key) {
-			var i;
-			var body = parent.content.document.body.innerHTML;
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
 
-			for (i = 0; i < words.length; i++) {
-				var reg = new RegExp("(>[^<>]*)(" + words[i] + ")+([^<>]*<)", "gi");
-				body = body.replace(reg, "$1<span style=\"color:white; background-color: Red;\">$2</span>$3");
-			}
+.btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+}
 
-			parent.content.document.body.innerHTML = body;
-		}
+.btn-primary:hover {
+    background: #1d4ed8;
+}
 
-		function highlightWhenComplete() {
-			if (navigator.userAgent.indexOf("Firefox") > -1) {
-				if (parent.contentLoaded) {
-					highlight(words.join('|'));
-					return;
-				}
-			} else {
-				if (parent.content.document.readyState) {
-					if (parent.content.document.readyState == 'complete') {
-						highlight(words.join('|'));
-						return;
-					}
-				} else {
-					if (parent.contentLoaded) {
-						highlight(words.join('|'));
-						return;
-					}
-				}
-			}
-			window.setTimeout("highlightWhenComplete();", 200);
-		}
+.btn-secondary {
+    background: #e0e7ff;
+    color: #1e3a8a;
+}
 
-		function Go() {
-			var i;
-			var url = "";
-			for (i = 0; i < document.getElementById("Result").options.length; i++) {
-				if (document.getElementById("Result").options[i].selected) {
-					url = document.getElementById("Result").options[i].value;
-					break;
-				}
-			}
-			if (url != "") {
-				parent.contentLoaded = false;
-				parent.content.location = url;
-				window.setTimeout("highlightWhenComplete();", 200);
-			}
-		}
+.btn-secondary:hover {
+    background: #c7d2fe;
+}
 
-		function window_resize() {
-			if (navigator.userAgent.indexOf("iPad") > -1 || navigator.userAgent.indexOf("iPhone") > -1 || navigator.userAgent.indexOf("iPod") > -1 || navigator.userAgent.indexOf("Android") > -1) {
-				document.getElementById("Result").style.cssText = "height: auto;width: " + (window.innerWidth - 20);
-				document.getElementById("keyword").style.cssText = "width: " + (window.innerWidth - 20);
-			} else if (window.innerHeight) {
-				document.getElementById("Result").style.cssText = "height: " + (window.innerHeight - 135) + "; width: " + (window.innerWidth - 20);
-				document.getElementById("keyword").style.cssText = "width: " + (window.innerWidth - 20);
-			} else {
-				document.getElementById("Result").style.cssText = "height: " + (document.body.offsetHeight - 130) + "; width: " + (document.body.offsetWidth - 20);
-				document.getElementById("keyword").style.cssText = "width: " + (document.body.offsetWidth - 20);
-			}
-		}
+.btn-ghost {
+    background: transparent;
+    color: #2563eb;
+}
 
-		function SearchIt() {
+.btn-ghost:hover {
+    background: rgba(37, 99, 235, 0.08);
+}
 
-			function addToRanks(index, r) {
-				var i;
-				var n = 0;
-				for (i = 0; i < rank.length; i++) {
-					if (rank[i][0] == index) {
-						rank[i][1] += r;
-						return;
-					}
-				}
-				n = rank.length;
-				rank[n] = new Array();
-				rank[n][0] = index;
-				rank[n][1] = r;
-			}
+.results-wrapper {
+    margin-top: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
 
-			var i, j;
-			var tn, str;
+.results-info {
+    display: none;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
 
-			var forSearch = new Array();
-			str = document.getElementById("keyword").value;
+.results-info strong {
+    font-weight: 700;
+}
 
+.results-list-container {
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-			var inquote = false;
-			var tmp = "";
-			words.length = 0;
+.results-header {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    background: #f8fafc;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
 
-			for (i = 0; i < str.length; i++) {
-				if (inquote) {
-					if (str.charAt(i) == '"') {
-						if (tmp != "") { words[words.length] = tmp; tmp = ""; }
-						inquote = false;
-					} else {
-						tmp += str.charAt(i);
-					}
-				} else {
-					if (str.charAt(i) == '"') {
-						if (tmp != "") { words[words.length] = tmp; tmp = ""; }
-						inquote = true;
-					} else if (str.charAt(i) == ' ') {
-						if (tmp != "") { words[words.length] = tmp; tmp = ""; }
-					} else {
-						tmp += str.charAt(i);
-					}
-				}
-			}
-			if (tmp != "") { words[words.length] = tmp; tmp = ""; }
+.results-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 60vh;
+    overflow-y: auto;
+}
 
+.result-item {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #1f2937;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
 
-			document.getElementById("Result").options.length = 0;
+.result-item:hover {
+    background: #eef2ff;
+}
 
-			var rrank = 1;
-			var RegExp_words = new Array();
+.result-item.selected {
+    background: #e0e7ff;
+    border-left: 3px solid #2563eb;
+}
 
+.result-main-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
+.result-title-text {
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+}
 
-			for (i = 0; i < words.length; i++) {
-				RegExp_words[i] = new RegExp(words[i], "gi");
-			}
+.result-rank {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.12);
+    padding: 2px 8px;
+    border-radius: 999px;
+    display: inline-flex;
+    width: fit-content;
+}
 
-			forSearch.length = 0;
-			if (!document.getElementById("previousResult").checked) {
-				tn = contents.length / 3;
-				for (i = 0; i <= tn - 1; i++) {
-					forSearch[i] = i;
-				}
-			} else {
-				for (i = 0; i < rank.length; i++) {
-					forSearch[i] = rank[i][0];
-				}
-			}
-			rank.length = 0;
+.result-meta {
+    font-size: 12px;
+    color: #475569;
+}
 
-			for (i = 0; i <= forSearch.length - 1; i++) {
-				str = contents[forSearch[i] * 3 + 1];
-				rrank = 1;
-				for (j = 0; j < RegExp_words.length; j++) {
-					r = str.match(RegExp_words[j]);
-					if (r != null) {
-						rrank *= (r.length + 1);
-					}
-				}
-				if (rrank > 1) {
-					addToRanks(forSearch[i], Math.round(Math.pow(rrank, 1 / RegExp_words.length) * 20));
-				}
-			}
+.empty-state {
+    list-style: none;
+    padding: 24px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+}
 
-			if (!document.getElementById("titleOnly").checked) {
-				for (i = 0; i <= forSearch.length - 1; i++) {
-					str = contents[forSearch[i] * 3];
-					rrank = 1;
-					for (j = 0; j < RegExp_words.length; j++) {
-						r = str.match(RegExp_words[j]);
-						if (r != null) {
-							rrank *= (r.length + 1);
-						}
-					}
-					if (rrank > 1) {
-						addToRanks(forSearch[i], Math.round(Math.pow(rrank, 1 / RegExp_words.length)));
-					}
-				}
-			}
+.empty-text {
+    line-height: 1.6;
+}
 
-			if (rank.length > 0) {
-				var t = new Array();
-				for (i = 0; i <= rank.length - 2; i++) {
-					for (j = 0; j <= rank.length - 2 - i; j++) {
-						if (rank[j][1] < rank[j + 1][1]) {
-							t = rank[j];
-							rank[j] = rank[j + 1];
-							rank[j + 1] = t;
-						}
-					}
-				}
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-				for (i = 0; i <= rank.length - 1; i++) {
-					document.getElementById("Result").options[document.getElementById("Result").options.length] = new Option(contents[rank[i][0] * 3 + 1] + " [Rank:" + rank[i][1] + "]", contents[rank[i][0] * 3 + 2].replace(/\\/g, '/'));
-					if (i == 0) {
-						document.getElementById("Result").selectedIndex = 0;
-					}
-				}
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.6);
+    border-radius: 999px;
+}
 
-			} else {
-				alert(strings["No topics found!"]);
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-			}
+.preview-tooltip {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    max-width: 420px;
+    width: min(420px, 45vw);
+    background: #111827;
+    color: #f8fafc;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.3);
+    font-size: 12px;
+    line-height: 1.6;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
 
-		}
+.preview-tooltip.visible {
+    opacity: 1;
+}
 
-	</script>
-	<script language="JavaScript" src="languages.js"></script>
-	<link href="style.css" rel="stylesheet" type="text/css">
+.preview-tooltip__title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #cbd5f5;
+}
 
+.preview-tooltip__content {
+    max-height: 260px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
 
+.preview-tooltip__content mark {
+    background: rgba(37, 99, 235, 0.6);
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+.preview-tooltip__empty {
+    color: #94a3b8;
+}
+
+.server-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 16px;
+    border: 1px solid #fecaca;
+    font-size: 12px;
+}
+</style>
+
+<script>
+var words = [];
+var API_BASE = 'https://5echmsearch.kagangtuya.top';
+var lastResultIndexes = [];
+var previewTooltip;
+var previewTitleElem;
+var previewContentElem;
+
+async function SearchIt() {
+    await executeSearch(false);
+}
+
+async function SearchWithinResults() {
+    if (!lastResultIndexes.length) {
+        renderMessage('请先执行一次完整搜索再使用结果内搜索', true);
+        return;
+    }
+    await executeSearch(true);
+}
+
+async function executeSearch(searchWithin) {
+    var keyword = document.getElementById('keyword').value.trim();
+    if (!keyword) {
+        renderMessage('请输入关键词后再搜索', true);
+        return;
+    }
+
+    var titleOnly = document.getElementById('titleOnly').checked;
+    renderMessage('正在搜索，请稍候…', true);
+
+    words = keyword.split(/\s+/).filter(function(w) { return w.length > 0; });
+
+    var params = new URLSearchParams({
+        keyword: keyword,
+        titleOnly: titleOnly,
+        page: 1,
+        pageSize: 100
+    });
+
+    if (searchWithin) {
+        params.set('baseIndexes', lastResultIndexes.join(','));
+    }
+
+    try {
+        var response = await fetch(API_BASE + '/api/search?' + params.toString());
+        if (!response.ok) {
+            throw new Error('搜索失败');
+        }
+        var data = await response.json();
+        displayResults(data);
+    } catch (e) {
+        console.error('API 搜索失败:', e);
+        lastResultIndexes = [];
+        renderMessage('搜索失败，请确认后端已运行 `node server.js`', true);
+    }
+}
+
+function displayResults(data) {
+    var listElem = document.getElementById('resultsList');
+    listElem.innerHTML = '';
+
+    if (data.results && data.results.length > 0) {
+        lastResultIndexes = data.results.map(function(item) { return item.index; });
+        document.getElementById('resultsCount').textContent = data.total;
+        document.getElementById('resultsInfo').style.display = 'block';
+
+        data.results.forEach(function(item, idx) {
+            var li = document.createElement('li');
+            li.className = 'result-item' + (idx === 0 ? ' selected' : '');
+            var sourcePath = resolveSourcePath(item);
+            var displayTitle = resolveTitle(item, sourcePath);
+            li.dataset.url = item.path || '';
+            li.dataset.title = displayTitle;
+            li.dataset.source = sourcePath;
+            li._previewText = resolvePreviewText(item);
+
+            var titleCell = document.createElement('div');
+            titleCell.className = 'result-main-title';
+
+            var titleText = document.createElement('div');
+            titleText.className = 'result-title-text';
+            titleText.textContent = displayTitle;
+
+            var rankBadge = document.createElement('div');
+            rankBadge.className = 'result-rank';
+            rankBadge.textContent = '相关度 ' + item.rank;
+
+            titleCell.appendChild(titleText);
+            titleCell.appendChild(rankBadge);
+
+            var sourceCell = document.createElement('div');
+            sourceCell.className = 'result-meta';
+            sourceCell.textContent = sourcePath || '—';
+
+            li.appendChild(titleCell);
+            li.appendChild(sourceCell);
+
+            li.addEventListener('click', function(event) {
+                selectItem(li, event);
+            });
+
+            li.addEventListener('dblclick', function() {
+                viewItem(item.path);
+            });
+
+            li.addEventListener('mouseenter', function(event) {
+                showPreview(li, event);
+            });
+
+            li.addEventListener('mousemove', movePreview);
+            li.addEventListener('mouseleave', hidePreview);
+
+            listElem.appendChild(li);
+        });
+
+        var first = listElem.querySelector('.result-item');
+        if (first) {
+            selectItem(first, null);
+        }
+    } else {
+        lastResultIndexes = [];
+        document.getElementById('resultsInfo').style.display = 'none';
+        renderMessage('未找到相关结果，请尝试调整关键词', true);
+    }
+}
+
+function showPreview(elem, event) {
+    if (!previewTooltip) return;
+
+    var title = (elem.dataset.title || '预览').trim();
+    var snippet = (elem._previewText || '').trim();
+
+    previewTitleElem.textContent = title || '预览';
+    if (snippet) {
+        previewContentElem.classList.remove('preview-tooltip__empty');
+        previewContentElem.innerHTML = renderSnippet(snippet);
+    } else {
+        previewContentElem.classList.add('preview-tooltip__empty');
+        previewContentElem.textContent = '暂无可预览的内容片段';
+    }
+
+    previewTooltip.classList.add('visible');
+
+    var baselineY;
+    if (event && typeof event.clientY === 'number') {
+        baselineY = event.clientY;
+    } else {
+        var rect = elem.getBoundingClientRect();
+        baselineY = rect.top + rect.height / 2;
+    }
+    positionPreview(baselineY);
+}
+
+function movePreview(event) {
+    if (!previewTooltip || !previewTooltip.classList.contains('visible')) return;
+    positionPreview(event.clientY);
+}
+
+function hidePreview() {
+    if (!previewTooltip) return;
+    previewTooltip.classList.remove('visible');
+    previewTooltip.style.left = '-9999px';
+    previewTooltip.style.top = '-9999px';
+}
+
+function positionPreview(cursorY) {
+    if (!previewTooltip) return;
+    var tooltip = previewTooltip;
+    var padding = 16;
+    var tooltipWidth = tooltip.offsetWidth;
+    var tooltipHeight = tooltip.offsetHeight;
+
+    var targetX = window.innerWidth - tooltipWidth - padding;
+    var targetY = typeof cursorY === 'number' ? cursorY - tooltipHeight / 2 : (window.innerHeight - tooltipHeight) / 2;
+
+    targetY = Math.max(padding, Math.min(window.innerHeight - tooltipHeight - padding, targetY));
+
+    tooltip.style.left = targetX + 'px';
+    tooltip.style.top = targetY + 'px';
+}
+
+function renderSnippet(snippet) {
+    var truncated = snippet.length > 900 ? snippet.slice(0, 900) + '…' : snippet;
+    var safeSnippet = escapeHtml(truncated || '');
+    words.forEach(function(word) {
+        var escaped = escapeRegExp(word);
+        if (!escaped) return;
+        var regex = new RegExp(escaped, 'gi');
+        safeSnippet = safeSnippet.replace(regex, function(match) {
+            return '<mark>' + match + '</mark>';
+        });
+    });
+    return safeSnippet
+        .replace(/\r\n/g, '<br>')
+        .replace(/\r/g, '<br>')
+        .replace(/\n/g, '<br>');
+}
+
+function renderMessage(message, clearPreview) {
+    document.getElementById('resultsInfo').style.display = 'none';
+    var listElem = document.getElementById('resultsList');
+    listElem.innerHTML = '<li class="empty-state"><div class="empty-text">' + escapeHtml(message) + '</div></li>';
+    if (clearPreview) {
+        hidePreview();
+    }
+}
+
+function highlightInContent() {
+    if (words.length === 0) return;
+
+    var attempts = 0;
+    var maxAttempts = 10;
+
+    function tryHighlight() {
+        attempts++;
+        try {
+            var contentWin = parent.content;
+            var contentDoc = contentWin.document;
+
+            if (!contentDoc || !contentDoc.body) {
+                if (attempts < maxAttempts) {
+                    setTimeout(tryHighlight, 300);
+                }
+                return;
+            }
+
+            var walker = contentDoc.createTreeWalker(contentDoc.body, NodeFilter.SHOW_TEXT, null, false);
+            var nodesToProcess = [];
+            var node;
+            while ((node = walker.nextNode())) {
+                if (node.parentNode.tagName !== 'SCRIPT' &&
+                    node.parentNode.tagName !== 'STYLE' &&
+                    node.parentNode.tagName !== 'MARK') {
+                    nodesToProcess.push(node);
+                }
+            }
+
+            nodesToProcess.forEach(function(textNode) {
+                var text = textNode.nodeValue;
+                var hasMatch = words.some(function(word) {
+                    return text.toLowerCase().indexOf(word.toLowerCase()) !== -1;
+                });
+
+                if (hasMatch) {
+                    var html = text;
+                    words.forEach(function(word) {
+                        var escapedWord = escapeRegExp(word);
+                        if (!escapedWord) return;
+                        var regex = new RegExp('(' + escapedWord + ')', 'gi');
+                        html = html.replace(regex, '<mark style="background: #fde68a; padding: 2px 4px; border-radius: 2px; font-weight: 500;">$1</mark>');
+                    });
+
+                    var temp = contentDoc.createElement('span');
+                    temp.innerHTML = html;
+
+                    var parent = textNode.parentNode;
+                    while (temp.firstChild) {
+                        parent.insertBefore(temp.firstChild, textNode);
+                    }
+                    parent.removeChild(textNode);
+                }
+            });
+
+        } catch (e) {
+            if (attempts < maxAttempts) {
+                setTimeout(tryHighlight, 300);
+            }
+        }
+    }
+
+    setTimeout(tryHighlight, 500);
+}
+
+function viewSelected() {
+    var selected = document.querySelector('.result-item.selected');
+    if (selected) {
+        var url = selected.dataset.url;
+        if (url) {
+            viewItem(url);
+        }
+    }
+}
+
+function viewItem(url) {
+    try {
+        parent.content.location.href = url;
+        highlightInContent();
+    } catch (e) {
+        console.error('跳转失败:', e);
+        try {
+            window.open(url, 'content');
+        } catch (e2) {
+            console.error('备用跳转也失败:', e2);
+        }
+    }
+}
+
+function selectItem(elem, event) {
+    var items = document.querySelectorAll('.result-item');
+    items.forEach(function(item) {
+        item.classList.remove('selected');
+    });
+    elem.classList.add('selected');
+    showPreview(elem, event || null);
+}
+
+function escapeHtml(text) {
+    return String(text || '').replace(/[&<>"']/g, function(ch) {
+        return ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[ch];
+    });
+}
+
+function escapeRegExp(text) {
+    return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function resolveSourcePath(item) {
+    if (!item) return '';
+    var rawPath = (item.sourcePath || item.path || '').toString();
+    var normalized = rawPath.replace(/\\+/g, '/');
+    if (/^topics\//i.test(normalized)) {
+        normalized = normalized.replace(/^topics\//i, '');
+    }
+    return normalized;
+}
+
+function resolveTitle(item, sourcePath) {
+    var title = (item && item.title ? item.title : '').toString().trim();
+    if (title) {
+        return title;
+    }
+    var fallback = sourcePath.split('/').pop() || '';
+    return fallback.replace(/\.(html?|htm)$/i, '') || '未命名页面';
+}
+
+function resolvePreviewText(item) {
+    if (!item) return '';
+    var text = (item.preview || item.content || item.snippet || '').toString();
+    return text.replace(/\r\n/g, '\n').replace(/\n\r/g, '\n').replace(/\r/g, '\n');
+}
+
+function init() {
+    previewTooltip = document.getElementById('previewTooltip');
+    previewTitleElem = document.getElementById('previewTooltipTitle');
+    previewContentElem = document.getElementById('previewTooltipContent');
+    hidePreview();
+    document.getElementById('keyword').focus();
+
+    fetch(API_BASE + '/api/search?keyword=test').then(function() {
+        console.log('后端服务已连接');
+    }).catch(function() {
+        var listElem = document.getElementById('resultsList');
+        listElem.innerHTML = '<li class="empty-state"><div class="empty-text">后端服务未启动，请运行 `node server.js`</div></li>';
+    });
+}
+</script>
 </head>
 
-<body bgcolor="#DCDBD6" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5"
-	onload="document.getElementById('loading').style.display='none';window_resize();document.getElementById('keyword').focus();"
-	onresize="window_resize();">
-	<div id="loading">
-		<font color="#FF0000" size="1">
-			<script>document.write(strings["Loading the data for search..."]);</script>
-		</font><br><br>
-	</div>
-	<script language="JavaScript" src="https://5echm.aivu.top/data.js"></script>
-	<form name="form1" method="post" action="" onSubmit="SearchIt(); return false;">
-		<table width="100%" border="0">
-			<tr>
-				<td><span class="label">
-						<script>document.write(strings["Type in the word(s) to search for:"]);</script>
-					</span>
-					<font size="1" face="Verdana, Arial, Helvetica, sans-serif"><br>
-					</font> <input name="keyword" type="text" class="label" id="keyword">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="checkbox" id="titleOnly">
-					<label for="titleOnly" class="label">
-						<script>document.write(strings["Search title only"]);</script>
-					</label>
-					<br> <input type="checkbox" id="previousResult">
-					<label for="previousResult" class="label">
-						<script>document.write(strings["Search previous results"]);</script>
-					</label>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td align="left">
-								<script>document.write('<input type="submit" name="button" value="' + strings["Search"] + '" class="label" onClick="SearchIt(); return false;">');</script>
-							</td>
-							<td align="right">
-								<script>document.write('<input name="display" type="button" id="display" value="' + strings["Display"] + '" class="label" onClick="Go(); return false;">');</script>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td><select name="Result" size="20" id="Result" class="label" ondblclick="Go();">
-					</select></td>
-			</tr>
-		</table>
+<body onload="init()">
+<div class="search-container">
+    <div class="search-header">
+        <div class="search-title">文档智能搜索</div>
+    </div>
 
-	</form>
+    <form onsubmit="SearchIt(); return false;">
+        <div class="search-input-wrapper">
+            <input
+                type="text"
+                id="keyword"
+                placeholder="输入关键词，例如：传送 门 技能"
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="options-row">
+            <label class="checkbox-label">
+                <input type="checkbox" id="titleOnly">
+                <span>只匹配标题</span>
+            </label>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">搜索</button>
+            <button type="button" class="btn btn-secondary" onclick="SearchWithinResults()">结果内搜索</button>
+            <button type="button" class="btn btn-ghost" onclick="viewSelected()">打开选中页面</button>
+        </div>
+    </form>
+</div>
+
+<div class="results-wrapper">
+    <div class="results-info" id="resultsInfo">
+        找到 <strong id="resultsCount">0</strong> 个匹配结果
+    </div>
+
+    <div class="results-list-container">
+        <div class="results-header">
+            <span>标题与相关度</span>
+            <span>来源路径</span>
+        </div>
+        <ul class="results-list" id="resultsList">
+            <li class="empty-state">
+                <div class="empty-text">输入关键词即可开始搜索</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="preview-tooltip" id="previewTooltip">
+    <div class="preview-tooltip__title" id="previewTooltipTitle">预览</div>
+    <div class="preview-tooltip__content preview-tooltip__empty" id="previewTooltipContent">悬停结果可查看内容片段</div>
+</div>
+
 </body>
-
 </html>
