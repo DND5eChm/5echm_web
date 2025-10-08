@@ -57,6 +57,44 @@ body {
     outline: none;
 }
 
+.search-help-bubble {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    max-width: 360px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #334155;
+    background: #f8fafc;
+    border: 1px solid #cbd5f5;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 20;
+}
+
+.search-help-bubble strong {
+    color: #1d4ed8;
+}
+
+.search-help-bubble code {
+    background: #e0e7ff;
+    color: #1e3a8a;
+    border-radius: 4px;
+    padding: 1px 4px;
+    font-size: 11px;
+}
+
+.search-input-wrapper:hover .search-help-bubble,
+.search-input-wrapper:focus-within .search-help-bubble {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .options-row {
     display: flex;
     align-items: center;
@@ -78,6 +116,34 @@ body {
     width: 14px;
     height: 14px;
     accent-color: #2563eb;
+}
+
+.filter-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-label {
+    font-size: 12px;
+    color: #475569;
+}
+
+.filter-select {
+    min-width: 150px;
+    padding: 6px 10px;
+    border: 1px solid #cbd5f5;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 12px;
+    color: #1f2937;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background: #ffffff;
 }
 
 .btn-group {
@@ -305,13 +371,31 @@ body {
 </style>
 
 <script>
-var API_BASE = "https://5echmsearch.kagangtuya.top"
 var words = [];
 var lastResultIndexes = [];
 var previewTooltip;
 var previewTitleElem;
 var previewContentElem;
+var categorySelect;
+var cachedCategories = [];
+var API_BASE="https://5echmsearch.kagangtuya.top"
 
+function extractHighlightTerms(input) {
+    if (!input) return [];
+    var terms = [];
+    var regex = /"([^"]+)"|(\S+)/g;
+    var match;
+    while ((match = regex.exec(input)) !== null) {
+        var token = match[1] || match[2] || '';
+        if (!token) continue;
+        token.split('|').forEach(function(part) {
+            var cleaned = part.trim();
+            if (!cleaned) return;
+            terms.push(cleaned);
+        });
+    }
+    return terms;
+}
 async function SearchIt() {
     await executeSearch(false);
 }
@@ -332,9 +416,10 @@ async function executeSearch(searchWithin) {
     }
 
     var titleOnly = document.getElementById('titleOnly').checked;
+    var categoryValue = categorySelect ? (categorySelect.value || 'all') : 'all';
     renderMessage('正在搜索，请稍候…', true);
 
-    words = keyword.split(/\s+/).filter(function(w) { return w.length > 0; });
+    words = extractHighlightTerms(keyword);
 
     var params = new URLSearchParams({
         keyword: keyword,
@@ -342,6 +427,7 @@ async function executeSearch(searchWithin) {
         page: 1,
         pageSize: 100
     });
+    params.set('category', categoryValue);
 
     if (searchWithin) {
         params.set('baseIndexes', lastResultIndexes.join(','));
@@ -378,6 +464,7 @@ function displayResults(data) {
             li.dataset.url = item.path || '';
             li.dataset.title = displayTitle;
             li.dataset.source = sourcePath;
+            li.dataset.category = item.category || '';
             li._previewText = resolvePreviewText(item);
 
             var titleCell = document.createElement('div');
@@ -396,7 +483,14 @@ function displayResults(data) {
 
             var sourceCell = document.createElement('div');
             sourceCell.className = 'result-meta';
-            sourceCell.textContent = sourcePath || '—';
+            var metaParts = [];
+            if (item.category) {
+                metaParts.push(item.category);
+            }
+            if (sourcePath) {
+                metaParts.push(sourcePath);
+            }
+            sourceCell.textContent = metaParts.join(' · ') || '—';
 
             li.appendChild(titleCell);
             li.appendChild(sourceCell);
@@ -651,11 +745,73 @@ function resolvePreviewText(item) {
     return text.replace(/\r\n/g, '\n').replace(/\n\r/g, '\n').replace(/\r/g, '\n');
 }
 
+function populateCategoryOptions(list, defaultCategory) {
+    if (!categorySelect) return;
+    var select = categorySelect;
+    select.innerHTML = '';
+
+    var optionAll = document.createElement('option');
+    optionAll.value = 'all';
+    optionAll.textContent = '全部分类';
+    select.appendChild(optionAll);
+
+    var seen = new Set();
+    (list || []).forEach(function(cat) {
+        var value = (cat || '').trim();
+        if (!value || seen.has(value)) return;
+        seen.add(value);
+        var option = document.createElement('option');
+        option.value = value;
+        option.textContent = value === defaultCategory ? value + '（未分类）' : value;
+        select.appendChild(option);
+    });
+}
+
+function loadCategoryOptions() {
+    if (!categorySelect) return;
+    categorySelect.disabled = true;
+    fetch(API_BASE + '/api/filters')
+        .then(function(resp) {
+            if (!resp.ok) {
+                throw new Error('failed');
+            }
+            return resp.json();
+        })
+        .then(function(data) {
+            cachedCategories = Array.isArray(data.categories) ? data.categories : [];
+            populateCategoryOptions(cachedCategories, data.defaultCategory || '');
+        })
+        .catch(function() {
+            cachedCategories = [];
+            populateCategoryOptions([], '');
+        })
+        .finally(function() {
+            categorySelect.disabled = false;
+        });
+}
+
 function init() {
     previewTooltip = document.getElementById('previewTooltip');
     previewTitleElem = document.getElementById('previewTooltipTitle');
     previewContentElem = document.getElementById('previewTooltipContent');
     hidePreview();
+    categorySelect = document.getElementById('categoryFilter');
+    if (categorySelect) {
+        loadCategoryOptions();
+        categorySelect.addEventListener('change', function() {
+            if (document.getElementById('keyword').value.trim()) {
+                SearchIt();
+            }
+        });
+    }
+    var titleOnlyCheckbox = document.getElementById('titleOnly');
+    if (titleOnlyCheckbox) {
+        titleOnlyCheckbox.addEventListener('change', function() {
+            if (document.getElementById('keyword').value.trim()) {
+                SearchIt();
+            }
+        });
+    }
     document.getElementById('keyword').focus();
 
     fetch(API_BASE + '/api/search?keyword=test').then(function() {
@@ -679,9 +835,12 @@ function init() {
             <input
                 type="text"
                 id="keyword"
-                placeholder="输入关键词，例如：传送 门 技能"
+                placeholder="输入多个关键词默认取交集，例如：腰带 巨人"
                 autocomplete="off"
             >
+            <div class="search-help-bubble">
+                <strong>搜索提示：</strong>空格分隔的词语会同时匹配；使用竖线 <code>|</code> 表示其中任意一个；用引号括起的短语会精确匹配全文；配合右侧“分类”筛选可以快速缩小范围。
+            </div>
         </div>
 
         <div class="options-row">
@@ -689,6 +848,12 @@ function init() {
                 <input type="checkbox" id="titleOnly">
                 <span>只匹配标题</span>
             </label>
+            <div class="filter-item">
+                <span class="filter-label">分类</span>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">全部分类</option>
+                </select>
+            </div>
         </div>
 
         <div class="btn-group">
