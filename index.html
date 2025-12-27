@@ -1,45 +1,127 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<!-- saved from url=(0014)about:internet -->
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<title>5E 不全书</title>
-<link rel="prefetch" href="data.js" as="script">
-<meta name="GENERATOR" content="WinCHM Pro">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script>
-var LocString=String(window.document.location.href);
-var DefaultPage;
-function GetQueryString(str){
-    var rs=new RegExp("(^|)"+str+"=([^\&]*)(\&|$)","gi").exec(LocString),tmp;
-    if(tmp=rs)return tmp[2];
-    return null;
-    }
-DefaultPage = GetQueryString("page");
-if(DefaultPage==null || DefaultPage==''){
-	DefaultPage = '写在前面.html';
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站维护公告 - DND5e不全书</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --accent-color: #c0392b; /* 类似D&D红龙的深红色，用于强调 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .icon-box {
+            margin-bottom: 20px;
+        }
+
+        .icon-box svg {
+            width: 64px;
+            height: 64px;
+            fill: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-sub);
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #999;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
-<script>
-document.write('<frameset rows="40,*" cols="*" framespacing="0" frameborder="0" border="0">');
-document.write('<frame src="webhelptop.htm" name="top" scrolling="NO" noresize id="top" >');
-document.write('<frame src="webhelpframe.htm#page=' +  DefaultPage + '" name="main" id="main">');
-document.write('</frameset>');
-</script>
-
-<noscript>
 <body>
-<p style="font-weight: bold">Your web browser needs JavaScript support to show the full function document.</p>
-<p><a href="indexh.htm">See simple version</a></p>
-</body>
-</noscript>
 
-<body>
-<p>
-<a href="webhelpleft.htm">5E 不全书</a>
-<br>
-<a href="http://www.softany.com/winchm/">This document is created with Softany WinCHM pro 4.</a>
-</p>
-</body>
+    <div class="container">
+        <!-- 图标区域：一个盾牌或维护图标 -->
+        <div class="icon-box">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+        </div>
 
+        <h1>网站暂时关闭审查公告</h1>
+
+        <div class="content">
+            <p><strong>各位 DND5e不全书 的使用者：</strong></p>
+            
+            <p>感谢部分使用者由于版权意识对我们发出的善意提醒。我们深知尊重知识产权与合规性对于社区长期健康发展的重要性。</p>
+            
+            <p>为避免潜在的侵权与合规风险，经内部紧急讨论，我们决定<strong>即刻起暂时下线所有译文内容</strong>。</p>
+            
+            <p>在此期间，我们将对网站现存的所有内容进行严格审查，重点核查<strong>插图及相关素材</strong>是否已取得合规与授权。</p>
+            
+            <p>待内部审查及整改工作完成后，网站将重新开放。感谢大家一直以来的理解、支持与监督。</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            &copy; 2025 DND5e不全书 <br>
+            Review in progress...
+        </div>
+    </div>
+
+</body>
 </html>
