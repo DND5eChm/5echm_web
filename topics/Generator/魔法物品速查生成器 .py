@@ -1,0 +1,353 @@
+import os
+import re
+from bs4 import BeautifulSoup
+from 文件遍历 import walk_through_files
+
+
+# ========= 输入 =========
+item_file_list = [
+    "城主指南2024/7.宝藏/魔法物品详述",
+    "荒洲探险家指南/荒洲宝藏",
+    "被遗忘的国度/耐瑟瑞尔/魔法物品",
+    "被遗忘的国度/费伦冒险/第八章：魔法物品.htm",
+    "艾伯伦：奇械锻炉/附录A：魔法物品.htm",
+    "艾伯伦：从终末战争中崛起/第五章",
+]
+
+# ========= 模板 / 输出 =========
+template_path = "../空白页模板/道具大速查模板.htm"
+output_path = "../速查/5E万器大全.htm"
+
+
+# ========= 来源 =========
+source_tag = {
+    "城主指南2024": "DMG24",
+    "荒洲探险家指南": "EGW",
+    "费伦冒险":"FR",
+    "耐瑟瑞尔":"NF",
+    "艾伯伦：奇械锻炉":"EFA",
+    "艾伯伦：从终末战争中崛起": "ERLW",
+}
+
+
+# ========= 基础 =========
+rarity_list = ["普通","非普通","珍稀","极珍稀","传说","神器","多种稀有度"]
+category_list = ["护甲","武器","戒指","权杖","卷轴","法杖","魔杖","药水","奇物"]
+rarity_tag_map = {
+    "非普通": "非普",
+    "极珍稀": "极珍",
+    "多种稀有度": "多种"
+}
+
+
+# ========= 子类别映射 =========
+subtype_map = {
+    "任意中甲或重甲，兽皮甲除外": ["链甲衫","鳞甲","半身板甲","重甲"],
+    "任意简易或军用": ["简易武器","军用武器"],
+    "任意简易武器或军用武器": ["简易武器","军用武器"],
+    "任意弹药或近战武器": ["弹药","近战武器"],
+    "具有弹药词条的任意简易或军用":["具有弹药词条的任意简易或军用"],
+    "具有投掷词条的任意简易或军用":["具有投掷词条的任意简易或军用"],
+    "任意单手近战武器":["单手近战武器"],
+    "任意剑": ["长柄刀","巨剑","长剑","刺剑","弯刀","短剑"], 
+    "任意护甲":["轻甲","中甲","重甲"],
+    "任意武器": ["简易武器","军用武器"],
+}
+
+
+# ========= 同调映射 =========
+attunement_map = {
+    "缺失手或臂的生物": ["缺失手","缺失臂"],
+    "缺失手、臂或腿的生物": ["缺失手","缺失臂","缺失腿"],
+    "缺失一眼的生物": ["缺失一眼"],
+}
+
+
+# ========= 白名单 =========
+subtype_whitelist = set("""
+短棒 匕首 巨棒 手斧 标枪 轻锤 硬头锤 长棍 镰刀 矛
+飞镖 轻弩 短弓 投石索
+战斧 链枷 长柄刀 巨斧 巨剑 戟 骑枪 长剑 巨锤 钉头锤 长矛 刺剑 弯刀 短剑 三叉戟 战镐 战锤 鞭
+吹箭筒 手弩 重弩 长弓 火铳 手铳
+军用武器 中甲 半身板甲 弹药 板甲 盾牌 简易武器 轻甲 近战武器 重甲 链甲 链甲衫 镶钉皮甲 鳞甲 皮甲
+具有弹药词条的任意简易或军用 具有投掷词条的任意简易或军用 单手近战武器
+""".split())
+
+attunement_whitelist = set("""
+吟游诗人 牧师 德鲁伊 圣武士 游侠
+术士 法师 魔契师 奇械师 
+野蛮人 武僧 战士 游荡者 施法者 矮人 战俑 类人生物
+持有守御龙纹的生物 持有抄录龙纹的生物 持有探寻龙纹的生物
+武器选择的生物 与矮人腰带维持同调的生物
+缺失一眼 缺失手 缺失腿 缺失臂
+""".split())
+
+
+# ========= 未映射 =========
+unmapped_subtypes = set()
+unmapped_attunement = set()
+
+
+# ========= 工具 =========
+def clean_text(t):
+    return t.replace("\u3000", " ").replace("\xa0", " ").strip()
+
+
+def split_multi(text):
+    return [t.strip() for t in re.split(r"[，,、/或]", text) if t.strip()]
+
+
+# ========= 子类别 =========
+def normalize_subtypes(text):
+    if not text:
+        return []
+
+    text = clean_text(text)
+
+    if text in subtype_map:
+        return subtype_map[text]
+
+    parts = split_multi(text)
+
+    result = []
+    for p in parts:
+        p = p.replace("任意", "").strip()
+        if p:
+            result.append(p)
+
+    return result
+
+
+# ========= 同调 =========
+def normalize_attunement(text):
+    if not text:
+        return []
+
+    text = clean_text(text)
+    
+    # 移除前导的“需”和两侧括号
+    text = text.replace("需", "").strip("（） ")
+    
+    # 优化：只移除字符串末尾的“同调”
+    # 比如 "矮人同调" -> "矮人"
+    # 但 "与...同调的生物" 保持不变
+    text = re.sub(r"同调$", "", text)
+
+    # ===== 精确映射 =====
+    if text in attunement_map:
+        return attunement_map[text]
+
+    # ===== 子串映射 =====
+    for k, v in attunement_map.items():
+        if k in text:
+            return v
+
+    # ===== fallback =====
+    # 这里处理“或是”、“或”等连接词
+    parts = [p.strip() for p in re.split(r"[，,、/或]|或是", text) if p.strip()]
+    return parts
+
+
+# ========= 类 =========
+class MagicItem:
+    def __init__(self, content, chm_path="", source="未知"):
+
+        self.name = ""
+        self.name_en = ""
+        self.item_id = ""
+
+        self.category = "其他"
+        self.rarity = "普通"
+        self.rarity_tag = "普通"
+
+        self.attunement = "否"
+        self.attune_conditions = []
+        self.subtypes = []
+
+        self.source = source
+        self.chm_path = chm_path
+
+        soup = BeautifulSoup(content, "html.parser")
+
+        self.item_id = soup.find("h6")["id"]
+
+        title = soup.find("h6").get_text(strip=True)
+        parts = title.split(" ", 1)
+        self.name = parts[0]
+        self.name_en = parts[1] if len(parts) > 1 else ""
+
+        p = soup.find("p")
+        style_tag = p.find(["em", "i"])
+
+        subline = style_tag.get_text(" ", strip=True) if style_tag else p.get_text(" ", strip=True)
+        subline = clean_text(re.sub(r"\s+", " ", subline))
+
+        # ========= 稀有度 =========
+        rarities = re.findall(
+            r"(多种稀有度|非普通|极珍稀|珍稀|传说|神器|普通)",
+            subline
+        )
+
+        rarities = list(dict.fromkeys(rarities))
+
+        if len(rarities) >= 2:
+            self.rarity = "多种稀有度"
+        elif len(rarities) == 1:
+            self.rarity = rarities[0]
+        else:
+            self.rarity = "普通"
+
+        self.rarity_tag = rarity_tag_map.get(self.rarity, self.rarity)
+
+        # ========= 类别 =========
+        for c in category_list:
+            if c in subline:
+                self.category = c
+
+                match = re.search(rf"{c}（([^）]+)）", subline)
+                if match:
+                    raw = match.group(1)
+                    subs = normalize_subtypes(raw)
+
+                    for s in subs:
+                        if s not in self.subtypes:
+                            self.subtypes.append(s)
+                        if s not in subtype_whitelist:
+                            unmapped_subtypes.add(s)
+                break
+
+        # ========= 同调（精准提取版） =========
+        self.attunement = "否"
+        self.attune_conditions = []
+
+        m = re.search(r"（需(.*?)同调）", subline)
+
+        if m:
+            raw = clean_text(m.group(1))  # ⚠️ 这里已经是“XX”本体
+
+            self.attunement = "是"
+
+            # 如果不是空，说明是特殊同调
+            if raw.strip():
+                self.attunement = "特殊"
+
+                conds = normalize_attunement(raw)
+
+                for c in conds:
+                    c = clean_text(c)
+
+                    if not c:
+                        continue
+
+                    if c not in self.attune_conditions:
+                        self.attune_conditions.append(c)
+
+                    if c not in attunement_whitelist:
+                        unmapped_attunement.add(c)
+
+    def to_row(self):
+
+        tags = [
+            self.rarity_tag,
+            self.category,
+            self.attunement,
+            self.source
+        ]
+
+        name_display = self.name + self.name_en
+
+        return (
+            f'<TR tags="{" ".join(tags)}" item="{name_display}">\n'
+            f'<TD><a href="{self.chm_path}#{self.item_id}">{name_display}</a></TD>\n'
+            f'<TD>{self.rarity}</TD>\n'
+            f'<TD>{self.category}</TD>\n'
+            f'<TD>{" / ".join(self.subtypes)}</TD>\n'
+            f'<TD>{self.attunement}</TD>\n'
+            f'<TD>{" / ".join(self.attune_conditions)}</TD>\n'
+            f'<TD>{self.source}</TD>\n'
+            f'</TR>'
+        )
+
+
+# ========= 主流程 =========
+big_item_dict = {}
+
+
+def process_file(file_path, file_name):
+
+    with open(file_path, "r", encoding="gbk") as f:
+        data = f.read()
+
+    body = data[data.find("<body>")+6:data.find("</body>")]
+    contents = re.findall(
+        r'(<H6.*?(?=<H6|$))',
+        body,
+        flags=re.S | re.I
+    )   
+
+    chm_path = file_path.replace("\\","/")
+
+    if "DND5e_chm/" in chm_path:
+        chm_path = chm_path.split("DND5e_chm/")[1]
+
+    parts = chm_path.split("/")
+    book = parts[0]
+
+    if book in ["被遗忘的国度"]:
+        book = parts[1]
+        source = source_tag.get(book, book)
+    elif book in source_tag:
+        source = source_tag[book]
+    else:
+        source = book
+
+    print("来源:", source)
+
+    for c in contents:
+        try:
+            item = MagicItem(c, chm_path, source)
+            big_item_dict[item.item_id] = item
+        except Exception as e:
+            try:
+                soup = BeautifulSoup(c, "html.parser")
+                h6 = soup.find("h6")
+                title = h6.get_text(strip=True) if h6 else c[:50]
+                print(f"解析失败: {title} ({type(e).__name__}: {e})")
+            except:
+                print("解析失败:", c[:50])
+
+
+# ========= 运行 =========
+if __name__ == "__main__":
+
+    for f in item_file_list:
+        walk_through_files(process_file, f)
+
+    print("总计:", len(big_item_dict))
+
+    with open(template_path, "r", encoding="gbk") as f:
+        tpl = f.read()
+
+    html = tpl.replace(
+        "{{内容}}",
+        "\n".join(
+            i.to_row()
+            for i in sorted(
+                big_item_dict.values(),
+                key=lambda x: x.name_en.lower()  # 按英文名首字母排序
+            )
+        )
+    )
+
+    with open(output_path, "w", encoding="gbk") as f:
+        f.write(html)
+
+    print("输出完成:", output_path)
+
+    print("\n====== 未映射子类别 ======")
+    for x in sorted(unmapped_subtypes):
+        print(x)
+
+    print("\n====== 未映射同调条件 ======")
+    for x in sorted(unmapped_attunement):
+        print(x)

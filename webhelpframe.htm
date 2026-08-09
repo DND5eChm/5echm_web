@@ -1,9 +1,9 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 <!-- saved from url=(0014)about:internet -->
 <html>
-<head>
+<head><meta charset="utf-8">
 <title>5E 不全书</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <script>
 var LocString=String(window.document.location.href);
 var DefaultPage;
@@ -14,18 +14,59 @@ function GetQueryString(str){
     }
 DefaultPage = GetQueryString("page");
 if(DefaultPage==null || DefaultPage==''){
-	DefaultPage = escape('写在前面.html');
+	DefaultPage = escape('%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2.html');
 }
 </script>
 </head>
 <script>
-document.write('<frameset rows="*" cols="285,*" framespacing="5" frameborder="1" border="5" bordercolor="">');
-document.write('<frame src="webhelpleft.htm" name="nav" frameborder="1" scrolling="no" bordercolor="" id="nav">');
-document.write('<frame src="topics/' +  DefaultPage + '" name="content" frameborder="1" bordercolor="" scrolling="auto" id="content">');
+document.write('<frameset rows="*" cols="285,*" framespacing="5" frameborder="1" border="5" bordercolor="#ffffff">');
+document.write('<frame src="webhelpleft.htm" name="nav" frameborder="1" scrolling="no" bordercolor="#ffffff" id="nav">');
+document.write('<frame src="topics/' +  DefaultPage + '" name="content" frameborder="1" bordercolor="#ffffff" scrolling="auto" id="content">');
 document.write('</frameset>');
 </script>
 
 <noframes><body>
 
+<script>
+(function() {
+    var sources = {};
+    function sendToContent(frame, data) {
+        try {
+            if (frame && frame.contentWindow && frame.contentWindow.postMessage) {
+                frame.contentWindow.postMessage({
+                    type: 'webhelp-search-apply',
+                    requestId: data.requestId,
+                    words: data.words || []
+                }, '*');
+            }
+        } catch (e) {}
+    }
+    function receive(event) {
+        var data = event && event.data;
+        if (data && data.type === 'webhelp-search-highlighted') {
+            try {
+                if (sources[data.requestId] && sources[data.requestId].postMessage) sources[data.requestId].postMessage(data, '*');
+            } catch (e) {}
+            return;
+        }
+        if (!data || data.type !== 'webhelp-search-navigate') return;
+        sources[data.requestId] = event.source;
+        var frame = document.getElementById('content');
+        if (!frame || !frame.contentWindow) return;
+        var content = frame.contentWindow;
+        var send = function() { sendToContent(frame, data); };
+        if (frame.addEventListener) {
+            var onload = function() {
+                frame.removeEventListener('load', onload);
+                send();
+            };
+            frame.addEventListener('load', onload);
+        }
+        try { content.location.href = data.url; } catch (e2) {}
+        [500, 1200, 2200].forEach(function(delay) { setTimeout(send, delay); });
+    }
+    if (window.addEventListener) window.addEventListener('message', receive, false);
+})();
+</script>
 </body></noframes>
 </html>
