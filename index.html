@@ -18,18 +18,6 @@ if(DefaultPage==null || DefaultPage==''){
 	DefaultPage = '%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2.html';
 }
 </script>
-</head>
-<script>
-document.write('<frameset rows="40,*" cols="*" framespacing="0" frameborder="0" border="0">');
-document.write('<frame src="webhelptop.htm" name="top" scrolling="NO" noresize id="top" >');
-document.write('<frame src="webhelpframe.htm#page=' +  DefaultPage + '" name="main" id="main">');
-document.write('</frameset>');
-</script>
-
-<noscript>
-<body>
-<p style="font-weight: bold">Your web browser needs JavaScript support to show the full function document.</p>
-<p><a href="indexh.htm">See simple version</a></p>
 <script>
 (function() {
     if (!window.addEventListener) return;
@@ -42,6 +30,18 @@ document.write('</frameset>');
     }, false);
 })();
 </script>
+</head>
+<script>
+document.write('<frameset rows="40,*" cols="*" framespacing="0" frameborder="0" border="0">');
+document.write('<frame src="webhelptop.htm" name="top" scrolling="NO" noresize id="top" >');
+document.write('<frame src="webhelpframe.htm#page=' +  DefaultPage + '" name="main" id="main">');
+document.write('</frameset>');
+</script>
+
+<noscript>
+<body>
+<p style="font-weight: bold">Your web browser needs JavaScript support to show the full function document.</p>
+<p><a href="indexh.htm">See simple version</a></p>
 </body>
 </noscript>
 

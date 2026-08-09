@@ -17,16 +17,6 @@ if(DefaultPage==null || DefaultPage==''){
 	DefaultPage = escape('%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2.html');
 }
 </script>
-</head>
-<script>
-document.write('<frameset rows="*" cols="285,*" framespacing="5" frameborder="1" border="5" bordercolor="#ffffff">');
-document.write('<frame src="webhelpleft.htm" name="nav" frameborder="1" scrolling="no" bordercolor="#ffffff" id="nav">');
-document.write('<frame src="topics/' +  DefaultPage + '" name="content" frameborder="1" bordercolor="#ffffff" scrolling="auto" id="content">');
-document.write('</frameset>');
-</script>
-
-<noframes><body>
-
 <script>
 (function() {
     var sources = {};
@@ -68,5 +58,15 @@ document.write('</frameset>');
     if (window.addEventListener) window.addEventListener('message', receive, false);
 })();
 </script>
+</head>
+<script>
+document.write('<frameset rows="*" cols="285,*" framespacing="5" frameborder="1" border="5" bordercolor="#ffffff">');
+document.write('<frame src="webhelpleft.htm" name="nav" frameborder="1" scrolling="no" bordercolor="#ffffff" id="nav">');
+document.write('<frame src="topics/' +  DefaultPage + '" name="content" frameborder="1" bordercolor="#ffffff" scrolling="auto" id="content">');
+document.write('</frameset>');
+</script>
+
+<noframes><body>
+
 </body></noframes>
 </html>
