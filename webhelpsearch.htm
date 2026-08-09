@@ -378,7 +378,63 @@ var previewTitleElem;
 var previewContentElem;
 var categorySelect;
 var cachedCategories = [];
-var API_BASE="https://5echmsearch.kagangtuya.top"
+var API_BASE = "https://5echmsearch.kagangtuya.top"
+var highlightRequestId = 0;
+var pendingContentLoadCleanup;
+
+function searchLog(message, detail) {
+    return;
+}
+
+function searchFrameContext() {
+    try {
+        return {
+            name: window.name || '',
+            href: window.location.href,
+            parentName: window.parent && window.parent.name || '',
+            topName: window.top && window.top.name || ''
+        };
+    } catch (e) {
+        return { error: String(e && e.message || e) };
+    }
+}
+
+function postSearchBridge(url, requestId) {
+    try {
+        var receiver = window.parent;
+        if (!receiver || !receiver.postMessage) return;
+        receiver.postMessage({
+            type: 'webhelp-search-navigate',
+            url: url,
+            words: words.slice(),
+            requestId: requestId
+        }, '*');
+        searchLog('bridge message sent', { requestId: requestId, url: url });
+    } catch (e) {
+        searchLog('bridge message failed', { requestId: requestId, error: String(e && e.message || e) });
+    }
+}
+
+function resolveContentUrl(url) {
+    try {
+        var link = document.createElement('a');
+        link.href = url;
+        return link.href;
+    } catch (e) {
+        return url;
+    }
+}
+
+if (window.addEventListener) {
+    window.addEventListener('message', function(event) {
+        var data = event && event.data;
+        if (data && data.type === 'webhelp-search-highlighted') {
+            searchLog('bridge highlight complete', data);
+        }
+    }, false);
+    searchLog('search bridge ready');
+}
+
 function extractHighlightTerms(input) {
     if (!input) return [];
     var terms = [];
@@ -604,70 +660,337 @@ function renderMessage(message, clearPreview) {
     }
 }
 
-function highlightInContent() {
+function getContentWindow() {
+    var current;
+    try {
+        // Search page may sit inside nav -> webhelpframe -> main frames.
+        // Start here, then walk parents until the sibling content frame appears.
+        current = window;
+    } catch (e) {
+        current = window;
+    }
+
+    for (var depth = 0; current && depth < 12; depth++) {
+        try {
+            var namedContent = current.frames && current.frames['content'];
+            if (namedContent && namedContent.document) {
+                searchLog('content frame found by name', { depth: depth, name: current.name || '' });
+                return namedContent;
+            }
+        } catch (namedFrameError) {
+            searchLog('named content lookup failed', { depth: depth, error: String(namedFrameError && namedFrameError.message || namedFrameError) });
+        }
+        try {
+            var ownerDocument = current.document;
+            var frame = ownerDocument && ownerDocument.getElementById('content');
+            if (!frame && ownerDocument && ownerDocument.getElementsByName) {
+                var namedFrames = ownerDocument.getElementsByName('content');
+                frame = namedFrames && namedFrames[0];
+            }
+            if (frame && frame.contentWindow && frame.contentWindow.document) {
+                searchLog('content frame found by DOM', { depth: depth, name: current.name || '' });
+                return frame.contentWindow;
+            }
+            if (!current.parent || current.parent === current) break;
+            current = current.parent;
+        } catch (e2) {
+            searchLog('parent frame walk failed', { depth: depth, error: String(e2 && e2.message || e2) });
+            break;
+        }
+    }
+    searchLog('content frame walk exhausted');
+    return null;
+}
+
+function getContentFrame() {
+    var contentWin = getContentWindow();
+    if (!contentWin) return null;
+    try {
+        var ownerDocument = contentWin.frameElement && contentWin.frameElement.ownerDocument;
+        return ownerDocument ? contentWin.frameElement : null;
+    } catch (e) {
+        return null;
+    }
+}
+
+function contentLocationMatches(contentWin, expectedUrl) {
+    if (!contentWin || !expectedUrl) return true;
+    try {
+        var expectedLink = document.createElement('a');
+        expectedLink.href = expectedUrl;
+        var expectedPath = (expectedLink.pathname || '').replace(/\/$/, '');
+        var currentPath = (contentWin.location.pathname || '').replace(/\/$/, '');
+        if (!expectedPath || !currentPath) return true;
+        var expectedDecoded = decodeURIComponent(expectedPath).toLowerCase();
+        var currentDecoded = decodeURIComponent(currentPath).toLowerCase();
+        return currentDecoded === expectedDecoded ||
+            currentDecoded.slice(-expectedDecoded.length - 1) === '/' + expectedDecoded;
+    } catch (e) {
+        return true;
+    }
+}
+
+function clearContentHighlights(contentDoc) {
+    if (!contentDoc) return;
+
+    var state = contentDoc.__searchHighlightState;
+    if (state && state.keydownHandler) {
+        contentDoc.removeEventListener('keydown', state.keydownHandler);
+    }
+
+    var navigator = contentDoc.getElementById('searchHighlightNavigator');
+    if (navigator && navigator.parentNode) {
+        navigator.parentNode.removeChild(navigator);
+    }
+
+    var marks = contentDoc.querySelectorAll('mark[data-search-highlight="true"]');
+    for (var i = 0; i < marks.length; i++) {
+        var mark = marks[i];
+        if (mark.parentNode) {
+            mark.parentNode.replaceChild(contentDoc.createTextNode(mark.textContent || ''), mark);
+        }
+    }
+    contentDoc.__searchHighlightState = null;
+}
+
+function ensureContentHighlightStyle(contentDoc) {
+    if (!contentDoc || !contentDoc.head) return;
+    if (contentDoc.getElementById('searchHighlightStyle')) return;
+
+    var style = contentDoc.createElement('style');
+    style.id = 'searchHighlightStyle';
+    style.textContent =
+        'mark[data-search-highlight="true"] {' +
+        ' background: #fde68a; color: inherit; padding: 1px 2px; border-radius: 2px;' +
+        ' font-weight: 500;' +
+        '}' +
+        '#searchHighlightNavigator {' +
+        ' position: fixed; top: 12px; right: 16px; z-index: 2147483647;' +
+        ' display: flex; align-items: center; gap: 6px; padding: 6px 8px;' +
+        ' border: 1px solid rgba(148, 163, 184, .55); border-radius: 8px;' +
+        ' background: rgba(255, 255, 255, .96); color: #1e293b;' +
+        ' box-shadow: 0 4px 14px rgba(15, 23, 42, .18);' +
+        ' font: 12px/1.2 Arial, sans-serif;' +
+        '}' +
+        '#searchHighlightNavigator button {' +
+        ' border: 0; border-radius: 5px; padding: 4px 7px; cursor: pointer;' +
+        ' background: #e0e7ff; color: #1e3a8a; font: inherit;' +
+        '}' +
+        '#searchHighlightNavigator button:hover:not(:disabled) { background: #c7d2fe; }' +
+        '#searchHighlightNavigator button:disabled { opacity: .45; cursor: default; }' +
+        '#searchHighlightNavigator .search-highlight-count {' +
+        ' min-width: 42px; text-align: center; white-space: nowrap; font-weight: 600;' +
+        '}';
+    contentDoc.head.appendChild(style);
+}
+
+function updateHighlightNavigator(state) {
+    if (!state || !state.counter) return;
+    var total = state.marks.length;
+    state.counter.textContent = total ? (state.index + 1) + ' / ' + total : '未找到';
+    state.previous.disabled = total < 2;
+    state.next.disabled = total < 2;
+}
+
+function jumpToHighlight(state, index, smooth) {
+    if (!state || !state.marks.length) return;
+
+    if (state.index >= 0 && state.marks[state.index]) {
+        state.marks[state.index].removeAttribute('data-search-active');
+        state.marks[state.index].style.background = '';
+        state.marks[state.index].style.color = '';
+        state.marks[state.index].style.outline = '';
+    }
+    state.index = (index + state.marks.length) % state.marks.length;
+    var mark = state.marks[state.index];
+    mark.setAttribute('data-search-active', 'true');
+    mark.style.background = '#f59e0b';
+    mark.style.color = '#111827';
+    mark.style.outline = '2px solid rgba(245, 158, 11, .45)';
+    updateHighlightNavigator(state);
+
+    try {
+        mark.scrollIntoView({
+            behavior: smooth ? 'smooth' : 'auto',
+            block: 'center',
+            inline: 'nearest'
+        });
+    } catch (e) {
+        mark.scrollIntoView(true);
+    }
+}
+
+function createHighlightNavigator(contentDoc, marks) {
+    var navigator = contentDoc.createElement('div');
+    navigator.id = 'searchHighlightNavigator';
+    navigator.setAttribute('role', 'navigation');
+    navigator.setAttribute('aria-label', '搜索关键词导航');
+
+    var previous = contentDoc.createElement('button');
+    previous.type = 'button';
+    previous.textContent = '上一个';
+    previous.setAttribute('aria-label', '上一个关键词');
+
+    var counter = contentDoc.createElement('span');
+    counter.className = 'search-highlight-count';
+
+    var next = contentDoc.createElement('button');
+    next.type = 'button';
+    next.textContent = '下一个';
+    next.setAttribute('aria-label', '下一个关键词');
+
+    navigator.appendChild(previous);
+    navigator.appendChild(counter);
+    navigator.appendChild(next);
+    contentDoc.body.appendChild(navigator);
+
+    var state = {
+        marks: marks,
+        index: -1,
+        navigator: navigator,
+        previous: previous,
+        next: next,
+        counter: counter,
+        keydownHandler: null
+    };
+    previous.addEventListener('click', function() {
+        jumpToHighlight(state, state.index - 1, true);
+    });
+    next.addEventListener('click', function() {
+        jumpToHighlight(state, state.index + 1, true);
+    });
+    state.keydownHandler = function(event) {
+        if (!event.altKey || (event.key !== 'ArrowUp' && event.key !== 'ArrowDown')) return;
+        event.preventDefault();
+        jumpToHighlight(state, state.index + (event.key === 'ArrowUp' ? -1 : 1), true);
+    };
+    contentDoc.addEventListener('keydown', state.keydownHandler);
+    updateHighlightNavigator(state);
+    return state;
+}
+
+function highlightInContent(requestId, expectedUrl) {
     if (words.length === 0) return;
 
     var attempts = 0;
-    var maxAttempts = 10;
+    var maxAttempts = 30;
+    searchLog('highlight scheduled', { requestId: requestId, expectedUrl: expectedUrl, words: words });
+
+    function retry() {
+        if (requestId && requestId !== highlightRequestId) return;
+        attempts++;
+        if (attempts >= maxAttempts) return;
+        if (attempts === 1 || attempts % 5 === 0) {
+            searchLog('highlight retry', { requestId: requestId, attempts: attempts });
+        }
+        setTimeout(tryHighlight, 200);
+    }
 
     function tryHighlight() {
-        attempts++;
+        if (requestId && requestId !== highlightRequestId) return;
         try {
-            var contentWin = parent.content;
+            var contentWin = getContentWindow();
+            if (!contentWin) {
+                if (attempts === 0 || attempts % 5 === 0) searchLog('content frame not found', { requestId: requestId, attempts: attempts });
+                retry();
+                return;
+            }
             var contentDoc = contentWin.document;
-
-            if (!contentDoc || !contentDoc.body) {
-                if (attempts < maxAttempts) {
-                    setTimeout(tryHighlight, 300);
+            if (!contentDoc || !contentDoc.body || contentDoc.readyState === 'loading') {
+                if (attempts === 0 || attempts % 5 === 0) {
+                    searchLog('content document not ready', {
+                        requestId: requestId,
+                        attempts: attempts,
+                        readyState: contentDoc && contentDoc.readyState,
+                        href: contentWin.location && contentWin.location.href
+                    });
                 }
+                retry();
+                return;
+            }
+            if (!contentLocationMatches(contentWin, expectedUrl)) {
+                if (attempts === 0 || attempts % 5 === 0) {
+                    searchLog('content URL mismatch', {
+                        requestId: requestId,
+                        attempts: attempts,
+                        expectedUrl: expectedUrl,
+                        actualUrl: contentWin.location.href
+                    });
+                }
+                retry();
                 return;
             }
 
+            clearContentHighlights(contentDoc);
+            ensureContentHighlightStyle(contentDoc);
+
+            var terms = words.filter(function(word, index, list) {
+                return word && list.indexOf(word) === index;
+            }).sort(function(a, b) {
+                return b.length - a.length;
+            });
+            if (!terms.length) return;
+
+            var regex = new RegExp('(' + terms.map(escapeRegExp).join('|') + ')', 'gi');
             var walker = contentDoc.createTreeWalker(contentDoc.body, NodeFilter.SHOW_TEXT, null, false);
             var nodesToProcess = [];
             var node;
             while ((node = walker.nextNode())) {
-                if (node.parentNode.tagName !== 'SCRIPT' &&
-                    node.parentNode.tagName !== 'STYLE' &&
-                    node.parentNode.tagName !== 'MARK') {
+                var tagName = node.parentNode && node.parentNode.tagName;
+                if (tagName !== 'SCRIPT' && tagName !== 'STYLE' && tagName !== 'NOSCRIPT' && tagName !== 'MARK') {
                     nodesToProcess.push(node);
                 }
             }
 
             nodesToProcess.forEach(function(textNode) {
-                var text = textNode.nodeValue;
-                var hasMatch = words.some(function(word) {
-                    return text.toLowerCase().indexOf(word.toLowerCase()) !== -1;
-                });
+                var text = textNode.nodeValue || '';
+                regex.lastIndex = 0;
+                var match;
+                var lastIndex = 0;
+                var fragment = contentDoc.createDocumentFragment();
+                var found = false;
 
-                if (hasMatch) {
-                    var html = text;
-                    words.forEach(function(word) {
-                        var escapedWord = escapeRegExp(word);
-                        if (!escapedWord) return;
-                        var regex = new RegExp('(' + escapedWord + ')', 'gi');
-                        html = html.replace(regex, '<mark style="background: #fde68a; padding: 2px 4px; border-radius: 2px; font-weight: 500;">$1</mark>');
-                    });
-
-                    var temp = contentDoc.createElement('span');
-                    temp.innerHTML = html;
-
-                    var parent = textNode.parentNode;
-                    while (temp.firstChild) {
-                        parent.insertBefore(temp.firstChild, textNode);
+                while ((match = regex.exec(text)) !== null) {
+                    found = true;
+                    if (match.index > lastIndex) {
+                        fragment.appendChild(contentDoc.createTextNode(text.slice(lastIndex, match.index)));
                     }
-                    parent.removeChild(textNode);
+                    var mark = contentDoc.createElement('mark');
+                    mark.setAttribute('data-search-highlight', 'true');
+                    mark.textContent = match[0];
+                    fragment.appendChild(mark);
+                    lastIndex = match.index + match[0].length;
+                    if (match[0].length === 0) regex.lastIndex++;
                 }
+
+                if (!found) return;
+                if (lastIndex < text.length) {
+                    fragment.appendChild(contentDoc.createTextNode(text.slice(lastIndex)));
+                }
+                textNode.parentNode.replaceChild(fragment, textNode);
             });
 
-        } catch (e) {
-            if (attempts < maxAttempts) {
-                setTimeout(tryHighlight, 300);
+            var marks = Array.prototype.slice.call(contentDoc.querySelectorAll('mark[data-search-highlight="true"]'));
+            var state = createHighlightNavigator(contentDoc, marks);
+            contentDoc.__searchHighlightState = state;
+            searchLog('highlight complete', {
+                requestId: requestId,
+                href: contentWin.location.href,
+                terms: terms,
+                matches: marks.length
+            });
+            if (marks.length) {
+                jumpToHighlight(state, 0, false);
             }
+        } catch (e) {
+            if (attempts === 0 || attempts % 5 === 0) {
+                searchLog('highlight exception', { requestId: requestId, attempts: attempts, error: String(e && e.message || e) });
+            }
+            retry();
         }
     }
 
-    setTimeout(tryHighlight, 500);
+    setTimeout(tryHighlight, 0);
 }
 
 function viewSelected() {
@@ -681,13 +1004,63 @@ function viewSelected() {
 }
 
 function viewItem(url) {
+    var requestId = ++highlightRequestId;
+    var targetUrl = resolveContentUrl(url);
+    var bridgeSent = false;
+    if (pendingContentLoadCleanup) {
+        pendingContentLoadCleanup();
+        pendingContentLoadCleanup = null;
+    }
+
     try {
-        parent.content.location.href = url;
-        highlightInContent();
+        var contentWin = getContentWindow();
+        var contentFrame = getContentFrame();
+        searchLog('view item', {
+            requestId: requestId,
+            url: url,
+            targetUrl: targetUrl,
+            context: searchFrameContext(),
+            contentWindowFound: !!contentWin,
+            contentFrameFound: !!contentFrame
+        });
+        if (contentFrame && contentFrame.addEventListener) {
+            var removeContentLoadListener;
+            var onContentLoad = function() {
+                removeContentLoadListener();
+                highlightInContent(requestId, targetUrl);
+            };
+            contentFrame.addEventListener('load', onContentLoad);
+            removeContentLoadListener = function() {
+                contentFrame.removeEventListener('load', onContentLoad);
+                if (pendingContentLoadCleanup === removeContentLoadListener) {
+                    pendingContentLoadCleanup = null;
+                }
+            };
+            pendingContentLoadCleanup = removeContentLoadListener;
+        }
+        if (!contentWin) {
+            postSearchBridge(targetUrl, requestId);
+            bridgeSent = true;
+            searchLog('using cross-origin content bridge', { requestId: requestId });
+            return;
+        }
+        contentWin.location.href = targetUrl;
+        searchLog('navigation assigned', { requestId: requestId, href: contentWin.location.href });
+        // Some browsers do not dispatch load on nested <frame>; retry after navigation too.
+        [150, 600, 1500].forEach(function(delay) {
+            setTimeout(function() {
+                if (requestId === highlightRequestId) {
+                    highlightInContent(requestId, targetUrl);
+                }
+            }, delay);
+        });
     } catch (e) {
+        searchLog('view item exception', { requestId: requestId, error: String(e && e.message || e) });
         console.error('跳转失败:', e);
+        if (!bridgeSent) postSearchBridge(targetUrl, requestId);
         try {
-            window.open(url, 'content');
+            window.open(targetUrl, 'content');
+            if (!bridgeSent) highlightInContent(requestId, targetUrl);
         } catch (e2) {
             console.error('备用跳转也失败:', e2);
         }
@@ -814,7 +1187,6 @@ function init() {
     document.getElementById('keyword').focus();
 
     fetch(API_BASE + '/api/search?keyword=test').then(function() {
-        console.log('后端服务已连接');
     }).catch(function() {
         var listElem = document.getElementById('resultsList');
         listElem.innerHTML = '<li class="empty-state"><div class="empty-text">后端服务未启动，请运行 `node server.js`</div></li>';
