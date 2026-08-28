@@ -223,9 +223,7 @@
   }
 
   function cycleTheme() {
-    var values = ["system", "light", "dark"];
-    var current = root.getAttribute("data-theme") || "system";
-    applyTheme(values[(values.indexOf(current) + 1) % values.length], true);
+    applyTheme(root.getAttribute("data-resolved-theme") === "dark" ? "light" : "dark", true);
   }
 
   function getFontSize() {
@@ -720,7 +718,7 @@
       projectVersion.hidden = false;
     }
     applySidebarWidth(readStorage("sidebarWidth") || sidebar.getBoundingClientRect().width || 288, false);
-    applyTheme(readStorage("theme") || "system", false);
+    applyTheme(readStorage("theme") || "light", false);
     applyFontSize(getFontSize(), false);
     if (isMobile()) closeDrawer();
     else setSidebarCollapsed(sidebarCollapsedByDefault(), false);

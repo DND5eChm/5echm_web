@@ -547,6 +547,37 @@
     return table.querySelector("tr");
   }
 
+  function normalizeCssColor(doc, value) {
+    var probe;
+    var color = cleanText(value);
+    if (!color || color.toLowerCase() === "transparent") return "";
+    probe = doc.createElement("span");
+    probe.style.color = color;
+    return probe.style.color;
+  }
+
+  function markLegacyTableColors(doc, table) {
+    var elements = [table].concat(toArray(table.querySelectorAll("[bgcolor], [color], [style]")));
+    elements.forEach(function (element) {
+      var ownerTable = element === table ? table : (element.closest ? element.closest("table") : null);
+      var background;
+      var foreground;
+      if (ownerTable !== table) return;
+
+      background = normalizeCssColor(doc, element.getAttribute("bgcolor") || element.style.backgroundColor);
+      if (background) {
+        element.style.setProperty("--legacy-table-background", background);
+        element.setAttribute("data-webhelp-legacy-background", "true");
+      }
+
+      foreground = normalizeCssColor(doc, element.getAttribute("color") || element.style.color);
+      if (foreground) {
+        element.style.setProperty("--legacy-table-foreground", foreground);
+        element.setAttribute("data-webhelp-legacy-foreground", "true");
+      }
+    });
+  }
+
   function classifyTable(table) {
     var className = String(table.className || "").toLowerCase();
     if (table.getAttribute("role") === "presentation" || /(^|[\s_-])layout([\s_-]|$)/.test(className) || table.getAttribute("data-statblock-layout") === "true") return "unknown";
@@ -589,6 +620,7 @@
       table.classList.add("table-enhanced", "table-enhanced--" + kind);
       table.classList.add(kind === "wide" ? "table-responsive--scroll" : "table-responsive--fit");
       if (kind === "dice") table.classList.add("table-responsive--dice");
+      markLegacyTableColors(doc, table);
       table.setAttribute("data-table-enhanced", "true");
       wrapTable(doc, table, kind);
     });

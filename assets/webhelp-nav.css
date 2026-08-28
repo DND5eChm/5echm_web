@@ -264,34 +264,49 @@ button {
   text-decoration: none;
 }
 
-.nav-node > a:first-child:not(:last-of-type) {
+.nav-node > a:first-child:not(:last-of-type),
+.nav-node > a.nav-disclosure {
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 0;
   z-index: 2;
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 31px;
-  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  color: var(--nav-muted);
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
 }
 
-.nav-node > a:first-child:not(:last-of-type):hover {
+.nav-node > a:first-child:not(:last-of-type):hover,
+.nav-node > a.nav-disclosure:hover {
+  color: var(--nav-text);
   background: var(--nav-hover);
+  border-color: var(--nav-border);
 }
 
-.nav-node > a:first-child:not(:last-of-type)::before {
-  width: 7px;
-  height: 7px;
-  border-right: 1.6px solid var(--nav-muted);
-  border-bottom: 1.6px solid var(--nav-muted);
+.nav-node > a:first-child:not(:last-of-type) > img,
+.nav-node > a.nav-disclosure > img {
+  display: none !important;
+}
+
+.nav-node > a:first-child:not(:last-of-type)::before,
+.nav-node > a.nav-disclosure::before {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
   content: "";
-  transform: rotate(-45deg);
+  transform: translateX(-1px) rotate(-45deg);
   transition: transform 120ms ease;
 }
 
-.nav-node > a:first-child:not(:last-of-type)[aria-expanded="true"]::before {
-  transform: rotate(45deg) translate(-1px, -1px);
+.nav-node > a:first-child:not(:last-of-type)[aria-expanded="true"]::before,
+.nav-node > a.nav-disclosure[aria-expanded="true"]::before {
+  transform: translate(-1px, -1px) rotate(45deg);
 }
 
 .nav-node > a:last-of-type {
@@ -300,7 +315,7 @@ button {
   align-items: flex-start;
   width: 100%;
   min-height: 32px;
-  padding: 5px 7px 5px 30px;
+  padding: 5px 7px 5px 32px;
   border-radius: 5px;
   line-height: 1.5;
 }
@@ -326,6 +341,12 @@ button {
   border-bottom: 1.3px solid var(--nav-muted);
   border-left: 1.3px solid var(--nav-muted);
   content: "";
+}
+
+/* Parent rows use disclosure arrow as their only leading affordance. */
+.nav-node > a:first-child:not(:last-of-type) + a:last-of-type::before,
+.nav-node > a:first-child:not(:last-of-type) + a:last-of-type::after {
+  display: none;
 }
 
 .nav-node > a:last-of-type:hover {

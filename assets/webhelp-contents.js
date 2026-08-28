@@ -16,14 +16,44 @@
     AutoCollapse = Boolean(autoCollapse);
   }
 
+  function disclosureControl(id) {
+    var image = get("imgn" + id);
+    if (image && image.parentElement) return image.parentElement;
+    var label = get("l" + id);
+    var node = label && label.closest ? label.closest(".nav-node") : null;
+    return node ? node.querySelector("a:first-child:not(:last-of-type)") : null;
+  }
+
+  function disclosureLabel(id, expanded) {
+    var label = get("l" + id);
+    var title = label ? (label.textContent || "").replace(/\s+/g, " ").trim() : "";
+    return (expanded ? "收起" : "展开") + "目录项" + (title ? "：" + title : "");
+  }
+
+  function updateDisclosureState(id, expanded) {
+    var control = disclosureControl(id);
+    if (!control) return;
+    var branchId = "d" + id;
+    var label = disclosureLabel(id, expanded);
+    control.classList.add("nav-disclosure");
+    control.setAttribute("role", "button");
+    control.setAttribute("tabindex", "0");
+    control.setAttribute("aria-controls", branchId);
+    control.setAttribute("aria-expanded", String(expanded));
+    control.setAttribute("aria-label", label);
+    control.setAttribute("title", label);
+  }
+
   function updateLegacyIcon(id, expanded) {
     var image = get("imgn" + id);
     if (image) {
+      image.hidden = true;
+      image.setAttribute("aria-hidden", "true");
       var source = image.getAttribute("src") || "";
       source = expanded ? source.replace(/plus\.gif$/i, "minus.gif") : source.replace(/minus\.gif$/i, "plus.gif");
       image.setAttribute("src", source || path + (expanded ? "tminus.gif" : "tplus.gif"));
-      if (image.parentElement) image.parentElement.setAttribute("aria-expanded", String(expanded));
     }
+    updateDisclosureState(id, expanded);
   }
 
   function show(id) {
@@ -218,6 +248,7 @@
   }
 
   function initialiseTree() {
+    enhanceDisclosureControls();
     branchIds().forEach(function (id) {
       var branch = get("d" + id);
       if (branch) updateLegacyIcon(id, branch.style.display !== "none");
@@ -242,6 +273,22 @@
     get("collapseAllButton").addEventListener("click", collapseAll);
     get("previousTopicButton").addEventListener("click", function () { clickNode(LastSelected - 1); });
     get("nextTopicButton").addEventListener("click", function () { clickNode(LastSelected + 1); });
+  }
+
+  function enhanceDisclosureControls() {
+    document.querySelectorAll(".nav-node").forEach(function (node) {
+      var branch = directBranch(node);
+      if (!branch) return;
+      var id = parseInt(branch.id.slice(1), 10);
+      if (isNaN(id)) return;
+      var control = disclosureControl(id);
+      if (!control) return;
+      control.addEventListener("keydown", function (event) {
+        if (event.key !== " " && event.key !== "Spacebar") return;
+        event.preventDefault();
+        NodeClick(id);
+      });
+    });
   }
 
   function body_onload() {

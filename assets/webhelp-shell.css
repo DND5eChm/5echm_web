@@ -145,6 +145,13 @@ select:focus-visible,
   stroke-linejoin: round;
 }
 
+.mobile-action-label {
+  display: none;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .app-header {
   position: relative;
   z-index: 60;
@@ -694,7 +701,7 @@ body.sidebar-resizing iframe {
   }
 
   .app-header {
-    grid-template-columns: 42px minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 4px;
     padding-right: max(6px, env(safe-area-inset-right));
     padding-left: max(6px, env(safe-area-inset-left));
@@ -704,6 +711,10 @@ body.sidebar-resizing iframe {
     position: static;
     grid-column: 1;
     grid-row: 1;
+    width: auto;
+    min-width: 58px;
+    padding: 0 8px;
+    gap: 5px;
     color: var(--text);
     background: transparent;
     border-color: transparent;
@@ -742,9 +753,12 @@ body.sidebar-resizing iframe {
   .brand-version,
   .global-search,
   .font-controls,
-  .theme-button,
   .print-button {
     display: none;
+  }
+
+  .mobile-action-label {
+    display: inline;
   }
 
   .header-actions {
