@@ -109,8 +109,12 @@
     return parts.map(function (part) { return encodeURIComponent(part); }).join("/");
   }
 
-  function initialTopicPath() {
-    return canonicalTopicPath(getQueryPage()) || canonicalTopicPath(body.getAttribute("data-default-page"));
+  function initialTopicUrl() {
+    var requested = getQueryPage();
+    var hashIndex = requested.indexOf("#");
+    var fragment = hashIndex >= 0 ? requested.slice(hashIndex) : "";
+    var path = canonicalTopicPath(hashIndex >= 0 ? requested.slice(0, hashIndex) : requested) || canonicalTopicPath(body.getAttribute("data-default-page"));
+    return path ? "topics/" + path + fragment : "";
   }
 
   function currentTopicRelativePath() {
@@ -724,7 +728,7 @@
     else setSidebarCollapsed(sidebarCollapsedByDefault(), false);
     setupEvents();
     setView(viewFromStorage(), { persist: false });
-    var initialPath = topicUrl(initialTopicPath());
+    var initialPath = initialTopicUrl();
     if (initialPath) contentFrame.src = initialPath;
     else contentFrame.src = "indexh.htm";
   }

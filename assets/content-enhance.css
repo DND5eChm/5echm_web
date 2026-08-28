@@ -4,6 +4,11 @@
   --table-hover: #f6f2ef;
   --table-border: var(--topic-border, #dedbd7);
   --table-text: var(--topic-text, #242629);
+  --quickref-surface: var(--topic-surface, #ffffff);
+  --quickref-muted: var(--topic-surface-muted, #f7f7f8);
+  --quickref-text-muted: var(--topic-text-muted, #666a70);
+  --quickref-accent: var(--topic-accent, #800000);
+  --quickref-focus: #2563eb;
   --statblock-surface: var(--topic-surface, #ffffff);
   --statblock-muted: var(--topic-surface-muted, #f7f7f8);
   --statblock-text: var(--topic-text, #242629);
@@ -158,13 +163,523 @@ html.webhelp-topic-document .table-responsive--fit > table {
   margin-bottom: 0;
 }
 
-html.webhelp-topic-document .statblock-view-toggle {
+/* Dense responsive finders for generated spell, item, and monster quick-reference pages. */
+html.quickref-document body.quickref-page > h1 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+html.quickref-document body.quickref-page > h1 font {
+  color: var(--quickref-accent) !important;
+}
+
+html.quickref-document .quickref-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  padding: 6px 0;
+  background: var(--quickref-surface);
+  border-block: 1px solid var(--table-border);
+}
+
+html.quickref-document .quickref-search-row,
+html.quickref-document .quickref-result-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+html.quickref-document .quickref-search-row {
+  flex: 1 1 28rem;
+}
+
+html.quickref-document .quickref-result-row {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+html.quickref-document .quickref-search-row input {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 8rem;
+  height: 32px;
+  margin: 0;
+  padding: 0 9px;
+  color: var(--table-text);
+  background: var(--quickref-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+html.quickref-document .quickref-search-row input:focus,
+html.quickref-document .quickref-sort select:focus,
+html.quickref-document .quickref-range-control select:focus {
+  background: var(--quickref-surface);
+  border-color: var(--quickref-focus);
+  outline: 2px solid color-mix(in srgb, var(--quickref-focus) 20%, transparent);
+  outline-offset: 1px;
+}
+
+html.quickref-document .quickref-button,
+html.quickref-document .quickref-option {
+  box-sizing: border-box;
+  min-height: 28px;
+  padding: 3px 8px;
+  color: var(--table-text);
+  background: transparent;
+  border: 1px solid var(--table-border);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+html.quickref-document .quickref-button:hover,
+html.quickref-document .quickref-option:hover {
+  background: var(--table-hover);
+}
+
+html.quickref-document .quickref-option[aria-pressed="true"],
+html.quickref-document .quickref-check input:checked + .quickref-option {
+  color: var(--quickref-accent);
+  background: color-mix(in srgb, var(--quickref-accent) 10%, var(--quickref-surface));
+  border-color: color-mix(in srgb, var(--quickref-accent) 62%, var(--table-border));
+  font-weight: 600;
+}
+
+html.quickref-document .quickref-filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+html.quickref-document .quickref-active-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  color: #ffffff;
+  background: var(--quickref-accent);
+  border-radius: 8px;
+  font-size: 10px;
+  line-height: 1;
+}
+
+html.quickref-document .quickref-active-count[hidden] {
   display: none;
+}
+
+html.quickref-document .quickref-result-count {
+  color: var(--quickref-text-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+html.quickref-document .quickref-sort,
+html.quickref-document .quickref-range-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--quickref-text-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+html.quickref-document .quickref-sort select,
+html.quickref-document .quickref-range-control select {
+  height: 30px;
+  padding: 0 24px 0 7px;
+  color: var(--table-text);
+  background: var(--quickref-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 5px;
+}
+
+html.quickref-document .quickref-filters {
+  margin: 0 0 10px;
+  padding: 6px 12px 8px;
+  background: var(--quickref-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 5px;
+}
+
+html.quickref-document .quickref-filters[hidden],
+html.quickref-document .quickref-native-controls {
+  display: none !important;
+}
+
+html.quickref-document .quickref-filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+}
+
+html.quickref-document .quickref-filter-heading strong {
+  font-size: 13px;
+}
+
+html.quickref-document .quickref-reset {
+  min-height: 26px;
+  color: var(--quickref-text-muted);
+  border-color: transparent;
+}
+
+html.quickref-document .quickref-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html.quickref-document .quickref-filter-group {
+  min-width: 0;
+  margin: 0;
+  padding: 7px 0;
+  border: 0;
+  border-top: 1px solid var(--table-border);
+}
+
+html.quickref-document .quickref-filter-label {
+  float: left;
+  width: 7em;
+  padding: 4px 8px 0 0;
+  color: var(--quickref-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+html.quickref-document .quickref-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+}
+
+html.quickref-document .quickref-check {
+  position: relative;
+  display: inline-flex;
+  margin: 0;
+  cursor: pointer;
+}
+
+html.quickref-document .quickref-check input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+html.quickref-document .quickref-check input:focus-visible + .quickref-option {
+  outline: 2px solid var(--quickref-focus);
+  outline-offset: 2px;
+}
+
+html.quickref-document .quickref-special-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px 14px;
+}
+
+html.quickref-document .quickref-special-row {
+  display: grid;
+  grid-template-columns: 4.8em minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+}
+
+html.quickref-document .quickref-special-label {
+  color: var(--quickref-text-muted);
+  font-size: 13px;
+}
+
+html.quickref-document .quickref-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 18rem;
+}
+
+html.quickref-document .quickref-segmented .quickref-option {
+  border-color: color-mix(in srgb, var(--table-text) 28%, var(--table-border));
+  border-radius: 0;
+}
+
+html.quickref-document .quickref-segmented .quickref-option:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+html.quickref-document .quickref-segmented .quickref-option:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+html.quickref-document .quickref-segmented .quickref-option + .quickref-option {
+  margin-left: -1px;
+}
+
+html.quickref-document .quickref-range-options {
+  flex-wrap: nowrap;
+}
+
+html.quickref-document .quickref-separator {
+  display: none;
+}
+
+html.quickref-document table.quickref-table {
+  font-size: 0.9em;
+  line-height: 1.42;
+}
+
+html.quickref-document table.quickref-table th,
+html.quickref-document table.quickref-table td {
+  padding: 8px 10px;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+html.quickref-document table.quickref-table tr > :first-child {
+  min-width: 16em;
+}
+
+html.quickref-document table.quickref-table tr > :first-child a {
+  margin-left: 0 !important;
+}
+
+html.quickref-document table.quickref-table .quickref-header td {
+  color: var(--table-text);
+  background: var(--table-header);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+html.quickref-document .quickref-mobile-summary {
+  display: none;
+}
+
+html.quickref-document .quickref-preview {
+  position: fixed;
+  z-index: 200;
+  box-sizing: border-box;
+  width: min(42rem, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  padding: 12px 14px;
+  overflow: auto;
+  color: var(--table-text);
+  background: var(--quickref-surface);
+  border: 1px solid color-mix(in srgb, var(--table-text) 24%, var(--table-border));
+  border-radius: 6px;
+  box-shadow: 0 10px 28px rgba(24, 27, 31, 0.18);
+  font-size: 13px;
+  line-height: 1.55;
+  pointer-events: auto;
+  animation: quickref-preview-in 100ms ease-out;
+}
+
+html.quickref-document .quickref-preview[hidden] {
+  display: none;
+}
+
+html.quickref-document .quickref-preview-title {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--quickref-accent);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+html.quickref-document .quickref-preview-content {
+  color: var(--table-text);
+}
+
+html.quickref-document .quickref-preview-content > :first-child {
+  margin-top: 0 !important;
+}
+
+html.quickref-document .quickref-preview-content > :last-child {
+  margin-bottom: 0 !important;
+}
+
+html.quickref-document .quickref-preview-content img,
+html.quickref-document .quickref-preview-content table {
+  max-width: 100%;
+}
+
+html.quickref-document .quickref-preview-content a {
+  color: var(--quickref-accent);
+}
+
+@keyframes quickref-preview-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.quickref-document .quickref-preview {
+    animation: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  html.quickref-document .quickref-preview {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html.quickref-document .quickref-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  html.quickref-document .quickref-search-row,
+  html.quickref-document .quickref-result-row {
+    flex: 0 0 auto;
+  }
+
+  html.quickref-document .quickref-result-row {
+    justify-content: space-between;
+  }
+
+  html.quickref-document .quickref-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  html.quickref-document .quickref-special-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  html.quickref-document body.quickref-page > h1 {
+    margin-bottom: 10px;
+    font-size: 1.12rem;
+  }
+
+  html.quickref-document .quickref-toolbar {
+    margin-bottom: 8px;
+    padding: 7px 0;
+  }
+
+  html.quickref-document .quickref-search-row input {
+    width: 100%;
+  }
+
+  html.quickref-document .quickref-filter-group {
+    padding-block: 7px;
+  }
+
+  html.quickref-document .quickref-filter-label {
+    float: none;
+    display: block;
+    width: auto;
+    padding: 0 0 6px;
+  }
+
+  html.quickref-document .quickref-special-row {
+    grid-template-columns: 5.2em minmax(0, 1fr);
+  }
+
+  html.quickref-document .table-responsive--scroll:has(> table.quickref-table) {
+    overflow: visible;
+  }
+
+  html.quickref-document .table-responsive--scroll > table.quickref-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  html.quickref-document table.quickref-table > tbody {
+    display: block;
+  }
+
+  html.quickref-document table.quickref-table .quickref-header {
+    display: none;
+  }
+
+  html.quickref-document table.quickref-table tr.quickref-record {
+    display: block;
+    padding: 11px 0 10px;
+    background: transparent;
+    border-bottom: 1px solid var(--table-border);
+  }
+
+  html.quickref-document table.quickref-table tr.quickref-record:hover {
+    background: transparent;
+  }
+
+  html.quickref-document table.quickref-table tr.quickref-record > td {
+    display: none;
+    width: auto !important;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  html.quickref-document table.quickref-table tr.quickref-record > td.quickref-primary,
+  html.quickref-document table.quickref-table tr.quickref-record > td.quickref-mobile-summary {
+    display: block;
+  }
+
+  html.quickref-document table.quickref-table .quickref-primary {
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: 650;
+    line-height: 1.48;
+  }
+
+  html.quickref-document table.quickref-table .quickref-primary a {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  html.quickref-document .quickref-meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 0;
+    min-width: 0;
+    color: var(--quickref-text-muted);
+    font-size: 0.86em;
+    line-height: 1.55;
+  }
+
+  html.quickref-document .quickref-meta-item + .quickref-meta-item::before {
+    padding: 0 0.45em;
+    color: var(--table-border);
+    content: "·";
+  }
+
+  html.quickref-document .quickref-meta-source {
+    margin-left: auto;
+    padding-left: 10px;
+    color: var(--quickref-text-muted);
+    white-space: nowrap;
+  }
+}
+
+html.webhelp-topic-document .statblock-view-toggle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   margin: 8px 0;
 }
 
 html.webhelp-topic-document .statblock-view-toggle__button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
   padding: 5px 9px;
   color: var(--topic-text, #242629);
   background: var(--topic-surface-muted, #f7f7f8);
@@ -173,6 +688,83 @@ html.webhelp-topic-document .statblock-view-toggle__button {
   font: inherit;
   font-size: 0.82em;
   cursor: pointer;
+}
+
+html.webhelp-topic-document .statblock-view-toggle__button:focus-visible {
+  outline: 2px solid var(--statblock-accent);
+  outline-offset: 2px;
+}
+
+html.webhelp-topic-document .statblock-view-toggle__button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+html.webhelp-topic-document .statblock-export-button {
+  display: inline-flex;
+  margin-left: auto;
+  color: var(--topic-text, #242629);
+  background: var(--topic-surface-muted, #f7f7f8);
+  border-color: var(--topic-border, #dedbd7);
+}
+
+html.webhelp-topic-document .statblock-export-button:hover:not(:disabled) {
+  color: var(--statblock-accent);
+  background: var(--topic-surface, #ffffff);
+  border-color: var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-export-button .statblock-button-icon {
+  color: var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-button-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+html.webhelp-topic-document .statblock-export-holder {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -100000px;
+  pointer-events: none;
+}
+
+html.webhelp-topic-document .statblock-export-capture {
+  box-sizing: border-box;
+  padding: 24px;
+  color: #242629;
+  background: #ffffff;
+  border: 2px solid #800000;
+  --topic-bg: #ffffff;
+  --topic-surface: #ffffff;
+  --topic-surface-muted: #f7f7f8;
+  --topic-text: #242629;
+  --topic-text-muted: #666a70;
+  --topic-border: #dedbd7;
+  --topic-accent: #800000;
+  --topic-link: #174e88;
+  --statblock-surface: #ffffff;
+  --statblock-muted: #f7f7f8;
+  --statblock-text: #242629;
+  --statblock-text-muted: #666a70;
+  --statblock-border: #dedbd7;
+  --statblock-accent: #800000;
+}
+
+html.webhelp-topic-document .statblock-export-capture .statblock-responsive {
+  display: block !important;
+}
+
+html.webhelp-topic-document .statblock-export-capture .statblock-responsive__media img {
+  max-height: none;
 }
 
 html.webhelp-topic-document .statblock-view-toggle__button[aria-pressed="true"] {
@@ -358,8 +950,12 @@ html.webhelp-topic-document .statblock-layout-scroll {
 }
 
 @media (max-width: 767px) {
-  html.webhelp-topic-document .statblock-view-toggle {
-    display: flex;
+  html.webhelp-topic-document .statblock-view-toggle__button {
+    display: inline-flex;
+  }
+
+  html.webhelp-topic-document .statblock-export-button {
+    margin-left: 0;
   }
 
   html.webhelp-topic-document .stat-block {
@@ -420,6 +1016,7 @@ html.webhelp-topic-document .statblock-layout-scroll {
 
 @media print {
   html.webhelp-topic-document .statblock-view-toggle,
+  html.webhelp-topic-document .statblock-export-holder,
   html.webhelp-topic-document .statblock-responsive {
     display: none !important;
   }

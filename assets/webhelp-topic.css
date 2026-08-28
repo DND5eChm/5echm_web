@@ -272,6 +272,14 @@ html.webhelp-topic-document td {
   background-color: var(--topic-surface) !important;
 }
 
+/* Keep legacy topic callouts readable when their source CSS uses light fills. */
+html.webhelp-topic-document[data-webhelp-theme="dark"] .HT,
+html.webhelp-topic-document[data-webhelp-theme="dark"] .center {
+  color: var(--topic-text) !important;
+  background-color: var(--topic-surface-muted) !important;
+  border-color: var(--topic-border) !important;
+}
+
 body.webhelp-home {
   padding-top: 28px;
 }
