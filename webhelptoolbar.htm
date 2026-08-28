@@ -1,21 +1,34 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0014)about:internet -->
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head><meta charset="utf-8">
-<title>5E 不全书</title>
-
-<script language="JavaScript" src="languages.js"></script>
-<link href="style.css" rel="stylesheet" type="text/css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>目录工具 - 5E 不全书</title>
+  <link rel="stylesheet" href="assets/webhelp-compat.css">
 </head>
-
-<body bgcolor="#DCDBD6" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="label">
-<table width="270" border="0" cellspacing="2" cellpadding="2">
-  <tr align="center">
-    <td><div class="border2" onmouseover="this.className='border1';" onmouseout="this.className='border2';" onmousedown="this.className='border3'" onmouseup="this.className='border1';" onclick="parent.tree.showAll();"><nobr><img src="images/showall.gif" align="absmiddle"><script>document.write(strings['Show all']);</script></nobr></div> </td>
-    <td><div class="border2" onmouseover="this.className='border1';" onmouseout="this.className='border2';" onmousedown="this.className='border3'" onmouseup="this.className='border1';" onclick="parent.tree.collapseAll();"><nobr><img src="images/hideall.gif" align="absmiddle"><script>document.write(strings['Hide all']);</script></nobr></div> </td>
-    <td><div class="border2" onmouseover="this.className='border1';" onmouseout="this.className='border2';" onmousedown="this.className='border3'" onmouseup="this.className='border1';" onclick="parent.tree.clickNode(parent.tree.LastSelected-1);"><nobr><img src="images/previous.gif" align="absmiddle"><script>document.write(strings['Previous']);</script></nobr></div> </td>
-    <td><div class="border2" onmouseover="this.className='border1';" onmouseout="this.className='border2';" onmousedown="this.className='border3'" onmouseup="this.className='border1';"onclick="parent.tree.clickNode(parseInt(parent.tree.LastSelected) + 1);"><nobr><img src="images/next.gif" align="absmiddle"><script>document.write(strings['Next']);</script></nobr></div> </td>
-  </tr>
-</table>
+<body>
+  <nav class="compat-toolbar" aria-label="目录工具">
+    <button type="button" data-action="showAll">展开全部</button>
+    <button type="button" data-action="collapseAll">折叠全部</button>
+    <button type="button" data-action="previous">上一篇</button>
+    <button type="button" data-action="next">下一篇</button>
+  </nav>
+  <script>
+  (function () {
+    "use strict";
+    document.querySelector(".compat-toolbar").addEventListener("click", function (event) {
+      var button = event.target.closest("button[data-action]");
+      if (!button) return;
+      try {
+        var tree = parent.tree || parent.frames.tree;
+        if (!tree) return;
+        if (button.dataset.action === "showAll") tree.showAll();
+        if (button.dataset.action === "collapseAll") tree.collapseAll();
+        if (button.dataset.action === "previous") tree.clickNode(tree.LastSelected - 1);
+        if (button.dataset.action === "next") tree.clickNode(tree.LastSelected + 1);
+      } catch (error) {}
+    });
+  })();
+  </script>
 </body>
 </html>

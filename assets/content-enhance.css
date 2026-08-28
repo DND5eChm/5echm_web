@@ -1,0 +1,432 @@
+:root {
+  --table-header: #f1efec;
+  --table-stripe: #faf9f7;
+  --table-hover: #f6f2ef;
+  --table-border: var(--topic-border, #dedbd7);
+  --table-text: var(--topic-text, #242629);
+  --statblock-surface: var(--topic-surface, #ffffff);
+  --statblock-muted: var(--topic-surface-muted, #f7f7f8);
+  --statblock-text: var(--topic-text, #242629);
+  --statblock-text-muted: var(--topic-text-muted, #666a70);
+  --statblock-border: var(--topic-border, #dedbd7);
+  --statblock-accent: var(--topic-accent, #800000);
+  --statblock-ability-cell-1: #e9e3d6;
+  --statblock-ability-cell-2: #d8d0c9;
+  --statblock-ability-cell-3: #d2d6ce;
+  --statblock-ability-cell-4: #cbc6c6;
+}
+
+/* Theme legacy monster cards without changing generated topic markup. */
+html.webhelp-topic-document .stat-block {
+  color: var(--statblock-text);
+  background-color: var(--statblock-surface);
+  border-color: var(--statblock-border);
+}
+
+html.webhelp-topic-document .stat-block h5,
+html.webhelp-topic-document .stat-block h6 {
+  color: var(--statblock-accent);
+  border-bottom-color: var(--statblock-accent);
+}
+
+html.webhelp-topic-document .stat-block .sub-line {
+  color: var(--statblock-text-muted);
+}
+
+html.webhelp-topic-document .stat-block table {
+  color: var(--statblock-accent);
+}
+
+html.webhelp-topic-document .stat-block table.stat-abilities th {
+  color: var(--statblock-text-muted);
+}
+
+html.webhelp-topic-document .stat-block td.c1 {
+  background-color: var(--statblock-ability-cell-1);
+}
+
+html.webhelp-topic-document .stat-block td.c2 {
+  background-color: var(--statblock-ability-cell-2);
+}
+
+html.webhelp-topic-document .stat-block td.c3 {
+  background-color: var(--statblock-ability-cell-3);
+}
+
+html.webhelp-topic-document .stat-block td.c4 {
+  background-color: var(--statblock-ability-cell-4);
+}
+
+html.webhelp-topic-document[data-webhelp-theme="dark"] .stat-block[style*="background-color"],
+html.webhelp-topic-document[data-webhelp-theme="dark"] .stat-block[style*="BACKGROUND-COLOR"] {
+  background-color: var(--statblock-surface) !important;
+}
+
+html.webhelp-topic-document[data-webhelp-theme="dark"] .stat-block [style*="background-color"],
+html.webhelp-topic-document[data-webhelp-theme="dark"] .stat-block [style*="BACKGROUND-COLOR"] {
+  background-color: var(--statblock-muted) !important;
+}
+
+html.webhelp-topic-document table.table-enhanced {
+  width: 100%;
+  max-width: 100%;
+  margin: 18px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--table-text);
+  font-size: 1em;
+  line-height: 1.55;
+}
+
+html.webhelp-topic-document table.table-enhanced th,
+html.webhelp-topic-document table.table-enhanced td {
+  padding: 0.58em 0.72em;
+  border-bottom: 1px solid var(--table-border);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+html.webhelp-topic-document table.table-enhanced thead th,
+html.webhelp-topic-document table.table-enhanced > tbody > tr:first-child > th,
+html.webhelp-topic-document table.table-enhanced > tr:first-child > th {
+  color: var(--table-text);
+  background: var(--table-header);
+  font-weight: 700;
+}
+
+html.webhelp-topic-document table.table-enhanced tbody tr:nth-child(even),
+html.webhelp-topic-document table.table-enhanced > tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+
+html.webhelp-topic-document table.table-enhanced tbody tr:hover,
+html.webhelp-topic-document table.table-enhanced > tr:hover {
+  background: var(--table-hover);
+}
+
+html.webhelp-topic-document table.table-enhanced--dice th:first-child,
+html.webhelp-topic-document table.table-enhanced--dice td:first-child {
+  width: 3.5em;
+  min-width: 3.5em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+html.webhelp-topic-document table.table-enhanced--dice td:nth-child(2),
+html.webhelp-topic-document table.table-enhanced--simple td {
+  overflow-wrap: anywhere;
+}
+
+html.webhelp-topic-document .table-responsive {
+  width: 100%;
+  max-width: 100%;
+  margin: 18px 0;
+}
+
+html.webhelp-topic-document .table-responsive--scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+html.webhelp-topic-document .table-responsive--scroll > table {
+  width: max-content;
+  min-width: 42rem;
+  margin: 0;
+}
+
+html.webhelp-topic-document .table-responsive--fit > table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+html.webhelp-topic-document .statblock-view-toggle {
+  display: none;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+html.webhelp-topic-document .statblock-view-toggle__button {
+  padding: 5px 9px;
+  color: var(--topic-text, #242629);
+  background: var(--topic-surface-muted, #f7f7f8);
+  border: 1px solid var(--topic-border, #dedbd7);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.82em;
+  cursor: pointer;
+}
+
+html.webhelp-topic-document .statblock-view-toggle__button[aria-pressed="true"] {
+  color: var(--statblock-accent);
+  border-color: var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-responsive {
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  color: var(--topic-text, #242629);
+  background: var(--statblock-surface);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+html.webhelp-topic-document .statblock-responsive[hidden] {
+  display: none !important;
+}
+
+html.webhelp-topic-document .statblock-responsive__header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-responsive__title {
+  margin: 0;
+  color: var(--statblock-accent);
+  font-size: 1.38rem;
+  line-height: 1.3;
+}
+
+html.webhelp-topic-document .statblock-responsive__title [id] {
+  color: inherit;
+}
+
+html.webhelp-topic-document .statblock-responsive__subtitle {
+  margin-top: 3px;
+  color: var(--topic-text-muted, #666a70);
+  font-style: italic;
+}
+
+html.webhelp-topic-document .statblock-responsive__summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+  border: 1px solid var(--statblock-accent);
+  background: var(--statblock-muted);
+}
+
+html.webhelp-topic-document .statblock-responsive__summary-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px;
+  min-width: 0;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__summary-item:nth-child(odd):not(:last-child) {
+  border-right: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__summary-item--wide {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+
+html.webhelp-topic-document .statblock-responsive__label,
+html.webhelp-topic-document .statblock-responsive__detail-label {
+  color: var(--statblock-accent);
+  font-weight: 700;
+}
+
+html.webhelp-topic-document .statblock-responsive__value,
+html.webhelp-topic-document .statblock-responsive__detail-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+html.webhelp-topic-document .statblock-responsive__abilities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+  border: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__ability {
+  min-width: 0;
+  padding: 9px 10px;
+  background: var(--statblock-muted);
+  border-bottom: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__ability:nth-child(odd) {
+  border-right: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__ability:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+html.webhelp-topic-document .statblock-responsive__ability-title {
+  color: var(--statblock-accent);
+  font-weight: 700;
+}
+
+html.webhelp-topic-document .statblock-responsive__ability-score {
+  color: var(--topic-text, #242629);
+}
+
+html.webhelp-topic-document .statblock-responsive__ability-line {
+  color: var(--topic-text-muted, #666a70);
+  font-size: 0.9em;
+}
+
+html.webhelp-topic-document .statblock-responsive__details {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0;
+  margin: 14px 0 0;
+  padding-top: 4px;
+  border-top: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__details dt,
+html.webhelp-topic-document .statblock-responsive__details dd {
+  min-width: 0;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--table-border);
+}
+
+html.webhelp-topic-document .statblock-responsive__details dt {
+  padding-right: 12px;
+}
+
+html.webhelp-topic-document .statblock-responsive__extras {
+  margin-top: 14px;
+}
+
+html.webhelp-topic-document .statblock-responsive__section {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-responsive__section-title {
+  margin: 0 0 8px;
+  color: var(--statblock-accent);
+  font-size: 1.12rem;
+  line-height: 1.35;
+}
+
+html.webhelp-topic-document .statblock-responsive__section p {
+  margin: 0.7em 0;
+}
+
+html.webhelp-topic-document .statblock-responsive__media {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--statblock-accent);
+}
+
+html.webhelp-topic-document .statblock-responsive__media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto !important;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+html.webhelp-topic-document .statblock-layout-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767px) {
+  html.webhelp-topic-document .statblock-view-toggle {
+    display: flex;
+  }
+
+  html.webhelp-topic-document .stat-block {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    margin-left: 0;
+    padding: 12px;
+    border-width: 2px;
+    font-size: 1rem;
+  }
+
+  html.webhelp-topic-document .stat-block[data-statblock-enhanced="true"][data-statblock-view="responsive"] {
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  html.webhelp-topic-document .stat-block[data-statblock-enhanced="true"][data-statblock-view="responsive"] > .statblock-source {
+    display: none;
+  }
+
+  html.webhelp-topic-document .stat-block[data-statblock-enhanced="true"][data-statblock-view="original"] > .statblock-source {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html.webhelp-topic-document .statblock-responsive {
+    display: block;
+  }
+
+  html.webhelp-topic-document table.statblock-layout[data-statblock-view="responsive"] {
+    width: 100% !important;
+    table-layout: fixed;
+  }
+
+  html.webhelp-topic-document .statblock-layout-scroll {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  html.webhelp-topic-document .statblock-layout-scroll > table.statblock-layout[data-statblock-view="original"] {
+    min-width: max-content;
+  }
+
+  html.webhelp-topic-document table.statblock-layout[data-statblock-view="responsive"] td.statblock-image-cell {
+    display: none !important;
+  }
+
+  html.webhelp-topic-document table.statblock-layout[data-statblock-view="responsive"] td.statblock-content-cell {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media print {
+  html.webhelp-topic-document .statblock-view-toggle,
+  html.webhelp-topic-document .statblock-responsive {
+    display: none !important;
+  }
+
+  html.webhelp-topic-document .statblock-layout-scroll {
+    overflow: visible;
+  }
+
+  html.webhelp-topic-document .table-responsive--scroll {
+    overflow: visible;
+  }
+
+  html.webhelp-topic-document .table-responsive--scroll > table {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+:root[data-webhelp-theme="dark"] {
+  --table-header: #292526;
+  --table-stripe: #1d1f21;
+  --table-hover: #252326;
+  --statblock-ability-cell-1: #2e2525;
+  --statblock-ability-cell-2: #392d2e;
+  --statblock-ability-cell-3: #252b29;
+  --statblock-ability-cell-4: #2c2b2e;
+}

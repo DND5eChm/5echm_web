@@ -1,22 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<!-- saved from url=(0014)about:internet -->
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head><meta charset="utf-8">
-<title>5E 不全书</title>
-
-<script>
-var LocString=String(window.document.location.href);
-var DefaultPage;
-function GetQueryString(str){
-    var rs=new RegExp("(^|)"+str+"=([^\&]*)(\&|$)","gi").exec(LocString),tmp;
-    if(tmp=rs)return tmp[2];
-    return null;
-    }
-DefaultPage = GetQueryString("page");
-if(DefaultPage==null || DefaultPage==''){
-	DefaultPage = '%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2.html';
-}
-</script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>5E 不全书</title>
+  <link rel="stylesheet" href="assets/webhelp-compat.css">
 <script>
 (function() {
     var sources = {};
@@ -59,14 +47,15 @@ if(DefaultPage==null || DefaultPage==''){
 })();
 </script>
 </head>
-<script>
-document.write('<frameset rows="*" cols="285,*" framespacing="5" frameborder="1" border="5" bordercolor="#ffffff">');
-document.write('<frame src="webhelpleft.htm" name="nav" frameborder="1" scrolling="no" bordercolor="#ffffff" id="nav">');
-document.write('<frame src="topics/' +  DefaultPage + '" name="content" frameborder="1" bordercolor="#ffffff" scrolling="auto" id="content">');
-document.write('</frameset>');
-</script>
-
-<noframes><body>
-
-</body></noframes>
+<body data-default-page="%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2.html" style="--compat-sidebar-width: clamp(240px, 285px, 420px); --legacy-back-color: #ffffff;">
+  <div class="compat-layout">
+    <aside class="compat-sidebar" aria-label="文档目录">
+      <iframe src="webhelpcontents.htm" name="nav" title="文档目录"></iframe>
+    </aside>
+    <main class="compat-content">
+      <iframe id="content" name="content" title="文档正文"></iframe>
+    </main>
+  </div>
+  <script src="assets/webhelp-frame.js"></script>
+</body>
 </html>

@@ -1,0 +1,482 @@
+:root {
+  --topic-bg: #f4f5f7;
+  --topic-surface: #ffffff;
+  --topic-surface-muted: #f7f7f8;
+  --topic-text: #242629;
+  --topic-text-muted: #666a70;
+  --topic-border: #e0e2e5;
+  --topic-accent: #991b1b;
+  --topic-accent-soft: #fbeaea;
+  --topic-link: #1d5fa7;
+  --topic-warning: #8a5b00;
+  --topic-warning-bg: #fff8df;
+  --topic-info-bg: #fff0f0;
+  --scrollbar-thumb: rgba(36, 38, 41, 0.26);
+  --scrollbar-thumb-hover: rgba(36, 38, 41, 0.42);
+  --scrollbar-track: transparent;
+  --webhelp-font-size: 16px;
+  color-scheme: light;
+  background: var(--topic-bg);
+}
+
+:root[data-webhelp-theme="dark"] {
+  --topic-bg: #111315;
+  --topic-surface: #17191c;
+  --topic-surface-muted: #1e2125;
+  --topic-text: #e7e9ec;
+  --topic-text-muted: #a8adb4;
+  --topic-border: #34383e;
+  --topic-accent: #e16d6d;
+  --topic-accent-soft: #3a2022;
+  --topic-link: #72a7e4;
+  --topic-warning: #f3c86a;
+  --topic-warning-bg: #332b19;
+  --topic-info-bg: #332023;
+  --scrollbar-thumb: rgba(231, 233, 236, 0.3);
+  --scrollbar-thumb-hover: rgba(231, 233, 236, 0.48);
+  --scrollbar-track: transparent;
+  color-scheme: dark;
+}
+
+html,
+body,
+* {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  min-height: 24px;
+  background: var(--scrollbar-thumb);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html.webhelp-topic-document,
+html.webhelp-topic-document body {
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+
+html.webhelp-topic-document {
+  overflow-x: hidden;
+  background: var(--topic-bg);
+}
+
+html.webhelp-topic-document body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding: 40px clamp(24px, 4vw, 64px) 72px;
+  color: var(--topic-text);
+  background: var(--topic-surface);
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", system-ui, sans-serif;
+  font-size: var(--webhelp-font-size);
+  line-height: 1.74;
+  overflow-wrap: break-word;
+}
+
+html.webhelp-topic-document h1,
+html.webhelp-topic-document h2,
+html.webhelp-topic-document h3,
+html.webhelp-topic-document h4 {
+  color: var(--topic-text);
+  font-family: inherit;
+  line-height: 1.35;
+}
+
+html.webhelp-topic-document h1 {
+  margin: 0 0 24px;
+  color: var(--topic-accent);
+  font-size: 2rem;
+}
+
+html.webhelp-topic-document h2 {
+  margin: 34px 0 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--topic-border);
+  font-size: 1.48rem;
+}
+
+html.webhelp-topic-document h3 {
+  margin: 28px 0 12px;
+  font-size: 1.2rem;
+}
+
+html.webhelp-topic-document h4 {
+  margin: 22px 0 10px;
+  font-size: 1.05rem;
+}
+
+html.webhelp-topic-document p,
+html.webhelp-topic-document ul,
+html.webhelp-topic-document ol,
+html.webhelp-topic-document dl,
+html.webhelp-topic-document blockquote,
+html.webhelp-topic-document pre {
+  max-width: 100%;
+}
+
+html.webhelp-topic-document p {
+  margin: 1em 0;
+}
+
+html.webhelp-topic-document div.center {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin-inline: clamp(0px, 4vw, 48px);
+  padding-inline: clamp(16px, 4vw, 50px);
+}
+
+html.webhelp-topic-document a {
+  color: var(--topic-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+html.webhelp-topic-document a:hover {
+  text-decoration-thickness: 2px;
+}
+
+html.webhelp-topic-document a:focus-visible,
+html.webhelp-topic-document button:focus-visible,
+html.webhelp-topic-document [tabindex]:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+html.webhelp-topic-document img,
+html.webhelp-topic-document video,
+html.webhelp-topic-document canvas,
+html.webhelp-topic-document svg {
+  max-width: 100%;
+  height: auto;
+}
+
+html.webhelp-topic-document iframe,
+html.webhelp-topic-document object,
+html.webhelp-topic-document embed {
+  max-width: 100%;
+}
+
+html.webhelp-topic-document hr {
+  height: 1px;
+  margin: 28px 0;
+  background: var(--topic-border);
+  border: 0;
+}
+
+html.webhelp-topic-document blockquote {
+  margin: 20px 0;
+  padding: 8px 18px;
+  color: var(--topic-text-muted);
+  border-left: 3px solid var(--topic-border);
+}
+
+html.webhelp-topic-document pre,
+html.webhelp-topic-document code,
+html.webhelp-topic-document samp,
+html.webhelp-topic-document kbd {
+  font-family: "Cascadia Mono", "Segoe UI Mono", Consolas, monospace;
+}
+
+html.webhelp-topic-document pre {
+  box-sizing: border-box;
+  padding: 14px 16px;
+  overflow-x: auto;
+  white-space: pre;
+  background: var(--topic-surface-muted);
+  border: 1px solid var(--topic-border);
+  border-radius: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+html.webhelp-topic-document :not(pre) > code {
+  padding: 0.12em 0.32em;
+  background: var(--topic-surface-muted);
+  border: 1px solid var(--topic-border);
+  border-radius: 4px;
+}
+
+.webhelp-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  margin: 18px 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.webhelp-table-scroll:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.webhelp-table-scroll > table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+html.webhelp-topic-document table {
+  border-collapse: collapse;
+}
+
+html.webhelp-topic-document th,
+html.webhelp-topic-document td {
+  overflow-wrap: normal;
+}
+
+:root[data-webhelp-theme="dark"] body,
+:root[data-webhelp-theme="dark"] body[bgcolor="#ffffff"],
+:root[data-webhelp-theme="dark"] body[bgcolor="#FFFFFF"] {
+  color: var(--topic-text);
+  background: var(--topic-surface);
+}
+
+:root[data-webhelp-theme="dark"] font[color="#000000"],
+:root[data-webhelp-theme="dark"] font[color="#000"],
+:root[data-webhelp-theme="dark"] font[color="black"] {
+  color: var(--topic-text) !important;
+}
+
+:root[data-webhelp-theme="dark"] [bgcolor="#ffffff"],
+:root[data-webhelp-theme="dark"] [bgcolor="#FFFFFF"],
+:root[data-webhelp-theme="dark"] [bgcolor="white"] {
+  background-color: var(--topic-surface) !important;
+}
+
+body.webhelp-home {
+  padding-top: 28px;
+}
+
+.webhelp-home-title {
+  margin: 0 0 20px !important;
+  color: var(--topic-accent);
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.webhelp-home-title > strong > font,
+.webhelp-home-title > font {
+  color: inherit !important;
+  font-size: inherit !important;
+}
+
+.webhelp-home-title font font {
+  margin-left: 8px;
+  color: var(--topic-accent) !important;
+  font-size: 0.36em !important;
+  font-weight: 500;
+}
+
+.webhelp-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0 22px;
+}
+
+.webhelp-quick-action {
+  margin: 0 !important;
+}
+
+.webhelp-quick-action-link {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 12px;
+  color: var(--topic-text) !important;
+  background: var(--topic-surface);
+  border: 1px solid var(--topic-border);
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.webhelp-quick-action-link:hover {
+  background: var(--topic-surface-muted);
+  border-color: color-mix(in srgb, var(--topic-accent) 48%, var(--topic-border));
+}
+
+.webhelp-quick-icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: #258f92;
+}
+
+.webhelp-quick-action-spell .webhelp-quick-icon {
+  color: #7957c2;
+}
+
+.webhelp-quick-action-monster .webhelp-quick-icon {
+  color: #2877b5;
+}
+
+.webhelp-quick-action-item .webhelp-quick-icon {
+  color: #c17722;
+}
+
+.webhelp-quick-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.webhelp-quick-chevron {
+  color: var(--topic-text-muted);
+  font-size: 22px;
+  line-height: 1;
+  text-align: right;
+}
+
+.webhelp-callout {
+  position: relative;
+  margin: 20px 0 !important;
+  padding: 13px 16px 13px 42px;
+  border: 1px solid var(--topic-border);
+  border-radius: 6px;
+}
+
+.webhelp-callout::before {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.webhelp-callout-info {
+  color: var(--topic-text);
+  background: var(--topic-info-bg);
+  border-color: color-mix(in srgb, var(--topic-accent) 25%, var(--topic-border));
+}
+
+.webhelp-callout-info::before {
+  color: var(--topic-accent);
+  content: "i";
+}
+
+.webhelp-callout-warning {
+  color: var(--topic-text);
+  background: var(--topic-warning-bg);
+  border-color: color-mix(in srgb, var(--topic-warning) 30%, var(--topic-border));
+}
+
+.webhelp-callout-warning::before {
+  color: var(--topic-warning);
+  content: "!";
+}
+
+@media (max-width: 767px) {
+  html.webhelp-topic-document body {
+    padding: 24px max(16px, env(safe-area-inset-left)) calc(48px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-right));
+    font-size: var(--webhelp-font-size);
+    line-height: 1.7;
+  }
+
+  html.webhelp-topic-document h1,
+  .webhelp-home-title {
+    font-size: 1.68rem;
+  }
+
+  html.webhelp-topic-document h2 {
+    margin-top: 28px;
+    font-size: 1.36rem;
+  }
+
+  html.webhelp-topic-document h3 {
+    font-size: 1.16rem;
+  }
+
+  .webhelp-quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .webhelp-quick-action-link {
+    transition: none;
+  }
+}
+
+@media print {
+  :root,
+  :root[data-webhelp-theme="dark"] {
+    --topic-bg: #ffffff;
+    --topic-surface: #ffffff;
+    --topic-surface-muted: #ffffff;
+    --topic-text: #000000;
+    --topic-text-muted: #333333;
+    --topic-border: #b8b8b8;
+    --topic-accent: #661111;
+    --topic-link: #174e88;
+    color-scheme: light;
+  }
+
+  html.webhelp-topic-document,
+  html.webhelp-topic-document body {
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .webhelp-table-scroll {
+    overflow: visible;
+  }
+
+  .webhelp-quick-action-link,
+  .webhelp-callout {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  a[href] {
+    color: #174e88;
+  }
+}
