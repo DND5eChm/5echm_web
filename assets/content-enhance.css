@@ -496,6 +496,82 @@ html.quickref-document .quickref-preview-content {
   color: var(--table-text);
 }
 
+/* Preview HTML is fetched before topic enhancement, so theme its legacy markup here. */
+html.quickref-document .quickref-preview-content h1,
+html.quickref-document .quickref-preview-content h2,
+html.quickref-document .quickref-preview-content h3,
+html.quickref-document .quickref-preview-content h4,
+html.quickref-document .quickref-preview-content h5,
+html.quickref-document .quickref-preview-content h6 {
+  margin: 0.7em 0 0.35em;
+  color: var(--table-text);
+  line-height: 1.35;
+}
+
+html.quickref-document .quickref-preview-content table {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 8px 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: inherit;
+  background: var(--quickref-surface);
+  font-size: 0.95em;
+  line-height: 1.45;
+}
+
+html.quickref-document .quickref-preview-content th,
+html.quickref-document .quickref-preview-content td {
+  padding: 0.38em 0.55em;
+  border-bottom: 1px solid var(--table-border);
+  color: inherit;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+html.quickref-document .quickref-preview-content tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+
+html.quickref-document .quickref-preview-content tr:hover {
+  background: var(--table-hover);
+}
+
+html.quickref-document .quickref-preview-content thead th,
+html.quickref-document .quickref-preview-content table > tbody > tr:first-child > th,
+html.quickref-document .quickref-preview-content table > tr:first-child > th {
+  color: inherit;
+  background: var(--table-header);
+  font-weight: 700;
+}
+
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [data-webhelp-legacy-background] {
+  background-color: var(--quickref-muted) !important;
+  background-color: color-mix(in srgb, var(--legacy-table-background) 18%, var(--quickref-muted)) !important;
+}
+
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [data-webhelp-legacy-foreground] {
+  color: var(--table-text) !important;
+  color: color-mix(in srgb, var(--legacy-table-foreground) 32%, var(--table-text)) !important;
+}
+
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#eeeeee"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#EEEEEE"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#eee"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#EEE"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="white"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#ffffff"],
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [bgcolor="#FFFFFF"] {
+  background-color: var(--table-stripe) !important;
+}
+
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [style*="background-color"]:not([data-webhelp-legacy-background]),
+html.quickref-document[data-webhelp-theme="dark"] .quickref-preview-content [style*="BACKGROUND-COLOR"]:not([data-webhelp-legacy-background]) {
+  background-color: var(--quickref-muted) !important;
+}
+
 html.quickref-document .quickref-preview-content > :first-child {
   margin-top: 0 !important;
 }

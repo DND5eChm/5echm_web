@@ -568,6 +568,10 @@
               try { element.setAttribute(attributeName, new URL(value, source.href).href); } catch (error) {}
             });
           });
+          var previewTables = [];
+          if (clone.tagName && clone.tagName.toLowerCase() === "table") previewTables.push(clone);
+          previewTables = previewTables.concat(toArray(clone.querySelectorAll("table")));
+          previewTables.forEach(function (table) { markLegacyTableColors(parsed, table); });
           container.appendChild(clone);
         }
         nodeCount += 1;
