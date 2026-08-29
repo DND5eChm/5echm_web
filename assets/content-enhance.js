@@ -56,7 +56,7 @@
       choice: {
         name: "attunement",
         label: "同调",
-        anyLabel: "不限",
+        anyLabel: "全选",
         optionLabels: { "否": "无需", "是": "需要", "特殊": "特殊" }
       },
       sorts: [
@@ -75,7 +75,7 @@
       choice: {
         name: "legendary",
         label: "传奇动作",
-        anyLabel: "不限",
+        anyLabel: "全选",
         optionLabels: { "有": "有", "无": "无" }
       },
       range: { minId: "crMinSelect", maxId: "crMaxSelect", label: "挑战等级" },
@@ -171,8 +171,19 @@
   function makeAllButton(doc, label) {
     var button = makeElement(doc, "button", "quickref-option quickref-option--all");
     button.type = "button";
-    button.textContent = label || "不限";
+    button.textContent = label || "全选";
     return button;
+  }
+
+  function makeInvertButton(doc) {
+    var button = makeElement(doc, "button", "quickref-option quickref-option--invert");
+    button.type = "button";
+    button.textContent = "反选";
+    return button;
+  }
+
+  function invertInputs(inputs) {
+    inputs.forEach(function (input) { input.checked = !input.checked; });
   }
 
   function makeCheckGroup(doc, kind, definition, onChange) {
@@ -181,8 +192,10 @@
     inputs.forEach(clearLegacyControlEvents);
     var group = makeFilterGroup(doc, definition.label);
     var allButton = makeAllButton(doc);
+    var invertButton = makeInvertButton(doc);
     normalizeControlIds(inputs, "quickref-" + kind + "-" + definition.name);
     group.controls.appendChild(allButton);
+    group.controls.appendChild(invertButton);
 
     var state = {
       element: group.element,
@@ -210,6 +223,11 @@
       state.update();
       onChange();
     });
+    invertButton.addEventListener("click", function () {
+      invertInputs(inputs);
+      state.update();
+      onChange();
+    });
     state.update();
     return state;
   }
@@ -221,10 +239,12 @@
     var group = makeFilterGroup(doc, definition.label);
     var hidden = makeElement(doc, "div", "quickref-native-controls");
     var allButton = makeAllButton(doc, definition.anyLabel);
+    var invertButton = makeInvertButton(doc);
     var buttons = [];
     normalizeControlIds(inputs, "quickref-" + kind + "-" + definition.name);
     group.controls.classList.add("quickref-filter-options--segmented");
     group.controls.appendChild(allButton);
+    group.controls.appendChild(invertButton);
 
     var state = {
       element: group.element,
@@ -255,6 +275,11 @@
     group.element.appendChild(hidden);
     allButton.addEventListener("click", function () {
       state.reset();
+      state.update();
+      onChange();
+    });
+    invertButton.addEventListener("click", function () {
+      invertInputs(inputs);
       state.update();
       onChange();
     });
@@ -1417,8 +1442,7 @@
     var holder = makeElement(doc, "div", "statblock-export-holder");
     var capture = makeElement(doc, "div", "statblock-export-capture");
     var card = responsive.cloneNode(true);
-    var viewportWidth = Math.max(320, doc.documentElement.clientWidth || window.innerWidth || 720);
-    capture.style.width = Math.min(720, viewportWidth - 32) + "px";
+    capture.style.width = "720px";
     card.hidden = false;
     card.removeAttribute("aria-hidden");
     card.style.display = "block";
