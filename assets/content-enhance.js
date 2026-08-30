@@ -1695,6 +1695,135 @@
     return directCells(row).length <= 1;
   }
 
+  function rowSpanValue(cell) {
+    return Math.max(1, parseInt(cell && cell.getAttribute("rowspan") || "1", 10) || 1);
+  }
+
+  function colSpanValue(cell) {
+    return Math.max(1, parseInt(cell && cell.getAttribute("colspan") || "1", 10) || 1);
+  }
+
+  function firstCellHasWidth(table) {
+    var row = firstRow(table);
+    var cells = directCells(row);
+    return Boolean(cells[0] && cells[0].getAttribute("width"));
+  }
+
+  function headerRows(table) {
+    var rows = toArray(table.querySelectorAll("tr"));
+    var result = [];
+    var ended = false;
+    rows.forEach(function (row) {
+      var cells = directCells(row);
+      var header = !ended && (row.querySelector("th") || cells.some(function (cell) {
+        return Boolean(cell.querySelector("strong, b"));
+      }));
+      if (header) result.push(row);
+      else ended = true;
+    });
+    return result;
+  }
+
+  function mobileTableRole(table, kind) {
+    var rows = toArray(table.querySelectorAll("tr"));
+    var count = columnCount(table);
+    var headers = headerRows(table);
+    var headerText = headers.map(nodeText).join(" ");
+    var hasLevelHeader = /等级|级别|\blevel\b/i.test(headerText);
+    var hasProgressionHeader = /特性|熟练加值|熟练|法术位|环阶|准备法术|\bfeature\b|proficiency|spell\s*slot|prepared\s*spell/i.test(headerText);
+    var hasTwoCellRows = rows.length > 1 && rows.filter(function (row) {
+      return directCells(row).length === 2;
+    }).length >= Math.ceil(rows.length * 0.6);
+    var hasLabelCell = rows.some(function (row) {
+      var cells = directCells(row);
+      return cells.length === 2 && (cells[0].querySelector("strong, b") || cells[0].getAttribute("width"));
+    });
+
+    if (!table.classList.contains("quickref-table") && !hasSpan(table) && count === 2 &&
+        hasTwoCellRows && (hasLabelCell || firstCellHasWidth(table))) {
+      return "key-value";
+    }
+    if (!table.classList.contains("quickref-table") && kind === "wide" &&
+        hasProgressionHeader && (count >= 6 || hasSpan(table) || (count >= 5 && hasLevelHeader))) {
+      return "progression";
+    }
+    return kind === "wide" ? "scroll" : "fit";
+  }
+
+  function annotateTableColumns(table) {
+    var rows = toArray(table.querySelectorAll("tr"));
+    var occupied = [];
+    var cellsByRow = [];
+    var columnRoles = {};
+    var headers = headerRows(table);
+
+    headers.forEach(function (row, index) {
+      row.classList.add("table-header-row", "table-header-row--" + (index + 1));
+    });
+
+    rows.forEach(function (row, index) {
+      var cursor = 0;
+      var entries = [];
+      directCells(row).forEach(function (cell) {
+        var colspan = colSpanValue(cell);
+        var rowspan = rowSpanValue(cell);
+        while (occupied[cursor] && occupied[cursor] > index) cursor += 1;
+        entries.push({ cell: cell, start: cursor, span: colspan });
+        for (var column = cursor; column < cursor + colspan; column += 1) {
+          occupied[column] = Math.max(occupied[column] || 0, index + rowspan);
+        }
+        cursor += colspan;
+      });
+      cellsByRow.push(entries);
+    });
+
+    headers.forEach(function (row) {
+      var entries = cellsByRow[rows.indexOf(row)] || [];
+      entries.forEach(function (entry) {
+        var text = nodeText(entry.cell);
+        var role = /等级|级别|\blevel\b/i.test(text) ? "level" :
+          (/熟练加值|熟练|\bPB\b|proficiency/i.test(text) ? "proficiency" :
+            (/职业特性|特性|描述|效果|feature|description|effect/i.test(text) ? "feature" : ""));
+        if (!role) return;
+        for (var column = entry.start; column < entry.start + entry.span; column += 1) {
+          columnRoles[column] = role;
+        }
+      });
+    });
+
+    cellsByRow.forEach(function (entries) {
+      entries.forEach(function (entry) {
+        entry.cell.setAttribute("data-table-column", String(entry.start + 1));
+        entry.cell.setAttribute("data-table-column-span", String(entry.span));
+        if (columnRoles[entry.start]) entry.cell.setAttribute("data-table-column-role", columnRoles[entry.start]);
+      });
+    });
+    table.style.setProperty("--webhelp-table-columns", String(columnCount(table)));
+    return columnRoles;
+  }
+
+  function tableMinWidth(columnCountValue) {
+    return Math.max(672, (Math.max(1, columnCountValue) * 52) + 140);
+  }
+
+  function addTableScrollAffordance(doc, wrapper, table, role) {
+    if (!wrapper || role !== "progression" || wrapper.getAttribute("data-scroll-affordance") === "true") return;
+    var hint = makeElement(doc, "div", "table-responsive__hint");
+    hint.setAttribute("role", "note");
+    hint.textContent = "左右滑动查看完整表格";
+    wrapper.insertBefore(hint, table);
+    wrapper.setAttribute("data-scroll-affordance", "true");
+
+    function refresh() {
+      hint.hidden = wrapper.scrollWidth <= wrapper.clientWidth + 2 || wrapper.scrollLeft > 8;
+    }
+
+    wrapper.addEventListener("scroll", refresh, { passive: true });
+    if (doc.defaultView) doc.defaultView.addEventListener("resize", refresh);
+    refresh();
+    if (doc.defaultView && doc.defaultView.requestAnimationFrame) doc.defaultView.requestAnimationFrame(refresh);
+  }
+
   function normalizeCssColor(doc, value) {
     var probe;
     var color = cleanText(value);
@@ -1743,7 +1872,7 @@
     return "wide";
   }
 
-  function wrapTable(doc, table, kind, adaptive) {
+  function wrapTable(doc, table, kind, adaptive, mobileRole) {
     var parent = table.parentElement;
     var wrapper = parent && (parent.classList.contains("table-responsive") || parent.classList.contains("webhelp-table-scroll")) ? parent : null;
     if (wrapper && !wrapper.classList.contains("table-responsive")) wrapper.classList.add("table-responsive");
@@ -1757,6 +1886,15 @@
     }
     if (wrapper) wrapper.classList.add("table-responsive--" + (kind === "wide" ? "scroll" : "fit"));
     if (wrapper && adaptive) wrapper.classList.add("table-responsive--adaptive");
+    if (wrapper && mobileRole) {
+      wrapper.classList.add("table-responsive--" + mobileRole);
+      if (mobileRole === "progression") {
+        wrapper.setAttribute("role", "region");
+        if (!wrapper.hasAttribute("tabindex")) wrapper.tabIndex = 0;
+        wrapper.setAttribute("aria-label", "可横向滚动的成长进阶表格");
+        addTableScrollAffordance(doc, wrapper, table, mobileRole);
+      }
+    }
   }
 
   function enhanceTables(doc) {
@@ -1769,13 +1907,20 @@
       try { kind = classifyTable(table); } catch (error) { kind = "unknown"; }
       if (kind === "unknown") return;
       adaptive = isFixedLayoutTable(table);
+      var mobileRole = mobileTableRole(table, kind);
       table.classList.add("table-enhanced", "table-enhanced--" + kind);
       if (adaptive) table.classList.add("table-enhanced--adaptive");
       table.classList.add(kind === "wide" ? "table-responsive--scroll" : "table-responsive--fit");
       if (kind === "dice") table.classList.add("table-responsive--dice");
+      table.classList.add("table-enhanced--" + mobileRole);
+      table.setAttribute("data-mobile-table", mobileRole);
+      if (mobileRole === "progression") {
+        table.style.setProperty("--webhelp-table-min-width", tableMinWidth(columnCount(table)) + "px");
+        annotateTableColumns(table);
+      }
       markLegacyTableColors(doc, table);
       table.setAttribute("data-table-enhanced", "true");
-      wrapTable(doc, table, kind, adaptive);
+      wrapTable(doc, table, kind, adaptive, mobileRole);
     });
   }
 

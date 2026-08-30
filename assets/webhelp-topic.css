@@ -85,6 +85,7 @@ html.webhelp-topic-document body {
 
 html.webhelp-topic-document {
   overflow-x: hidden;
+  background: #f4f5f7;
   background: var(--topic-bg);
 }
 
@@ -93,6 +94,9 @@ html.webhelp-topic-document body {
   width: 100%;
   max-width: 1160px;
   margin-inline: auto;
+  padding: 40px 24px 72px;
+  color: #242629;
+  background: #ffffff;
   padding: 40px clamp(24px, 4vw, 64px) 72px;
   color: var(--topic-text);
   background: var(--topic-surface);
@@ -419,6 +423,8 @@ body.webhelp-home {
 
 @media (max-width: 767px) {
   html.webhelp-topic-document body {
+    padding: 24px 16px 48px;
+    font-size: 16px;
     padding: 24px max(16px, env(safe-area-inset-left)) calc(48px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-right));
     font-size: var(--webhelp-font-size);
     line-height: 1.7;

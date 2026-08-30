@@ -7,6 +7,31 @@
   var setting = "light";
   var fontSize = 16;
 
+  function needsLegacyRuntime() {
+    return !window.Promise || !window.Object || !Object.keys || !window.Array ||
+      !Array.prototype.forEach || !Array.prototype.find || !Array.from ||
+      !window.String || !String.prototype.trim || !window.Element ||
+      !Element.prototype.closest || !Element.prototype.remove ||
+      !window.NodeList || !NodeList.prototype.forEach ||
+      !("classList" in root);
+  }
+
+  function loadLegacyRuntime() {
+    var current = script;
+    var scripts;
+    var source;
+    if (!current) {
+      scripts = document.getElementsByTagName("script");
+      current = scripts[scripts.length - 1];
+    }
+    source = current && current.src ? current.src.replace(/[^\\/?#]*(?:[?#].*)?$/, "webhelp-legacy.js") : "assets/webhelp-legacy.js";
+    if (document.write) {
+      document.write("<script src=\"" + source.replace(/\"/g, "&quot;") + "\"><\/script>");
+    }
+  }
+
+  if (needsLegacyRuntime()) loadLegacyRuntime();
+
   try {
     var storedTheme = window.localStorage.getItem("5echm.webhelp.theme");
     if (/^(light|dark|system)$/.test(storedTheme || "")) setting = storedTheme;

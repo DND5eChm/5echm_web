@@ -83,10 +83,13 @@ body {
 }
 
 html {
+  background: #ffffff;
   background: var(--nav-bg);
 }
 
 body {
+  color: #292b2f;
+  background: #ffffff;
   color: var(--nav-text);
   background: var(--nav-bg);
   font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", system-ui, sans-serif;

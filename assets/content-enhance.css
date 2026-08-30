@@ -158,6 +158,41 @@ html.webhelp-topic-document .table-responsive--scroll > table {
   margin: 0;
 }
 
+html.webhelp-topic-document .table-responsive--progression {
+  position: relative;
+  overscroll-behavior-x: none;
+  overscroll-behavior-inline: none;
+}
+
+html.webhelp-topic-document .table-responsive--progression > table {
+  table-layout: auto;
+}
+
+html.webhelp-topic-document .table-responsive__hint {
+  display: none;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 3px 8px;
+  color: var(--quickref-text-muted, var(--topic-text-muted));
+  background: var(--quickref-muted, var(--topic-surface-muted));
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  font-size: 0.78em;
+  line-height: 1.35;
+}
+
+html.webhelp-topic-document table.table-enhanced--key-value {
+  table-layout: auto;
+}
+
+html.webhelp-topic-document table.table-enhanced--key-value th,
+html.webhelp-topic-document table.table-enhanced--key-value td {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 767px) {
   html.webhelp-topic-document .table-responsive--adaptive {
     overflow: visible;
@@ -170,6 +205,94 @@ html.webhelp-topic-document .table-responsive--scroll > table {
     min-width: 0 !important;
     table-layout: auto;
   }
+
+  html.webhelp-topic-document .table-responsive--progression {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  html.webhelp-topic-document .table-responsive--progression .table-responsive__hint:not([hidden]) {
+    display: block;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--key-value {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0 !important;
+    table-layout: fixed;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--key-value > tbody > tr > :first-child,
+  html.webhelp-topic-document table.table-enhanced--key-value > tr > :first-child {
+    width: 46% !important;
+    min-width: 0;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--key-value > tbody > tr > :last-child,
+  html.webhelp-topic-document table.table-enhanced--key-value > tr > :last-child {
+    width: 54% !important;
+    min-width: 0;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--key-value th,
+  html.webhelp-topic-document table.table-enhanced--key-value td {
+    padding: 0.58em 0.62em;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression {
+    width: max-content !important;
+    min-width: var(--webhelp-table-min-width, 42rem) !important;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression th,
+  html.webhelp-topic-document table.table-enhanced--progression td {
+    box-sizing: border-box;
+    min-width: 3.25rem;
+    padding: 0.5em 0.62em;
+    white-space: nowrap;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression .table-header-row > * {
+    background: var(--table-header);
+    font-weight: 700;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression [data-table-column-role="level"] {
+    width: 3.5rem;
+    min-width: 3.5rem;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression [data-table-column-role="proficiency"] {
+    width: 4.75rem;
+    min-width: 4.75rem;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression [data-table-column-role="feature"] {
+    width: 12rem;
+    min-width: 12rem;
+    white-space: normal;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression [data-table-column="1"] {
+    position: sticky !important;
+    inset-inline-start: 0;
+    left: 0;
+    z-index: 4;
+    background-color: var(--quickref-surface, var(--topic-surface));
+    box-shadow: 1px 0 0 var(--table-border);
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression .table-header-row > [data-table-column="1"] {
+    background: var(--table-header);
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression tbody tr:nth-child(even) [data-table-column="1"] {
+    background: var(--table-stripe);
+  }
+
 }
 
 html.webhelp-topic-document .table-responsive--fit > table {
@@ -462,6 +585,13 @@ html.quickref-document table.quickref-table tr > :first-child {
 
 html.quickref-document table.quickref-table tr > :first-child a {
   margin-left: 0 !important;
+}
+
+/* Keep superseded spell entries visibly legacy after shell link theming. */
+html.quickref-document table.quickref-table a.legacy {
+  color: var(--quickref-text-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
 }
 
 html.quickref-document table.quickref-table .quickref-header td {
@@ -1122,6 +1252,15 @@ html.webhelp-topic-document .statblock-layout-scroll {
   html.webhelp-topic-document .table-responsive--scroll > table {
     width: 100%;
     min-width: 0;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--progression {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html.webhelp-topic-document .table-responsive__hint {
+    display: none !important;
   }
 }
 
