@@ -1682,6 +1682,19 @@
     return table.querySelector("tr");
   }
 
+  function hasFixedWidth(table) {
+    var value = table.style && table.style.width || table.getAttribute("width") || "";
+    return /^\s*\d+(?:\.\d+)?(?:px)?\s*$/i.test(value);
+  }
+
+  function isFixedLayoutTable(table) {
+    var row;
+    if (!hasFixedWidth(table)) return false;
+    if (table.querySelector("table")) return true;
+    row = firstRow(table);
+    return directCells(row).length <= 1;
+  }
+
   function normalizeCssColor(doc, value) {
     var probe;
     var color = cleanText(value);
@@ -1722,6 +1735,7 @@
     var firstText = cells.length ? nodeText(cells[0]) : "";
     var headerText = nodeText(row);
     if (!headerText && !table.querySelector("th")) return "unknown";
+    if (hasFixedWidth(table)) return "wide";
     var dice = count === 2 && (/^\s*\d+d\d+/i.test(firstText) || /\b\d+d\d+\b/i.test(headerText));
     if (hasSpan(table)) return "wide";
     if (dice) return "dice";
@@ -1729,7 +1743,7 @@
     return "wide";
   }
 
-  function wrapTable(doc, table, kind) {
+  function wrapTable(doc, table, kind, adaptive) {
     var parent = table.parentElement;
     var wrapper = parent && (parent.classList.contains("table-responsive") || parent.classList.contains("webhelp-table-scroll")) ? parent : null;
     if (wrapper && !wrapper.classList.contains("table-responsive")) wrapper.classList.add("table-responsive");
@@ -1742,6 +1756,7 @@
       wrapper.appendChild(table);
     }
     if (wrapper) wrapper.classList.add("table-responsive--" + (kind === "wide" ? "scroll" : "fit"));
+    if (wrapper && adaptive) wrapper.classList.add("table-responsive--adaptive");
   }
 
   function enhanceTables(doc) {
@@ -1750,14 +1765,17 @@
       if (table.parentElement && table.parentElement.closest && table.parentElement.closest("table")) return;
       if (table.getAttribute("data-table-enhanced") === "true") return;
       var kind;
+      var adaptive;
       try { kind = classifyTable(table); } catch (error) { kind = "unknown"; }
       if (kind === "unknown") return;
+      adaptive = isFixedLayoutTable(table);
       table.classList.add("table-enhanced", "table-enhanced--" + kind);
+      if (adaptive) table.classList.add("table-enhanced--adaptive");
       table.classList.add(kind === "wide" ? "table-responsive--scroll" : "table-responsive--fit");
       if (kind === "dice") table.classList.add("table-responsive--dice");
       markLegacyTableColors(doc, table);
       table.setAttribute("data-table-enhanced", "true");
-      wrapTable(doc, table, kind);
+      wrapTable(doc, table, kind, adaptive);
     });
   }
 

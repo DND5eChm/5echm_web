@@ -158,6 +158,20 @@ html.webhelp-topic-document .table-responsive--scroll > table {
   margin: 0;
 }
 
+@media (max-width: 767px) {
+  html.webhelp-topic-document .table-responsive--adaptive {
+    overflow: visible;
+  }
+
+  html.webhelp-topic-document table.table-enhanced--adaptive,
+  html.webhelp-topic-document .table-responsive--adaptive > table {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0 !important;
+    table-layout: auto;
+  }
+}
+
 html.webhelp-topic-document .table-responsive--fit > table {
   margin-top: 0;
   margin-bottom: 0;
