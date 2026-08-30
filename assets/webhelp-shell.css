@@ -453,6 +453,8 @@ html[data-theme="dark"] .theme-icon-dark {
   display: grid;
   grid-template-columns: var(--sidebar-width) 5px minmax(0, 1fr);
   width: 100%;
+  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height) - env(safe-area-inset-top));
   height: calc(100dvh - var(--header-height) - env(safe-area-inset-top));
   min-height: 0;
   transition: grid-template-columns 160ms ease;
@@ -773,6 +775,8 @@ body.sidebar-resizing iframe {
   .app-layout,
   body.sidebar-collapsed .app-layout {
     display: block;
+    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height) - env(safe-area-inset-top));
     height: calc(100dvh - var(--header-height) - env(safe-area-inset-top));
   }
 
