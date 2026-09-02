@@ -338,6 +338,24 @@ html.quickref-document .quickref-result-row {
   justify-content: flex-end;
 }
 
+html.quickref-document .quickref-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+html.quickref-document .quickref-pagination[hidden] {
+  display: none;
+}
+
+html.quickref-document .quickref-page-status {
+  min-width: 3.5em;
+  color: var(--quickref-text-muted);
+  font-size: 13px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 html.quickref-document .quickref-search-row input {
   box-sizing: border-box;
   flex: 1 1 auto;
@@ -1260,6 +1278,10 @@ html.webhelp-topic-document .statblock-layout-scroll {
   }
 
   html.webhelp-topic-document .table-responsive__hint {
+    display: none !important;
+  }
+
+  html.quickref-document .quickref-pagination {
     display: none !important;
   }
 }

@@ -5,6 +5,7 @@
   var MOBILE_QUERY = "(max-width: 767px)";
   var EXPORT_MAX_DIMENSION = 8192;
   var EXPORT_MAX_AREA = 16000000;
+  var QUICK_REFERENCE_PAGE_SIZE = 150;
   var ABILITY_LABELS = {
     "力量": "str", "str": "str", "strength": "str",
     "敏捷": "dex", "dex": "dex", "dexterity": "dex",
@@ -374,6 +375,10 @@
       label.appendChild(select);
       group.controls.appendChild(label);
       select.addEventListener("change", function () {
+        if (min.selectedIndex > max.selectedIndex) {
+          if (select === min) max.selectedIndex = min.selectedIndex;
+          else min.selectedIndex = max.selectedIndex;
+        }
         state.update();
         onChange();
       });
@@ -693,10 +698,12 @@
     var headerCells = directCells(header);
     var rows = toArray(table.querySelectorAll("tr[" + config.rowAttribute + "][tags]"));
     var body = rows.length ? rows[0].parentNode : null;
-    var legacySearch = typeof window.search === "function" ? window.search : null;
     var states = [];
     var filterTimer = 0;
     var appliedSort = "source";
+    var currentPage = 0;
+    var filteredRows = rows.slice();
+    var records = [];
 
     doc.documentElement.classList.add("quickref-document", "quickref-document--" + kind);
     doc.body.classList.add("quickref-page");
@@ -721,6 +728,12 @@
         });
       }
       row.appendChild(makeMobileSummary(doc, kind, cells));
+      records.push({
+        row: row,
+        name: cleanText(row.getAttribute(config.rowAttribute)).toLowerCase(),
+        tags: String(row.getAttribute("tags") || ""),
+        range: kind === "monster" ? crRank(cellText(cells, 4)) : 0
+      });
     });
     setupQuickReferencePreview(doc, table);
 
@@ -735,6 +748,10 @@
     var sortLabel = makeElement(doc, "label", "quickref-sort");
     var sortCaption = makeElement(doc, "span");
     var sortSelect = makeElement(doc, "select");
+    var pagination = makeElement(doc, "div", "quickref-pagination");
+    var previousPage = makeElement(doc, "button", "quickref-button");
+    var pageStatus = makeElement(doc, "span", "quickref-page-status");
+    var nextPage = makeElement(doc, "button", "quickref-button");
     clearLegacyControlEvents(searchInput);
     searchInput.type = "search";
     searchInput.setAttribute("aria-label", kind === "spell" ? "搜索法术" : (kind === "item" ? "搜索物品" : "搜索怪物"));
@@ -747,6 +764,15 @@
     sortCaption.textContent = "排序";
     sortLabel.appendChild(sortCaption);
     sortLabel.appendChild(sortSelect);
+    previousPage.type = "button";
+    previousPage.textContent = "上一页";
+    nextPage.type = "button";
+    nextPage.textContent = "下一页";
+    pagination.setAttribute("role", "navigation");
+    pagination.setAttribute("aria-label", "速查结果分页");
+    pagination.appendChild(previousPage);
+    pagination.appendChild(pageStatus);
+    pagination.appendChild(nextPage);
     config.sorts.forEach(function (sort) {
       var option = doc.createElement("option");
       option.value = sort.value;
@@ -757,6 +783,7 @@
     searchRow.appendChild(toggle);
     resultRow.appendChild(resultCount);
     resultRow.appendChild(sortLabel);
+    resultRow.appendChild(pagination);
     toolbar.appendChild(searchRow);
     toolbar.appendChild(resultRow);
     searchHost.parentNode.insertBefore(toolbar, searchHost);
@@ -772,11 +799,99 @@
     filterHeading.appendChild(filterTitle);
     filterHeading.appendChild(reset);
 
-    function runSearch() {
-      filterTimer = 0;
-      if (legacySearch) {
-        try { legacySearch.call(window); } catch (error) {}
+    function selectedValues(name) {
+      return toArray(doc.getElementsByName(name)).filter(function (input) {
+        return input.checked;
+      }).map(function (input) {
+        return String(input.value || "");
+      });
+    }
+
+    function matchesAny(tags, values) {
+      return values.some(function (value) { return tags.indexOf(value) !== -1; });
+    }
+
+    function selectedRange(select, fallback) {
+      if (!select || select.selectedIndex < 0) return fallback;
+      return crRank(cleanText(select.options[select.selectedIndex].text));
+    }
+
+    function readCriteria() {
+      var criteria = {
+        groups: config.groups.map(function (definition) {
+          return selectedValues(definition.name);
+        }),
+        choice: config.choice ? selectedValues(config.choice.name) : null,
+        special: config.special ? selectedValues("special") : null,
+        minimum: -Infinity,
+        maximum: Infinity
+      };
+      if (config.range) {
+        criteria.minimum = selectedRange(doc.getElementById(config.range.minId), -Infinity);
+        criteria.maximum = selectedRange(doc.getElementById(config.range.maxId), Infinity);
       }
+      return criteria;
+    }
+
+    function recordMatches(record, keyword, criteria) {
+      if (keyword && record.name.indexOf(keyword) === -1) return false;
+      if (!criteria.groups.every(function (values) {
+        return matchesAny(record.tags, values);
+      })) return false;
+      if (criteria.choice && !matchesAny(record.tags, criteria.choice)) return false;
+      if (criteria.special && !criteria.special.every(function (value) {
+        return record.tags.indexOf(value) !== -1;
+      })) return false;
+      if (record.range < criteria.minimum || record.range > criteria.maximum) return false;
+      return true;
+    }
+
+    function renderPage() {
+      if (!body) return;
+      var pageCount = Math.max(1, Math.ceil(filteredRows.length / QUICK_REFERENCE_PAGE_SIZE));
+      var start;
+      var fragment = doc.createDocumentFragment();
+      currentPage = Math.max(0, Math.min(currentPage, pageCount - 1));
+      start = currentPage * QUICK_REFERENCE_PAGE_SIZE;
+      rows.forEach(function (row) {
+        if (row.parentNode === body) body.removeChild(row);
+      });
+      filteredRows.slice(start, start + QUICK_REFERENCE_PAGE_SIZE).forEach(function (row) {
+        row.style.display = "";
+        fragment.appendChild(row);
+      });
+      body.appendChild(fragment);
+      resultCount.textContent = "找到 " + filteredRows.length + " / " + rows.length + " 条";
+      pageStatus.textContent = (currentPage + 1) + " / " + pageCount;
+      previousPage.disabled = currentPage === 0;
+      nextPage.disabled = currentPage >= pageCount - 1;
+      pagination.hidden = pageCount <= 1;
+    }
+
+    function renderAllForPrint() {
+      if (!body || filteredRows.length <= QUICK_REFERENCE_PAGE_SIZE) return;
+      var fragment = doc.createDocumentFragment();
+      rows.forEach(function (row) {
+        if (row.parentNode === body) body.removeChild(row);
+      });
+      filteredRows.forEach(function (row) {
+        row.style.display = "";
+        fragment.appendChild(row);
+      });
+      body.appendChild(fragment);
+    }
+
+    function runSearch() {
+      var keyword = cleanText(searchInput.value).toLowerCase();
+      var criteria = readCriteria();
+      filterTimer = 0;
+      currentPage = 0;
+      filteredRows = records.filter(function (record) {
+        return recordMatches(record, keyword, criteria);
+      }).map(function (record) {
+        return record.row;
+      });
+      renderPage();
       updateStatus();
     }
 
@@ -815,22 +930,23 @@
     if (separator && separator.tagName && separator.tagName.toLowerCase() === "hr") separator.classList.add("quickref-separator");
 
     function sortRows() {
-      if (!body) return;
       var sort = sortSelect.value;
       if (sort === appliedSort) return;
-      rows.slice().sort(function (left, right) {
+      records.sort(function (leftRecord, rightRecord) {
+        var left = leftRecord.row;
+        var right = rightRecord.row;
         var leftValue = quickReferenceSortValue(kind, sort, left);
         var rightValue = quickReferenceSortValue(kind, sort, right);
         var result = typeof leftValue === "string" ? leftValue.localeCompare(rightValue, "zh-CN") : leftValue - rightValue;
         return result || (parseInt(left.getAttribute("data-quickref-order"), 10) - parseInt(right.getAttribute("data-quickref-order"), 10));
-      }).forEach(function (row) { body.appendChild(row); });
+      });
+      rows = records.map(function (record) { return record.row; });
       appliedSort = sort;
+      runSearch();
     }
 
     function updateStatus() {
-      var visible = rows.filter(function (row) { return row.style.display !== "none"; }).length;
       var active = states.filter(function (state) { return state.active(); }).length;
-      resultCount.textContent = "找到 " + visible + " / " + rows.length + " 条";
       toggleCount.textContent = active ? String(active) : "";
       toggleCount.hidden = !active;
     }
@@ -845,10 +961,24 @@
       searchInput.value = "";
       states.forEach(function (state) { state.reset(); state.update(); });
       sortSelect.value = "source";
-      sortRows();
-      runSearch();
+      if (appliedSort === "source") runSearch();
+      else sortRows();
     });
     sortSelect.addEventListener("change", sortRows);
+    previousPage.addEventListener("click", function () {
+      if (currentPage <= 0) return;
+      currentPage -= 1;
+      renderPage();
+    });
+    nextPage.addEventListener("click", function () {
+      if ((currentPage + 1) * QUICK_REFERENCE_PAGE_SIZE >= filteredRows.length) return;
+      currentPage += 1;
+      renderPage();
+    });
+    if (doc.defaultView) {
+      doc.defaultView.addEventListener("beforeprint", renderAllForPrint);
+      doc.defaultView.addEventListener("afterprint", renderPage);
+    }
     searchInput.addEventListener("input", function () {
       window.clearTimeout(filterTimer);
       filterTimer = window.setTimeout(runSearch, 60);
