@@ -23,6 +23,12 @@
 
 /* Theme legacy monster cards without changing generated topic markup. */
 html.webhelp-topic-document .stat-block {
+  box-sizing: border-box;
+  /* Legacy cards often carry fixed inline widths and overflow:hidden. */
+  max-width: calc(100% - 32px);
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
   color: var(--statblock-text);
   background-color: var(--statblock-surface);
   border-color: var(--statblock-border);
@@ -1253,6 +1259,11 @@ html.webhelp-topic-document .statblock-layout-scroll {
 }
 
 @media print {
+  html.webhelp-topic-document .stat-block {
+    max-width: none;
+    overflow: visible !important;
+  }
+
   html.webhelp-topic-document .statblock-view-toggle,
   html.webhelp-topic-document .statblock-export-holder,
   html.webhelp-topic-document .statblock-responsive {

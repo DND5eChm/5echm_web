@@ -247,6 +247,15 @@
     get("filterCount").textContent = count.value ? count.value + " 个匹配" : "无匹配";
   }
 
+  function navigateHistory(direction) {
+    try {
+      var historyWindow = parent;
+      if (!parent.WebHelpShell && parent.frames && parent.frames.content) historyWindow = parent.frames.content;
+      if (direction < 0) historyWindow.history.back();
+      else historyWindow.history.forward();
+    } catch (error) {}
+  }
+
   function initialiseTree() {
     enhanceDisclosureControls();
     branchIds().forEach(function (id) {
@@ -271,8 +280,8 @@
     });
     get("expandSelectedButton").addEventListener("click", expandSelected);
     get("collapseAllButton").addEventListener("click", collapseAll);
-    get("previousTopicButton").addEventListener("click", function () { clickNode(LastSelected - 1); });
-    get("nextTopicButton").addEventListener("click", function () { clickNode(LastSelected + 1); });
+    get("previousTopicButton").addEventListener("click", function () { navigateHistory(-1); });
+    get("nextTopicButton").addEventListener("click", function () { navigateHistory(1); });
   }
 
   function enhanceDisclosureControls() {
