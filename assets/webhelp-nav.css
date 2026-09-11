@@ -12,7 +12,7 @@
   --scrollbar-thumb: rgba(41, 43, 47, 0.26);
   --scrollbar-thumb-hover: rgba(41, 43, 47, 0.42);
   --scrollbar-track: transparent;
-  --webhelp-font-size: 16px;
+  --webhelp-ui-font-size: 14px;
   color-scheme: light;
 }
 
@@ -93,7 +93,7 @@ body {
   color: var(--nav-text);
   background: var(--nav-bg);
   font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: var(--webhelp-ui-font-size, 14px);
   line-height: 1.55;
 }
 
@@ -246,7 +246,7 @@ button {
 .navigation-tree,
 .navigation-tree div {
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--webhelp-ui-font-size, 14px);
 }
 
 .navigation-tree > div {

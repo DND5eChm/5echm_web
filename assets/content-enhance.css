@@ -642,7 +642,7 @@ html.quickref-document .quickref-preview {
   border: 1px solid color-mix(in srgb, var(--table-text) 24%, var(--table-border));
   border-radius: 6px;
   box-shadow: 0 10px 28px rgba(24, 27, 31, 0.18);
-  font-size: 13px;
+  font-size: var(--webhelp-font-size, 16px);
   line-height: 1.55;
   pointer-events: auto;
   animation: quickref-preview-in 100ms ease-out;
@@ -656,7 +656,7 @@ html.quickref-document .quickref-preview-title {
   display: block;
   margin-bottom: 6px;
   color: var(--quickref-accent);
-  font-size: 14px;
+  font-size: 1.08em;
   line-height: 1.4;
 }
 

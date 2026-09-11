@@ -80,10 +80,31 @@
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
       </button>
 
-      <div class="font-controls" aria-label="字号">
-        <span class="tool-label">字号</span>
-        <button class="text-button" id="fontDecrease" type="button" aria-label="减小字号" title="减小字号">A</button>
-        <button class="text-button text-button-large" id="fontIncrease" type="button" aria-label="增大字号" title="增大字号">A</button>
+      <div class="font-adjust-control">
+        <button class="command-button font-adjust-button" id="fontAdjustButton" type="button" aria-label="字体调整" aria-haspopup="dialog" aria-controls="fontAdjustMenu" aria-expanded="false" title="字体调整">
+          <span class="font-adjust-label">字体调整</span>
+          <span class="font-adjust-glyph" aria-hidden="true">A</span>
+        </button>
+        <div class="font-adjust-menu" id="fontAdjustMenu" role="dialog" aria-label="字体调整" hidden>
+          <div class="font-adjust-title">字体调整</div>
+          <div class="font-slider-group">
+            <div class="font-slider-label">
+              <span>正文内容字体</span>
+              <output id="fontSizeOutput" for="fontSizeRange">16px</output>
+            </div>
+            <input class="font-size-range" id="fontSizeRange" type="range" min="14" max="48" step="1" value="16" aria-label="调整正文内容字体">
+            <div class="font-range-scale" aria-hidden="true"><span>14px</span><span>48px</span></div>
+          </div>
+          <div class="font-slider-group">
+            <div class="font-slider-label">
+              <span>目录与其他 UI 字体</span>
+              <output id="uiFontSizeOutput" for="uiFontSizeRange">14px</output>
+            </div>
+            <input class="font-size-range" id="uiFontSizeRange" type="range" min="12" max="24" step="1" value="14" aria-label="调整目录与其他 UI 字体">
+            <div class="font-range-scale" aria-hidden="true"><span>12px</span><span>24px</span></div>
+          </div>
+          <div class="font-adjust-help">拖动滑块调整正文、目录和界面显示</div>
+        </div>
       </div>
 
       <button class="command-button print-button" id="printButton" type="button" title="打印当前文章">
@@ -109,12 +130,10 @@
         <option value="light" selected>浅色</option>
         <option value="dark">深色</option>
       </select>
-      <div class="menu-font-row">
-        <span>正文字号</span>
-        <output id="fontSizeOutput">16px</output>
-        <button id="menuFontDecrease" type="button" aria-label="减小字号">A−</button>
-        <button id="menuFontIncrease" type="button" aria-label="增大字号">A＋</button>
-      </div>
+      <button class="menu-command menu-font-adjust" id="menuFontAdjust" type="button" aria-haspopup="dialog" aria-controls="fontAdjustMenu">
+        <span>字体调整</span>
+        <output id="menuFontSizeSummary">16px</output>
+      </button>
       <button class="menu-command" id="menuPrintButton" type="button">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>
         打印当前文章

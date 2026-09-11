@@ -6,6 +6,7 @@
   var kind = script ? script.getAttribute("data-webhelp-kind") || "" : "";
   var setting = "light";
   var fontSize = 16;
+  var uiFontSize = 14;
 
   function needsLegacyRuntime() {
     return !window.Promise || !window.Object || !Object.keys || !window.Array ||
@@ -36,7 +37,9 @@
     var storedTheme = window.localStorage.getItem("5echm.webhelp.theme");
     if (/^(light|dark|system)$/.test(storedTheme || "")) setting = storedTheme;
     var storedFontSize = parseInt(window.localStorage.getItem("5echm.webhelp.fontSize"), 10);
-    if (storedFontSize >= 14 && storedFontSize <= 20) fontSize = storedFontSize;
+    if (storedFontSize >= 14 && storedFontSize <= 48) fontSize = storedFontSize;
+    var storedUiFontSize = parseInt(window.localStorage.getItem("5echm.webhelp.uiFontSize"), 10);
+    if (storedUiFontSize >= 12 && storedUiFontSize <= 24) uiFontSize = storedUiFontSize;
   } catch (error) {}
 
   var resolved = setting;
@@ -56,6 +59,7 @@
   }
 
   root.style.setProperty("--webhelp-font-size", fontSize + "px");
+  root.style.setProperty("--webhelp-ui-font-size", uiFontSize + "px");
   if (kind === "shell") {
     root.setAttribute("data-theme", setting);
     root.setAttribute("data-resolved-theme", resolved);

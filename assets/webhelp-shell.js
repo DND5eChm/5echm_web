@@ -9,8 +9,11 @@
     search: { src: "webhelpsearch.htm", title: "全文搜索" }
   };
   var FONT_MIN = 14;
-  var FONT_MAX = 20;
+  var FONT_MAX = 48;
   var FONT_DEFAULT = 16;
+  var UI_FONT_MIN = 12;
+  var UI_FONT_MAX = 24;
+  var UI_FONT_DEFAULT = 14;
   var SIDEBAR_MIN = 240;
   var SIDEBAR_MAX = 420;
   var MOBILE_BREAKPOINT = 768;
@@ -32,9 +35,16 @@
   var leaveSearchButton = document.getElementById("leaveSearchButton");
   var moreButton = document.getElementById("moreButton");
   var moreMenu = document.getElementById("moreMenu");
+  var fontAdjustButton = document.getElementById("fontAdjustButton");
+  var fontAdjustMenu = document.getElementById("fontAdjustMenu");
+  var fontSizeRange = document.getElementById("fontSizeRange");
+  var uiFontSizeRange = document.getElementById("uiFontSizeRange");
+  var menuFontAdjust = document.getElementById("menuFontAdjust");
+  var menuFontSizeSummary = document.getElementById("menuFontSizeSummary");
   var themeButton = document.getElementById("themeButton");
   var themeSelect = document.getElementById("themeSelect");
   var fontSizeOutput = document.getElementById("fontSizeOutput");
+  var uiFontSizeOutput = document.getElementById("uiFontSizeOutput");
   var liveRegion = document.getElementById("liveRegion");
   var projectVersion = document.getElementById("projectVersion");
   var projectTitle = document.querySelector(".brand-title").textContent.trim();
@@ -199,8 +209,9 @@
     if (!doc || !doc.documentElement) return;
     doc.documentElement.setAttribute("data-webhelp-theme", resolvedTheme());
     if (kind === "nav") doc.documentElement.setAttribute("data-search-theme", resolvedTheme());
-    doc.documentElement.style.setProperty("--webhelp-font-size", getFontSize() + "px");
+    doc.documentElement.style.setProperty("--webhelp-ui-font-size", getUiFontSize() + "px");
     if (kind === "topic") {
+      doc.documentElement.style.setProperty("--webhelp-font-size", getFontSize() + "px");
       ensureStylesheet(doc, "webhelpTopicStyles", resolveAsset("assets/webhelp-topic.css"));
       ensureStylesheet(doc, "webhelpContentEnhanceStyles", resolveAsset("assets/content-enhance.css"));
       ensureScript(doc, "webhelpContentEnhanceScript", resolveAsset("assets/content-enhance.js"));
@@ -234,23 +245,41 @@
     return clamp(parseInt(readStorage("fontSize"), 10) || FONT_DEFAULT, FONT_MIN, FONT_MAX);
   }
 
+  function getUiFontSize() {
+    return clamp(parseInt(readStorage("uiFontSize"), 10) || UI_FONT_DEFAULT, UI_FONT_MIN, UI_FONT_MAX);
+  }
+
+  function setRangeProgress(range, value, minimum, maximum) {
+    if (!range) return;
+    range.value = String(value);
+    range.style.setProperty("--font-progress", ((value - minimum) / (maximum - minimum)) * 100 + "%");
+  }
+
   function applyFontSize(value, persist) {
     var size = clamp(parseInt(value, 10) || FONT_DEFAULT, FONT_MIN, FONT_MAX);
     root.style.setProperty("--topic-font-size", size + "px");
     fontSizeOutput.value = size + "px";
     fontSizeOutput.textContent = size + "px";
+    setRangeProgress(fontSizeRange, size, FONT_MIN, FONT_MAX);
+    if (menuFontSizeSummary) menuFontSizeSummary.textContent = size + "px";
     if (persist !== false) writeStorage("fontSize", size);
     try {
       contentFrame.contentDocument.documentElement.style.setProperty("--webhelp-font-size", size + "px");
     } catch (error) {}
-    try {
-      navFrame.contentDocument.documentElement.style.setProperty("--webhelp-font-size", size + "px");
-    } catch (error) {}
-    announce("正文字号 " + size + " 像素");
+    announce("正文内容字体 " + size + " 像素");
   }
 
-  function changeFontSize(delta) {
-    applyFontSize(getFontSize() + delta, true);
+  function applyUiFontSize(value, persist) {
+    var size = clamp(parseInt(value, 10) || UI_FONT_DEFAULT, UI_FONT_MIN, UI_FONT_MAX);
+    root.style.setProperty("--webhelp-ui-font-size", size + "px");
+    uiFontSizeOutput.value = size + "px";
+    uiFontSizeOutput.textContent = size + "px";
+    setRangeProgress(uiFontSizeRange, size, UI_FONT_MIN, UI_FONT_MAX);
+    if (persist !== false) writeStorage("uiFontSize", size);
+    try {
+      navFrame.contentDocument.documentElement.style.setProperty("--webhelp-ui-font-size", size + "px");
+    } catch (error) {}
+    announce("目录与界面字体 " + size + " 像素");
   }
 
   function announce(message) {
@@ -602,6 +631,20 @@
     moreButton.setAttribute("aria-expanded", "false");
   }
 
+  function openFontAdjustMenu() {
+    closeMoreMenu();
+    fontAdjustMenu.hidden = false;
+    fontAdjustButton.setAttribute("aria-expanded", "true");
+    fontSizeRange.focus();
+  }
+
+  function closeFontAdjustMenu() {
+    if (fontAdjustMenu.hidden) return;
+    fontAdjustMenu.hidden = true;
+    fontAdjustButton.setAttribute("aria-expanded", "false");
+    if (document.activeElement === fontSizeRange) fontAdjustButton.focus();
+  }
+
   function setupResizer() {
     var startX = 0;
     var startWidth = 0;
@@ -655,13 +698,22 @@
     mobileSearchButton.addEventListener("click", function () { openSearch(globalSearchInput.value || readStorage("lastSearch") || ""); });
     themeButton.addEventListener("click", cycleTheme);
     themeSelect.addEventListener("change", function () { applyTheme(themeSelect.value, true); });
-    document.getElementById("fontDecrease").addEventListener("click", function () { changeFontSize(-1); });
-    document.getElementById("fontIncrease").addEventListener("click", function () { changeFontSize(1); });
-    document.getElementById("menuFontDecrease").addEventListener("click", function () { changeFontSize(-1); });
-    document.getElementById("menuFontIncrease").addEventListener("click", function () { changeFontSize(1); });
+    fontAdjustButton.addEventListener("click", function () {
+      fontAdjustMenu.hidden ? openFontAdjustMenu() : closeFontAdjustMenu();
+    });
+    fontSizeRange.addEventListener("input", function () { applyFontSize(fontSizeRange.value, true); });
+    uiFontSizeRange.addEventListener("input", function () { applyUiFontSize(uiFontSizeRange.value, true); });
+    menuFontAdjust.addEventListener("click", openFontAdjustMenu);
     document.getElementById("printButton").addEventListener("click", printCurrentTopic);
     document.getElementById("menuPrintButton").addEventListener("click", printCurrentTopic);
-    moreButton.addEventListener("click", function () { moreMenu.hidden ? openMoreMenu() : closeMoreMenu(); });
+    moreButton.addEventListener("click", function () {
+      if (moreMenu.hidden) {
+        closeFontAdjustMenu();
+        openMoreMenu();
+      } else {
+        closeMoreMenu();
+      }
+    });
     navFrame.addEventListener("load", enhanceNavDocument);
     contentFrame.addEventListener("load", onContentLoad);
     window.addEventListener("resize", function () {
@@ -705,10 +757,12 @@
       if (event.key === "Escape") {
         if (body.classList.contains("drawer-open")) closeDrawer();
         closeMoreMenu();
+        closeFontAdjustMenu();
       }
     });
     document.addEventListener("pointerdown", function (event) {
       if (!moreMenu.hidden && !moreMenu.contains(event.target) && !moreButton.contains(event.target)) closeMoreMenu();
+      if (!fontAdjustMenu.hidden && !fontAdjustMenu.contains(event.target) && !fontAdjustButton.contains(event.target) && !menuFontAdjust.contains(event.target)) closeFontAdjustMenu();
     });
     if (systemTheme) {
       var themeChange = function () {
@@ -729,6 +783,7 @@
     applySidebarWidth(readStorage("sidebarWidth") || sidebar.getBoundingClientRect().width || 288, false);
     applyTheme(readStorage("theme") || "light", false);
     applyFontSize(getFontSize(), false);
+    applyUiFontSize(getUiFontSize(), false);
     if (isMobile()) closeDrawer();
     else setSidebarCollapsed(sidebarCollapsedByDefault(), false);
     setupEvents();
