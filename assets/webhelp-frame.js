@@ -47,6 +47,13 @@
       script.async = false;
       doc.head.appendChild(script);
     }
+    if (!doc.getElementById("webhelpContrastScript")) {
+      var contrastScript = doc.createElement("script");
+      contrastScript.id = "webhelpContrastScript";
+      contrastScript.src = asset("assets/webhelp-contrast.js");
+      contrastScript.async = false;
+      doc.head.appendChild(contrastScript);
+    }
   }
 
   frame.src = path(pageValue());

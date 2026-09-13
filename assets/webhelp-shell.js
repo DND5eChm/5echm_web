@@ -215,6 +215,7 @@
       ensureStylesheet(doc, "webhelpTopicStyles", resolveAsset("assets/webhelp-topic.css"));
       ensureStylesheet(doc, "webhelpContentEnhanceStyles", resolveAsset("assets/content-enhance.css"));
       ensureScript(doc, "webhelpContentEnhanceScript", resolveAsset("assets/content-enhance.js"));
+      ensureScript(doc, "webhelpContrastScript", resolveAsset("assets/webhelp-contrast.js"));
       doc.documentElement.classList.add("webhelp-topic-document");
     } else {
       ensureStylesheet(doc, "webhelpNavStyles", resolveAsset("assets/webhelp-nav.css"));

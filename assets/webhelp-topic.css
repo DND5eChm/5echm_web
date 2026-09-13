@@ -151,12 +151,24 @@ html.webhelp-topic-document p {
   margin: 1em 0;
 }
 
-html.webhelp-topic-document div.center {
+html.webhelp-topic-document div.center,
+html.webhelp-topic-document .letter {
   box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
+  /* Legacy topics often put a fixed WIDTH on quote/callout blocks inline. */
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
   margin-inline: clamp(0px, 4vw, 48px);
   padding-inline: clamp(16px, 4vw, 50px);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+html.webhelp-topic-document .letter {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
 
 html.webhelp-topic-document a {
