@@ -56,6 +56,8 @@
   var nextHistoryMode = "replace";
   var preferredNavigationNode = -1;
   var lastTrackedPage = "";
+  var bookCatalog = Array.isArray(window.WebHelpBookCatalog) ? window.WebHelpBookCatalog : [];
+  var selectedBookKey = "";
 
   function readStorage(key) {
     try {
@@ -496,6 +498,8 @@
         if (link && isMobile()) window.setTimeout(closeDrawer, 30);
       }, true);
     }
+    renderHomeBookshelf();
+    if (selectedBookKey && currentView === "contents") focusSelectedBook();
   }
 
   function quickActionIcon(kind) {
@@ -506,6 +510,270 @@
       item: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l2 12H5zM9 8a3 3 0 0 1 6 0M9 13h6"/></svg>'
     };
     return icons[kind] || icons.legacy;
+  }
+
+  function createHomeElement(doc, tagName, className, textContent) {
+    var element = doc.createElement(tagName);
+    if (className) element.className = className;
+    if (textContent) element.textContent = textContent;
+    return element;
+  }
+
+  function bookshelfTone(key) {
+    var hash = 0;
+    String(key || "").split("").forEach(function (character) {
+      hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
+    });
+    return hash % 7;
+  }
+
+  function ensureHomeBookshelf(doc) {
+    if (!doc || !doc.body || doc.getElementById("webhelpBookshelf")) return;
+    var section = createHomeElement(doc, "section", "webhelp-bookshelf");
+    section.id = "webhelpBookshelf";
+    section.setAttribute("aria-labelledby", "webhelpBookshelfTitle");
+
+    var heading = createHomeElement(doc, "div", "webhelp-bookshelf-heading");
+    var title = createHomeElement(doc, "h2", "webhelp-bookshelf-title", "书架");
+    title.id = "webhelpBookshelfTitle";
+    var copy = createHomeElement(doc, "p", "webhelp-bookshelf-copy", "按出版先后排列；书脊越高，站内收录条目越多。选择书籍可查看其目录。");
+    heading.appendChild(title);
+    heading.appendChild(copy);
+
+    var casesElement = createHomeElement(doc, "div", "webhelp-bookcases");
+    casesElement.id = "webhelpBookcases";
+
+    var status = createHomeElement(doc, "p", "webhelp-bookshelf-status", "正在读取站内藏书……");
+    status.id = "webhelpBookshelfStatus";
+    status.setAttribute("aria-live", "polite");
+
+    var detail = createHomeElement(doc, "div", "webhelp-book-detail");
+    detail.id = "webhelpBookDetail";
+    detail.hidden = true;
+
+    section.appendChild(heading);
+    section.appendChild(casesElement);
+    section.appendChild(status);
+    section.appendChild(detail);
+
+    var quickGrid = doc.querySelector(".webhelp-quick-grid");
+    if (quickGrid && quickGrid.parentNode) quickGrid.parentNode.insertBefore(section, quickGrid.nextSibling);
+    else doc.body.appendChild(section);
+  }
+
+  function currentContentsApi() {
+    if (currentView !== "contents") return null;
+    try {
+      return navFrame.contentWindow.WebHelpContents || null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function bookHeight(count, maximum) {
+    if (typeof count !== "number") return 156;
+    if (!maximum) return 150;
+    return 142 + Math.round(Math.log(count + 1) / Math.log(maximum + 1) * 86);
+  }
+
+  function bookByKey(key) {
+    return bookCatalog.find(function (book) { return book.key === key; }) || null;
+  }
+
+  function outlineForBook(api, book, seen) {
+    if (!api || !book) return null;
+    var visited = seen || {};
+    if (visited[book.key]) return null;
+    visited[book.key] = true;
+    var direct = api.getBookOutline(book);
+    if (direct) return direct;
+    var members = (book.memberKeys || []).map(function (key) {
+      var member = bookByKey(key);
+      var outline = outlineForBook(api, member, visited);
+      return member && outline ? { book: member, outline: outline } : null;
+    }).filter(Boolean);
+    if (!members.length) return null;
+    return {
+      id: -1,
+      title: book.title,
+      count: members.reduce(function (count, member) { return count + member.outline.count; }, 0),
+      children: members.map(function (member) {
+        return {
+          id: member.outline.id,
+          title: member.book.title,
+          href: "",
+          hasChildren: true
+        };
+      })
+    };
+  }
+
+  function renderBookDetail(doc, book, outline) {
+    var detail = doc.getElementById("webhelpBookDetail");
+    if (!detail) return;
+    detail.textContent = "";
+    if (!book || !outline) {
+      detail.hidden = true;
+      return;
+    }
+
+    detail.hidden = false;
+    var header = createHomeElement(doc, "div", "webhelp-book-detail-heading");
+    var heading = createHomeElement(doc, "h4", "webhelp-book-detail-title", book.title);
+    var meta = createHomeElement(doc, "p", "webhelp-book-detail-meta", book.abbreviation + " · 收录 " + outline.count + " 项");
+    header.appendChild(heading);
+    header.appendChild(meta);
+    detail.appendChild(header);
+
+    if (outline.missing) {
+      detail.appendChild(createHomeElement(doc, "p", "webhelp-book-detail-empty", "这本书已列入书目，但当前站点尚未收录可跳转的独立目录。"));
+      return;
+    }
+
+    if (!outline.children.length) {
+      detail.appendChild(createHomeElement(doc, "p", "webhelp-book-detail-empty", "这本书目前没有可直接跳转的二级目录。"));
+      return;
+    }
+
+    var list = createHomeElement(doc, "ol", "webhelp-book-chapters");
+    outline.children.forEach(function (chapter) {
+      var item = doc.createElement("li");
+      var button = createHomeElement(doc, "button", "webhelp-book-chapter", chapter.title);
+      button.type = "button";
+      button.setAttribute("data-node-id", chapter.id);
+      button.setAttribute("title", "转到“" + chapter.title + "”");
+      var chevron = createHomeElement(doc, "span", "webhelp-book-chapter-chevron", "›");
+      chevron.setAttribute("aria-hidden", "true");
+      button.appendChild(chevron);
+      button.addEventListener("click", function () {
+        var api = currentContentsApi();
+        if (api && api.activateNode(chapter.id)) announce("正在打开“" + chapter.title + "”");
+      });
+      item.appendChild(button);
+      list.appendChild(item);
+    });
+    detail.appendChild(list);
+  }
+
+  function renderHomeBookshelf() {
+    var doc;
+    try { doc = contentFrame.contentDocument; } catch (error) { return; }
+    if (!doc || !doc.body || !doc.body.classList.contains("webhelp-home")) return;
+    ensureHomeBookshelf(doc);
+    var casesElement = doc.getElementById("webhelpBookcases");
+    var status = doc.getElementById("webhelpBookshelfStatus");
+    var detail = doc.getElementById("webhelpBookDetail");
+    var bookshelf = doc.getElementById("webhelpBookshelf");
+    if (!casesElement || !status || !detail || !bookshelf) return;
+    if (casesElement.contains(detail)) bookshelf.appendChild(detail);
+
+    var api = currentContentsApi();
+    var records = bookCatalog.map(function (book) {
+      return { book: book, outline: outlineForBook(api, book) };
+    });
+    var maximum = records.reduce(function (value, record) {
+      return Math.max(value, record.outline ? record.outline.count : 0);
+    }, 0);
+
+    var groups = [
+      { key: "core", title: "新版核心资源（2024）", description: "现行核心规则", compact: true },
+      { key: "legacy", title: "旧版资源", description: "2014 版与已停止更新内容", compact: true },
+      { key: "official", title: "规则扩展", description: "官方规则补充", compact: true },
+      { key: "setting", title: "战役设定", description: "官方世界与设定集" },
+      { key: "partner", title: "合作内容", description: "第三方与合作出版物" },
+      { key: "other", title: "其他出版物", description: "站内收录的其他实体出版资源" }
+    ];
+
+    casesElement.textContent = "";
+    var compactTier = createHomeElement(doc, "div", "webhelp-bookshelf-tier webhelp-bookshelf-tier-rules");
+    compactTier.setAttribute("aria-label", "核心与规则资源");
+    casesElement.appendChild(compactTier);
+    groups.forEach(function (group) {
+      var groupRecords = records.filter(function (record) { return record.book.section === group.key; });
+      if (!groupRecords.length) return;
+      var groupElement = createHomeElement(doc, "section", "webhelp-bookshelf-group webhelp-bookshelf-group-" + group.key);
+      groupElement.setAttribute("aria-labelledby", "webhelpBookshelfGroup-" + group.key);
+      var groupHeading = createHomeElement(doc, "div", "webhelp-bookshelf-group-heading");
+      var groupTitle = createHomeElement(doc, "h3", "webhelp-bookshelf-group-title", group.title);
+      groupTitle.id = "webhelpBookshelfGroup-" + group.key;
+      var groupDescription = createHomeElement(doc, "span", "webhelp-bookshelf-group-description", group.description + " · " + groupRecords.length + " 本");
+      groupHeading.appendChild(groupTitle);
+      groupHeading.appendChild(groupDescription);
+      groupElement.appendChild(groupHeading);
+
+      var caseElement = createHomeElement(doc, "div", "webhelp-bookcase");
+      caseElement.setAttribute("role", "group");
+      caseElement.setAttribute("aria-label", group.title + "书架");
+      groupRecords.forEach(function (record) {
+        var book = record.book;
+        var count = record.outline ? record.outline.count : 0;
+        var button = createHomeElement(doc, "button", "webhelp-book webhelp-book-tone-" + bookshelfTone(book.key));
+        if (api && !record.outline) button.classList.add("webhelp-book-unavailable");
+        button.type = "button";
+        button.setAttribute("aria-pressed", String(selectedBookKey === book.key));
+        button.setAttribute("data-book-key", book.key);
+        button.style.setProperty("--book-height", bookHeight(count, maximum) + "px");
+        button.title = book.title + "（" + book.abbreviation + "），收录 " + count + " 项";
+
+        var name = createHomeElement(doc, "span", "webhelp-book-name", book.title);
+        var abbreviation = createHomeElement(doc, "span", "webhelp-book-abbreviation", book.abbreviation);
+        button.appendChild(name);
+        button.appendChild(abbreviation);
+        button.addEventListener("click", function () {
+          selectedBookKey = book.key;
+          renderHomeBookshelf();
+          focusSelectedBook();
+        });
+        caseElement.appendChild(button);
+      });
+      groupElement.appendChild(caseElement);
+      (group.compact ? compactTier : casesElement).appendChild(groupElement);
+    });
+
+    if (!api) {
+      status.textContent = "选择书籍后将切换到目录并载入章节。";
+      status.hidden = false;
+    } else {
+      var availableCount = records.filter(function (record) { return Boolean(record.outline); }).length;
+      status.textContent = "书目共 " + records.length + " 本，当前站点已匹配 " + availableCount + " 本。";
+      status.hidden = availableCount === records.length;
+    }
+
+    var selected = records.find(function (record) { return record.book.key === selectedBookKey; });
+    var selectedOutline = selected && (selected.outline || { count: 0, children: [], missing: true });
+    if (selected) {
+      var selectedGroup = casesElement.querySelector(".webhelp-bookshelf-group-" + selected.book.section);
+      if (/^(core|legacy|official)$/.test(selected.book.section)) {
+        casesElement.insertBefore(detail, compactTier.nextSibling);
+      } else if (selectedGroup) {
+        selectedGroup.appendChild(detail);
+      }
+    }
+    renderBookDetail(doc, selected && selected.book, selectedOutline);
+  }
+
+  function focusSelectedBook() {
+    var book = bookByKey(selectedBookKey);
+    if (!book) return;
+    if (isMobile()) openDrawer();
+    else if (body.classList.contains("sidebar-collapsed")) setSidebarCollapsed(false, false);
+    if (currentView !== "contents") {
+      setView("contents", { persist: true });
+      return;
+    }
+    var api = currentContentsApi();
+    if (!api) return;
+    var outline = api.focusBook(book);
+    if (!outline && book.memberKeys) {
+      book.memberKeys.some(function (key) {
+        var member = bookByKey(key);
+        outline = member ? api.focusBook(member) : null;
+        return Boolean(outline);
+      });
+    }
+    renderHomeBookshelf();
+    if (outline) announce("已展开“" + book.title + "”，共收录 " + outlineForBook(api, book).count + " 项");
+    else announce("“" + book.title + "”当前尚无可展开的独立目录");
   }
 
   function enhanceHomePage(doc) {
@@ -549,6 +817,9 @@
       actionParagraphs[0].parentNode.insertBefore(grid, actionParagraphs[0]);
       actionParagraphs.forEach(function (paragraph) { grid.appendChild(paragraph); });
     }
+
+    ensureHomeBookshelf(doc);
+    renderHomeBookshelf();
 
     Array.prototype.slice.call(doc.querySelectorAll("p")).forEach(function (paragraph) {
       var text = (paragraph.textContent || "").trim();

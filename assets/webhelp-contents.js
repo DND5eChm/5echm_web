@@ -196,6 +196,132 @@
     });
   }
 
+  function nodeLabelElement(node) {
+    if (!node) return null;
+    return Array.prototype.reduce.call(node.children, function (result, child) {
+      if (result || child.tagName !== "A") return result;
+      return child.querySelector('[id^="l"]');
+    }, null);
+  }
+
+  function nodeLink(node) {
+    if (!node) return null;
+    return Array.prototype.find.call(node.children, function (child) {
+      return child.tagName === "A" && child.getAttribute("target") === "content";
+    }) || null;
+  }
+
+  function nodeId(node) {
+    var label = nodeLabelElement(node);
+    var id = label ? parseInt(label.id.slice(1), 10) : -1;
+    return isNaN(id) ? -1 : id;
+  }
+
+  function normaliseBookLabel(value) {
+    return String(value || "")
+      .replace(/\*/g, "")
+      .replace(/new!/ig, "")
+      .replace(/[（(]无模组[）)]/g, "")
+      .replace(/[（(]旧版[）)]/g, "")
+      .replace(/\s+/g, "")
+      .trim();
+  }
+
+  function isContentLabel(value) {
+    var text = String(value || "").replace(/\s+/g, "");
+    return Boolean(text) && !/^[—–-]+$/.test(text) && text.indexOf("分割线") === -1;
+  }
+
+  function findBookNode(book) {
+    var labels = [book && book.title].concat(book && book.tocLabels || [])
+      .map(normaliseBookLabel)
+      .filter(Boolean);
+    var ancestorLabels = (book && book.ancestorTitles || []).map(normaliseBookLabel).filter(Boolean);
+    function matches(node, requireAncestor) {
+      var label = nodeLabelElement(node);
+      if (!label || labels.indexOf(normaliseBookLabel(label.textContent)) === -1) return false;
+      if (!requireAncestor || !ancestorLabels.length) return true;
+      var parent = node.parentElement && node.parentElement.closest ? node.parentElement.closest(".nav-node") : null;
+      while (parent) {
+        var parentLabel = nodeLabelElement(parent);
+        if (parentLabel && ancestorLabels.indexOf(normaliseBookLabel(parentLabel.textContent)) !== -1) return true;
+        parent = parent.parentElement && parent.parentElement.closest ? parent.parentElement.closest(".nav-node") : null;
+      }
+      return false;
+    }
+    var rootMatch = rootNodes().find(function (node) { return matches(node, false); });
+    if (rootMatch) return rootMatch;
+    if (!ancestorLabels.length) return null;
+    return Array.prototype.find.call(document.querySelectorAll(".nav-node"), function (node) {
+      return matches(node, true);
+    }) || null;
+  }
+
+  function bookNodeRecord(node) {
+    var label = nodeLabelElement(node);
+    var link = nodeLink(node);
+    var id = nodeId(node);
+    if (!label || id < 0 || !isContentLabel(label.textContent)) return null;
+    return {
+      id: id,
+      title: (label.textContent || "").replace(/\s+/g, " ").trim(),
+      href: link ? link.getAttribute("href") || "" : "",
+      hasChildren: Boolean(directBranch(node))
+    };
+  }
+
+  function getBookOutline(book) {
+    var node = findBookNode(book || {});
+    if (!node) return null;
+    var branch = directBranch(node);
+    var entries = Array.prototype.map.call(node.querySelectorAll(".nav-node"), bookNodeRecord)
+      .filter(Boolean);
+    return {
+      id: nodeId(node),
+      title: (nodeLabelElement(node).textContent || "").replace(/\s+/g, " ").trim(),
+      count: entries.length,
+      children: childNodes(branch).map(bookNodeRecord).filter(Boolean)
+    };
+  }
+
+  function clearBookFocus() {
+    document.querySelectorAll(".bookshelf-focused").forEach(function (node) {
+      node.classList.remove("bookshelf-focused");
+    });
+  }
+
+  function focusBook(book) {
+    var node = findBookNode(book || {});
+    if (!node) return null;
+    var filter = get("directoryFilter");
+    if (filter && filter.value) {
+      filter.value = "";
+      clearFilter();
+    }
+    var id = nodeId(node);
+    var label = nodeLabelElement(node);
+    showParent(label);
+    show(id);
+    clearBookFocus();
+    node.classList.add("bookshelf-focused");
+    try {
+      node.scrollIntoView({
+        block: "center",
+        behavior: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    } catch (error) {
+      if (label) label.scrollIntoView({ block: "nearest" });
+    }
+    return getBookOutline(book);
+  }
+
+  function activateBookNode(index) {
+    var id = parseInt(index, 10);
+    if (isNaN(id) || !get("l" + id)) return false;
+    clickNode(id);
+    return true;
+  }
+
   function snapshotBranches() {
     var snapshot = {};
     document.querySelectorAll('div[id^="d"]').forEach(function (branch) {
@@ -318,6 +444,11 @@
   window.LinkDblClick = LinkDblClick;
   window.LinkClick = LinkClick;
   window.body_onload = body_onload;
+  window.WebHelpContents = {
+    activateNode: activateBookNode,
+    focusBook: focusBook,
+    getBookOutline: getBookOutline
+  };
   Object.defineProperty(window, "LastSelected", {
     get: function () { return LastSelected; },
     set: function (value) { LastSelected = parseInt(value, 10); }

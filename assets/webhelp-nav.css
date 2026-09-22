@@ -377,6 +377,16 @@ button {
   font-weight: 600;
 }
 
+.nav-node.bookshelf-focused > a:last-of-type {
+  color: var(--nav-accent);
+  background: color-mix(in srgb, var(--nav-accent) 9%, var(--nav-surface));
+  box-shadow: inset 3px 0 0 var(--nav-accent);
+}
+
+.nav-node.bookshelf-focused > a:last-of-type span {
+  font-weight: 650;
+}
+
 .nav-node > a.is-selected {
   box-shadow: inset 3px 0 var(--nav-accent);
 }
