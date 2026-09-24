@@ -16,7 +16,7 @@
     { key: "mpmm", title: "魔邓肯巨献：多元宇宙的怪物", abbreviation: "MPMM", publishedAt: "2022-05-17", section: "official" },
     { key: "bpgg", title: "毕格比巨献：巨人之荣耀", abbreviation: "BPGG", publishedAt: "2023-08-15", section: "official" },
     { key: "bmt", title: "万象无常书", abbreviation: "BMT", publishedAt: "2023-11-14", section: "official" },
-    { key: "ua", title: "启封奥秘", abbreviation: "UA", section: "official" },
+    { key: "ua", title: "启封奥秘", abbreviation: "AU", section: "official" },
 
     { key: "scag", title: "剑湾冒险者指南", abbreviation: "SCAG", publishedAt: "2015-11-03", section: "setting" },
     { key: "wge", title: "艾伯伦寻路者指南", abbreviation: "WGE", publishedAt: "2018-07-23", section: "setting" },
