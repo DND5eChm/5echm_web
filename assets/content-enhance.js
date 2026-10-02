@@ -35,11 +35,14 @@
       ],
       special: [
         { label: "专注", positive: "专注", negative: "非专" },
-        { label: "仪式", positive: "仪式", negative: "非仪" },
+        { label: "仪式", positive: "仪式", negative: "非仪", positiveLabel: "可以", negativeLabel: "不可" },
         { label: "言语", positive: "言语", negative: "非言" },
         { label: "姿势", positive: "姿势", negative: "非姿" },
         { label: "材料", positive: "材料", negative: "非材" },
-        { label: "贵重材料", positive: "价耗", negative: "无特" }
+        {
+          label: "特殊材料", positive: "价耗", negative: "无特", positiveLabel: "是", negativeLabel: "非",
+          description: "特殊材料指注明价值或会被消耗的材料成分；选择“是”或“非”时，仅筛选含材料成分的法术。"
+        }
       ],
       sorts: [
         { value: "source", label: "原表顺序" },
@@ -315,24 +318,31 @@
         });
       }
     };
-    definitions.forEach(function (definition) {
+    definitions.forEach(function (definition, index) {
       var positive = inputs.find(function (input) { return input.value === definition.positive; });
       var negative = inputs.find(function (input) { return input.value === definition.negative; });
       if (!positive || !negative) return;
       var row = makeElement(doc, "div", "quickref-special-row");
       var label = makeElement(doc, "span", "quickref-special-label");
       var buttons = makeElement(doc, "div", "quickref-segmented");
+      var description = null;
+      if (definition.description) {
+        description = makeElement(doc, "p", "quickref-special-description");
+        description.id = "quickref-" + kind + "-special-description-" + (index + 1);
+        description.textContent = definition.description;
+      }
       label.textContent = definition.label;
       row.appendChild(label);
       row.appendChild(buttons);
       [
         { value: "any", label: "任意" },
-        { value: "positive", label: "需要" },
-        { value: "negative", label: "无需" }
+        { value: "positive", label: definition.positiveLabel || "需要" },
+        { value: "negative", label: definition.negativeLabel || "无需" }
       ].forEach(function (option) {
         var button = makeElement(doc, "button", "quickref-option");
         button.type = "button";
         button.textContent = option.label;
+        if (description) button.setAttribute("aria-describedby", description.id);
         button.addEventListener("click", function () {
           positive.checked = option.value === "positive";
           negative.checked = option.value === "negative";
@@ -343,6 +353,7 @@
         rows.push({ button: button, positive: positive, negative: negative, value: option.value });
       });
       group.controls.appendChild(row);
+      if (description) group.controls.appendChild(description);
     });
     group.element.appendChild(hidden);
     state.update();

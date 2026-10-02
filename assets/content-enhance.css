@@ -560,6 +560,14 @@ html.quickref-document .quickref-special-label {
   font-size: 13px;
 }
 
+html.quickref-document .quickref-special-description {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  color: var(--quickref-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 html.quickref-document .quickref-segmented {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
